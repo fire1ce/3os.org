@@ -5,6 +5,10 @@ site_author: Stas Yakobov
 site_description: >-
     Collocation of technical documentation, guides, knowledge, examples and
     tips...
+repo_url: https://github.com/fire1ce/3os.org
+repo_name: fire1ce/3os.org
+edit_uri: edit/master/docs/
+
 
 # Theme Configuration
 theme:
@@ -58,6 +62,9 @@ plugins:
       decryption_failure_message: 'Nope!'
       encryption_info_message: ''
   - awesome-pages
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
 
 
 extra:

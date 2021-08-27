@@ -1,5 +1,7 @@
 nav:
-  - About: about.md
+  - about.md
+  - Portfolio: about/portfolio/
   - Affiliate Disclosure: affiliateDisclosure.md
-  - ...
-  - License: license.md
+  - cookies-policy.md
+  - privacy-policy.md
+  - license.md
