@@ -1,0 +1,10 @@
+nav:
+  - Guides: guides
+  - Linux: linux
+  - macOS: mac-os
+  - Raspberry Pi: raspberry-pi
+  - Development: development
+  - Windows: windows
+  - Penetration Testing: penetration-testing
+  - Markdown CheatSheet: markdown-cheatsheet
+  - About: about

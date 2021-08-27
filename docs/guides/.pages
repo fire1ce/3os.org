@@ -1,0 +1,11 @@
+nav:
+  - Better Terminal Experience: better-terminal-experience.md
+  - pihole_dns.md
+  - gmailMarkAsRead.md
+  - TorPi - Raspberry Pi Tor AP: ../raspberry-pi/TOR-Pi/
+  - Useful Links & Tools: usefulLinks_Tools.md
+  - Synology DSM: synology.md
+  - Ubiquiti EdgeRouter & Unifi: ubiquiti.md
+  - Proxmox Virtualization: proxmox.md
+  - Tools: tools
+  - Privet Content: privet

@@ -1,0 +1,75 @@
+<!-- Footer -->
+<footer class="md-footer">
+  <!-- Link to previous and/or next page -->
+  {% if page.previous_page or page.next_page %}
+  <nav
+    class="md-footer__inner md-grid"
+    aria-label="{{ lang.t('footer.title') }}"
+  >
+    <!-- Link to previous page -->
+    {% if page.previous_page %} {% set direction = lang.t("footer.previous") %}
+    <a
+      href="{{ page.previous_page.url | url }}"
+      class="md-footer__link md-footer__link--prev"
+      aria-label="{{ direction }}: {{ page.previous_page.title | e }}"
+      rel="prev"
+    >
+      <div class="md-footer__button md-icon">
+        {% include ".icons/material/arrow-left.svg" %}
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+          <span class="md-footer__direction"> {{ direction }} </span>
+          {{ page.previous_page.title }}
+        </div>
+      </div>
+    </a>
+    {% endif %}
+
+    <!-- Link to next page -->
+    {% if page.next_page %} {% set direction = lang.t("footer.next") %}
+    <a
+      href="{{ page.next_page.url | url }}"
+      class="md-footer__link md-footer__link--next"
+      aria-label="{{ direction }}: {{ page.next_page.title | e }}"
+      rel="next"
+    >
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+          <span class="md-footer__direction"> {{ direction }} </span>
+          {{ page.next_page.title }}
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        {% include ".icons/material/arrow-right.svg" %}
+      </div>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  <!-- Footer -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        {% if config.copyright %}
+        <div class="md-footer-copyright__highlight">{{ config.copyright }}</div>
+        {% endif %}
+        <a href="/about/privacy-policy/" title="Privacy Policy"
+          >Privacy Policy
+        </a>
+        |
+        <a href="/about/cookies-policy" title="Cookies Policy"
+          >Cookies Policy
+        </a>
+        |
+        <a href="/sitemap.xml" title="Site Map"> Site Map </a>
+        |
+        <a href="/about/affiliateDisclosure" title="Affiliate Disclosure"
+          >Affiliate Disclosure
+        </a>
+      </div>
+      {% block social %} {% include "partials/social.html" %} {% endblock %}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,124 @@
+# Project information
+site_name: 3os
+site_url: https://3os.org/
+site_author: Stas Yakobov
+site_description: >-
+    Collocation of technical documentation, guides, knowledge, examples and
+    tips...
+
+# Theme Configuration
+theme:
+  name: material
+  custom_dir: docs/theme
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.top
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - search.share
+    # - toc.integrate
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font: false
+  icon:
+    logo: material/chart-donut-variant
+  favicon: assets/favicon.png
+# Custom theme additions
+extra_css:
+  - theme/css/fonts.css
+  - theme/css/extra.css
+
+
+# Plugins
+plugins:
+  - search:
+      prebuild_index: true
+      lang: 'en'
+  - minify:
+      minify_html: true
+  - encryptcontent:
+      title_prefix: ''
+      summary: 'Privet Content'
+      placeholder: 'Password '
+      decryption_failure_message: 'Nope!'
+      encryption_info_message: ''
+  - awesome-pages
+
+
+extra:
+  # analytics:
+  #   provider: google
+  #   property: G-RJ1F4E5LH1
+  # disqus: 3os
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/fire1ce
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/stas-yakobov
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/3os.org
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - sane_lists
+  - attr_list
+  - markdown.extensions.codehilite:
+     guess_lang: false
+  - def_list
+  - footnotes
+  - abbr
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      toc_depth: '3'
+      permalink: true
+      separator: '-'
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.extra
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: fire1ec
+      repo: 3os.org
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.tilde
+
+# Copyright
+copyright: 'Copyright &copy; 3os.org @2018'

@@ -1,0 +1,3 @@
+[submodule "docs/guides/privet"]
+	path = docs/guides/privet
+	url = git@github.com:fire1ce/privet.3os.org.git

@@ -1,0 +1,16 @@
+nav:
+  - Welcome: welcome.md
+  - headings.md
+  - text-highlighting.md
+  - line-breaks.md
+  - lists.md
+  - tables.md
+  - links.md
+  - images.md
+  - code-blocks.md
+  - admonition.md
+  - block-quotes.md
+  - Icons: icons.md
+  - emoji.md
+  - embed-external-sources.md
+  - meta-data.md
