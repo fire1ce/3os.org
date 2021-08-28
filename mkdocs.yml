@@ -94,7 +94,7 @@ markdown_extensions:
   - md_in_html
   - tables
   - toc:
-      toc_depth: '3'
+      toc_depth: '2'
       permalink: true
       separator: '-'
   - pymdownx.arithmatex:

@@ -55,19 +55,23 @@
         {% if config.copyright %}
         <div class="md-footer-copyright__highlight">{{ config.copyright }}</div>
         {% endif %}
-        <a href="/about/privacy-policy/" title="Privacy Policy"
+        <a href="/sitemap.xml" title="Site Map"> Site Map </a>
+        |
+        <a href="/information/privacy-policy/" title="Privacy Policy"
           >Privacy Policy
         </a>
         |
-        <a href="/about/cookies-policy" title="Cookies Policy"
+        <a href="/information/cookies-policy" title="Cookies Policy"
           >Cookies Policy
         </a>
         |
-        <a href="/sitemap.xml" title="Site Map"> Site Map </a>
-        |
-        <a href="/about/affiliateDisclosure" title="Affiliate Disclosure"
+        <a href="/information/affiliateDisclosure" title="Affiliate Disclosure"
           >Affiliate Disclosure
         </a>
+        |
+        <a href="/information/portfolio" title="Portfolio">Portfolio </a>
+        |
+        <a href="/information/license" title="License">License </a>
       </div>
       {% block social %} {% include "partials/social.html" %} {% endblock %}
     </div>

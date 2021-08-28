@@ -1,15 +1,18 @@
 ---
-title: Docker General
+title: Docker
 description: Docker General useful commands tips, SSH to a Docker Container, Update All Downloaded Docker Container Images, Purging All Unused or Dangling Docker Container Images, Create mysql Docker with Mapping to Host
-tags:
- - testing
- - unimportant
 ---
 
 ## SSH to a Container
 
 ```bash
 docker exec -it mysqldb "bash"
+```
+
+or
+
+```bash
+docker exec -it mysqldb "sh"
 ```
 
 ## Update All Downloaded Images
