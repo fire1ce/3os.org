@@ -4,3 +4,6 @@
 [submodule "docs/about/portfolio"]
 	path = docs/about/portfolio
 	url = git@github.com:fire1ce/fire1ce.git
+[submodule "docs/information/portfolio"]
+	path = docs/information/portfolio
+	url = git@github.com:fire1ce/fire1ce.git
