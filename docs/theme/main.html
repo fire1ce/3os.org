@@ -4,54 +4,63 @@
 <!-- footer -->
 {% block footer %}{% include "footer.html" %} {% endblock %}
 
-<div class="md-main__inner md-grid">
-  {% block site_nav %} {% if nav %} {% if page and page.meta and page.meta.hide
-  %} {% set hidden = "hidden" if "navigation" in page.meta.hide %} {% endif %}
-  <div
-    class="md-sidebar md-sidebar--primary"
-    data-md-component="sidebar"
-    data-md-type="navigation"
-    {{
-    hidden
-    }}
-  >
-    <div class="md-sidebar__scrollwrap">
-      <div class="md-sidebar__inner">{% include "partials/nav.html" %}</div>
-    </div>
-  </div>
-  {% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page
-  and page.meta and page.meta.hide %} {% set hidden = "hidden" if "toc" in
-  page.meta.hide %} {% endif %}
-  <div
-    class="md-sidebar md-sidebar--secondary"
-    data-md-component="sidebar"
-    data-md-type="toc"
-    {{
-    hidden
-    }}
-  >
-    <div class="md-sidebar__scrollwrap">
-      <div class="md-sidebar__inner">{% include "partials/toc.html" %}</div>
-    </div>
-  </div>
-  {% endif %} {% endblock %}
-  <div class="md-content" data-md-component="content">
-    <article class="md-content__inner md-typeset">
-      {% block content %} {% if page.edit_url %}
-      <a
-        href="{{ page.edit_url }}"
-        title="{{ lang.t('edit.link.title') }}"
-        class="md-content__button md-icon"
-      >
-        {% include ".icons/material/pencil.svg" %}
-      </a>
-      {% endif %} {% if not "\x3ch1" in page.content %}
-      <h1>{{ page.title | d(config.site_name, true)}}</h1>
-      {% endif %} {{ page.content }} {% if page and page.meta %} {% if
-      page.meta.git_revision_date_localized or page.meta.revision_date %} {%
-      include "partials/source-file.html" %} {% endif %} {% endif %} {% endblock
-      %} {% block disqus %} {% include "partials/integrations/disqus.html" %} {%
-      endblock %}
-    </article>
+<!-- site nav -->
+
+{% block site_nav %} {% if nav %} {% if page and page.meta and page.meta.hide %}
+{% set hidden = "hidden" if "navigation" in page.meta.hide %} {% endif %}
+<div
+  class="md-sidebar md-sidebar--primary"
+  data-md-component="sidebar"
+  data-md-type="navigation"
+  {{
+  hidden
+  }}
+>
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">{% include "partials/nav.html" %}</div>
   </div>
 </div>
+{% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page and
+page.meta and page.meta.hide %} {% set hidden = "hidden" if "toc" in
+page.meta.hide %} {% endif %}
+<div
+  class="md-sidebar md-sidebar--secondary"
+  data-md-component="sidebar"
+  data-md-type="toc"
+  {{
+  hidden
+  }}
+>
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">{% include "partials/toc.html" %}</div>
+    <!-- donation section -->
+    <div class="donation">
+      <form
+        method="get"
+        type="buymeacoffee"
+        target="_blank"
+        action="https://www.buymeacoffee.com/fire1ce"
+      >
+        <button class="donate-button-buymeacoffee" type="submit"></button>
+      </form>
+      <form
+        method="get"
+        type="submit"
+        target="_blank"
+        action="https://www.paypal.com/donate?hosted_button_id=Y5NSXQQ6VPSK6"
+      >
+        <button class="donate-button-paypal" type="submit"></button>
+      </form>
+      <form
+        method="get"
+        type="patreon"
+        target="_blank"
+        action="https://www.patreon.com/fire1ce"
+      >
+        <button class="donate-button-patreon" type="submit"></button>
+      </form>
+    </div>
+    <!-- donation end -->
+  </div>
+</div>
+{% endif %} {% endblock %}
