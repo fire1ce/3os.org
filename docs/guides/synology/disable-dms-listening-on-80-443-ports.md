@@ -1,9 +1,7 @@
 ---
-title: Synology DSM Guides & Tips
+title: Disable DSM Listening on 80,443 Ports
 description: Synology DSM Listening on 80,443 Ports
 ---
-
-## Disable DSM Listening on 80,443 Ports
 
 This will temporary free the 80, 443 ports until the next reboot
 
