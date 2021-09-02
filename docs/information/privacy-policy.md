@@ -1,8 +1,9 @@
 ---
-title: Privacy Policy
 description: Your privacy is very important to us. Accordingly, we have developed this policy in order for you to understand how we collect, use, communicate and make use of personal information. The following outlines our privacy policy.
 disqus: ""
 ---
+
+# Privacy Policy
 
 Your privacy is very important to us. Accordingly, we have developed this policy in order for you to understand how we collect, use, communicate and make use of personal information. The following outlines our privacy policy.
 
@@ -54,20 +55,6 @@ This website may contain links to many other websites. cannot guarantee the accu
 
 By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.
 
-## Intellectual Property Rights
-
-All copyrights, trademarks, patents and other intellectual property rights in and on our website and all content and software located on the site shall remain the sole property of or its licensors. The use of our trademarks, content and intellectual property is forbidden without the express written consent from.
-
-You must not:
-
-Republish material from our website without prior written consent.
-
-Sell or rent material from our website.
-
-Reproduce, duplicate, create derivative, copy or otherwise exploit material on our website for any purpose.
-
-Redistribute any content from our website, including onto another website.
-
 ## Acceptable Use
 
 You agree to use our website only for lawful purposes, and in a way that does not infringe the rights of, restrict or inhibit anyone else’s use and enjoyment of the website. Prohibited behavior includes harassing or causing distress or inconvenience to any other user, transmitting obscene or offensive content or disrupting the normal flow of dialogue within our website.
@@ -100,7 +87,7 @@ For site security purposes and to ensure that this service remains available to 
 
 ## Disclaimer And Limitation Of Liability
 
-Homegrounds.co makes no representations, warranties, or assurances as to the accuracy, currency or completeness of the content contain on this website or any sites linked to this site.
+We makes no representations, warranties, or assurances as to the accuracy, currency or completeness of the content contain on this website or any sites linked to this site.
 
 All the materials on this site are provided ‘as is’ without any express or implied warranty of any kind, including warranties of merchantability, noninfringement of intellectual property or fitness for any particular purpose. In no event shall or its agents or associates be liable for any damages whatsoever (including, without limitation, damages for loss of profits, business interruption, loss of information, injury or death) arising out of the use of or inability to use the materials, even if has been advised of the possibility of such loss or damages.
 

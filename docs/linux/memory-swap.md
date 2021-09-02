@@ -2,28 +2,12 @@
 description: Linux Memory & Swap how to, guides, examples, and simple usage
 ---
 
-# Linux Memory & Swap Related Topics
+# Memory & Swap
 
-## Who uses RAM
+## Who Uses RAM
 
 ```bash
 ps aux  | awk '{print $6/1024 " MB\t\t" $11}'  | sort -n
-```
-
-## Prevent OOM killer
-
-Edit file /etc/sysctl.conf
-
-```bash
-vm.overcommit_memory = 2
-vm.overcommit_ratio = 100
-```
-
-In case of bad memory usage (php out of memory) use this settings:
-
-```bash
-vm.overcommit_memory = 0
-vm.overcommit_ratio = 80
 ```
 
 ## Who Is Using Swap Memory

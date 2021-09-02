@@ -1,5 +1,5 @@
 ---
-description: Linux - SSH Hardening with RSA Keys
+description: SSH Hardening with RSA Keys
 ---
 
 # SSH Hardening with RSA Keys
