@@ -1,8 +1,8 @@
 ---
-description: Raspberry Pi Tips & Tricks how to, guides, examples, and simple usage, Raspberry Pi, Default User and Password, Install Oh-My-Zsh on Raspbian
+description: Raspberry Pi Tips & Tricks how to, guides, snippets, examples, and simple usage, Raspberry Pi, Default User and Password, Install Oh-My-Zsh on Raspbian
 ---
 
-# Raspberry Pi Tips & Tricks
+# Snippets
 
 ## Enable SSH on Raspberry Pi Without a Screen
 

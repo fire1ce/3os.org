@@ -2,7 +2,7 @@
 description: macOS macOS UI tweaks and tips, for better experience, productivity and workflow
 ---
 
-# macOS UI Tweaks
+# UI Tweaks
 
 ## Hide All The Icons On Your Desktop
 

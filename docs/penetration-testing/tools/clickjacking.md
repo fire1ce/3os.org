@@ -1,7 +1,9 @@
 ---
-title: Clickjacking Test Page
 description: Clickjacking Test Page
 ---
+
+# Clickjacking Test Page
+
 !!! note ""
     :point_right: __[Full Screen Version](/assets/pages/clickjacking/){target=\_blank}__ :point_left:
 

@@ -1,8 +1,8 @@
 ---
-description: Ubuntu & Debian Linux - Guides, Examples and Usage
+description: Ubuntu & Debian Linux - snippetsm guides, examples and usage
 ---
 
-# Ubuntu & Debian Related Topics
+# General Snippets
 
 ## Disable Firewall Ubuntu
 

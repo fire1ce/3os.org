@@ -1,7 +1,0 @@
-nav:
-  - General: general.md
-  - UI Tweaks: ui.md
-  - System Tweaks: system.md
-  - Applications Tweaks: applications.md
-  - BrewUp - macOS Auto Update: brewup.md
-  - Python macOS The Right Way: pythonTheRightWay.md

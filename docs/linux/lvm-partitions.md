@@ -2,7 +2,7 @@
 description: Linux - LVM Partition how to, guides
 ---
 
-# Linux LVM Partitions
+# LVM Partitions
 
 ## Removing LVM Partition and Merging In To / (root partition)
 

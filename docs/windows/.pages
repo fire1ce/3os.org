@@ -1,3 +1,4 @@
 nav:
-    - Windows General: windowsGeneral.md
-    - Windows Guides and How-To: windowsGuides.md
+    - snippets.md
+    - useful-software.md
+    - ...

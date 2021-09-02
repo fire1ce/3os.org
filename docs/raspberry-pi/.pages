@@ -1,6 +1,3 @@
 nav:
-  - General: piGeneral.md
-  - Docker on Raspberry Pi : dockerPi.md
-  - TorPi - Raspberry Pi Tor AP: TOR-Pi.md
-  - Raspberry Pi Magic Mirror: MagicMirror.md
-  - 3g Modem Host Configuration: 3gModemHost.md
+    - snippets.md
+    - ...

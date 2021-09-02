@@ -2,7 +2,7 @@
 description: macOS System tweaks and tips for better experience, productivity and workflow and more
 ---
 
-# macOS System Tweaks and Guides for Better Experience, Productivity and Workflow
+# System Tweaks
 
 ## Install macOS Updates via CLI
 

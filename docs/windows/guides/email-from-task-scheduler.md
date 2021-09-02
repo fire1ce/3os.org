@@ -1,71 +1,9 @@
 ---
-description: Windows Guides and How-To, examples and simple usage
+description: How to send emails from the windows task scheduler
 ---
 
-# Windows Guides and How-To
 
-## Declare Locations as "Inside Your Local Network"
-
-!!! warning
-    The Intranet Zone is the most trusted and least protected zone. DO NOT put any subnets or IP addresses in this zone unless they are TOTALLY under YOUR control. That includes ANY public server, web site, subnet, or IP address.
-
-* Select 'Control Panel'/'Internet Properties'/'Security' tab. (Alternatively, open Internet Explorer and select 'Tools'/'Internet Options'/'Security' tab.)
-
-* Highlight 'Local Intranet' and click 'Sites'.
-
-* Set the following: Uncheck 'Automatically detect intranet network'.Check 'Include all local (intranet) sites not listed in other zones'.Uncheck 'Include all sites that bypass the proxy server'.Check 'Include all network paths (UNCs)'.​
-
-* Click 'Advanced'
-
-* Uncheck 'Require server verification (https:) for all sites in this zone'.
-
-* In the field labeled 'Add this web site to the zone:', add your local, private subnet using an asterisk for a network mask and click 'Add'. E.g. If your home (local) network is 192.168.25.0 with a mask of 255.255.255.0, enter '192.168.25.*' (without the quotes).
-
-!!! note
-    Entries can be:​
-
-    * Individual IP addresses (e.g. '192.168.5.25', etc.),
-    * Class C subnets (e.g. '192.168.27.*'),
-    * Class B subnets (e.g. '172.16.*.*'), or
-    * Class A subnets (e.g. '10.*.*.*')​
-
-You can add as many addresses as you need to the list
-It can be handy add the address of a VPN subnet to the list if it is also private and you TOTALLY trust it.​
-
-* Close out with 'Close'/'OK'/'OK' and close the Control Panel (or Internet Explorer).
-
-## Add Program to Startup - Windows 7,8,10 & Servers
-
-Hit WIN+R or from start menu search `run` and press enter.  
-At run dialog enter `shell:common startup`:
-
-![shell:common startup](../assets/images/windows/2018-10-21_09-52-21_runStartup.png "shell:common startup")
-
-* Create shortcut for the program you want to auto startup when Windows boots.
-* Move the shortcut to the `Startup` folder that opened before.
-
-## Reboot or Shutdown Windows From Command Line (CMD)
-
-Reboot windows computer
-This command will set a time out of 10 seconds to close the applications. After 10 seconds, windows reboot will start.
-
-```cmd
-shutdown /r /t 10
-```
-
-Force reboot
-
-```cmd
-shutdown /r /f /t 0
-```
-
-Force Shutdown
-
-```cmd
-shutdown /s /f /t 0
-```
-
-## Send Emails From The Windows Task Scheduler
+# Send Emails From The Windows Task Scheduler
 
 First, [download SendEmail](https://github.com/fire1ce/sendEmail-windwos-v1.56/archive/master.zip "SendEmail"), a free (and open source) tool for sending emails from the command line. Extract the downloaded archive into a folder on your computer.
 

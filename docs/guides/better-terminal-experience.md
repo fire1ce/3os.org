@@ -9,7 +9,7 @@ This is a short guide for better terminal experience for macOS/Linux using `Oh-M
 ## MacOS Installation with iTerm2 and Homebrew
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/guides/betterTerminal/linuxTerminal.png" alt="terminal screenshot">
+   <img src="/assets/images/guides/better-terminal-experience/linuxTerminal.png" alt="terminal screenshot">
 </div>
 
 First of all we need to install [**Homebrew**](https://brew.sh/)

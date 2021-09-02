@@ -2,7 +2,7 @@
 description: macOS Applications tweaks and tips for better experience, productivity and workflow and more
 ---
 
-# macOS Applications Tweaks and Tips for Better Experience, Productivity and Workflow and more
+# Applications Tweaks
 
 ## iTerm2 Tweaks and Tips
 

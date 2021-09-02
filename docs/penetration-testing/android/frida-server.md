@@ -1,7 +1,8 @@
 ---
-title: Frida Server for SSL Pinning Bypass
 description: Android Penetration Testing - guide for installing and using frida server on android for bypassing SSL Pinning
 ---
+
+# Frida Server for SSL Pinning Bypass
 
 ## Requirements
 
