@@ -1,7 +1,8 @@
 ---
-title: Install zsh and oh-my-zsh
 description: how to install ZSH and oh-my-zsh on synology dsm nas
 ---
+
+# Install zsh and oh-my-zsh
 
 Add community package source to package center
 Open package center -> preference. Now we are at General tab. Allow install package from Synology Inc. and trusted publishers.

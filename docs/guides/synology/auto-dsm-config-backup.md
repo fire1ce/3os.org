@@ -1,7 +1,8 @@
 ---
-title: Auto DSM Config Backup
 description: Auto DSM config backup with local script 
 ---
+
+# Auto DSM Config Backup
 
 Since synology's dms doesn't provide any auto-backup for it's configuration i've made a smile script that can be run at from the "Task Scheduler".
 The script invokes synoconfbkp cli command that will dump the config file to provided folder. I use dropbox's folder in my case (This will sync my files to DropBox account). It append a date and hostname.

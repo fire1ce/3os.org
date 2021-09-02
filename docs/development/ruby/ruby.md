@@ -1,8 +1,9 @@
 ---
-description: Development - Python how to, guides, examples, and simple usage
+description: Ruby and Gems Cli Useful Commands
 ---
 
-# Ruby
+
+# Ruby Cli Commands
 
 ## Get Gem & Ruby Environment Information
 

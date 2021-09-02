@@ -1,7 +1,8 @@
 ---
-title: Better Terminal Experience - Oh-My-Zsh + Bira Theme + Autosuggestions
 description: short guide for better terminal experience for macOS/Linux using Oh-My-Zsh, Bira Theme Autosuggestions, and Highlight plugins.
 ---
+
+# Better Terminal Experience - Oh-My-Zsh + Bira Theme + Autosuggestions
 
 This is a short guide for better terminal experience for macOS/Linux using `Oh-My-Zsh`, `Bira Theme`, `Autosuggestions` and `Highlight` plugins.
 

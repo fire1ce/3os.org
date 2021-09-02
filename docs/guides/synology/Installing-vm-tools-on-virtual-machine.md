@@ -1,7 +1,8 @@
 ---
-title: Installing VM Tools on Virtual Machine
 description: How to installing VM Tools on Virtual Machine at DSM synology nas
 ---
+
+# Installing VM Tools on Virtual Machine
 
 On Debian:
 

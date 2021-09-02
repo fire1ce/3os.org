@@ -1,10 +1,8 @@
 ---
-description: Proxmox Guides, Tips and modifications
+description: Proxmox GPU passthrough to VM guide
 ---
 
-# Proxmox
-
-## GPU Passthrough to VM
+# GPU Passthrough to VM
 
 Hardware Requirements:
 
@@ -12,7 +10,7 @@ Hardware Requirements:
 * Interrupt mapping
 * UEFI BIOS
 
-### Configuring Proxmox
+## Configuring Proxmox
 
 __Configuring the Grub__
 Assuming you are using an Intel CPU, either SSH directly into your Proxmox server, or utilizing the noVNC Shell terminal under "Node", open up the /etc/default/grub file. I prefer to use nano, but you can use whatever text editor you prefer.
@@ -64,7 +62,7 @@ When you finished editing /etc/default/grub run this command:
 update-grub
 ```
 
-### VFIO Modules
+## VFIO Modules
 
 You'll need to add a few VFIO modules to your Proxmox system. Again, using nano (or whatever), edit the file /etc/modules
 
@@ -83,7 +81,7 @@ vfio_virqfd
 
 Then save and exit.
 
-### IOMMU Interrupt Remapping
+## IOMMU Interrupt Remapping
 
 I'm not going to get too much into this; all you really need to do is run the following commands in your Shell:
 
@@ -92,7 +90,7 @@ echo "options vfio_iommu_type1 allow_unsafe_interrupts=1" > /etc/modprobe.d/iomm
 echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf
 ```
 
-### Blacklisting Drivers
+## Blacklisting Drivers
 
 We don't want the Proxmox host system utilizing our GPU(s), so we need to blacklist the drivers. Run these commands in your Shell:
 
@@ -102,7 +100,7 @@ echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf
 ```
 
-### Adding GPU to VFIO
+## Adding GPU to VFIO
 
 Run this command:
 
@@ -151,7 +149,7 @@ reset
 
 Now your Proxmox host should be ready to passthrough GPUs!
 
-### Configuring the VM (Windows 10)
+## Configuring the VM (Windows 10)
 
 Download VirtIO drivers directly to you proxmox ios files locations
 
@@ -247,13 +245,3 @@ Here is my final screenshot of the VM's Hardware configuration:
     alt="terminal screenshot">
 </div>
 
-## Remove Proxmox 6.0/5.1+ Subscription Notice
-
-To remove “You do not have a valid subscription for this server” run the command bellow. You will need to SSH to your Proxmox machine or use the node console through the PVE web interface.
-
-SSH to the the proxmox host,
-Run the following one line command
-
-```bash
-sed -i.bak "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
-```

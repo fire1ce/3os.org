@@ -1,6 +1,0 @@
-nav:
-  - Git: git.md
-  - dockerGeneral.md
-  - Python: python.md
-  - Ruby: ruby.md
-  - npm & node: npm.md

@@ -1,7 +1,8 @@
 ---
-title: Gmail Mark Archived Mail as Read
 description: Gmail Mark Archived Mail as Read guide
 ---
+
+# Gmail Mark Archived Mail as Read
 
 1. Head to script.google.com to start a script.
 2. Choose to create a script for Gmail in the little popup.

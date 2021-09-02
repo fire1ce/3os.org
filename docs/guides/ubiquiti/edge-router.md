@@ -1,22 +1,16 @@
 ---
-description: Ubiquiti EdgeRouter, Unifi, UNMS Guides, Tips & Tricks
+description: Ubiquiti EdgeRouter useful commands tips and tricks
 ---
 
-# Ubiquiti Networks - EdgeRouter, Unifi, UNMS, UDM-PRO
+# EdgeRouter
 
-## UDM-PRO - Restart Webserver (cleans ram usage)
-
-```bash
-podman restart unifi-os
-```
-
-## EdgeRouter - Clear DNS Forwarding Cache via SSH Call
+## Clear DNS Forwarding Cache via SSH Call
 
 ```bash
 ssh user@192.168.1.1 'sudo /opt/vyatta/bin/sudo-users/vyatta-op-dns-forwarding.pl --clear-cache'
 ```
 
-## EdgeRouter - SSH via RSA keys
+## SSH via RSA keys
 
 SSH to the Edge Router:
 Copy the public key to /tmp folder
@@ -157,6 +151,7 @@ Show Hosts Config
 ```bash
 cat /etc/hosts
 ```
+
 
 ## Guest Wifi With Ubiquiti EdgeRouter and Unifi Access Points
 

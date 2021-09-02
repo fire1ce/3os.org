@@ -1,7 +1,8 @@
 ---
-title: Allow SSH With RSA KEY
 description: how to allow and ssh with rsa yes to synology dsm
 ---
+
+# Allow SSH With RSA Key
 
 * Log into Synology web UI as an administrator user
 * Enable “User Home”
