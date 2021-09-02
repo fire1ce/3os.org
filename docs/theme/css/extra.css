@@ -36,11 +36,9 @@
     255
   ); /* snippets copy button hover color */
 }
-
 .md-typeset code {
   border-radius: 5px; /* border-radius of the code section*/
 }
-
 .md-typeset img {
   border-radius: 5px; /* images border-radius */
 }
