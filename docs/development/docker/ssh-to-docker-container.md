@@ -1,7 +1,8 @@
 ---
-title: SSH to Docker Container
 description: How to SSH to docker container with container name or id
 ---
+
+# SSH to Docker Container
 
 `mysqldb` is an example name of a container. You can use the _CONTAINER ID_ like `439c1bdc0ff2`
 
