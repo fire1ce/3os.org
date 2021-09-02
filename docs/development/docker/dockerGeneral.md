@@ -25,10 +25,6 @@ To additionally remove any stopped containers and all unused images (not just da
 docker system prune -a
 ```
 
-## Portainer.io Docker UI management
-
-[Portainer.io](https://portainer.io/)
-
 ## Find Container IP
 
 ```bash
@@ -41,29 +37,10 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' con
 docker ps -a
 ```
 
-## Create mysql Docker with Mapping to Host
-
-```bash
-docker run --name mysqldb -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="qweQWE123" -p 3306:3306 -it mysql/mysql-server:5.7
-```
-
-## Exit Container Without Closing It
-
-```bash
-crtl+shift+D
-```
-
 ## Container Specific Logs (to view the output of commands running in container)
 
 ```bash
 docker logs mysqldb
-```
-
-## Create Volume and Map Container to it
-
-```bash
-docker volume create vol1
-docker run --name mysqldb_map -v vol1:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="qweQWE123" -p 3306:3306 -it mysql/mysql-server:5.7
 ```
 
 ## View Details for Specific Docker
