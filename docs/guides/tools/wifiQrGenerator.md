@@ -13,7 +13,7 @@ This is a fully static code - no data is send to any server!
 ## Generator
 
 <div style="overflow: hidden;">
-    <iframe src="/assets/pages/qrwifi/" scrolling="no" style="border: 0px solid #c0c3c6; height: 700px; width:100%"></iframe>
+    <iframe src="/assets/pages/wifi-qr-generator/" scrolling="no" style="border: 0px solid #c0c3c6; height: 700px; width:100%"></iframe>
 </div>
 
 ## Credit & Sources

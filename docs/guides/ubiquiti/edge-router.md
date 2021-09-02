@@ -159,48 +159,48 @@ cat /etc/hosts
 
 From the Dashboard, click Add Interface and select VLAN.
 
-![Interface](/assets/images/ubiquiti/guestWifi/01.Interface.png)
+![Interface](/assets/images/guides/ubiquiti/guestWifi/01.Interface.png)
 
 Set up the VLAN ID as You like for this example will use id **1003** and attach it to the physical interface of your LAN. Give it an IP address in the range of a private IP block, but make sure you end it in a /24 to specify the proper subnet (I originally did /32 as I though it was supposed to be the exact IP address).
 
-![vlan](/assets/images/ubiquiti/guestWifi/02.vlan.png)
+![vlan](/assets/images/guides/ubiquiti/guestWifi/02.vlan.png)
 
 Click on the Services tab. Click Add DHCP Server. Set it up similar to the image below.
 
-![DHCP](/assets/images/ubiquiti/guestWifi/03.DHCP.png)
+![DHCP](/assets/images/guides/ubiquiti/guestWifi/03.DHCP.png)
 
 Click on the DNS tab under services. Click Add Listen interface and select the VLAN interface. Make sure you hit save.
 
-![dns](/assets/images/ubiquiti/guestWifi/04.dns.png)
+![dns](/assets/images/guides/ubiquiti/guestWifi/04.dns.png)
 
 At this point, you should be able to connect to your Guest Network and connect to the Internet. However, you’ll be able to access the EdgeRouter as well as other devices on your LAN. Next thing you have to do is secure the VLAN.
 
 Click on Firewall/NAT and then click on Add Ruleset. This is for packets coming into the router destined for somewhere else (not the router). Set up the default policy for Accept. Click Save.
 
-![firewall rules](/assets/images/ubiquiti/guestWifi/05.firewall01.png)
+![firewall rules](/assets/images/guides/ubiquiti/guestWifi/05.firewall01.png)
 
 From the Actions menu next to the Ruleset, click Interfaces.
 
-![firewall rules](/assets/images/ubiquiti/guestWifi/06.firewall02.png)
+![firewall rules](/assets/images/guides/ubiquiti/guestWifi/06.firewall02.png)
 
 Select your VLAN interface and the in direction.
 
-![firewall rules](/assets/images/ubiquiti/guestWifi/07.firewall03.png)
+![firewall rules](/assets/images/guides/ubiquiti/guestWifi/07.firewall03.png)
 
 Click Rules and then Add New Rule. Click on Basic and name it LAN. Select Drop as the Action.
 
-![firewall rules](/assets/images/ubiquiti/guestWifi/08.firewall04.png)
+![firewall rules](/assets/images/guides/ubiquiti/guestWifi/08.firewall04.png)
 
 Click Destination and enter 10.0.1.0/24 or whatever your LAN IP range is. Then click Save. This will drop all packets from the VLAN destined for your LAN. Save.
 
-![firewall rules](/assets/images/ubiquiti/guestWifi/09.firewall05.png)
+![firewall rules](/assets/images/guides/ubiquiti/guestWifi/09.firewall05.png)
 
 Repeat 1 and 2 above (name it GUEST_LOCAL). From the Interface, select the VLAN interface and the local direction. However, set up the default policy as Drop.
 
 Add a new rule. Set it to Accept on UDP port 53.
 
-![firewall rules](/assets/images/ubiquiti/guestWifi/10.firewall06.png)
-![firewall rules](/assets/images/ubiquiti/guestWifi/11.firewall07.png)
+![firewall rules](/assets/images/guides/ubiquiti/guestWifi/10.firewall06.png)
+![firewall rules](/assets/images/guides/ubiquiti/guestWifi/11.firewall07.png)
 
 Save.
 Let's continue to set up the Uifi AP
@@ -210,13 +210,13 @@ Let's continue to set up the Uifi AP
 If you want to limit your Guest Users Bandwidth, head over to User Groups and create a new user group called Guest.
 Enter bandwidth limits that are appropriate for your Internet Speed. I used 6000 down and 2500 up.
 
-![Unifi_limit](/assets/images/ubiquiti/guestWifi/12.Unifi_limit.png)
+![Unifi_limit](/assets/images/guides/ubiquiti/guestWifi/12.Unifi_limit.png)
 
 Now go to the Wireless Networks section and create a new network called “Guest” or whatever you want to call it.
 
 Make sure it is enabled, give it WiFi security key, check the “Guest Policy” option, enter the VLAN **Id you used previously** and choose the Guest User Group. Save!
 
-![Unifi_SSDID](/assets/images/ubiquiti/guestWifi/13.Unifi_SSDID.png)
+![Unifi_SSDID](/assets/images/guides/ubiquiti/guestWifi/13.Unifi_SSDID.png)
 
 Done. Test Your New Guest Wifi by connecting to the Guest Wifi and browse to a website.
 
@@ -429,7 +429,7 @@ commit ; save
 
 Add DNS forwarding to the new vlan vtun0 to get DNS resolving.
 
-![DNS](/assets/images/ubiquiti/guestWifi/14.DNS_F.png)
+![DNS](/assets/images/guides/ubiquiti/guestWifi/14.DNS_F.png)
 
 ### Exmaple for clinet.opvn Config
 

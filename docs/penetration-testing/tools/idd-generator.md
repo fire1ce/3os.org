@@ -5,7 +5,7 @@ description: Penetration Testing - Israel ID Generator & Validator
 # IID Generator & Validator
 
 <div style="overflow: hidden;">
-    <iframe title="Israel ID Generator & Validator" src="/assets/pages/IID_Generator/" scrolling="no" style="border: 0px; height: 250px; margin-top: -0px; width:100%"></iframe>
+    <iframe title="Israel ID Generator & Validator" src="/assets/pages/iid-generator/" scrolling="no" style="border: 0px; height: 250px; margin-top: -0px; width:100%"></iframe>
 </div>
 
 ## Description

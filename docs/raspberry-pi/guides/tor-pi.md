@@ -5,11 +5,11 @@ description: Raspberry Pi - Raspberry Pi Tor Access Point Guide, Tor proxy, Rasp
 # TorPi - Raspberry Pi Tor Access Point
 
 <div style="margin:0 auto">
-   <img src="/assets/images/RaspberryPi/torPi/networkDiagram.png" alt="Tor-Pi Network Flow">
+   <img src="/assets/images/raspberry-pi/torPi/networkDiagram.png" alt="Tor-Pi Network Flow">
 </div>
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/torPi/torPi.jpg" alt="TorPi - Raspberry Pi Tor Access Point">
+   <img src="/assets/images/raspberry-pi/torPi/torPi.jpg" alt="TorPi - Raspberry Pi Tor Access Point">
 </div>
 
 <!-- prettier-ignore-start -->
@@ -44,14 +44,14 @@ If you still need information form the original guide is hidden below:
     Download **Raspberry Pi OS Minimal** image from: [raspberrypi.org](https://www.raspberrypi.org/downloads/raspberry-pi-os/ 'Raspberry Pi OS Download'){target=\_blank}
     It's a headless os - **Without GUI**
     <div style="width:80%; margin:0 auto">
-      <img src="/assets/images/RaspberryPi/torPi/rasberryPiOsMinimal.png" alt="TorPi">
+      <img src="/assets/images/raspberry-pi/torPi/rasberryPiOsMinimal.png" alt="TorPi">
     </div>
     Burn **Raspberry Pi OS Minimal** image to SD-Card that will be used in this project for TorPi.  
     Since we don't won't to use external screen or keyboard, we need to allow an SSH access to the Raspberry Pi OS on the first boot.
     After we created our bootable SD card we need to mount it and add a file called **“ssh”** inside a boot partition.  
     This will enable and start ssh daemon on pi at boot.
     <div style="width:40%; margin:0 auto">
-      <img src="/assets/images/RaspberryPi/torPi/ssh_file.png" alt="TorPi">
+      <img src="/assets/images/raspberry-pi/torPi/ssh_file.png" alt="TorPi">
     </div>
     To continue the setup we will need a Ethernet Cable with DHCP and Internet Connection.  
     Insert the SD card and the Ethernet cable and boot your pi by connecting power.  
@@ -78,7 +78,7 @@ If you still need information form the original guide is hidden below:
     _Optional_: [Fix bash local error](https://3os.org/linux/general/general/#fix_locales_fix_bash_local_error 'Fix bash local error'){target=\_blank}
     _Optional_: [Set System Time With NTP](https://3os.org/linux/general/general/#set_system_time_with_time_zone_timedatectl_ntp 'Set System Time With NTP'){target=\_blank}
     _Optional_ [Install Oh My Zsh](https://3os.org/guides/BetterTerminal/#linux_installation 'Install Oh My Zsh'){target=\_blank}
-    Follow this to [Disable IPv6 on Raspberry Pi Os](https://3os.org/raspberryPi/piGeneral/#disable_ipv6_on_raspberry_pi_os 'Disable IPv6 on Raspberry Pi Os'){target=\_blank}
+    Follow this to [Disable IPv6 on Raspberry Pi Os](https://3os.org/raspberry-pi/piGeneral/#disable_ipv6_on_raspberry_pi_os 'Disable IPv6 on Raspberry Pi Os'){target=\_blank}
     Change the Hostname to 'torPi' or any one you like
     ```bash
     sudo raspi-config
@@ -130,7 +130,7 @@ If you still need information form the original guide is hidden below:
     ### warning
     Change the Default web-ui Credentials
     <div style="width:80%; margin:0 auto">
-       <img src="/assets/images/RaspberryPi/torPi/webui-authentication.png" alt="webui-authentication">
+       <img src="/assets/images/raspberry-pi/torPi/webui-authentication.png" alt="webui-authentication">
     </div>
     ### Configuration with One Wireless Interface
     ```bash
@@ -138,7 +138,7 @@ If you still need information form the original guide is hidden below:
     The only think you should to in the interface is to change the SSD, PSK
     ```
     <div style="margin:0 auto">
-       <img src="/assets/images/RaspberryPi/torPi/wlan0_hotspot.png" alt="wlan0 hotspot">
+       <img src="/assets/images/raspberry-pi/torPi/wlan0_hotspot.png" alt="wlan0 hotspot">
     </div>
     ### Configuration with Two Wireless Interface
     If you raspberry pi as only **two wireless** interface we need to set  
@@ -146,11 +146,11 @@ If you still need information form the original guide is hidden below:
     **wlan0 as WiFi Client**  
     Set the Hotspot with interface **wlan1**
     <div style="width:80%; margin:0 auto">
-       <img src="/assets/images/RaspberryPi/torPi/wlan1_hotspost.png" alt="wlan1 hotspot">
+       <img src="/assets/images/raspberry-pi/torPi/wlan1_hotspost.png" alt="wlan1 hotspot">
     </div>
     Connect to known WiFi make sure the interface is set to wlan0
     <div style="width:80%; margin:0 auto">
-       <img src="/assets/images/RaspberryPi/torPi/wlan0_wifiClient.png" alt="wlan0 hotspot">
+       <img src="/assets/images/raspberry-pi/torPi/wlan0_wifiClient.png" alt="wlan0 hotspot">
     </div>
     ## Tor Service
     Install tor service
@@ -182,7 +182,7 @@ If you still need information form the original guide is hidden below:
     MaxCircuitDirtiness 10
     ```
     <div style="width:60%; margin:0 auto">
-       <img src="/assets/images/RaspberryPi/torPi/torrc.png" alt="torrc">
+       <img src="/assets/images/raspberry-pi/torPi/torrc.png" alt="torrc">
     </div>
     Start and enable Tor Service a boot
     ```bash
@@ -194,7 +194,7 @@ If you still need information form the original guide is hidden below:
     sudo netstat -plnt
     ```
     <div style="margin:0 auto">
-       <img src="/assets/images/RaspberryPi/torPi/netstat_tor.png" alt="netstat tor">
+       <img src="/assets/images/raspberry-pi/torPi/netstat_tor.png" alt="netstat tor">
     </div>
     ### Bug
     ```bash
@@ -282,7 +282,7 @@ If you still need information form the original guide is hidden below:
     sudo iptables -t nat -L
     ```
     <div style="margin:0 auto">
-       <img src="/assets/images/RaspberryPi/torPi/iptables.png" alt="iptables">
+       <img src="/assets/images/raspberry-pi/torPi/iptables.png" alt="iptables">
     </div>
     ## Testing
     ### warning

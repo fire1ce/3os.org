@@ -6,7 +6,7 @@ description: This htpasswd password encryption applet is written in JavaScript, 
 
 This htpasswd password encryption applet is written in JavaScript, so the entire process runs within your browser.Nothing is transmitted to any server, we take your privacy and securityserious.
 
-<iframe title="" src="/assets/pages/htpasswd_Generator/" scrolling="no" style="border: 0px; height: 320px; margin-top: -0px; width:100%"></iframe>
+<iframe title="" src="/assets/pages/htpasswd-generator/" scrolling="no" style="border: 0px; height: 320px; margin-top: -0px; width:100%"></iframe>
 
 ## Credit & Sources
 

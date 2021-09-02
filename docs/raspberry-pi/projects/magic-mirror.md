@@ -6,7 +6,7 @@ description: Raspberry Pi - Magic Mirror Installation how to, guides, examples, 
 # Magic Mirror
 
 <div style="width:80%; margin:0 auto">
-    <img src="/assets/images/RaspberryPi/magicMirror/IMG_2134.jpg" alt="MagicMirror">
+    <img src="/assets/images/raspberry-pi/magicMirror/IMG_2134.jpg" alt="MagicMirror">
 </div>
 
 ## Magic Mirror Build Pictures
@@ -14,74 +14,74 @@ description: Raspberry Pi - Magic Mirror Installation how to, guides, examples, 
 23" Samsung screen power resoldering:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1719.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1719.jpg" alt="MagicMirror">
 </div>
 
 Wooden frame initial fitting test on a glass with duel mirror film applied:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1717.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1717.jpg" alt="MagicMirror">
 </div>
 
 Testing the screen installation (frame removed) with power cords:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1722.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1722.jpg" alt="MagicMirror">
 </div>
 
 Testing black&white picture from a laptop after frame assembly:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1732.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1732.jpg" alt="MagicMirror">
 </div>
 
 Power, Lan, Usb external ports cutouts:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1766.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1766.jpg" alt="MagicMirror">
 </div>
 
 Fitted extended ports with wood filler:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1767.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1767.jpg" alt="MagicMirror">
 </div>
 
 Extended ports:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1768.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1768.jpg" alt="MagicMirror">
 </div>
 
 
 Assembly With screen, Raspberry Pi, cable routing, black material which do not pass light where there is no screen:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1771.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1771.jpg" alt="MagicMirror">
 </div>
 
 Adding some color for the frame:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1978.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1978.jpg" alt="MagicMirror">
 </div>
 
 Testing everything is working as it should be:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1984.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1984.jpg" alt="MagicMirror">
 </div>
 
 Full assembly behind the mirror:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_1985.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1985.jpg" alt="MagicMirror">
 </div>
 
 Final Product:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/RaspberryPi/magicMirror/IMG_2134.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_2134.jpg" alt="MagicMirror">
 </div>
 
 ## Configuration Setup
@@ -95,7 +95,7 @@ sudo nano /boot/config.txt
 Add one of those according to your setup to the config file:
 
 | Code                   | Description     |
-|------------------------|-----------------|
+| ---------------------- | --------------- |
 | display_rotate=0       | Normal          |
 | display_rotate=1       | 90 degrees      |
 | display_rotate=2       | 180 degrees     |
