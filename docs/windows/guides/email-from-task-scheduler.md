@@ -55,6 +55,6 @@ For example, let’s say your email address is you@gmail.com and you’d like to
 
 Once you’ve put together your options, copy and paste them into the Add arguments box.
 
-![SendEmails](/assets/images/windows//sendMail/sendMail4.png)
+![SendEmails](/assets/images/windows/sendMail/sendMail4.png)
 
 Save your task and you’re done. Your task will automatically send email on the schedule (or in response to the event) you specified.
