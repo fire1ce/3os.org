@@ -3,7 +3,7 @@ nav:
   - Linux: linux
   - macOS: mac-os
   - Raspberry Pi: raspberry-pi
-  - Development: development
+  - DevOps: devops
   - Windows: windows
   - Penetration Testing: penetration-testing
   - Markdown CheatSheet: markdown-cheatsheet
