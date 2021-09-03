@@ -7,8 +7,7 @@ description: how to install ZSH and oh-my-zsh on synology dsm nas
 Add community package source to package center
 Open package center -> preference. Now we are at General tab. Allow install package from Synology Inc. and trusted publishers.
 
-Switch to Package Sources tab and add the source of synocommunity: http://packages.synocommunity.com
-
+Switch to Package Sources tab and add the source of synocommunity: `https://packages.synocommunity.com `
 Now you can see a list of packages in the Community tab
 
 Install zsh from package center
