@@ -71,7 +71,7 @@ extra:
   analytics:
     provider: google
     property: G-RJ1F4E5LH1
-  disqus: 3os
+  # disqus: 3os
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/fire1ce
