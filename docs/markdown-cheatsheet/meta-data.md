@@ -6,8 +6,6 @@ description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Meta 
 The [Metadata][1] extension makes it possible to add metadata to a document
 which gives more control over the theme in a page-specific context.
 
-  [1]: https://pythonhosted.org/Markdown/extensions/meta_data.html
-
 ## Installation
 
 Add the following lines to your `mkdocs.yml`:

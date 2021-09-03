@@ -26,7 +26,7 @@ Place an image with __Relative__ link at center of the page from link:
 
 ```markdown
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/markdown-cheatsheet/welcome//example/minion500x500.png" alt="image with relative link">
+   <img src="/assets/images/markdown-cheatsheet/welcome/example/minion500x500.png" alt="image with relative link">
 </div>
 ```
 
@@ -57,13 +57,13 @@ __Result:__
 ## Inline Image With Text
 
 ```markdown
-Inline ![minion](/assets/images/markdown-cheatsheet/welcome//example/minion100x100.png) With Relative Link
+Inline ![minion](/assets/images/markdown-cheatsheet/welcome/example/minion100x100.png) With Relative Link
 
 Inline <img src="https://octodex.github.com/images/minion.png" width=50> With Reference Link
 ```
 
 __Result:__  
-Inline ![minion](/assets/images/markdown-cheatsheet/welcome//example/minion100x100.png) With Relative Link
+Inline ![minion](/assets/images/markdown-cheatsheet/welcome/example/minion100x100.png) With Relative Link
 
 Inline <img src="https://octodex.github.com/images/minion.png" width=50> With Reference Link
 
@@ -71,10 +71,10 @@ Inline <img src="https://octodex.github.com/images/minion.png" width=50> With Re
 
 ```markdown
 > :camera: __Figure Title__  
-> ![minion](/assets/images/markdown-cheatsheet/welcome//example/minion500x500.png)
+> ![minion](/assets/images/markdown-cheatsheet/welcome/example/minion500x500.png)
 ```
 
 __Result:__  
 > :camera: __Figure Title__  
-> ![minion](/assets/imagesmarkdown-cheatsheet/welcome//example/minion500x500.png)
+> ![minion](/assets/imagesmarkdown-cheatsheet/welcome/example/minion500x500.png)
 
