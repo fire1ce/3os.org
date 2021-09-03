@@ -131,8 +131,9 @@
     /* IE6-IE8 */ url("/theme/fonts/FiraCode/fira-code-v12-latin-700.woff2")
       format("woff2"),
     /* Super Modern Browsers */
-      url("../FiraCode/fonts/fira-code-v12-latin-700.woff") format("woff"),
-    /* Modern Browsers */ url("../FiraCode/fonts/fira-code-v12-latin-700.ttf")
+      url("/theme/fonts/FiraCode/fira-code-v12-latin-700.woff") format("woff"),
+    /* Modern Browsers */
+      url("/theme/fonts/FiraCode/fira-code-v12-latin-700.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
       url("/theme/fonts/FiraCode/fira-code-v12-latin-700.svg#FiraCode")
