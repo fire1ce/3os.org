@@ -59,6 +59,7 @@ plugins:
       title_prefix: ''
       summary: 'Privet Content'
       placeholder: 'Password '
+      password_button: True
       decryption_failure_message: 'Nope!'
       encryption_info_message: ''
   - awesome-pages
