@@ -96,8 +96,6 @@ If no quotes of any kind are allowed you can `eval()` a `fromCharCode` in JavaSc
 
 This will bypass most SRC domain filters. Inserting javascript in an event method will also apply to any HTML tag type injection that uses elements like Form, Iframe, Input, Embed etc. It will also allow any relevant event for the tag type to be substituted like `onblur`, `onclick` giving you an extensive amount of variations for many injections listed here. Submitted by David Cross .
 
-Edited by Abdullah Hussam(@Abdulahhusam).
-
 ```html
 <IMG SRC=# onmouseover="alert('xxs')">
 ```

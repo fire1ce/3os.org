@@ -17,5 +17,5 @@ description: Penetration Testing - Tools and Usefully Links for Penetration Test
 | [jwt.io](https://jwt.io/){target=\_blank}                                                            | Allows You to Decode, Verify and Generate Json Web Tokens                     |
 | [DNS Dumpster](https://dnsdumpster.com/){target=\_blank}                                             | Domain Research Tool That Can Discover Hosts Related to a Domain              |
 | [SSL-Lab](https://www.ssllabs.com/ssltest/){target=\_blank}                                          | Deep Analysis of The Configuration of any SSL Web Server                      |
-| [GraphQLmap](https://github.com/swisskyrepo/GraphQLmap0){target=\_blank}                             | Engine to interact with a graphqlr endpoint for penetration-testing purposes. |
+| [GraphQLmap](https://github.com/swisskyrepo/GraphQLmap){target=\_blank}                              | Engine to interact with a graphqlr endpoint for penetration-testing purposes. |
 
