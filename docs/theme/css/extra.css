@@ -41,6 +41,8 @@
 }
 .md-typeset img {
   border-radius: 5px; /* images border-radius */
+  height: auto;
+  max-width: 100%;
 }
 .md-grid {
   max-width: 1420px; /* width of the middle section */
