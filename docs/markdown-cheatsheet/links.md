@@ -7,12 +7,12 @@ description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Links
 ## Basic link
 
 ``` markdown
-[Assemble](http://assemble.io)
+[Assemble](https://assemble.io)
 ```
 
 Renders to (hover over the link, there is no tooltip):
 
-[Assemble](http://assemble.io)
+[Assemble](https://assemble.io)
 
 ## Link With Title
 
