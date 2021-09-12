@@ -1,5 +1,5 @@
 ---
-description: Collation of useful general cli commands for pentesters
+description: Collation of useful general cli commands for penetration tests
 ---
 
 # Cli Commands Collation
