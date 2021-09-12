@@ -53,6 +53,9 @@ plugins:
   - search:
       prebuild_index: true
       lang: 'en'
+  - exclude-search:
+      exclude:
+        - blog.md
   - minify:
       minify_html: true
   - encryptcontent:
