@@ -1,1 +1,4 @@
-hide: true
+nav:
+    - about-proxmark.md
+    - cheatsheet.md
+    - ...
