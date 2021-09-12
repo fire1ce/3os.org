@@ -2,20 +2,20 @@
 description: ADB CheatSheet - In this CheatSheet, you will find a series of practical example commands for running ADB and getting the most of Android Debug Bridge powerful tool.
 ---
 
-# ADB CheatSheet (Android Debug Bridge)
+# ADB CheatSheet
 
 ## ADB Basics
 
 | Command                             | Description                                 |
 | ----------------------------------- | ------------------------------------------- |
-| __adb devices__                     | ==Lists connected devices==                 |
-| ==adb connect 192.168.2.1==         | ==Connects to adb device over network==     |
+| __adb devices__                     | __Lists connected devices__                 |
+| __adb connect 192.168.2.1__         | __Connects to adb device over network__     |
 | adb root                            | Restarts adbd with root permissions         |
 | adb start-server                    | Starts the adb server                       |
 | adb kill-server                     | Kills the adb server                        |
-| ==adb reboot==                      | ==Reboots the device==                      |
-| ==adb devices -l==                  | ==List of devices by product/model==        |
-| ==adb -s `<deviceName> <command>`== | ==Redirect command to specific device==     |
+| __adb reboot__                      | __Reboots the device__                      |
+| __adb devices -l__                  | __List of devices by product/model__        |
+| __adb -s `<deviceName> <command>`__ | __Redirect command to specific device__     |
 | adb –d `<command>`                  | Directs command to only attached USB device |
 | adb –e `<command>`                  | Directs command to only attached emulator   |
 
@@ -23,7 +23,7 @@ description: ADB CheatSheet - In this CheatSheet, you will find a series of prac
 
 | Command                                      | Description         |
 | -------------------------------------------- | ------------------- |
-| ==adb logcat `[options] [filter] [filter]`== | ==View device log== |
+| __adb logcat `[options] [filter] [filter]`__ | __View device log__ |
 | adb bugreport                                | Print bug reports   |
 
 ## Permissions
@@ -37,35 +37,36 @@ description: ADB CheatSheet - In this CheatSheet, you will find a series of prac
 
 | Command                        | Description                     |
 | ------------------------------ | ------------------------------- |
-| ==adb shell install== `<apk>`  | ==Install app==                 |
-| ==adb shell install `<path>`== | ==Install app from phone path== |
+| __adb shell install__ `<apk>`  | __Install app__                 |
+| __adb shell install `<path>`__ | __Install app from phone path__ |
 | adb shell install -r `<path>`  | Install app from phone path     |
 | adb shell uninstall `<name>`   | Remove the app                  |
 
 ## Paths
 
-| Command                                   | Description                     |
-| ----------------------------------------- | ------------------------------- |
-| /data/data/`<package name>`/databases     | App databases                   |
-| /data/data/`<package name>`/shared_prefs/ | Shared preferences              |
-| /data/app                                 | Apk installed by user           |
-| /system/app                               | Pre-installed APK files         |
-| /mmt/asec                                 | Encrypted apps (App2SD)         |
-| /mmt/emmc                                 | Internal SD Card                |
-| /mmt/adcard                               | External/Internal SD Card       |
-| /mmt/adcard/external_sd                   | External SD Card                |
-| -------                                   | -----------                     |
-| adb shell ls                              | List directory contents         |
-| adb shell ls -s                           | Print size of each file         |
-| adb shell ls -R                           | List subdirectories recursively |
-| ==adb shell pm path `<package name>`==    | ==Get full path of a package==  |
+| Command                                   | Description                               |
+| ----------------------------------------- | ----------------------------------------- |
+| /data/data/`<package name>`/databases     | App databases                             |
+| /data/data/`<package name>`/shared_prefs/ | Shared preferences                        |
+| /data/app                                 | Apk installed by user                     |
+| /system/app                               | Pre-installed APK files                   |
+| /mmt/asec                                 | Encrypted apps (App2SD)                   |
+| /mmt/emmc                                 | Internal SD Card                          |
+| /mmt/adcard                               | External/Internal SD Card                 |
+| /mmt/adcard/external_sd                   | External SD Card                          |
+| -------                                   | -----------                               |
+| adb shell ls                              | List directory contents                   |
+| adb shell ls -s                           | Print size of each file                   |
+| adb shell ls -R                           | List subdirectories recursively           |
+| __adb shell pm path `<package name>`__    | __Get full path of a package__            |
+| __adb shell pm list packages -f__         | __Lists all the packages and full paths__ |
 
 ## File Operations
 
 | Command                         | Description                      |
 | ------------------------------- | -------------------------------- |
-| ==adb push `<local> <remote>`== | ==Copy file/dir to device==      |
-| ==adb pull `<remote> <local>`== | ==Copy file/dir from device==    |
+| __adb push `<local> <remote>`__ | __Copy file/dir to device__      |
+| __adb pull `<remote> <local>`__ | __Copy file/dir from device__    |
 | run-as `<package>` cat `<file>` | Access the private package files |
 
 ## Phone Info
