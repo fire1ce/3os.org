@@ -1,5 +1,5 @@
 ---
-description: Collation of useful general cli commands for penetration tests
+description: penetration tests CheatSheet - In this CheatSheet, you will find a series of practical example commands for running penetration tests and getting the most of penetration tests.
 ---
 
 # Cli Commands Collation
