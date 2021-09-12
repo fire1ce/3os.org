@@ -1,4 +1,5 @@
 nav:
+  - Blog: blog.md
   - Guides: guides
   - Linux: linux
   - macOS: mac-os
