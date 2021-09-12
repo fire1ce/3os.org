@@ -81,10 +81,10 @@ This restores the dumped data onto the new card. Now we just need to give the ca
 proxmark3> hf mf restore 1
 ```
 
-Copy the UID of the original card
+Copy the UID of the original card `de0f3dcd`
 
 ```bash
-proxmark3> hf mf csetuid `de0f3dcd`
+proxmark3> hf mf csetuid de0f3dcd
 ```
 
 We’re done.
