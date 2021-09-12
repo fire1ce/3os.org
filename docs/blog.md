@@ -1,5 +1,7 @@
 ---
 description: penetration tests CheatSheet - In this CheatSheet, you will find a series of practical example commands for running penetration tests and getting the most of penetration tests.
+hide:
+  - navigation
 ---
 
 <style>
@@ -14,5 +16,5 @@ description: penetration tests CheatSheet - In this CheatSheet, you will find a 
 
 ## ADB CheatSheet (12/09/21)
 
-> Added new page [ADB CheatSheet](/penetration-testing/android/adb-cheatsheet) to Penetration Testing - Android.  
+> Added [ADB CheatSheet](/penetration-testing/android/adb-cheatsheet) page to Penetration Testing - Android.  
 > You will find a series of practical example commands for running ADB and getting the most of Android Debug Bridge powerful tool
