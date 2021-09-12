@@ -51,6 +51,8 @@ config.theme.palette %} {% set font = config.theme.font %}
     margin-top: 0.5rem;
     margin-right: 0.5rem;
     color: var(--md-primary-bg-color);
+    width: 150px;
+    border-color: var(--md-primary-bg-color);
   }
 
   .tx-hero .md-button--primary {
@@ -262,11 +264,11 @@ config.theme.palette %} {% set font = config.theme.font %}
         <h1>3os Project</h1>
         <p>{{ config.site_description }}</p>
         <a
-          href="/guides/better-terminal-experience/"
+          href="/blog/"
           title="{{ lang.t('source.link.title') }}"
           class="md-button md-button--primary"
         >
-          Guides
+          Blog
         </a>
         <a
           href="https://github.com/fire1ce"
