@@ -1,5 +1,5 @@
 ---
-description: penetration tests CheatSheet - In this CheatSheet, you will find a series of practical example commands for running penetration tests and getting the most of penetration tests.
+description: News and updates on 3os.org. Short descriptions on what's new or any major updates.
 hide:
   - navigation
 ---
