@@ -49,8 +49,6 @@ docker run \
 -p 7003:80 \
 -v /root/pihole:/etc/pihole/ \
 -v /root/pihole/dnsmasq.d:/etc/dnsmasq.d/ \
--e VIRTUAL_HOST="pi.hole" \
--e PROXY_LOCATION="pi.hole" \
 -e ServerIP="127.0.0.1" \
 -e DNS1=172.30.9.3#5053 \
 -e DNS2=172.30.9.3#5053 \
