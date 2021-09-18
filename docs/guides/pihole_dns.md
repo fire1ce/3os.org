@@ -18,8 +18,8 @@ I've configured my router as a DNS server for all the DHCP clients with primary 
    <img src="/assets/images/guides/pihole-dns/diagram.png" alt="network flow">
 </div>
 
--   **Pi-hole-1 runs on ubuntu server (virutal machine)**
--   **Pi-hole-2 rusn on ubuntu server (Raspbery Pi)**
+-   **Pi-hole-1 runs on ubuntu server (virtual machine)**
+-   **Pi-hole-2 runs on ubuntu server (Raspberry Pi)**
 
 ## Installation
 
