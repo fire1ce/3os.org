@@ -2,497 +2,497 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://3os.org/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/blog/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/cli-commands/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/purging-and-cleaning/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/ssh-to-docker-container/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/git/git/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/node-npm/npm/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/node-npm/pm2/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/python/pip/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/python/python/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/ruby/ruby/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/better-terminal-experience/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/gmailMarkAsRead/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/pihole_dns/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/usefulLinks_Tools/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/private/kali.3os.re/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/private/noc.3os.re/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/private/oscar.3os.re/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/private/port.3os.re/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/proxmox/pgu-passthrough-to-vm/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/synology/Install-oh-my-zsh/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/synology/Installing-vm-tools-on-virtual-machine/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/synology/allow-ssh-with-rsa-key/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/synology/auto-dsm-config-backup/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/synology/disable-dms-listening-on-80-443-ports/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/tools/htpasswd-generator/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/tools/wifiQrGenerator/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/ubiquiti/edge-router/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/guides/ubiquiti/udm-pro/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/affiliateDisclosure/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/cookies-policy/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/license/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/privacy-policy/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/portfolio/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/files-handling/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/general-snippets/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/locales-time-zone/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/lvm-partitions/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/memory-swap/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/smb-mount-autofs/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ssh-hardening-with-rsa-keys/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/apache/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/cpanel/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/csf/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/esxi/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/nginx/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/plesk/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/postfix/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/sophos/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services/wordpress/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ubuntu-debian/general-snippets/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ubuntu-debian/unattended-upgrades/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/applications-tweaks/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/pythonTheRightWay/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/system-tweaks/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/ui-tweaks/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/homebrew/brewup/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/homebrew/homebrew-snippets/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/admonition/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/block-quotes/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/code-blocks/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/embed-external-sources/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/emoji/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/headings/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/icons/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/images/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/line-breaks/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/links/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/lists/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/meta-data/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/tables/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/text-highlighting/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/markdown-cheatsheet/welcome/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/kali-linux/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/vmware-fusion/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/android/adb-cheatsheet/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/android/apktool/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/android/frida-server/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/android/links/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/android/mobsf/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/cli-commands-collation/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/gobuster-cheatsheet/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/nmap-cheatsheet/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/xss-cheatsheet/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/proxmark/Mifare1k/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/proxmark/about-proxmark/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/proxmark/cheatsheet/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/tools/clickjacking/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/tools/idd-generator/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/tools/links/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/docker-raspberrypi/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/snippets/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/guides/3g-modem-host/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/guides/tor-pi/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/projects/magic-mirror/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/snippets/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/useful-software/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/guides/declare-locations/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/guides/email-from-task-scheduler/</loc>
-         <lastmod>2021-09-18</lastmod>
+         <lastmod>2021-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
