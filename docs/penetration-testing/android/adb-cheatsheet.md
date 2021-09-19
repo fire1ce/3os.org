@@ -4,12 +4,12 @@ description: ADB CheatSheet - In this CheatSheet, you will find a series of prac
 
 # ADB CheatSheet
 
-## Common Nmap Commands
+## Common ADB Commands
 
 Push a file to Download folder of the Android Device
 
 ```bash
-adb push /mnt/sdcard/Download/example.apk
+adb push example.apk /mnt/sdcard/Download/
 ```
 
 Pulls  a file to Download folder of the Android Device
