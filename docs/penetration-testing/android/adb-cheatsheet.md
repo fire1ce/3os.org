@@ -48,7 +48,7 @@ description: ADB CheatSheet - In this CheatSheet, you will find a series of prac
 | ----------------------------------------- | ----------------------------------------- |
 | /data/data/`<package name>`/databases     | App databases                             |
 | /data/data/`<package name>`/shared_prefs/ | Shared preferences                        |
-| mnt/sdcard/Download/                      | Download folder                           |
+| /mnt/sdcard/Download/                     | Download folder                           |
 | /data/app                                 | Apk installed by user                     |
 | /system/app                               | Pre-installed APK files                   |
 | /mmt/asec                                 | Encrypted apps (App2SD)                   |
