@@ -4,6 +4,38 @@ description: ADB CheatSheet - In this CheatSheet, you will find a series of prac
 
 # ADB CheatSheet
 
+## Common Nmap Commands
+
+Push a file to Download folder of the Android Device
+
+```bash
+adb push /mnt/sdcard/Download/example.apk
+```
+
+Pulls  a file to Download folder of the Android Device
+
+```bash
+adb pull /mnt/sdcard/Download/example.apk
+```
+
+Install apk from host to Android device
+
+```bash
+adb shell install example.apk
+```
+
+Install apk from Android device storage
+
+```bash
+adb shell install /mnt/sdcard/Download/example.apk
+```
+
+Lists all the installed packages and get the full paths
+
+```bash
+adb shell pm list packages -f
+```
+
 ## ADB Basics
 
 | Command                             | Description                                 |
