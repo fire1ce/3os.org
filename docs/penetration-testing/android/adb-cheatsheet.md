@@ -36,7 +36,7 @@ Lists all the installed packages and get the full paths
 adb shell pm list packages -f
 ```
 
-Set network proxy 
+Set network proxy
 
 ```bash
 adb shell settings put global http_proxy <address>:<port>
