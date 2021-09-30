@@ -6,13 +6,13 @@ description: Ubuntu, Debian, Raspberry Pi unattended upgrades guide
 # Unattended Upgrades
 
 ```bash
-apt install -y unattended-upgrades apt-listchanges
+sudo apt install -y unattended-upgrades apt-listchanges
 ```
 
 Edit the config to your preference
 
 ```bash
-nano /etc/apt/apt.conf.d/50unattended-upgrades
+sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 ```
 
 !!! example
@@ -105,8 +105,8 @@ nano /etc/apt/apt.conf.d/50unattended-upgrades
 Automatic call via /etc/apt/apt.conf.d/20auto-upgrades
 
 ```bash
-echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | debconf-set-selections
-dpkg-reconfigure -f noninteractive unattended-upgrades
+echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | sudo debconf-set-selections
+sudo dpkg-reconfigure -f noninteractive unattended-upgrades
 ```
 
 Check the /etc/apt/apt.conf.d/20auto-upgrades for those 2 lines:
@@ -119,7 +119,7 @@ APT::Periodic::Unattended-Upgrade "1";
 Manual Run:
 
 ```bash
-unattended-upgrade -d
+sudo unattended-upgrade -d
 ```
 
 To enable unattended-upgrade use the following command:
