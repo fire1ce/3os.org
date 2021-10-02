@@ -32,7 +32,7 @@ Since we want to forward DNS requests from Pihole to Cloudflared (DOH) we will c
 Create Docker network for the Pihole and Cloudflared with only 5 IP address:
 
 ```bash
-docker network create --subnet 172.30.9.0/29 dns-net
+docker network create --subnet 172.30.9.0/29 dns-network
 ```
 
 We will run the pihole docker container with hardcoded ip from the pull we created. we will pass the DNS1, DNS2 ip address for the Cloudflared container we ill create in the next step
@@ -50,11 +50,10 @@ docker run \
 -v /root/pihole:/etc/pihole/ \
 -v /root/pihole/dnsmasq.d:/etc/dnsmasq.d/ \
 -e ServerIP="127.0.0.1" \
--e DNS1=172.30.9.3#5053 \
--e DNS2=172.30.9.3#5053 \
+-e PIHOLE_DNS_="172.30.9.3#5053;172.30.9.3#5053" \
 -e WEBPASSWORD="ChangeMe" \
 -v /etc/localtime:/etc/localtime \
---network=dns-net \
+--network=dns-network \
 pihole/pihole:latest
 ```
 
@@ -71,7 +70,7 @@ docker run \
 -e PUID=1000 \
 -e PGID=1000 \
 -e PORT=5053 \
---network=dns-net \
+--network=dns-network \
 visibilityspots/cloudflared:latest
 ```
 
