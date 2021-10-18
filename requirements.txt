@@ -1,6 +1,6 @@
 Babel==2.9.1
 beautifulsoup4==4.10.0
-bracex==2.1.1
+bracex==2.2
 click==8.0.3
 ghp-import==2.0.2
 gitdb==4.0.7
@@ -17,7 +17,7 @@ mkdocs-awesome-pages-plugin==2.5.1
 mkdocs-encryptcontent-plugin==1.2.2
 mkdocs-exclude-search==0.5.2
 mkdocs-git-revision-date-localized-plugin==0.10.0
-mkdocs-material==7.3.3
+mkdocs-material==7.3.4
 mkdocs-material-extensions==1.0.3
 mkdocs-minify-plugin==0.4.1
 packaging==21.0
