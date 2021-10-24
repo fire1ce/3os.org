@@ -90,12 +90,12 @@ curl wget git dnsutils whois net-tools htop locate telnet traceroute \
 dirb wfuzz dirbuster enum4linux gobuster nbtscan nikto nmap \
 onesixtyone oscanner smbclient fern-wifi-cracker crowbar smbmap \
 smtp-user-enum sslscan tnscmd10g whatweb snmpcheck wkhtmltopdf \
-sipvicious seclists wordlists hash-identifier hydra bully netcat \
+sipvicious seclists wordlists hydra bully netcat-openbsd netcat-traditional \
 adb fastboot realtek-rtl88xxau-dkms docker docker-compose crunch \
 wifite apktool apksigner zipalign default-jre default-jdk man-db \
 screenfetch xsltproc binwalk python3-pip zlib1g-dev python2.7-dev \
-subfinder chrony hcxtools libssl-dev hcxdumptool hashcat netcat \
-libpcap-dev npm sqlmap wpscan exploitdb
+subfinder chrony hcxtools libssl-dev hcxdumptool hashcat hash-identifier \
+libpcap-dev npm sqlmap wpscan exploitdb minicom screen hashid nfs-common
 ```
 
 ## MobSF - Mobile Security Framework Docker
