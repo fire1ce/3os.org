@@ -14,6 +14,14 @@ hide:
 
 ---
 
+## Added New Tools to Penetration Testing (24/10/21)
+
+> [Bettercap 1.6.2](/penetration-testing/tools/bettercap1.6.2.md) tool for man in the middle attack and ssl strip  
+> [Metasploit Framework](/penetration-testing/tools/metasploit.md) Metasploit Framework, a tool for developing and executing exploit code against a remote target machine  
+> [Wifite](/penetration-testing/tools/wifite.md) Wifite is an automated wireless attack tool
+
+---
+
 ## Proxmark Section (12/09/21)
 
 > Added `Proxmark` section at Penetration Testing.  
