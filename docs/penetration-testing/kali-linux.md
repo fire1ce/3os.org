@@ -8,6 +8,10 @@ description: Penetration Testing - Kali Linux how to, guides, examples, and simp
 
 This is a simple guide to install Minimal Headless Kali Linux by converting a Debian Linux to Kali Linux distro without any unnecessary tools. Basicity you install the tools you need.
 
+| __Platforms__                                                     | __Minimum Monthly Price__                |
+| ----------------------------------------------------------------- | ---------------------------------------- |
+| [DigitalOcean.com](https://m.do.co/c/2f680de0d76e){target=_blank} | 5$ (This link provides 100$ for 60 days) |
+
 First of all we will need a clean Debian Linux local or at any cloud provider with ssh access
 
 Let's convert! We will install two packages which allow as to replace Debian's repo to kali repo
@@ -92,109 +96,6 @@ wifite apktool apksigner zipalign default-jre default-jdk man-db \
 screenfetch xsltproc binwalk python3-pip zlib1g-dev python2.7-dev \
 subfinder chrony hcxtools libssl-dev hcxdumptool hashcat netcat \
 libpcap-dev npm sqlmap wpscan exploitdb
-```
-
-## Metasploit Install
-
-```bash
-apt install -y metasploit-framework postgresql
-```
-
-```bash
-systemctl enable postgresql
-```
-
-```bash
-systemctl start postgresql
-```
-
-```bash
-msfdb init
-```
-
-Start:
-
-```bash
-msfconsole
-```
-
-## Install Pyrit for Wifite
-
-[Source](https://github.com/JPaulMora/Pyrit/wiki)
-
-Install dependencies
-
-```bash
-apt install python zlib openssl git
-```
-
-The Install
-
-```bash
-cd ~;
-git clone https://github.com/JPaulMora/Pyrit.git;
-pip install psycopg2 scapy;
-cd Pyrit;
-python setup.py clean;
-python setup.py build;
-python setup.py install;
-rm -rf ~/Pyrit
-```
-
-## AutoRecon Installation
-
-Based on this repo [Tib3rius/AutoRecon](https://github.com/Tib3rius/AutoRecon)
-
-Install requirements:
-
-```bash
-apt install -y \
-curl enum4linux gobuster nbtscan nikto seclists git \
-nmap onesixtyone oscanner smbclient smbmap smtp-user-enum \
-sslscan tnscmd10g whatweb snmpcheck wkhtmltopdf sipvicious
-```
-
-```bash
-python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
-```
-
-## Bettercap 1.6.2 Installation
-
-<!-- prettier-ignore-start -->
-!!! warning
-    If you have Bettercap 2.x you should change the environmental path for running both Bettercap versions to run properly
-<!-- prettier-ignore-end -->
-
-Install Ruby Gem
-
-```bash
-apt install -y ruby-full libpcap-dev
-gem update --system
-gem install bettercap
-```
-
-**Basic SSL Strip Example**
-
-```bash
-bettercap -X -T 192.168.1.104 --proxy
-```
-
-**SSL Strip With XSS Example**
-
-```bash
-bettercap -X -T 192.168.3.104 --proxy --proxy-module injectjs --js-data "<script>alert('SSL STRIP, Script Injection')</script>"
-```
-
-To find that Bettercap installation from ruby gems:
-
-```bash
-gem environment
-```
-
-the path should be under **GEM PATHP** for example:
-
-```bash
-/var/lib/gems/2.7.0/gems/bettercap-1.6.2
 ```
 
 ## MobSF - Mobile Security Framework Docker

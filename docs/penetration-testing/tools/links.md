@@ -2,7 +2,7 @@
 description: Penetration Testing - Tools and Usefully Links for Penetration Testing
 ---
 
-# Tools Links
+# Links
 
 ## Usefully Tools for Pentesters
 
