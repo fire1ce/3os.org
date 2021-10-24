@@ -98,24 +98,7 @@ subfinder chrony hcxtools libssl-dev hcxdumptool hashcat hash-identifier \
 libpcap-dev npm sqlmap wpscan exploitdb minicom screen hashid nfs-common
 ```
 
-## MobSF - Mobile Security Framework Docker
-
-Based on [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF)
-
-```bash
-docker run \
--d \
--it \
--h mobsf \
--v /root/docker/mobSF:/root/.MobSF \
---name mobsf \
---restart always \
--e TZ=Asia/Jerusalem \
--p 50000:8000 \
-opensecurity/mobile-security-framework-mobsf:latest
-```
-
-## SSH Broken Pipe in Kali - Fix
+## Fix SSH Broken Pipe in Kali
 
 ```bash
 nano ~/.ssh/config
