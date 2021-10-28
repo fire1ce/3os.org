@@ -10,7 +10,7 @@ It is `NOT` intended for piracy and other non-legal uses. It could be used for l
 
 ## Download and Documentation
 
-[Official Apktool Website](https://ibotpeaches.github.io/Apktool/)
+[Official Apktool Website](https://ibotpeaches.github.io/Apktool/){target=_blank}
 
 ## How to Singe APK After Compile
 

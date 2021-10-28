@@ -1,6 +1,7 @@
 # Site generated files
 site/
 venv/
+tmp/
 
 # OS generated files
 .DS_Store

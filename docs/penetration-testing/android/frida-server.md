@@ -17,7 +17,7 @@ pip3 install frida-tools
 pip3 install objection
 ```
 
-Download [Frida Server](https://github.com/frida/frida/releases)
+Download [Frida Server](https://github.com/frida/frida/releases){target=_blank}
 Extract and Rename the file to _frida-server_
 Move the file to the Adnroid Phone to **/data/local/tmp/**
 
