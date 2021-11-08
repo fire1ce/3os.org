@@ -42,7 +42,7 @@ ZSH_THEME="bira"
 Plugins
 
 ```bash
-plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize osx pyenv colorize adb aws)
+plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize macos pyenv colorize adb aws)
 ```
 
 Add this to the the end of ~/.zshrc
@@ -119,7 +119,7 @@ ZSH_THEME="bira"
 Plugins
 
 ```bash
-plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize osx pyenv colorize adb aws)
+plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize macos pyenv colorize adb aws)
 ```
 
 Add this to the the end of ~/.zshrc
