@@ -70,7 +70,7 @@ ZSH_THEME="bira"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize osx pyenv colorize adb aws)
+plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize macos pyenv colorize adb aws)
 
 source $ZSH/oh-my-zsh.sh
 
