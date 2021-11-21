@@ -16,17 +16,23 @@ softwareupdate -i -a
 xcode-select --install
 ```
 
+## Import ed25519/RSA Keys to macOS Keychain
 
-## Import RSA Keys to macOS Keychain
+Copy your ed25519, ed25519.pub __or__ id_rsa, id_rsa.pub to _~/.ssh/_ folder
 
-Copy your id_rsa, id_rsa.pub to _~/.ssh/_ folder
+!!! Example "Store the key in the Macos Keychain"
 
-Step 1 - Store the key in the keychain
-Just do this once:
+    === "ed25519 Key"
 
-```bash
-ssh-add -K ~/.ssh/[your-private-key]
-```
+        ```bash
+        ssh-add --apple-use-keychain ~/.ssh/ed25519
+        ```
+
+    === "RSA Keys"
+
+        ```bash
+        ssh-add apple-use-keychain ~/.ssh/id_rsa
+        ```
 
 Enter your key passphrase, and you won't be asked for it again.
 
@@ -86,7 +92,7 @@ To disable strict host checking on OS X for the current user,
 create or edit ~/.ssh/ssh_config and add the following lines:
 
 ```bash
-   StrictHostKeyChecking no
+StrictHostKeyChecking no
 ```
 
 ## Set macOS Hostname via CLI
