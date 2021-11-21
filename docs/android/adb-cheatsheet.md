@@ -12,11 +12,19 @@ Push a file to Download folder of the Android Device
 adb push example.apk /mnt/sdcard/Download/
 ```
 
-Pulls  a file to Download folder of the Android Device
+Lists all the installed packages and get the full paths
+
+```bash
+adb shell pm list packages -f
+```
+
+Pulls a file from android device
 
 ```bash
 adb pull /mnt/sdcard/Download/example.apk
 ```
+
+--------
 
 Install apk from host to Android device
 
@@ -30,11 +38,7 @@ Install apk from Android device storage
 adb shell install /mnt/sdcard/Download/example.apk
 ```
 
-Lists all the installed packages and get the full paths
-
-```bash
-adb shell pm list packages -f
-```
+--------
 
 Set network proxy
 
