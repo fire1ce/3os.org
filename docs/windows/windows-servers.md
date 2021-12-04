@@ -17,8 +17,8 @@ At Server Manager click `Configure this local server`
 
 Open gpedit.msc with Run
 
-Local Computer Policy -> Administrative Templates -> System -> Display Shutdown Even Tracker - Disable
-Local Computer Policy -> Windows Settings -> Security Settings -> Local Policies -> Security Options ->Interactive logon: Do not require CTRL+ALT+DEL - Enable
+* Local Computer Policy -> Administrative Templates -> System -> Display Shutdown Even Tracker - Disable
+* Local Computer Policy -> Windows Settings -> Security Settings -> Local Policies -> Security Options ->Interactive logon: Do not require CTRL+ALT+DEL - Enable
 
 ## Convert Evaluation Copy to Full Version
 
