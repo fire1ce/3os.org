@@ -4,6 +4,14 @@ description: Windows Guides and How-To, examples, snippets and simple usage
 
 # Snippets
 
+## Activate Administrator User
+
+Run with Powershell
+
+```powershell
+net user Administrator /active:yes
+```
+
 ## Add Program to Startup - Windows 7,8,10 & Servers
 
 Hit WIN+R or from start menu search `run` and press enter.  
@@ -34,4 +42,3 @@ Force Shutdown
 ```cmd
 shutdown /s /f /t 0
 ```
-
