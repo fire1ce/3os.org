@@ -40,3 +40,19 @@ Windows Server 2022 Datacenter:
 dism /online /set-edition:serverdatacenter /productkey:WX4NM-KYWYW-QJJR4-XV3QB-6VM33 /accepteula
 ```
 
+### Windows Server 2019
+
+Run from Powershell:
+
+Windows Server 2019 Standard
+
+```powershell
+dism /online /set-edition:ServerStandard /productkey:N69G4-B89J2-4G8F4-WWYCC-J464C /accepteula
+```
+
+Windows Server 2019 Datacenter:
+
+```powershell
+dism /online /set-edition:ServerDatacenter /productkey:WMDGN-G9PQG-XVVXX-R3X43-63DFG /accepteula
+```
+
