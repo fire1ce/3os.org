@@ -12,6 +12,12 @@ Run with Powershell
 net user Administrator /active:yes
 ```
 
+Change to Administrator password.
+
+Logout and login with Administrator
+
+
+
 ## Add Program to Startup - Windows 7,8,10 & Servers
 
 Hit WIN+R or from start menu search `run` and press enter.  
