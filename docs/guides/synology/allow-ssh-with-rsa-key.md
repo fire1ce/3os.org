@@ -32,7 +32,7 @@ sudo vi /etc/ssh/sshd_config
 * Save the file and exit the editor
 
 ```bash
-sudo synoservicectl --restart sshd
+sudo systemctl restart sshd
 ```
 
 You should now connect with rsa key.
