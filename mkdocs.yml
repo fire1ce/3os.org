@@ -13,6 +13,7 @@ edit_uri: edit/master/docs/
 # Theme Configuration
 theme:
   name: material
+  highlightjs: true
   custom_dir: docs/theme
   language: en
   features:
