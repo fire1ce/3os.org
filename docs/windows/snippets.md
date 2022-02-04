@@ -6,17 +6,23 @@ description: Windows Guides and How-To, examples, snippets and simple usage
 
 ## Activate Administrator User
 
-Run with Powershell
+Hit the Windows Key + R and type
 
-```powershell
-net user Administrator /active:yes
+```cmd
+lusrmgr.msc
 ```
 
-Change to Administrator password.
+Edit Administrator, remove the - [x] Account is disable. ok
 
-Logout and login with Administrator
+Right Click on Administrator and click Set Password
 
+## Lunch "Network Connections"
 
+Hit the Windows Key + R and type
+
+```cmd
+ncpa.cpl
+```
 
 ## Add Program to Startup - Windows 7,8,10 & Servers
 
