@@ -20,11 +20,12 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.top
-    - navigation.sections
+    # - navigation.sections
+    - navigation.tracking
     - search.suggest
     - search.highlight
     - search.share
-    # - toc.integrate
+    - toc.integrate
 
   palette:
     - media: "(prefers-color-scheme: light)"

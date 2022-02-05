@@ -1,6 +1,3 @@
-[submodule "docs/guides/privet"]
-path = docs/guides/private
-url = git@github.com:fire1ce/private.3os.org.git
 [submodule "docs/information/portfolio"]
 path = docs/information/portfolio
 url = git@github.com:fire1ce/fire1ce.git
