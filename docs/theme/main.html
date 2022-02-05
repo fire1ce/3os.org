@@ -18,21 +18,6 @@
 >
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">{% include "partials/nav.html" %}</div>
-  </div>
-</div>
-{% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page and
-page.meta and page.meta.hide %} {% set hidden = "hidden" if "toc" in
-page.meta.hide %} {% endif %}
-<div
-  class="md-sidebar md-sidebar--secondary"
-  data-md-component="sidebar"
-  data-md-type="toc"
-  {{
-  hidden
-  }}
->
-  <div class="md-sidebar__scrollwrap">
-    <div class="md-sidebar__inner">{% include "partials/toc.html" %}</div>
     <!-- donation section -->
     <div class="donation">
       <h3>Support us</h3>
@@ -61,6 +46,50 @@ page.meta.hide %} {% endif %}
         <button class="donate-button-patreon" type="submit"></button>
       </form>
     </div>
+    <!-- donation end -->
+  </div>
+</div>
+{% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page and
+page.meta and page.meta.hide %} {% set hidden = "hidden" if "toc" in
+page.meta.hide %} {% endif %}
+<div
+  class="md-sidebar md-sidebar--secondary"
+  data-md-component="sidebar"
+  data-md-type="toc"
+  {{
+  hidden
+  }}
+>
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">{% include "partials/toc.html" %}</div>
+    <!-- donation section -->
+    <!-- <div class="donation">
+      <h3>Support us</h3>
+      <form
+        method="get"
+        type="buymeacoffee"
+        target="_blank"
+        action="https://www.buymeacoffee.com/fire1ce"
+      >
+        <button class="donate-button-buymeacoffee" type="submit"></button>
+      </form>
+      <form
+        method="post"
+        type="submit"
+        target="_blank"
+        action="https://www.paypal.com/donate/?hosted_button_id=Y5NSXQQ6VPSK6&Z3JncnB0="
+      >
+        <button class="donate-button-paypal" type="submit"></button>
+      </form>
+      <form
+        method="get"
+        type="patreon"
+        target="_blank"
+        action="https://www.patreon.com/fire1ce"
+      >
+        <button class="donate-button-patreon" type="submit"></button>
+      </form>
+    </div> -->
     <!-- donation end -->
   </div>
 </div>
