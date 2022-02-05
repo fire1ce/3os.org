@@ -1,0 +1,115 @@
+{
+  "main": {
+    "id": "56c362ffaa474240",
+    "type": "split",
+    "children": [
+      {
+        "id": "39ff92a0b85b5cf1",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "markdown-cheatsheet/admonition.md",
+            "mode": "source"
+          }
+        },
+        "group": "67db619469ee2c76"
+      },
+      {
+        "id": "1262f430e430c1c1",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "markdown-cheatsheet/admonition.md",
+            "mode": "preview"
+          }
+        },
+        "group": "67db619469ee2c76"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9181a750efc0b4ae",
+    "type": "split",
+    "children": [
+      {
+        "id": "999fc6793e2c745a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d6dfb39b9b0587a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "8dab79ae8df01289",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 238
+  },
+  "right": {
+    "id": "5cbeaae76e65c172",
+    "type": "split",
+    "children": [
+      {
+        "id": "8106a81ec76f5101",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "46c914084b6a8702",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "markdown-cheatsheet/admonition.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "39ff92a0b85b5cf1",
+  "lastOpenFiles": [
+    "markdown-cheatsheet/admonition.md",
+    "markdown-cheatsheet/block-quotes.md",
+    "markdown-cheatsheet/code-blocks.md",
+    "markdown-cheatsheet/embed-external-sources.md",
+    "markdown-cheatsheet/emoji.md",
+    "markdown-cheatsheet/headings.md",
+    "markdown-cheatsheet/icons.md",
+    "markdown-cheatsheet/images.md",
+    "markdown-cheatsheet/line-breaks.md",
+    "markdown-cheatsheet/links.md"
+  ]
+}

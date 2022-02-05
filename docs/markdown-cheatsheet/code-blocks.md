@@ -8,7 +8,7 @@ description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Code 
 
 _Example_:
 
-```` markdown
+````markdown
 ``` python linenums="1"
 def bubble_sort(items):
     for i in range(len(items)):
