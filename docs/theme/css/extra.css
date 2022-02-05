@@ -47,10 +47,13 @@
 .md-grid {
   max-width: 1420px; /* width of the middle section */
 }
-md-main__inner md-grid {
-  margin-left: 1rem;
-  margin-right: 3rem;
+/* fix for right side when not using dedicated content of table */
+@media screen and (min-width: 76.25em) {
+  .md-content__inner {
+    margin-right: 5rem;
+  }
 }
+
 /* support buttons */
 
 .donation {
