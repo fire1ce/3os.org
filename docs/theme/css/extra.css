@@ -47,7 +47,10 @@
 .md-grid {
   max-width: 1420px; /* width of the middle section */
 }
-
+md-main__inner md-grid {
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
 /* support buttons */
 
 .donation {
