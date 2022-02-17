@@ -1,10 +1,11 @@
 ---
 description: short guide for better terminal experience for macOS/Linux using Oh-My-Zsh, Bira Theme Autosuggestions, and Highlight plugins.
+template: comments.html
 ---
 
 # Better Terminal Experience - Oh-My-Zsh + Bira Theme + Autosuggestions
 
-This is a short guide for better terminal experience for macOS/Linux using `Oh-My-Zsh`, `Bira Theme`, `Autosuggestions` and `Highlight` plugins.
+This is a short guide for better terminal experience for macOS/Linux using `Oh-My-Zsh` , `Bira Theme` , `Autosuggestions` and `Highlight` plugins.
 
 ## MacOS Installation with iTerm2 and Homebrew
 
@@ -22,7 +23,7 @@ This will install all the necessary requirements:
 
 ```bash
 brew tap homebrew/cask-fonts
-brew install zsh-autosuggestions zsh-syntax-highlighting git wget zsh iterm2 font-fira-code-nerd-font 
+brew install zsh-autosuggestions zsh-syntax-highlighting git wget zsh iterm2 font-fira-code-nerd-font
 ```
 
 Install [**Oh-My-Zsh**](https://github.com/robbyrussell/oh-my-zsh)
@@ -70,9 +71,9 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 Requirements:
 
--   git
--   zsh
--   wget
+- git
+- zsh
+- wget
 
 The example below uses **apt** package manager (change to your package manager accordingly)
 
@@ -106,8 +107,6 @@ mv zshrc_config ~/.zshrc
 
 **~/.zshrc Manual Config Modifications**
 
-
-
 Manual:
 
 Theme:
@@ -125,10 +124,14 @@ plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip co
 Add this to the the end of ~/.zshrc
 
 ```bash
+
 ## Shell Integration and plugins
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ## Fix for Slow zsh-autosuggestions copy&paste
+
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'

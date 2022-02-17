@@ -3,12 +3,11 @@ site_name: 3os
 site_url: https://3os.org/
 site_author: Stas Yakobov
 site_description: >-
-    Collocation of technical documentation, guides, knowledge, examples and
-    tips...
+  Collocation of technical documentation, guides, knowledge, examples and
+  tips...
 repo_url: https://github.com/fire1ce/3os.org
 repo_name: fire1ce/3os.org
 edit_uri: edit/master/docs/
-
 
 # Theme Configuration
 theme:
@@ -28,13 +27,13 @@ theme:
     - toc.integrate
 
   palette:
-    - media: "(prefers-color-scheme: light)"
+    - media: '(prefers-color-scheme: light)'
       scheme: default
       primary: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
+    - media: '(prefers-color-scheme: dark)'
       scheme: slate
       primary: blue grey
       toggle:
@@ -48,7 +47,6 @@ theme:
 extra_css:
   - theme/css/fonts.css
   - theme/css/extra.css
-
 
 # Plugins
 plugins:
@@ -72,7 +70,6 @@ plugins:
       type: date
       fallback_to_build_date: true
 
-
 extra:
   analytics:
     provider: google
@@ -91,7 +88,7 @@ markdown_extensions:
   - sane_lists
   - attr_list
   - markdown.extensions.codehilite:
-     guess_lang: false
+      guess_lang: false
   - def_list
   - footnotes
   - abbr

@@ -24,7 +24,7 @@ Pulls a file from android device
 adb pull /mnt/sdcard/Download/example.apk
 ```
 
---------
+---
 
 Install apk from host to Android device
 
@@ -38,7 +38,7 @@ Install apk from Android device storage
 adb shell install /mnt/sdcard/Download/example.apk
 ```
 
---------
+---
 
 Set network proxy
 
@@ -49,21 +49,21 @@ adb shell settings put global http_proxy <address>:<port>
 Disable network proxy
 
 ```bash
-adb shell settings put global http_proxy :0 
+adb shell settings put global http_proxy :0
 ```
 
 ## ADB Basics
 
 | Command                             | Description                                 |
 | ----------------------------------- | ------------------------------------------- |
-| __adb devices__                     | __Lists connected devices__                 |
-| __adb connect 192.168.2.1__         | __Connects to adb device over network__     |
+| **adb devices**                     | **Lists connected devices**                 |
+| **adb connect 192.168.2.1**         | **Connects to adb device over network**     |
 | adb root                            | Restarts adbd with root permissions         |
 | adb start-server                    | Starts the adb server                       |
 | adb kill-server                     | Kills the adb server                        |
-| __adb reboot__                      | __Reboots the device__                      |
-| __adb devices -l__                  | __List of devices by product/model__        |
-| __adb -s `<deviceName> <command>`__ | __Redirect command to specific device__     |
+| **adb reboot**                      | **Reboots the device**                      |
+| **adb devices -l**                  | **List of devices by product/model**        |
+| **adb -s `<deviceName> <command>`** | **Redirect command to specific device**     |
 | adb –d `<command>`                  | Directs command to only attached USB device |
 | adb –e `<command>`                  | Directs command to only attached emulator   |
 
@@ -71,7 +71,7 @@ adb shell settings put global http_proxy :0
 
 | Command                                      | Description         |
 | -------------------------------------------- | ------------------- |
-| __adb logcat `[options] [filter] [filter]`__ | __View device log__ |
+| **adb logcat `[options] [filter] [filter]`** | **View device log** |
 | adb bugreport                                | Print bug reports   |
 
 ## Permissions
@@ -85,8 +85,8 @@ adb shell settings put global http_proxy :0
 
 | Command                        | Description                     |
 | ------------------------------ | ------------------------------- |
-| __adb shell install__ `<apk>`  | __Install app__                 |
-| __adb shell install `<path>`__ | __Install app from phone path__ |
+| **adb shell install** `<apk>`  | **Install app**                 |
+| **adb shell install `<path>`** | **Install app from phone path** |
 | adb shell install -r `<path>`  | Install app from phone path     |
 | adb shell uninstall `<name>`   | Remove the app                  |
 
@@ -107,15 +107,15 @@ adb shell settings put global http_proxy :0
 | adb shell ls                              | List directory contents                   |
 | adb shell ls -s                           | Print size of each file                   |
 | adb shell ls -R                           | List subdirectories recursively           |
-| __adb shell pm path `<package name>`__    | __Get full path of a package__            |
-| __adb shell pm list packages -f__         | __Lists all the packages and full paths__ |
+| **adb shell pm path `<package name>`**    | **Get full path of a package**            |
+| **adb shell pm list packages -f**         | **Lists all the packages and full paths** |
 
 ## File Operations
 
 | Command                         | Description                      |
 | ------------------------------- | -------------------------------- |
-| __adb push `<local> <remote>`__ | __Copy file/dir to device__      |
-| __adb pull `<remote> <local>`__ | __Copy file/dir from device__    |
+| **adb push `<local> <remote>`** | **Copy file/dir to device**      |
+| **adb pull `<remote> <local>`** | **Copy file/dir from device**    |
 | run-as `<package>` cat `<file>` | Access the private package files |
 
 ## Phone Info
@@ -149,17 +149,16 @@ adb shell settings put global http_proxy :0
 
 ## Device Related Commands
 
-| Command                                                     | Description                              |
-| ----------------------------------------------------------- | ---------------------------------------- |
-| adb reboot-recovery                                         | Reboot device into recovery mode         |
-| adb reboot fastboot                                         | Reboot device into recovery mode         |
-| adb shell screencap -p "/path/to/screenshot.png"            | Capture screenshot                       |
-| adb shell screenrecord "/path/to/record.mp4"                | Record device screen                     |
-| adb backup -apk -all -f backup.ab                           | Backup settings and apps                 |
-| adb backup -apk -shared -all -f backup.ab                   | Backup settings, apps and shared storage |
-| adb backup -apk -nosystem -all -f backup.ab                 | Backup only non-system apps              |
-| adb restore backup.ab                                       | Restore a previous backup                |
-| -------                                                     | -----------                              |
-| adb shell am start -a android.intent.action.VIEW -d URL     | Opens URL                                |
-| adb shell am start -t image/* -a android.intent.action.VIEW | Opens gallery                            |
-
+| Command                                                      | Description                              |
+| ------------------------------------------------------------ | ---------------------------------------- |
+| adb reboot-recovery                                          | Reboot device into recovery mode         |
+| adb reboot fastboot                                          | Reboot device into recovery mode         |
+| adb shell screencap -p "/path/to/screenshot.png"             | Capture screenshot                       |
+| adb shell screenrecord "/path/to/record.mp4"                 | Record device screen                     |
+| adb backup -apk -all -f backup.ab                            | Backup settings and apps                 |
+| adb backup -apk -shared -all -f backup.ab                    | Backup settings, apps and shared storage |
+| adb backup -apk -nosystem -all -f backup.ab                  | Backup only non-system apps              |
+| adb restore backup.ab                                        | Restore a previous backup                |
+| -------                                                      | -----------                              |
+| adb shell am start -a android.intent.action.VIEW -d URL      | Opens URL                                |
+| adb shell am start -t image/\* -a android.intent.action.VIEW | Opens gallery                            |

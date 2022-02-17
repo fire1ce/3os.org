@@ -5,7 +5,7 @@ description: Useful Links & Tools
 # Useful Links & Tools
 
 | Services                                                                                 | Description                          |
-|------------------------------------------------------------------------------------------|--------------------------------------|
+| ---------------------------------------------------------------------------------------- | ------------------------------------ |
 | [Mail-Tester.com](https://www.mail-tester.com/)                                          | Tests the quality of emails          |
 | [ipleak.net](https://ipleak.net/)                                                        | Shows Information About Your IP      |
 | [sslLabs.com](https://www.ssllabs.com/)                                                  | Test Your SSL Certification          |
@@ -19,7 +19,7 @@ description: Useful Links & Tools
 ## Chrome Useful Extensions
 
 | Chrome Extensions                                                                                                                               | Description                                     |
-|-------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
 | [1Password](https://chrome.google.com/webstore/detail/1password-extension-deskt/aomjjhallfgjeglblehebfpbcfeobpgk?hl=en)                         | Password Manager (Desktop App Required)         |
 | [Clear Browsing Data](https://chrome.google.com/webstore/detail/clear-browsing-data/bjilljlpencdcpihofiobpnfgcakfdbe?hl=en)                     | Clear Browsing Data                             |
 | [HTTPS Everywhere](https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp?hl=en)                           | Automatically use HTTPS                         |
@@ -33,7 +33,7 @@ description: Useful Links & Tools
 ## Firefox Useful Extensions
 
 | Firefox Extensions                                                                                     | Description                     |
-|--------------------------------------------------------------------------------------------------------|---------------------------------|
+| ------------------------------------------------------------------------------------------------------ | ------------------------------- |
 | [FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/)                        | Proxy Management                |
 | [Wappalyzer](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)                               | Identifies software on websites |
 | [Clear Browsing Data](https://addons.mozilla.org/en-US/firefox/addon/clear-browsing-data/?src=search)  | Delete browsing data            |
