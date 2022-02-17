@@ -1,6 +1,5 @@
 [
   "table-editor-obsidian",
   "obsidian-git",
-  "cm-editor-syntax-highlight-obsidian",
-  "obsidian-linter"
+  "cm-editor-syntax-highlight-obsidian"
 ]
