@@ -47,6 +47,12 @@
 .md-grid {
   max-width: 1420px; /* width of the middle section */
 }
+
+/* Code snippets with title*/
+.highlight span.filename {
+  color: var(--md-code-fg-color); /* Code snippets with title font color */
+  border-bottom: 0.05rem solid var(--md-footer-fg-color--light); /* divider */
+}
 /* fix for right side when not using dedicated content of table */
 @media screen and (min-width: 76.25em) {
   .md-content__inner {
@@ -63,7 +69,7 @@
 .donate-button-paypal {
   width: 6rem;
   height: 2rem;
-  background-image: url("/assets/images/support/paypal.svg");
+  background-image: url('/assets/images/support/paypal.svg');
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -74,7 +80,7 @@
 .donate-button-patreon {
   width: 6rem;
   height: 2rem;
-  background-image: url("/assets/images/support/patreon.svg");
+  background-image: url('/assets/images/support/patreon.svg');
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -85,7 +91,7 @@
 .donate-button-buymeacoffee {
   width: 6rem;
   height: 2rem;
-  background-image: url("/assets/images/support/buymeacoffee.svg");
+  background-image: url('/assets/images/support/buymeacoffee.svg');
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;

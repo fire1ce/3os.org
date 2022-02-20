@@ -1,11 +1,11 @@
 nav:
   - Blog: blog.md
   - Guides: guides
+  - DevOps: devops
+  - Infrastructure: infrastructure
   - Linux: linux
   - macOS: mac-os
-  - Raspberry Pi: raspberry-pi
-  - DevOps: devops
   - Windows: windows
+  - Raspberry Pi: raspberry-pi
   - Android: android
   - Penetration Testing: penetration-testing
-  - Markdown CheatSheet: markdown-cheatsheet

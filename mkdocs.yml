@@ -24,7 +24,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-    - toc.integrate
+    # - toc.integrate
 
   palette:
     - media: '(prefers-color-scheme: light)'
@@ -69,6 +69,9 @@ plugins:
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
+  - tags:
+      tags_file: tags.md
+
 
 extra:
   analytics:

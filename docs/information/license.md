@@ -1,11 +1,10 @@
 ---
 description: MIT License
-disqus: ""
 ---
 
 # License
 
-__MIT License__
+**MIT License**
 
 Copyright &copy; 2018 Stas Yakobov
 

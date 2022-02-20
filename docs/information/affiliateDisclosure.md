@@ -1,6 +1,5 @@
 ---
 description: Affiliate Disclosure. This website can include advertising, supported content, paid inserts, affiliate links or other types of monetization.
-disqus: ""
 ---
 
 # Affiliate Disclosure
