@@ -58,6 +58,11 @@ plugins:
         - blog.md
   - minify:
       minify_html: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+      css_files:
+          - theme/css/extra.css
   - encryptcontent:
       title_prefix: ''
       summary: 'Privet Content'
@@ -71,7 +76,10 @@ plugins:
       fallback_to_build_date: true
   - tags:
       tags_file: tags.md
-
+  # - img2fig
+  - redirects:
+      redirect_maps:
+          'guides/proxmox/pgu-passthrough-to-vm.md': 'infrastructure/proxmox/pgu-passthrough-to-vm.md'
 
 extra:
   analytics:

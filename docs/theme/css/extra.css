@@ -27,27 +27,41 @@
   --md-code-hl-generic-color: var(--md-default-fg-color_custom--light);
   --md-code-hl-variable-color: var(--md-default-fg-color_custom--light);
 }
-/* snippets */
+/* snippets copy button color */
+:root {
+  --md-snippet-copy-button-color: var(--md-default-fg-color_custom--light);
+}
 .md-clipboard {
-  color: hsla(var(--md-hue), 75%, 90%, 0.5); /* snippets copy button color */
-  --md-accent-fg-color: rgb(
-    255,
-    255,
-    255
-  ); /* snippets copy button hover color */
+  color: var(--md-default-fg-color_custom--lightest);
+  --md-accent-fg-color: var(--md-default-fg-color_custom--light);
+  --md-default-fg-color--light: var(--md-default-fg-color_custom--lighter);
 }
+.md-clipboard:hover {
+  color: white;
+}
+
+/* border-radius of the code section*/
 .md-typeset code {
-  border-radius: 5px; /* border-radius of the code section*/
+  border-radius: 5px;
 }
+
+/* images border-radius */
 .md-typeset img {
-  border-radius: 5px; /* images border-radius */
+  border-radius: 5px;
   height: auto;
   max-width: 100%;
 }
+
+/* width of the middle section */
 .md-grid {
-  max-width: 1420px; /* width of the middle section */
+  max-width: 1420px;
 }
 
+/* Code snippets font color fix*/
+.highlight
+  :is(.na, .nv, .vc, .vg, .vi, .ge, .gr, .gh, .go, .gp, .gs, .gu, .gt) {
+  color: var(--md-code-fg-color);
+}
 /* Code snippets with title*/
 .highlight span.filename {
   color: var(--md-code-fg-color); /* Code snippets with title font color */
