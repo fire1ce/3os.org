@@ -1,10 +1,17 @@
 ---
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Tables, Lists examples and simple usage
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Markddown Tables and Markddown Lists.
+tags: [markdown-cheatsheet, mkdocs, tables, lists]
 ---
 
 # Tables & Lists
 
 ## Tables
+
+A table in Markdown consists of two parts: the header and the rows of data in the table. As per the Markdown spec:
+
+- pipe (|) character separates the individual columns in a table.
+- (-) hyphens act as a delimiter row to separate the header row from the body.
+- (:) colon to align cell contents.
 
 ```markdown
 | **Option** | **Description**                            |
@@ -14,7 +21,7 @@ description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Table
 | ext        | extension to be used for dest files.       |
 ```
 
-**Result:**
+_Result:_
 
 | **Option** | **Description**                            |
 | ---------- | ------------------------------------------ |
@@ -24,11 +31,79 @@ description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Table
 
 ---
 
-## description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Lists examples and simple usage
+### Column alignment
+
+If you want to align a specific column to the `left`, `center` or `right`, you
+can use the [regular Markdown syntax] placing `:` characters at the beginning
+and/or end of the divider.
+
+=== "Left"
+
+    ``` markdown hl_lines="2" title="Data table, columns aligned to left"
+    | Method      | Description                          |
+    | :---------- | :----------------------------------- |
+    | `GET`       | :material-check:     Fetch resource  |
+    | `PUT`       | :material-check-all: Update resource |
+    | `DELETE`    | :material-close:     Delete resource |
+    ```
+
+    <div class="result" markdown>
+
+    | Method      | Description                          |
+    | :---------- | :----------------------------------- |
+    | `GET`       | :material-check:     Fetch resource  |
+    | `PUT`       | :material-check-all: Update resource |
+    | `DELETE`    | :material-close:     Delete resource |
+
+    </div>
+
+=== "Center"
+
+    ``` markdown hl_lines="2" title="Data table, columns centered"
+    | Method      | Description                          |
+    | :---------: | :----------------------------------: |
+    | `GET`       | :material-check:     Fetch resource  |
+    | `PUT`       | :material-check-all: Update resource |
+    | `DELETE`    | :material-close:     Delete resource |
+    ```
+
+    <div class="result" markdown>
+
+    | Method      | Description                          |
+    | :---------: | :----------------------------------: |
+    | `GET`       | :material-check:     Fetch resource  |
+    | `PUT`       | :material-check-all: Update resource |
+    | `DELETE`    | :material-close:     Delete resource |
+
+    </div>
+
+=== "Right"
+
+    ``` markdown hl_lines="2" title="Data table, columns aligned to right"
+    | Method      | Description                          |
+    | ----------: | -----------------------------------: |
+    | `GET`       | :material-check:     Fetch resource  |
+    | `PUT`       | :material-check-all: Update resource |
+    | `DELETE`    | :material-close:     Delete resource |
+    ```
+
+    <div class="result" markdown>
+
+    | Method      | Description                          |
+    | ----------: | -----------------------------------: |
+    | `GET`       | :material-check:     Fetch resource  |
+    | `PUT`       | :material-check-all: Update resource |
+    | `DELETE`    | :material-close:     Delete resource |
+
+    </div>
+
+---
 
 ## Lists
 
 ### Unordered List
+
+Bullet point lists can be created by starting each line with an asterisk followed by a space before the content of the bullet point. Note that the space is important and should not be forgotten.
 
 Example:
 
@@ -37,68 +112,62 @@ Example:
 - Consectetur adipiscing elit
 - Integer molestie lorem at massa
 - Facilisis in pretium nisl aliquet
-  - Phasellus iaculis neque
-  - Consectetur adipiscing elit
-- Nulla volutpat aliquam velit
-- Phasellus iaculis neque
 ```
 
-**Result:**
+_Result:_
 
 - Lorem ipsum dolor sit amet
 - Consectetur adipiscing elit
 - Integer molestie lorem at massa
 - Facilisis in pretium nisl aliquet
-  - Phasellus iaculis neque
-  - Consectetur adipiscing elit
-- Nulla volutpat aliquam velit
-- Phasellus iaculis neque
+
+---
 
 ### Ordered List
 
-**TIP**: If you just use `1.` for each number, GitHub will automatically number each item. For example:
+Similarly, numbered lists can be created by starting each line with a number followed by a space and then the relevant text.
 
 ```markdown
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 4. Faucibus porta lacus fringilla vel
-   1. Facilisis in pretium nisl aliquet
-   2. Nulla volutpat aliquam velit
 5. Aenean sit amet erat nunc
 6. Eget porttitor lorem
 ```
 
-**Result:**
+_Result:_
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 4. Faucibus porta lacus fringilla vel
-   1. Facilisis in pretium nisl aliquet
-   2. Nulla volutpat aliquam velit
 5. Aenean sit amet erat nunc
 6. Eget porttitor lorem
+
+---
 
 ### Blocks List
 
 ```markdown
-> :memo:
->
 > - list under lists
 > - under lists
 ```
 
-**Result:**
+_Result:_
 
-> :memo:
->
 > - list under lists
 > - under lists
 
-### Tasklists¶
+---
 
-_Example_:
+### Tasklists
+
+A task list is a set of tasks that each render on a separate line with a clickable checkbox. You can select or deselect the checkboxes to mark the tasks as complete or incomplete.
+
+You can use Markdown to create a task list in any comment on GitHub. If you reference an issue, pull request, or discussion in a task list, the reference will unfurl to show the title and state.
+
+_Example:_
 
 ```markdown
 - [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -109,7 +178,7 @@ _Example_:
 - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
 ```
 
-**Result:**
+_Result:_
 
 - [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
 - [ ] Vestibulum convallis sit amet nisi a tincidunt

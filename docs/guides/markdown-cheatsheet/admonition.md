@@ -1,10 +1,6 @@
 ---
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. and Material Theme for MkDocs. Admonition examples and simple usage
-tags:
-  - markdown
-  - cheatsheet
-  - admonition
-  - syntax
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Admonitions.
+tags: [markdown-cheatsheet, mkdocs, admonition]
 ---
 
 # Admonitions
@@ -34,6 +30,8 @@ the next line, indented by four spaces:
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
+---
+
 ### Changing the title
 
 By default, the title will equal the type qualifier in titlecase. However, it
@@ -54,6 +52,8 @@ links, formatting, ...) after the type qualifier:
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
+---
+
 ### Removing the title
 
 Similar to [changing the title], the icon and title can be omitted entirely by
@@ -73,6 +73,8 @@ not work for [collapsible blocks]:
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
+
+---
 
 ### Collapsible blocks
 
@@ -109,6 +111,8 @@ Adding a `+` after the `???` token renders the block expanded:
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
+
+---
 
 ### Supported types
 

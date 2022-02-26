@@ -1,83 +1,53 @@
 ---
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Images examples and simple usage
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Images.
+tags: [markdown-cheatsheet, mkdocs, images]
 ---
 
 # Images
 
-Images have a similar syntax to [links](links.md 'links markdowns') but include a preceding exclamation point.  
-==All images will render in original size if not specified otherwise.==
+Markdown is a text format so naturally you can type in the Markdown representation of an image using `![A test image](image.png)` to put an image reference directly into the editor.
 
-## Embedding Images With HTML Tags
+!!! Warning "Warning"
 
-Place an image with **Reference** link at center of the page from link:
+    This site uses the Material Design for MkDocs theme with the following CSS overrides there for
+    the results in your case may differ.
 
-```markdown
-<div style="width:50%; margin:0 auto">
-   <img src="https://octodex.github.com/images/minion.png" alt="image with reference link">
-</div>
-```
+??? example "Custom css"
 
-**Result:**
-
-<div style="width:50%; margin:0 auto">
-   <img src="https://octodex.github.com/images/minion.png" alt="image with reference link">
-</div>
-
-Place an image with **Relative** link at center of the page from link:
-
-```markdown
-<div style="width:80%; margin:0 auto">
-   <img src="/assets/images/markdown-cheatsheet/example/minion500x500.png" alt="image with relative link">
-</div>
-```
-
-**Result:**
-
-<div style="width:80%; margin:0 auto">
-   <img src="https://octodex.github.com/images/minion.png" alt="minion">
-</div>
+    ```css
+    /* images css */
+    .md-typeset img {
+      border-radius: 5px;
+      height: auto;
+      max-width: 95%;
+      margin: auto;
+      display: block;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    ```
 
 ## Embedding Images
 
-```markdown
+```markdown title="Internal soruce example"
+![minion](/assets/images/guides/markdown-cheatsheet/images.png)
+```
+
+```markdown title="External source example"
 ![minion](https://octodex.github.com/images/minion.png)
 ```
 
-**Result:**
+_Result:_
+
 ![minion](https://octodex.github.com/images/minion.png)
 
-Embedding Images with width attributes:
+---
 
-> :bulb: **"hight" attributes is not needed**
+## Embedding Images With Width Attributes
 
-```markdown
+```markdown title="width=200 example"
 <img src="/assets/images/markdown-cheatsheet/example/minion.png" width=200>
 ```
 
-**Result:**  
+_Result:_
+
 <img src="/assets/images/markdown-cheatsheet/example/minion.png" width=200>
-
-## Inline Image With Text
-
-```markdown
-Inline ![minion](/assets/images/markdown-cheatsheet/example/minion100x100.png) With Relative Link
-
-Inline <img src="/assets/images/markdown-cheatsheet/example/minion.png" width=50> With Reference Link
-```
-
-**Result:**  
-Inline ![minion](/assets/images/markdown-cheatsheet/example/minion100x100.png) With Relative Link
-
-Inline <img src="/assets/images/markdown-cheatsheet/example/minion.png" width=50> With Reference Link
-
-## Block Quotes with Image
-
-```markdown
-> :camera: **Figure Title**  
-> ![minion](/assets/images/markdown-cheatsheet/example/minion500x500.png)
-```
-
-**Result:**
-
-> :camera: **Figure Title**  
-> ![minion](/assets/images/markdown-cheatsheet/example//minion500x500.png)

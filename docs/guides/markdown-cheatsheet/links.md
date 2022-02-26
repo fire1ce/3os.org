@@ -30,7 +30,7 @@ Renders to (hover over the link, there should be a tooltip):
 [Relative Link](../index.md 'Relative Link')
 ```
 
-**Result:**
+_Result:_
 
 [Relative Link](../index.md 'Relative Link')
 
@@ -47,7 +47,7 @@ Use {target=\_blank} to a link
 [Reference Link With New Tab](https://github.com/fire1ce/3os.org/ 'Opens new tab for reference link'){target=\_blank}
 ```
 
-**Result:**
+_Result:_
 
 [Relative Link With New Tab](../index.md 'Opens new tab for relative home page'){target=\_blank}  
 [Reference Link With New Tab](https://github.com/fire1ce/3os.org/ 'Opens new tab for reference link'){target=\_blank}
@@ -72,6 +72,6 @@ will jump to these sections:
 mail link with emoji [📧](mailto:example@example.com)
 ```
 
-**Result:**
+_Result:_
 
 mail link with emoji [📧](mailto:example@example.com)

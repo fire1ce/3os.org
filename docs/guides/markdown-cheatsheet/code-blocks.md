@@ -1,15 +1,25 @@
 ---
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Code Blocks examples and usage
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Code Blocks, Code Blocks with Syntax Highlighting, Code Blocks with titles, Code Blocks with numbers.
+tags: [markdown-cheatsheet, mkdocs, code-blocks]
 ---
 
 # Code Blocks
 
-## Adding Line Numbers To Code Block
+Code blocks and examples are an essential part of technical project
+documentation. Material for MkDocs provides different ways to set up syntax
+highlighting for code blocks, either during build time using [Pygments] or
+during runtime using a JavaScript syntax highlighter.
 
-_Example_:
+## Adding a Title
 
-````markdown
-```python linenums="1"
+In order to provide additional context, a custom title can be added to a code
+block by using the `title="<custom title>"` option directly after the shortcode,
+e.g. to display the name of a file:
+
+_Example:_
+
+````markdown title="Code block with title"
+```py title="bubble_sort.py"
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
@@ -18,26 +28,58 @@ def bubble_sort(items):
 ```
 ````
 
-_Result_:
+_Result:_
 
-```python linenums="1"
+```py title="bubble_sort.py"
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
+
+---
+
+## Adding Line Numbers To Code Block
+
+_Example:_
+
+Line numbers can be added to a code block by using the `linenums="<start>"`
+option directly after the shortcode, whereas `<start>` represents the starting
+line number. A code block can start from a line number other than `1`, which
+allows to split large code blocks for readability:
+
+````markdown title="Code block with line numbers"
+```py linenums="1"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+````
+
+_Result:_
+
+```py linenums="1"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+
+---
 
 ## Highlighting Specific Lines
 
 Specific lines can be highlighted by passing the line numbers to the `hl_lines`
-argument placed right after the language short name. Note that line counts start
-at `1`, regardless of the starting line number specified as part of `linenums`.
+argument placed right after the language shortcode. Note that line counts start
+at `1`, regardless of the starting line number specified as part of
+[`linenums`][adding line numbers]:
 
-_Example_:
-
-````markdown
-```python hl_lines="2 3"
+````markdown title="Code block with highlighted lines"
+```py hl_lines="2 3"
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
@@ -46,168 +88,30 @@ def bubble_sort(items):
 ```
 ````
 
-_Result_:
+_Result:_
 
-```python hl_lines="2 3"
+```py linenums="1" hl_lines="2 3"
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
+
+---
 
 ## Highlighting Inline Code Blocks
 
-Inline code blocks can be highlighted by prefixing them with a shebang-like sequence, i.e. `#!`, directly followed by the `language short name`
+When [InlineHilite] is enabled, syntax highlighting can be applied to inline
+code blocks by prefixing them with a shebang, i.e. `#!`, directly followed by
+the corresponding [language shortcode][list of available lexers].
 
-_Example_:
+_Example:_
 
-```markdown
+```markdown title="Inline code block"
 The `#!python range()` function is used to generate a sequence of numbers.
 ```
 
-_Result_:
+_Result:_
 
 The `#!python range()` function is used to generate a sequence of numbers.
-
-## Adding Keyboard Keys
-
-_Example_:
-
-```markdown
-++ctrl+alt+del++
-```
-
-_Result_:
-
-++ctrl+alt+del++
-
-Note that `Snippets` is not limited to code blocks, but can be used anywhere.
-
-## Grouping Code Blocks
-
-_Example_:
-
-````markdown
-=== "C"
-
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
-
-=== "C++"
-
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
-````
-
-_Result_:
-
-=== "C"
-
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
-
-=== "C++"
-
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
-
-## Embedded Content & Grouping Code Blocks
-
-_Example_:
-
-````markdown
-!!! example
-
-    === "Unordered List"
-
-        _Example_:
-
-        ``` markdown
-        * Sed sagittis eleifend rutrum
-        * Donec vitae suscipit est
-        * Nulla tempor lobortis orci
-        ```
-
-        _Result_:
-
-        * Sed sagittis eleifend rutrum
-        * Donec vitae suscipit est
-        * Nulla tempor lobortis orci
-
-    === "Ordered List"
-
-        _Example_:
-
-        ``` markdown
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
-        ```
-
-        _Result_:
-
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
-````
-
-_Result_:
-
-!!! example
-
-    === "Unordered List"
-
-        _Example_:
-
-        ``` markdown
-        * Sed sagittis eleifend rutrum
-        * Donec vitae suscipit est
-        * Nulla tempor lobortis orci
-        ```
-
-        _Result_:
-
-        * Sed sagittis eleifend rutrum
-        * Donec vitae suscipit est
-        * Nulla tempor lobortis orci
-
-    === "Ordered List"
-
-        _Example_:
-
-        ``` markdown
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
-        ```
-
-        _Result_:
-
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
