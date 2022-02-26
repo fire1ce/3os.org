@@ -1,77 +1,16 @@
-:root > * {
-  /* Code snippets main color shades and hue*/
-  --md-hue: 232;
-  --md-code-fg-color: hsla(var(--md-hue), 10%, 90%, 1);
-  --md-code-bg-color: hsla(var(--md-hue), 10%, 10%, 1);
-  /* Default snippets color shades */
-  --md-default-fg-color_custom: hsla(var(--md-hue), 75%, 95%, 1);
-  --md-default-fg-color_custom--light: hsla(var(--md-hue), 75%, 90%, 0.7);
-  --md-default-fg-color_custom--lighter: hsla(var(--md-hue), 75%, 90%, 0.4);
-  --md-default-fg-color_custom--lightest: hsla(var(--md-hue), 75%, 90%, 0.3);
-  --md-default-bg-color_custom: hsla(var(--md-hue), 15%, 21%, 1);
-  --md-default-bg-color_custom--light: hsla(var(--md-hue), 15%, 21%, 0.54);
-  --md-default-bg-color_custom--lighter: hsla(var(--md-hue), 15%, 21%, 0.26);
-  --md-default-bg-color_custom--lightest: hsla(var(--md-hue), 15%, 21%, 0.07);
-  /* Code snippets highlighting color shades */
-  --md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 0.15);
-  --md-code-hl-number-color: hsla(6, 74%, 63%, 1);
-  --md-code-hl-special-color: hsla(340, 83%, 66%, 1);
-  --md-code-hl-function-color: hsla(291, 57%, 65%, 1);
-  --md-code-hl-constant-color: hsla(250, 62%, 70%, 1);
-  --md-code-hl-keyword-color: hsla(219, 66%, 64%, 1);
-  --md-code-hl-string-color: hsla(150, 58%, 44%, 1);
-  --md-code-hl-name-color: var(--md-code-fg-color);
-  --md-code-hl-operator-color: var(--md-default-fg-color_custom--light);
-  --md-code-hl-punctuation-color: var(--md-default-fg-color_custom--light);
-  --md-code-hl-comment-color: var(--md-default-fg-color_custom--light);
-  --md-code-hl-generic-color: var(--md-default-fg-color_custom--light);
-  --md-code-hl-variable-color: var(--md-default-fg-color_custom--light);
-}
-/* snippets copy button color */
-:root {
-  --md-snippet-copy-button-color: var(--md-default-fg-color_custom--light);
-}
-.md-clipboard {
-  color: var(--md-default-fg-color_custom--lightest);
-  --md-accent-fg-color: var(--md-default-fg-color_custom--light);
-  --md-default-fg-color--light: var(--md-default-fg-color_custom--lighter);
-}
-.md-clipboard:hover {
-  color: white;
-}
-
 /* border-radius of the code section*/
 .md-typeset code {
   border-radius: 5px;
 }
 
-/* images border-radius */
+/* images css */
 .md-typeset img {
   border-radius: 5px;
   height: auto;
-  max-width: 100%;
-}
-
-/* width of the middle section */
-.md-grid {
-  max-width: 1420px;
-}
-
-/* Code snippets font color fix*/
-.highlight
-  :is(.na, .nv, .vc, .vg, .vi, .ge, .gr, .gh, .go, .gp, .gs, .gu, .gt) {
-  color: var(--md-code-fg-color);
-}
-/* Code snippets with title*/
-.highlight span.filename {
-  color: var(--md-code-fg-color); /* Code snippets with title font color */
-  border-bottom: 0.05rem solid var(--md-footer-fg-color--light); /* divider */
-}
-/* fix for right side when not using dedicated content of table */
-@media screen and (min-width: 76.25em) {
-  .md-content__inner {
-    margin-right: 5rem;
-  }
+  max-width: 95%;
+  margin: auto;
+  display: block;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 /* support buttons */
