@@ -17,6 +17,13 @@ config.theme.palette %} {% set font = config.theme.font %}
     display: none;
   }
 
+  /* fix fo images css overide*/
+  .md-typeset img {
+    display: inherit;
+    box-shadow: inherit;
+    max-width: 100%;
+  }
+
   .tx-container {
     padding-top: 1rem;
     background-color: var(--md-primary-fg-color);
