@@ -19,12 +19,11 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.top
-    # - navigation.sections
+    - navigation.indexes
     - navigation.tracking
     - search.suggest
     - search.highlight
     - search.share
-    # - toc.integrate
 
   palette:
     - media: '(prefers-color-scheme: light)'
@@ -76,13 +75,23 @@ plugins:
       fallback_to_build_date: true
   - tags:
       tags_file: tags.md
-  - redirects:
-      redirect_maps:
-          'guides/proxmox/pgu-passthrough-to-vm.md': 'infrastructure/proxmox/pgu-passthrough-to-vm.md'
   - meta-descriptions
   - external-markdown
-
-
+  - redirects:
+      redirect_maps:
+          'guides/openwrt/tipsandtricks' : 'infrastructure/openwrt/tipsandtricks.md'
+          'guides/proxmox/igpu-passthrough-to-vm.md' : 'infrastructure/proxmox/igpu-passthrough-to-vm.md'
+          'guides/proxmox/networking.md' : 'infrastructure/proxmox/networking.md'
+          'guides/proxmox/pgu-passthrough-to-vm.md': 'infrastructure/proxmox/pgu-passthrough-to-vm.md'
+          'guides/proxmox/tipsandtricks.md': 'infrastructure/proxmox/tipsandtricks.md'
+          'guides/synology/allow-ssh-with-rsa-key.md' : 'infrastructure/synology/allow-ssh-with-rsa-key.md'
+          'guides/synology/auto-dsm-config-backup.md' : 'infrastructure/synology/auto-dsm-config-backup.md'
+          'guides/synology/disable-dms-listening-on-80-443-ports.md' : 'infrastructure/synology/disable-dms-listening-on-80-443-ports.md'
+          'guides/synology/Install-oh-my-zsh.md' : 'infrastructure/synology/Install-oh-my-zsh.md'
+          'guides/synology/Installing-vm-tools-on-virtual-machine.md' : 'infrastructure/synology/Installing-vm-tools-on-virtual-machine.md'
+          'guides/ubiquiti/edge-router.md' : 'infrastructure/ubiquiti/edge-router.md'
+          'guides/ubiquiti/udm-pro.md' : 'infrastructure/ubiquiti/udm-pro.md'
+          'penetration-testing/other/vmware-fusion.md' : 'infrastructure/vmware/vmware-fusion.md'
 
 
 
