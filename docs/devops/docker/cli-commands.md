@@ -18,9 +18,13 @@ docker images |grep -v REPOSITORY|awk '{print $1}'|xargs -L1 docker pull
 
 ## Find Container IP
 
+{% raw %}
+
 ```bash
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 ```
+
+{% endraw %}
 
 ## Container Specific Logs (to view the output of commands running in container)
 
