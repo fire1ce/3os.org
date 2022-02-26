@@ -13,6 +13,11 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+/* The width of the content area */
+.md-grid {
+  max-width: 1560px;
+}
+
 /* support buttons */
 
 .donation {
