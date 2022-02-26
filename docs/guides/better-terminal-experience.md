@@ -1,20 +1,15 @@
 ---
 description: short guide for better terminal experience for macOS/Linux using Oh-My-Zsh, Bira Theme Autosuggestions, and Highlight plugins.
-template: comments.html
-tags:
-  - Terminal
-  - Oh-My-Zsh
+tags: [macos, linux, oh-my-zsh, bira, autosuggestions, highlight]
 ---
 
 # Better Terminal Experience - Oh-My-Zsh + Bira Theme + Autosuggestions
 
-This is a short guide for better terminal experience for macOS/Linux using `Oh-My-Zsh` , `Bira Theme` , `Autosuggestions` and `Highlight` plugins.
+This is a short guide for better terminal experience for macOS/Linux using `Oh-My-Zsh`, `Bira Theme`, `Autosuggestions` and `Highlight` plugins.
 
 ## MacOS Installation with iTerm2 and Homebrew
 
-<div style="width:80%; margin:0 auto">
-   <img src="/assets/images/guides/better-terminal-experience/linuxTerminal.png" alt="terminal screenshot">
-</div>
+![terminal screenshot](/assets/images/guides/better-terminal-experience/linuxTerminal.png)
 
 First of all we need to install [**Homebrew**](https://brew.sh/)
 
@@ -127,14 +122,10 @@ plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip co
 Add this to the the end of ~/.zshrc
 
 ```bash
-
 ## Shell Integration and plugins
-
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 ## Fix for Slow zsh-autosuggestions copy&paste
-
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
