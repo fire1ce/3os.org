@@ -6,24 +6,21 @@ description: Pi-hole as DNS Server with DNS over HTTPS (DOH) Based on Docker Con
 
 You can read about Pi-hole at their [Official Website](https://pi-hole.net/ 'pi-hole.net')
 
-<div style="width:80%; margin:0 auto">
-   <img src="/assets/images/guides/pihole-dns/webgui.png" alt="pihole-webgui">
-</div>
+![pihole-webgui](/assets/images/guides/pihole-dns/webgui.png)
 
 My setup fully depends on pi-hole dns server, that's why we use two servers one as primary DNS Server and the second as secondary DNS server.
 
 I've configured my router as a DNS server for all the DHCP clients with primary and the secondary DNS as my pi-hole servers. This way all the clients requests the router to resolve the DNS.
 
-<div style="width:80%; margin:0 auto">
-   <img src="/assets/images/guides/pihole-dns/diagram.png" alt="network flow">
-</div>
+![network flow](/assets/images/guides/pihole-dns/diagram.png)
 
--   **Pi-hole-1 runs on ubuntu server (virtual machine)**
--   **Pi-hole-2 runs on ubuntu server (Raspberry Pi)**
+- **Pi-hole-1 runs on ubuntu server (virtual machine)**
+- **Pi-hole-2 runs on ubuntu server (Raspberry Pi)**
 
 ## Installation
 
 !!! warning
+
     This is not a step by step guide for all the configurations of pihole or how to use docker
 
 We will be using docker containers for both Pihole and the Cloudflared (DOH).
@@ -31,7 +28,7 @@ Since we want to forward DNS requests from Pihole to Cloudflared (DOH) we will c
 
 Create Docker network for the Pihole and Cloudflared with only 5 IP address:
 
-```bash
+```shell
 docker network create --subnet 172.30.9.0/29 dns-network
 ```
 
