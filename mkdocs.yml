@@ -1,6 +1,6 @@
 # Project information
 site_name: 3os
-site_url: https://3os.org/
+site_url: https://3os.org
 site_author: Stas Yakobov
 site_description: >-
   Collocation of technical documentation, guides, knowledge, examples and
@@ -76,10 +76,15 @@ plugins:
       fallback_to_build_date: true
   - tags:
       tags_file: tags.md
-  # - img2fig
   - redirects:
       redirect_maps:
           'guides/proxmox/pgu-passthrough-to-vm.md': 'infrastructure/proxmox/pgu-passthrough-to-vm.md'
+  - meta-descriptions
+  - external-markdown
+
+
+
+
 
 extra:
   analytics:
@@ -109,7 +114,7 @@ markdown_extensions:
   - toc:
       title: On This Page
       permalink: true
-      toc_depth: '2'
+      toc_depth: '3'
       separator: '-'
   - pymdownx.arithmatex:
       generic: true
@@ -140,6 +145,12 @@ markdown_extensions:
       custom_checkbox: true
       clickable_checkbox: true
   - pymdownx.tilde
+  - meta
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 # Copyright
 copyright: 'Copyright &copy; 3os.org @2018'

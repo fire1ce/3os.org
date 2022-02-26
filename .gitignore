@@ -2,7 +2,8 @@
 site/
 venv/
 tmp/
-
+**/gen_
+**/gen_*
 # OS generated files
 .DS_Store
 **/.DS_Store
