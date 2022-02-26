@@ -94,7 +94,6 @@ plugins:
           'penetration-testing/other/vmware-fusion.md' : 'infrastructure/vmware/vmware-fusion.md'
 
 
-
 extra:
   analytics:
     provider: google
