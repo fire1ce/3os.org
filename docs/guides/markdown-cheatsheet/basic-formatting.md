@@ -2,6 +2,7 @@
 description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Markddown Headings and Markddown Text Highlighting, Horizontal Line.
 tags:
   [markdown-cheatsheet, mkdocs, headings, text-highlighting, horizontal-line]
+toc_depth: 2
 ---
 
 # Basic Formatting
@@ -24,7 +25,7 @@ Markdown makes it easy to format messages. Type a message as you normally would,
 
 ## Horizontal Line
 
-```markdown
+```markdown title='Horizontal Line Example'
 Horizontal line
 
 ---
@@ -48,7 +49,7 @@ Headings from `h1` through `h6` are constructed with a `#` for each level:
 
 ### Regular Headings
 
-```markdown
+```markdown title="Regular Headings (h1-h6)"
 ### Heading 3
 
 #### Heading 4
@@ -72,7 +73,7 @@ _Result:_
 
 ### Headings <small>with secondary text</small>
 
-```markdown
+```markdown title="Headings with secondary text (h1-h6)"
 ### Heading 3 <small>with secondary text</small>
 
 #### Heading 4 <small>with secondary text</small>

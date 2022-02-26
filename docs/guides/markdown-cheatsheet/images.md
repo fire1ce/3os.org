@@ -5,7 +5,7 @@ tags: [markdown-cheatsheet, mkdocs, images]
 
 # Images
 
-Markdown is a text format so naturally you can type in the Markdown representation of an image using `![A test image](image.png)` to put an image reference directly into the editor.
+Markdown is a text format so naturally you can type in the Markdown representation of an image using examples below to put an image reference directly into the editor.
 
 !!! Warning "Warning"
 
@@ -29,25 +29,31 @@ Markdown is a text format so naturally you can type in the Markdown representati
 ## Embedding Images
 
 ```markdown title="Internal soruce example"
-![minion](/assets/images/guides/markdown-cheatsheet/images.png)
+![minion][internal-source]
+
+[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 ```
 
 ```markdown title="External source example"
-![minion](https://octodex.github.com/images/minion.png)
+![minion][external-source]
+
+[external-source]: https://octodex.github.com/images/minion.png 'Title of the image'
 ```
 
 _Result:_
 
-![minion](https://octodex.github.com/images/minion.png)
+![minion][internal-source]
+
+[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the link'
 
 ---
 
 ## Embedding Images With Width Attributes
 
 ```markdown title="width=200 example"
-<img src="/assets/images/markdown-cheatsheet/example/minion.png" width=200>
+<img src="/assets/images/markdown-cheatsheet/minion.png" width=200 title="Minion">
 ```
 
 _Result:_
 
-<img src="/assets/images/markdown-cheatsheet/example/minion.png" width=200>
+<img src="/assets/images/markdown-cheatsheet/minion.png" width=200 title="Minion">

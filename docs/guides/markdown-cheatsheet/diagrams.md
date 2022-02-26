@@ -14,7 +14,7 @@ popular and flexible solution for drawing diagrams.
 
 ## Usage
 
-### Using flowcharts
+### Using Flowcharts
 
 [Flowcharts] are diagrams that represent workflows or processes. The steps
 are rendered as nodes of various kinds and are connected by edges, describing
@@ -44,7 +44,7 @@ graph LR
 
 [flowcharts]: https://mermaid-js.github.io/mermaid/#/flowchart
 
-### Using sequence diagrams
+### Using Sequence Diagrams
 
 [Sequence diagrams] describe a specific scenario as sequential interactions
 between multiple objects or actors, including the messages that are exchanged
@@ -80,7 +80,7 @@ sequenceDiagram
 
 [sequence diagrams]: https://mermaid-js.github.io/mermaid/#/sequenceDiagram
 
-### Using state diagrams
+### Using State Diagrams
 
 [State diagrams] are a great tool to describe the behavior of a system,
 decomposing it into a finite number of states, and transitions between those
@@ -120,7 +120,7 @@ stateDiagram-v2
 
 [state diagrams]: https://mermaid-js.github.io/mermaid/#/stateDiagram
 
-### Using class diagrams
+### Using Class Diagrams
 
 [Class diagrams] are central to object oriented programing, describing the
 structure of a system by modelling entities as classes and relationships between
@@ -190,7 +190,7 @@ classDiagram
 
 [class diagrams]: https://mermaid-js.github.io/mermaid/#/classDiagram
 
-### Using entity-relationship diagrams
+### Using Entity-Relationship Diagrams
 
 An [entity-relationship diagram] is composed of entity types and specifies
 relationships that exist between entities. It describes inter-related things in

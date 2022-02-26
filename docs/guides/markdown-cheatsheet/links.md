@@ -1,77 +1,90 @@
 ---
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Links examples and simple usage
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes links.
+tags: [markdown-cheatsheet, mkdocs, links]
 ---
 
 # Links
 
-## Basic link
-
-```markdown
-[Assemble](https://assemble.io)
-```
-
-Renders to (hover over the link, there is no tooltip):
-
-[Assemble](https://assemble.io)
-
 ## Link With Title
 
-```markdown
-[Upstage](https://github.com/upstage/ 'Visit Upstage!')
-```
+```markdown title='Link with Title Example'
+[My Github Page][github-url]
 
-Renders to (hover over the link, there should be a tooltip):
-
-[Upstage](https://github.com/upstage/ 'Visit Upstage!')
-
-## Relative Link
-
-```markdown
-[Relative Link](../index.md 'Relative Link')
+[github-url]: https://github.com/fire1ce 'Title of the link'
 ```
 
 _Result:_
 
-[Relative Link](../index.md 'Relative Link')
+[My Github Page][github-url]
 
-## Link With "Open In New Tab"
+[github-url]: https://github.com/fire1ce 'Title of the link'
 
-Use {target=\_blank} to a link
+---
 
-```markdown
-[Example](https://example.com){target=\_blank}
-```
+## Open In New Tab
 
-```markdown
-[Relative Link With New Tab](../index.md 'Opens new tab for relative home page'){target=\_blank}  
-[Reference Link With New Tab](https://github.com/fire1ce/3os.org/ 'Opens new tab for reference link'){target=\_blank}
-```
+Append `(target=\_blank)` to the end of the link.
 
-_Result:_
+```markdown title='Open In New Tab Link Example'
+[My Github Page][github-url]{target=\_blank}
 
-[Relative Link With New Tab](../index.md 'Opens new tab for relative home page'){target=\_blank}  
-[Reference Link With New Tab](https://github.com/fire1ce/3os.org/ 'Opens new tab for reference link'){target=\_blank}
-
-## Anchor Links
-
-Named anchors enable you to jump to the specified anchor point on the same page. For example, each of these chapters:
-
-```markdown
-- [Jumps to Links](#links)
-```
-
-will jump to these sections:
-
-- [Jumps to Links](#links)
-
-**NOTE** that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.
-
-## Mail To Link With Icon
-
-```markdown
-mail link with emoji [📧](mailto:example@example.com)
+[github-url]: https://github.com/fire1ce 'Title of the link'
 ```
 
 _Result:_
 
-mail link with emoji [📧](mailto:example@example.com)
+[My Github Page][github-url]{target=\_blank}
+
+[github-url]: https://github.com/fire1ce 'Title of the link'
+
+---
+
+_Result:_
+
+## Internal Anchor Links
+
+```markdown title='Internal Anchor Links Example'
+[Jumps to section in page][internal-anchor-link]
+
+[internal-anchor-link]: /guides/markdown-cheatsheet/tables-lists/#lists 'Internal Anchor Links'
+```
+
+_Result:_
+
+[Jumps to section in page][internal-anchor-link]
+
+[internal-anchor-link]: /guides/markdown-cheatsheet/tables-lists/#lists 'Internal Anchor Links'
+
+---
+
+## Image With Links
+
+```markdown title='Image With Links Example'
+[![This is Image with link][image-link]][url-link]{target=\_blank}
+
+[image-link]: /assets/images/markdown-cheatsheet/minion200x200.png 'Minion'
+[url-link]: https://github.com/fire1ce 'Go to Github'
+```
+
+_Result:_
+
+[![This is Image with link][image-link]][url-link]{target=\_blank}
+
+[image-link]: /assets/images/markdown-cheatsheet/minion200x200.png 'Minion'
+[url-link]: https://github.com/fire1ce 'Go to Github'
+
+---
+
+## `Mailto` Link
+
+```markdown title='Mailto Link Example'
+[Send Email][mail-to-link]
+
+[mail-to-link]: mailto:example@example.com 'Send Email'
+```
+
+_Result:_
+
+[Send Email][mail-to-link]
+
+[mail-to-link]: mailto:example@example.com 'Send Email'

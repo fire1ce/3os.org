@@ -32,7 +32,7 @@ the next line, indented by four spaces:
 
 ---
 
-### Changing the title
+### Changing The Title
 
 By default, the title will equal the type qualifier in titlecase. However, it
 can be changed by adding a quoted string containing valid Markdown (including
@@ -54,7 +54,7 @@ links, formatting, ...) after the type qualifier:
 
 ---
 
-### Removing the title
+### Removing The Title
 
 Similar to [changing the title], the icon and title can be omitted entirely by
 adding an empty string directly after the type qualifier. Note that this will
@@ -76,7 +76,7 @@ not work for [collapsible blocks]:
 
 ---
 
-### Collapsible blocks
+### Collapsible Blocks
 
 When [Details] is enabled and an admonition block is started with `???` instead
 of `!!!`, the admonition is rendered as a collapsible block with a small toggle
@@ -114,7 +114,7 @@ Adding a `+` after the `???` token renders the block expanded:
 
 ---
 
-### Supported types
+### Supported Types
 
 Following is a list of type qualifiers provided by Material for MkDocs, whereas
 the default type, and thus fallback for unknown type qualifiers, is `note`:

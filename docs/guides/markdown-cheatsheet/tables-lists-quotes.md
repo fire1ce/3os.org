@@ -1,9 +1,9 @@
 ---
-description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Markddown Tables and Markddown Lists.
-tags: [markdown-cheatsheet, mkdocs, tables, lists]
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Markddown Tables and Markddown Lists, Markdown Quotes.
+tags: [markdown-cheatsheet, mkdocs, tables, lists, quotes]
 ---
 
-# Tables & Lists
+# Tables, Lists and Quotes
 
 ## Tables
 
@@ -13,7 +13,7 @@ A table in Markdown consists of two parts: the header and the rows of data in th
 - (-) hyphens act as a delimiter row to separate the header row from the body.
 - (:) colon to align cell contents.
 
-```markdown
+```markdown title='Table Example'
 | **Option** | **Description**                            |
 | ---------- | ------------------------------------------ |
 | data       | path to data files to supply the data.     |
@@ -31,7 +31,7 @@ _Result:_
 
 ---
 
-### Column alignment
+### Column Alignment
 
 If you want to align a specific column to the `left`, `center` or `right`, you
 can use the [regular Markdown syntax] placing `:` characters at the beginning
@@ -107,7 +107,7 @@ Bullet point lists can be created by starting each line with an asterisk followe
 
 Example:
 
-```markdown
+```markdown title='Unordered List Example'
 - Lorem ipsum dolor sit amet
 - Consectetur adipiscing elit
 - Integer molestie lorem at massa
@@ -127,7 +127,7 @@ _Result:_
 
 Similarly, numbered lists can be created by starting each line with a number followed by a space and then the relevant text.
 
-```markdown
+```markdown title='Ordered List Example'
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
@@ -149,7 +149,7 @@ _Result:_
 
 ### Blocks List
 
-```markdown
+```markdown title='Blocks List Example'
 > - list under lists
 > - under lists
 ```
@@ -169,7 +169,7 @@ You can use Markdown to create a task list in any comment on GitHub. If you refe
 
 _Example:_
 
-```markdown
+```markdown title='Task List Example'
 - [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
 - [ ] Vestibulum convallis sit amet nisi a tincidunt
   - [x] In hac habitasse platea dictumst
@@ -186,3 +186,41 @@ _Result:_
   - [x] In scelerisque nibh non dolor mollis congue sed et metus
   - [ ] Praesent sed risus massa
 - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+
+---
+
+## Block Quotes
+
+For quoting blocks of content from another source within your document.
+
+Add `>` before any text you want to quote.
+
+```markdown title='Quoting Blocks Example'
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+```
+
+_Result:_
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+
+---
+
+### Nested Block Quotes
+
+```markdown title='Quoting Blocks Nested Example'
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+>
+> > Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctorodio
+> > non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+```
+
+_Result:_
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+>
+> > Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctorodio
+> > non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
