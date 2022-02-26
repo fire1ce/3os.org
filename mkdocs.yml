@@ -79,7 +79,7 @@ plugins:
   - external-markdown
   - redirects:
       redirect_maps:
-          'guides/openwrt/tipsandtricks' : 'infrastructure/openwrt/tipsandtricks.md'
+          'guides/openwrt/tipsandtricks.md' : 'infrastructure/openwrt/tipsandtricks.md'
           'guides/proxmox/igpu-passthrough-to-vm.md' : 'infrastructure/proxmox/igpu-passthrough-to-vm.md'
           'guides/proxmox/networking.md' : 'infrastructure/proxmox/networking.md'
           'guides/proxmox/pgu-passthrough-to-vm.md': 'infrastructure/proxmox/pgu-passthrough-to-vm.md'
