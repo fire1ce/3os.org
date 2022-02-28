@@ -14,9 +14,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: byrnereese/github-action-mkdocs-link-check@main
-      with:
-        use-verbose-mode: 'yes'
-        folder-path: 'docs/*'
+    - with:
+        file-extension: '.md'
+        verbose-mode: 'yes'
+        folder-path: 'docs'
+        synchronous: 'yes'
+        local-only: 'no'
+        recurse: 'yes'
 
   build:
     name: Deploy docs
