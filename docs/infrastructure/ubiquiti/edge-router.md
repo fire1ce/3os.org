@@ -158,7 +158,7 @@ cat /etc/hosts
 
 From the Dashboard, click Add Interface and select VLAN.
 
-![Interface](/assets/images/guides/ubiquiti/guestWifi/01. Interface.png)
+![Interface](/assets/images/guides/ubiquiti/guestWifi/01.Interface.png)
 
 Set up the VLAN ID as You like for this example will use id **1003** and attach it to the physical interface of your LAN. Give it an IP address in the range of a private IP block, but make sure you end it in a /24 to specify the proper subnet (I originally did /32 as I though it was supposed to be the exact IP address).
 
@@ -166,7 +166,7 @@ Set up the VLAN ID as You like for this example will use id **1003** and attach 
 
 Click on the Services tab. Click Add DHCP Server. Set it up similar to the image below.
 
-![DHCP](/assets/images/guides/ubiquiti/guestWifi/03. DHCP.png)
+![DHCP](/assets/images/guides/ubiquiti/guestWifi/03.DHCP.png)
 
 Click on the DNS tab under services. Click Add Listen interface and select the VLAN interface. Make sure you hit save.
 
@@ -210,13 +210,13 @@ Let's continue to set up the Uifi AP
 If you want to limit your Guest Users Bandwidth, head over to User Groups and create a new user group called Guest.
 Enter bandwidth limits that are appropriate for your Internet Speed. I used 6000 down and 2500 up.
 
-![Unifi_limit](/assets/images/guides/ubiquiti/guestWifi/12. Unifi_limit.png)
+![Unifi_limit](/assets/images/guides/ubiquiti/guestWifi/12.Unifi_limit.png)
 
 Now go to the Wireless Networks section and create a new network called “Guest” or whatever you want to call it.
 
 Make sure it is enabled, give it WiFi security key, check the “Guest Policy” option, enter the VLAN **Id you used previously** and choose the Guest User Group. Save!
 
-![Unifi_SSDID](/assets/images/guides/ubiquiti/guestWifi/13. Unifi_SSDID.png)
+![Unifi_SSDID](/assets/images/guides/ubiquiti/guestWifi/13.Unifi_SSDID.png)
 
 Done. Test Your New Guest Wifi by connecting to the Guest Wifi and browse to a website.
 
@@ -441,7 +441,7 @@ commit ; save
 
 Add DNS forwarding to the new vlan vtun0 to get DNS resolving.
 
-![DNS](/assets/images/guides/ubiquiti/guestWifi/14. DNS_F.png)
+![DNS](/assets/images/guides/ubiquiti/guestWifi/14.DNS_F.png)
 
 ### Exmaple for clinet.opvn Config
 
@@ -485,7 +485,7 @@ run from the same directory:
 ./speedtest-cli --no-pre-allocate
 ```
 
-based on [https://github.com/sivel/speedtest-cli](https://github.com/sivel/speedtest-cli "speedtest-cli")
+based on [https://github.com/sivel/speedtest-cli](https://github.com/sivel/speedtest-cli 'speedtest-cli')
 
 ## Enable NetFlow on EdgeRouter to UNMS
 
