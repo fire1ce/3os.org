@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       
-      # Runs Deploy MkDocs
+      # Deploy MkDocs
       - name: Deploy MkDocs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
@@ -28,4 +28,13 @@ jobs:
           EXTRA_PACKAGES: build-base
           # GITHUB_DOMAIN: github.myenterprise.com
           REQUIREMENTS: ./requirements.txt
+
+      # Clear Cloudfalre cache
+      - name: Clear Cloudflare cache
+        uses: Cyb3r-Jak3/action-cloudflare-cache@<Latest Release>
+        with:
+          # Zone is required by both methods
+          zone: ${{ secrets.CLOUDFLARE_ZONE }}
+          # Using API Token
+          api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
 
