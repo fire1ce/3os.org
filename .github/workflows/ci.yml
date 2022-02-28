@@ -16,7 +16,7 @@ jobs:
     - uses: byrnereese/github-action-mkdocs-link-check@main
       with:
         use-verbose-mode: 'yes'
-
+        folder-path: 'docs/*'
 
   build:
     name: Deploy docs
