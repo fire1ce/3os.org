@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: byrnereese/github-action-mkdocs-link-check@v1
+    - uses: byrnereese/github-action-mkdocs-link-check@main
       with:
         use-verbose-mode: 'yes'
         folder-path: 'docs/'
