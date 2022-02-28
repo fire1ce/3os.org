@@ -9,16 +9,6 @@ on:
     - cron: '0 4 * * *'
 
 jobs:
-  markdown-link-check:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: byrnereese/github-action-mkdocs-link-check@main
-      with:
-        use-verbose-mode: 'yes'
-        folder-path: 'docs'
-        recurse: 'yes'
-
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
