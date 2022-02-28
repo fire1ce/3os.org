@@ -8,8 +8,16 @@ on:
   schedule:
     - cron: '0 4 * * *'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: byrnereese/github-action-mkdocs-link-check@main
+      with:
+        use-verbose-mode: 'yes'
+        folder-path: 'docs/'
+
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
@@ -37,4 +45,6 @@ jobs:
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
           # Using API Token
           api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
+
+
 
