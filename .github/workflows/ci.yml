@@ -12,11 +12,11 @@ jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - uses: byrnereese/github-action-mkdocs-link-check@main
       with:
         use-verbose-mode: 'yes'
-        folder-path: 'docs/**/*.md'
+
 
   build:
     name: Deploy docs
