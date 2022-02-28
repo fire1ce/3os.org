@@ -70,9 +70,6 @@ plugins:
       decryption_failure_message: 'Nope!'
       encryption_info_message: ''
   - awesome-pages
-  - git-revision-date-localized:
-      type: date
-      fallback_to_build_date: true
   - tags:
       tags_file: tags.md
   - meta-descriptions
