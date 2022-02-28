@@ -31,7 +31,7 @@ jobs:
 
       # Clear Cloudfalre cache
       - name: Clear Cloudflare cache
-        uses: Cyb3r-Jak3/action-cloudflare-cache@<Latest Release>
+        uses: Cyb3r-Jak3/action-cloudflare-cache@master
         with:
           # Zone is required by both methods
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
