@@ -95,9 +95,9 @@ plugins:
 
 
 extra:
-  analytics:
-    provider: google
-    property: G-RJ1F4E5LH1
+  # analytics:
+  #   provider: google
+  #   property: G-RJ1F4E5LH1
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/fire1ce
