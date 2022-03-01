@@ -3,7 +3,7 @@ name: Link Snitch
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   URL: https://3os.org
@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out master
-        uses: actions/checkout@master
+      - name: Check out main
+        uses: actions/checkout@main
         with:
           fetch-depth: 20
       - name: Report broken links
