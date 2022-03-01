@@ -1,9 +1,11 @@
 name: Check Links
 on:
-  repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: "00 18 * * *"
+    branches:
+      - gh-pages
+  push:
+    branches:
+      - gh-pages
 
 jobs:
   linkChecker:
