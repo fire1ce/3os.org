@@ -11,7 +11,8 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      
+      - uses: peaceiris/actions-gh-pages@v3
 
       - name: Link Checker
         id: lychee
