@@ -19,6 +19,6 @@ jobs:
       - name: Check out master
         uses: actions/checkout@master
         with:
-          fetch-depth: 1
+          fetch-depth: 20
       - name: Report broken links
         uses: victoriadrake/link-snitch@master
