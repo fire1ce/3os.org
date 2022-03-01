@@ -1,12 +1,9 @@
 name: Check Links
 on:
+  repository_dispatch:
   workflow_dispatch:
-    branches:
-    - gh-pages
-
-
-
-
+  schedule:
+    - cron: "00 18 * * *"
 
 jobs:
   linkChecker:
@@ -15,11 +12,18 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Link Checker
+        id: lychee
         uses: lycheeverse/lychee-action@v1.3.1
-        with:
-          fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      # - name: Create Issue From File
+      #   if: ${{ steps.lychee.outputs.exit_code != 0 }}
+      #   uses: peter-evans/create-issue-from-file@v3
+      #   with:
+      #     title: Link Checker Report
+      #     content-filepath: ./lychee/out.md
+      #     labels: report, automated issue
 
 
 
