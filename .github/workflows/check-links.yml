@@ -14,7 +14,7 @@ jobs:
     steps:
       
       - uses: peaceiris/actions-gh-pages@v3
-        env:
+        with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Link Checker
         id: lychee
