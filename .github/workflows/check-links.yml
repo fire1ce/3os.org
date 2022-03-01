@@ -5,6 +5,7 @@ on:
       - gh-pages
   push:
     branches:
+      - main
       - gh-pages
 
 jobs:
