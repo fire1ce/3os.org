@@ -55,20 +55,6 @@ plugins:
   - exclude-search:
       exclude:
         - blog.md
-  - minify:
-      minify_html: true
-      minify_css: true
-      htmlmin_opts:
-          remove_comments: true
-      css_files:
-          - theme/css/extra.css
-  - encryptcontent:
-      title_prefix: ''
-      summary: 'Privet Content'
-      placeholder: 'Password '
-      password_button: True
-      decryption_failure_message: 'Nope!'
-      encryption_info_message: ''
   - awesome-pages
   - tags:
       tags_file: tags.md
