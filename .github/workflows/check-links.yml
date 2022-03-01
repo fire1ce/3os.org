@@ -1,29 +1,26 @@
 name: Check Links
 on:
   workflow_dispatch:
+    branches:
+    - gh-pages
   schedule:
     - cron: '0 4 * * *'
 
-jobs:
-  markdown-link-check:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.9]
-    environment:
-      name: main
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
 
-    - name: Check links
-      uses: byrnereese/github-action-mkdocs-link-check@main
-      with:
-        file-extension: '.md'
-        verbose-mode: 'no'
-        folder-path: 'docs'
-        synchronous: 'yes'
-        local-only: 'no'
-        recurse: 'yes'
+
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.3.1
+        with:
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 
 
