@@ -1,10 +1,12 @@
 name: Link Snitch
 
 on:
-  push:
-    branches:
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+      branches:
       - main
-
 env:
   URL: https://3os.org
   # FILENAME: report.yaml

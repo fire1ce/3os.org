@@ -7,7 +7,7 @@ site_description: >-
   tips...
 repo_url: https://github.com/fire1ce/3os.org
 repo_name: fire1ce/3os.org
-edit_uri: edit/master/docs/
+edit_uri: edit/main/docs/
 
 # Theme Configuration
 theme:
