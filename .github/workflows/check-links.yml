@@ -3,8 +3,7 @@ on:
   workflow_dispatch:
     branches:
     - gh-pages
-  schedule:
-    - cron: '0 4 * * *'
+
 
 
 
