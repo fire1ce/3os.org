@@ -37,10 +37,8 @@ jobs:
           checkName: deploy
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
-      - name: Do something with a passing deploy
+      - name: Clear Cloudflare cache with a passing deploy
         if: steps.wait-for-build.outputs.conclusion == 'success'
-      # Clear Cloudfalre cache
-      - name: Clear Cloudflare cache
         uses: Cyb3r-Jak3/action-cloudflare-cache@main
         with:
           # Zone is required by both methods
