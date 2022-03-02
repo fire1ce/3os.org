@@ -9,36 +9,36 @@ description: Gobuster CheatSheet - In this CheatSheet, you will find a series of
 ### dir Mode
 
 ```bash
-gobuster dir -u https://buffered.io -w ~/wordlists/shortlist.txt
+gobuster dir -u https://example.com -w ~/wordlists/shortlist.txt
 
 ```
 
 With content length
 
 ```bash
-gobuster dir -u https://buffered.io -w ~/wordlists/shortlist.txt -l
+gobuster dir -u https://example.com -w ~/wordlists/shortlist.txt -l
 ```
 
 ### dns Mode
 
 ```bash
-gobuster dns -d mysite.com -t 50 -w common-names.txt
+gobuster dns -d example.com -t 50 -w common-names.txt
 ```
 
 ```bash
-gobuster dns -d google.com -w ~/wordlists/subdomains.txt
+gobuster dns -d example.com-w ~/wordlists/subdomains.txt
 ```
 
 With Show IP
 
 ```bash
-gobuster dns -d google.com -w ~/wordlists/subdomains.txt -i
+gobuster dns -d example.com -w ~/wordlists/subdomains.txt -i
 ```
 
 Base domain validation warning when the base domain fails to resolve
 
 ```bash
-gobuster dns -d google.com -w ~/wordlists/subdomains.txt -i
+gobuster dns -d example.com -w ~/wordlists/subdomains.txt -i
 ```
 
 Wildcard DNS is also detected properly:
@@ -50,7 +50,7 @@ gobuster dns -d 0.0.1.xip.io -w ~/wordlists/subdomains.txt
 ### vhost Mode
 
 ```bash
-gobuster vhost -u https://mysite.com -w common-vhosts.txt
+gobuster vhost -u https://example.com -w common-vhosts.txt
 ```
 
 s3 Mode
