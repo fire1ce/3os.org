@@ -12,3 +12,4 @@ example@gmail.com
 you@gmail.com
 file:///github/workspace/docs/penetration-testing/cheatsheets/http:/google:ha.ckers.org
 file:///github/workspace/docs/penetration-testing/cheatsheets/http:/;URL=javascript:alert('XSS')
+javascript:alert('XSS')
