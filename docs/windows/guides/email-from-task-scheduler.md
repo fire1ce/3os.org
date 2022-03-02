@@ -2,10 +2,9 @@
 description: How to send emails from the windows task scheduler
 ---
 
-
 # Send Emails From The Windows Task Scheduler
 
-First, [download SendEmail](https://github.com/fire1ce/sendEmail-windwos-v1.56/archive/master.zip "SendEmail"), a free (and open source) tool for sending emails from the command line. Extract the downloaded archive into a folder on your computer.
+First, [download SendEmail](https://github.com/fire1ce/sendEmail-windwos-v1.56/archive/master.zip 'SendEmail'), a free (and open source) tool for sending emails from the command line. Extract the downloaded archive into a folder on your computer.
 
 ![SendEmails](/assets/images/windows/send-email/send-email1.png)
 
@@ -22,34 +21,34 @@ Finally, you’ll have to add the arguments required to authenticate with your S
 
 ### Server Options
 
-> * -f EMAIL – The email address you’re sending from.  
-> * -s SERVER:PORT – The SMTP server and port it requires.  
-> * -xu USERNAME – The username you need to authenticate with the SMTP server.  
-> * -xp PASSWORD – The password you need to authenticate with the SMTP server.  
-> * -o tls=yes – Enables TLS encryption. May be necessary for some SMTP servers.  
+> - -f EMAIL – The email address you’re sending from.
+> - -s SERVER:PORT – The SMTP server and port it requires.
+> - -xu USERNAME – The username you need to authenticate with the SMTP server.
+> - -xp PASSWORD – The password you need to authenticate with the SMTP server.
+> - -o tls=yes – Enables TLS encryption. May be necessary for some SMTP servers.
 
-__If you’re using Gmail’s SMTP servers, these are the server options you’ll need:__
+**If you’re using Gmail’s SMTP servers, these are the server options you’ll need:**
 
-> * -s smtp.gmail.com:587 -xu you@gmail.com -xp password -o tls=yes
+> - -s smtp.gmail.com:587 -xu you@gmail.com -xp password -o tls=yes
 
 Of course, you’ll have to enter your own email address and password here.
 
 ### Destination Options
 
-> * -t EMAIL – The destination email address. You can send an email to multiple addresses by including a space between each address after the -t option.  
-> * -cc EMAIL – Any addresses you’d like to CC on the email. You can specify multiple addresses by placing a space between each email address, just as with the -t command above.  
-> * -bcc EMAIL – The BCC version of the CC option above.  
+> - -t EMAIL – The destination email address. You can send an email to multiple addresses by including a space between each address after the -t option.
+> - -cc EMAIL – Any addresses you’d like to CC on the email. You can specify multiple addresses by placing a space between each email address, just as with the -t command above.
+> - -bcc EMAIL – The BCC version of the CC option above.
 
 ### Email Options
 
-> * -u SUBJECT – The subject of your email  
-> * -m BODY – The message body text of your email.  
-> * -a ATTACHMENT – The path of a file you’d like to attach. This is optional.  
+> - -u SUBJECT – The subject of your email
+> - -m BODY – The message body text of your email.
+> - -a ATTACHMENT – The path of a file you’d like to attach. This is optional.
 
-For example, let’s say your email address is you@gmail.com and you’d like to send an email to person@example.com. You’d use the following options:
+For example, let’s say your email address is example@gmail.com and you’d like to send an email to person@example.com. You’d use the following options:
 
 ```cmd
--f you@gmail.com -t person@example.com -u Subject -m This is the body text! -s smtp.gmail.com:587 -xu you@gmail.com -xp password -o tls=yes
+-f example@gmail.com -t person@example.com -u Subject -m This is the body text! -s smtp.gmail.com:587 -xu example@gmail.com -xp password -o tls=yes
 ```
 
 Once you’ve put together your options, copy and paste them into the Add arguments box.
