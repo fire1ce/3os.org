@@ -1,5 +1,7 @@
+# 3os.org
+
 [![CI](https://github.com/fire1ce/3os.org/actions/workflows/ci.yml/badge.svg)](https://github.com/fire1ce/3os.org/actions/workflows/ci.yml)
-[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://3os.org/markdown-cheatsheet/welcome/)
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://3os.org/guides/markdown-cheatsheet/about/)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fire1ce/3os.org/tree/master/src)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)
 
