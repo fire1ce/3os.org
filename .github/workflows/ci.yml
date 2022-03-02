@@ -29,6 +29,16 @@ jobs:
           # GITHUB_DOMAIN: github.myenterprise.com
           REQUIREMENTS: ./requirements.txt
 
+      - name: Wait for deploy to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-deploy
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: deploy
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Do something with a passing deploy
+        if: steps.wait-for-build.outputs.conclusion == 'success'
       # Clear Cloudfalre cache
       - name: Clear Cloudflare cache
         uses: Cyb3r-Jak3/action-cloudflare-cache@main
@@ -37,6 +47,7 @@ jobs:
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
           # Using API Token
           api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
+
 
 
 
