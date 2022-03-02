@@ -1,3 +1,12 @@
 http://192.168.1.1:8080
 https://help.ubnt.com/hc/en-us/articles/115015971688-EdgeRouter-OpenVPN-Server
 http://127.0.0.1:4444/
+http://localhost:4444/
+user@192.168.1.1
+http://192.168.1.2:8080/
+http://66.102.7.147/
+http://xss.rocks/xss.jpg
+http://www.google.com/ogle.com/
+http://ha.ckers.org@google/
+example@gmail.com
+you@gmail.com
