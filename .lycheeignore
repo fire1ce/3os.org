@@ -10,3 +10,5 @@ http://www.google.com/ogle.com/
 http://ha.ckers.org@google/
 example@gmail.com
 you@gmail.com
+file:///github/workspace/docs/penetration-testing/cheatsheets/http:/google:ha.ckers.org
+file:///github/workspace/docs/penetration-testing/cheatsheets/http:/;URL=javascript:alert('XSS')
