@@ -1,5 +1,5 @@
 ---
-description: penetration tests CheatSheet - In this CheatSheet, you will find a series of practical example commands for running penetration tests and getting the most of penetration tests.
+description: Penetration Tests CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Gobuster and getting the most of this powerful tool.
 ---
 
 # Cli Commands Collation

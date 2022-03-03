@@ -1,5 +1,5 @@
 ---
-description: Proxmox Tips and Tricks
+description: Proxmox Tips and Tricks - A collection of useful tips and tricks for Proxmox
 ---
 
 # Proxmox Tips and Tricks
