@@ -1,14 +1,23 @@
 # 3os.org
 
-[![CI](https://github.com/fire1ce/3os.org/actions/workflows/ci.yml/badge.svg)](https://github.com/fire1ce/3os.org/actions/workflows/ci.yml)
-[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://3os.org/guides/markdown-cheatsheet/about/)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fire1ce/3os.org/tree/master/src)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)
+[![Mkdocs Build][mkdocs-build-badge]][mkdocs-build-url]
+[![Made With Markdown][made-with-markdown-badge]][made-with-markdown-url]
+[![Contributions Welcome][contributions-welcome-badge]][contributions-welcome-url]
+[![MIT license][mit-license-badge]][mit-license-url]
 
 - The 3os.org is made and built with [MkDocs](https://www.mkdocs.org/)
 - Themed with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 - The `Master` branch contains the Source code before build
 - Contributions is welcome
+
+[mkdocs-build-badge]: https://github.com/fire1ce/3os.org/actions/workflows/mkdocs-build.yml/badge.svg
+[mkdocs-build-url]: https://github.com/fire1ce/3os.org/actions/workflows/mkdocs-build.yml
+[made-with-markdown-badge]: https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg
+[made-with-markdown-url]: https://3os.org/guides/markdown-cheatsheet/about/
+[contributions-welcome-badge]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
+[contributions-welcome-url]: https://github.com/fire1ce/3os.org/tree/master/src
+[mit-license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
+[mit-license-url]: https://mit-license.org/
 
 ## License
 
