@@ -1,21 +1,14 @@
 name: cloudflare-cache
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [pages-build-deployment, deploy, 'github-pages[bot]']
+    types: [completed]
+
 jobs:
   cloudflare-cache:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for deploy to succeed
-        uses: fountainhead/action-wait-for-check@v1.0.0
-        id: wait-for-deploy
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Deploy to GitHub Pages
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-
       - name: Clear Cloudflare cache with a passing deploy
         if: steps.wait-for-deploy.outputs.conclusion == 'success'
         uses: Cyb3r-Jak3/action-cloudflare-cache@main
