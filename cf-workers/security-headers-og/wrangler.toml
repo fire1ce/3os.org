@@ -1,0 +1,8 @@
+name = "security-headers-og"
+type = "javascript"
+
+account_id = "1922b009e1f403ee16c22aecb9978ff9"
+workers_dev = true
+route = "*3os.org/*"
+zone_id = "4f0cee2867cf17115584fd624410d0fb"
+compatibility_date = "2022-03-03"

@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "security-headers-og",
+  "version": "1.0.0",
+  "description": "This worker is used to add security headers and Open Graph html meta tags to the response.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "fire1ce <stas@3os.org>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
