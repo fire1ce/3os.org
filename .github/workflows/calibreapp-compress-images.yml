@@ -1,5 +1,5 @@
 
-name: Calibreapp Compress Images
+name: calibreapp-compress-images
 on:
   pull_request:
     paths:

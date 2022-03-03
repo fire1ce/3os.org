@@ -1,19 +1,16 @@
-name: cloudflare-cache
+name: cloudflare-clear-cache
 
 on:
   workflow_run:
-    workflows: [deploy]
+    workflows: [pages-build-deployment, 'github-pages[bot]']
     types: [completed]
 
 jobs:
   cloudflare-cache:
     runs-on: ubuntu-latest
     steps:
-      - name: Clear Cloudflare cache with a passing deploy
-        if: steps.wait-for-deploy.outputs.conclusion == 'success'
+      - name: Clear Cloudflare Cache
         uses: Cyb3r-Jak3/action-cloudflare-cache@main
         with:
-          # Zone is required by both methods
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
-          # Using API Token
           api_token: ${{ secrets.CLOUDFLARE_TOKEN }}

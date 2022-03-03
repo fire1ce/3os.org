@@ -1,5 +1,5 @@
 
-name: CI
+name: mkdocs-deploy
 
 on:
   push:
@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
-
-      
       # Deploy MkDocs
       - name: Deploy MkDocs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
