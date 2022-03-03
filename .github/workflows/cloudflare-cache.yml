@@ -2,7 +2,7 @@ name: cloudflare-cache
 
 on:
   workflow_run:
-    workflows: [pages-build-deployment, deploy, 'github-pages[bot]']
+    workflows: [deploy]
     types: [completed]
 
 jobs:
