@@ -2,7 +2,7 @@ name: cloudflare-clear-cache
 
 on:
   workflow_run:
-    workflows: [pages-build-deployment, 'github-pages[bot]']
+    workflows: [pages-build-deployment]
     types: [completed]
 
 jobs:

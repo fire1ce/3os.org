@@ -2,10 +2,11 @@ name: broken-link-checker
 
 
 on:
+  push:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: "00 18 * * *"
+    - cron: '0 4 * * *'
 
 jobs:
   linkChecker:
