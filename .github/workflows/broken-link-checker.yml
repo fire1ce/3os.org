@@ -2,9 +2,6 @@ name: broken-link-checker
 
 
 on:
-  workflow_run:
-    workflows: [pages-build-deployment]
-    types: [completed]
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * *'
