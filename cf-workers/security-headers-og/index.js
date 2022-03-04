@@ -46,11 +46,11 @@ if (title) {
 <meta property="og:title" content="${title[1]}"/>
 <meta property="og:type" content="website">
 <meta property="og:url" content="${req.url}">
-<meta property="og:image" content="https://3os.org/theme/preview.png">
+<meta property="og:image" content="https://3os.org/theme/3os-preview.png">
 <meta property="twitter:title" content="${title[1]}">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="${req.url}">
-<meta property="twitter:image" content="https://3os.org/theme/preview.png">`,
+<meta property="twitter:image" content="https://3os.org/theme/3os-preview.png">`,
   );
 }
 
