@@ -3,8 +3,7 @@ site_name: 3os
 site_url: https://3os.org
 site_author: Stas Yakobov
 site_description: >-
-  Collocation of technical documentation, guides, knowledge, examples and
-  tips...
+  Collocation of technical documentation and guides for devops, developers, pentesters, systems administrators and other IT professionals.
 repo_url: https://github.com/fire1ce/3os.org
 repo_name: fire1ce/3os.org
 edit_uri: edit/main/docs/
