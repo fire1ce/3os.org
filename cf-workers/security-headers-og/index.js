@@ -40,28 +40,26 @@ const description = html.match(/<meta name="description" content="([^<]*)">/); /
 if (title) {
   html = html.replace(
     title[0],
-    `
-<title>${title[1]}</title>
-<meta name="og:title" content="${title[1]}" />
-<meta name="twitter:title" content="${title[1]}" />
+`<title>${title[1]}</title>
+<meta name="og:title" content="${title[1]}"/>
+<meta name="twitter:title" content="${title[1]}"/>
+<meta property="og:title" content="${title[1]}"/>
 <meta property="og:type" content="website">
 <meta property="og:url" content="${req.url}">
 <meta property="og:image" content="https://3os.org/theme/preview.png">
+<meta property="twitter:title" content="${title[1]}">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="${req.url}">
-<meta property="twitter:image" content="https://3os.org/theme/preview.png">
-`,
+<meta property="twitter:image" content="https://3os.org/theme/preview.png">`,
   );
 }
 
 if (description) {
   html = html.replace(
     description[0],
-    `
-<meta name="description" content="${description[1]}" />
+`<meta name="description" content="${description[1]}" />
 <meta property="og:description" content="${description[1]}">
-<meta property="twitter:description" content="${description[1]}">
-`,
+<meta property="twitter:description" content="${description[1]}">`,
   );
 } // loop over COMBINED headers, magic????
 
