@@ -24,16 +24,25 @@ config.theme.palette %} {% set font = config.theme.font %}
     max-width: 100%;
   }
 
+  .md-container {
+    background-color: var(--md-code-bg-color);
+  }
+
   .tx-container {
     background-color: var(--md-primary-fg-color);
-    background-image: linear-gradient(to bottom, transparent, transparent, #fff),
+    background-image: linear-gradient(
+        to bottom,
+        transparent,
+        transparent,
+        var(--md-code-bg-color)
+      ),
       linear-gradient(
         to top,
         transparent,
         transparent,
         var(--md-primary-fg-color)
       ),
-      url('/theme/circuitboard.svg');
+      url('circuitboard.svg');
     background-repeat: no-repeat;
   }
 
@@ -53,36 +62,42 @@ config.theme.palette %} {% set font = config.theme.font %}
     padding-bottom: 6rem;
   }
 
+  /* inlustarton image */
+
+  .tx-hero__image {
+    filter: grayscale(85%);
+  }
+  /* main page buttons */
   .tx-hero .md-button {
     margin-top: 0.5rem;
     margin-right: 0.5rem;
-    color: var(--md-primary-bg-color);
     width: 150px;
     border-color: var(--md-primary-bg-color);
+    color: var(--md-primary-bg-color);
   }
 
   .tx-hero .md-button--primary {
     background-color: var(--md-primary-bg-color);
-    color: rgb(77, 135, 168);
     border-color: var(--md-primary-bg-color);
+    color: var(--md-primary-fg-color);
   }
 
-  .tx-hero .md-button:focus,
-  .tx-hero .md-button:hover {
-    background-color: var(--md-accent-fg-color);
-    color: var(--md-default-bg-color);
-    border-color: var(--md-accent-fg-color);
+  .tx-hero .md-button:is(:focus, :hover) {
+    background-color: var(--md-primary-fg-color--dark);
+    border-color: var(--md-primary-fg-color--dark);
+    color: var(--md-accent-bg-color);
   }
 
+  /* main feature items */
   .feature-item h2 svg {
     height: 30px;
     float: left;
     margin-right: 10px;
     transform: translateY(10%);
+    fill: var(--md-default-fg-color);
   }
 
   .feature-item {
-    /* font-family: "Lato", sans-serif; */
     font-weight: 300;
     box-sizing: border-box;
     padding: 0 15px;
@@ -90,7 +105,7 @@ config.theme.palette %} {% set font = config.theme.font %}
   }
 
   .feature-item h2 {
-    color: #333;
+    color: var(--md-default-fg-color);
     font-weight: 300;
     font-size: 25px;
     white-space: nowrap;
@@ -107,7 +122,7 @@ config.theme.palette %} {% set font = config.theme.font %}
     line-height: 1.8em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    color: #111;
+    color: var(--md-default-fg-color);
     margin: 0 0 10px;
     display: block;
   }
@@ -256,11 +271,7 @@ config.theme.palette %} {% set font = config.theme.font %}
   <div class="md-grid md-typeset">
     <div class="tx-hero">
       <div class="tx-hero__image">
-        <img
-          src="/theme/illustration.svg"
-          alt="illustration"
-          draggable="false"
-        />
+        <img src="illustration.svg" alt="illustration" draggable="false" />
       </div>
       <div class="tx-hero__content">
         <h1>3os Project</h1>

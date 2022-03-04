@@ -12,7 +12,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   highlightjs: true
-  custom_dir: docs/theme
+  custom_dir: theme
   language: en
   features:
     - navigation.tabs
@@ -20,6 +20,7 @@ theme:
     - navigation.top
     - navigation.indexes
     - navigation.tracking
+    - navigation.sections
     - search.suggest
     - search.highlight
     - search.share
@@ -27,13 +28,13 @@ theme:
   palette:
     - media: '(prefers-color-scheme: light)'
       scheme: default
-      primary: indigo
+      primary: teal
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: '(prefers-color-scheme: dark)'
       scheme: slate
-      primary: blue grey
+      primary: teal
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
@@ -43,8 +44,8 @@ theme:
   favicon: assets/favicon.png
 # Custom theme additions
 extra_css:
-  - theme/css/fonts.css
-  - theme/css/extra.css
+  - css/fonts.css
+  - css/extra.css
 
 # Plugins
 plugins:
