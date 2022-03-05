@@ -85,6 +85,6 @@ _Result:_
 
 _Result:_
 
-[Send Email][mail-to-link]{:rel=“nofollow”}
+[Send Email][mail-to-link]{:rel=nofollow}
 
 [mail-to-link]: mailto:example@example.com 'Send Email'
