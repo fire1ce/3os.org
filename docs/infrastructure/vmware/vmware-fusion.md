@@ -58,7 +58,7 @@ python -m SimpleHTTPServer 4444
     <img src="/assets/images/penetration-testing/vmwareFusion/pythonServerExmaple.jpg" alt="python server on port 4444">
 </div>
 
-Now you can test it on the Host machine by browsing to http://localhost:4444 or http://127.0.0.1:4444
+Now you can test it on the Host machine by browsing to `http://localhost:4444` or `http://127.0.0.1:4444`
 
 <div style="width:90%; margin:0 auto">
     <img src="/assets/images/penetration-testing/vmwareFusion/host.jpg" alt="localhost forwarding">

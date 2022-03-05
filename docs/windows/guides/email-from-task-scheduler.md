@@ -45,7 +45,7 @@ Of course, you’ll have to enter your own email address and password here.
 > - -m BODY – The message body text of your email.
 > - -a ATTACHMENT – The path of a file you’d like to attach. This is optional.
 
-For example, let’s say your email address is example@gmail.com and you’d like to send an email to person@example.com. You’d use the following options:
+For example, let’s say your email address is example@gmail.com and you’d like to send an email to `person@example.com`. You’d use the following options:
 
 ```cmd
 -f example@gmail.com -t person@example.com -u Subject -m This is the body text! -s smtp.gmail.com:587 -xu example@gmail.com -xp password -o tls=yes

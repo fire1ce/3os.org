@@ -81,7 +81,6 @@ nmap -sn -v 192.168.0.0/24
 
 ## OS Detection
 
-
 | Switch            | Description                          | Example                                                                                              |
 | ----------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------- |
 | -O                | nmap 192.168.1.1 -O                  | Remote OS detection using TCP/IP stack fingerprinting                                                |
@@ -91,7 +90,6 @@ nmap -sn -v 192.168.0.0/24
 | -A                | nmap 192.168.1.1 -A                  | Enables OS detection, version detection, script scanning, and traceroute                             |
 
 ## Timing and Performance
-
 
 | Switch                                                       | Description          | Example                                                                                     |
 | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------------------------------------- |
@@ -118,7 +116,7 @@ nmap -sn -v 192.168.0.0/24
 | -sC              | nmap 192.168.1.1 -sC                                                      | Scan with default NSE scripts. Considered useful for discovery and safe |
 | --script default | nmap 192.168.1.1 --script default                                         | Scan with default NSE scripts. Considered useful for discovery and safe |
 | --script         | nmap 192.168.1.1 --script=banner                                          | Scan with a single script. Example banner                               |
-| --script         | nmap 192.168.1.1 --script=http*                                           | Scan with a wildcard. Example http                                      |
+| --script         | nmap 192.168.1.1 --script=http\*                                          | Scan with a wildcard. Example http                                      |
 | --script         | nmap 192.168.1.1 --script=http,banner                                     | Scan with two scripts. Example http and banner                          |
 | --script         | nmap 192.168.1.1 --script "not intrusive"                                 | Scan default, but remove intrusive scripts                              |
 | --script-args    | nmap --script snmp-sysdescr --script-args snmpcommunity=admin 192.168.1.1 | NSE script with arguments                                               |
@@ -131,22 +129,22 @@ nmap -sn -v 192.168.0.0/24
 | nmap -n -Pn -p 80 --open -sV -vvv --script banner,http-title -iR 1000                                                | Fast search for random web servers             |
 | nmap -Pn --script=dns-brute domain.com                                                                               | Brute forces DNS hostnames guessing subdomains |
 | nmap -n -Pn -vv -O -sV --script smb-enum*,smb-ls,smb-mbenum,smb-os-discovery,smb-s*,smb-vuln*,smbv2* -vv 192.168.1.1 | Safe SMB scripts to run                        |
-| nmap --script whois* domain.com                                                                                      | Whois query                                    |
+| nmap --script whois\* domain.com                                                                                     | Whois query                                    |
 | nmap -p80 --script http-unsafe-output-escaping scanme.nmap.org                                                       | Detect cross site scripting vulnerabilities    |
 | nmap -p80 --script http-sql-injection scanme.nmap.org                                                                | Check for SQL injections                       |
 
 ## Firewall / IDS Evasion and Spoofing
 
-| Switch        | Description                                                                 | Example                                                                                         |
-| ------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| -f            | nmap 192.168.1.1 -f                                                         | Requested scan (including ping scans) use tiny fragmented IP packets. Harder for packet filters |
-| --mtu         | nmap 192.168.1.1 --mtu 32                                                   | Set your own offset size                                                                        |
-| -D            | nmap -D 192.168.1.101,192.168.1.102, 192.168.1.103,192.168.1.23 192.168.1.1 | Send scans from spoofed IPs                                                                     |
-| -D            | nmap -D decoy-ip1,decoy-ip2,your-own-ip,decoy-ip3,decoy-ip4 remote-host-ip  | Above example explained                                                                         |
-| -S            | nmap -S www.microsoft.com www.facebook.com                                  | Scan Facebook from Microsoft (-e eth0 -Pn may be required)                                      |
-| -g            | nmap -g 53 192.168.1.1                                                      | Use given source port number                                                                    |
-| --proxies     | nmap --proxies http://192.168.1.1:8080, http://192.168.1.2:8080 192.168.1.1 | Relay connections through HTTP/SOCKS4 proxies                                                   |
-| --data-length | nmap --data-length 200 192.168.1.1                                          | Appends random data to sent packets                                                             |
+| Switch        | Description                                                                     | Example                                                                                         |
+| ------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| -f            | nmap 192.168.1.1 -f                                                             | Requested scan (including ping scans) use tiny fragmented IP packets. Harder for packet filters |
+| --mtu         | nmap 192.168.1.1 --mtu 32                                                       | Set your own offset size                                                                        |
+| -D            | nmap -D 192.168.1.101,192.168.1.102, 192.168.1.103,192.168.1.23 192.168.1.1     | Send scans from spoofed IPs                                                                     |
+| -D            | nmap -D decoy-ip1,decoy-ip2,your-own-ip,decoy-ip3,decoy-ip4 remote-host-ip      | Above example explained                                                                         |
+| -S            | nmap -S www.microsoft.com www.facebook.com                                      | Scan Facebook from Microsoft (-e eth0 -Pn may be required)                                      |
+| -g            | nmap -g 53 192.168.1.1                                                          | Use given source port number                                                                    |
+| --proxies     | nmap --proxies `http://192.168.1.1:8080`, `http://192.168.1.2:8080` 192.168.1.1 | Relay connections through HTTP/SOCKS4 proxies                                                   |
+| --data-length | nmap --data-length 200 192.168.1.1                                              | Appends random data to sent packets                                                             |
 
 ### Example IDS Evasion command
 
