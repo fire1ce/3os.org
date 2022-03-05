@@ -1,26 +1,85 @@
-<div data-md-component="announce">
-  {% if self.announce() %}
-  <aside class="md-banner">
-    <div class="md-banner__inner md-grid md-typeset">
-      {% block announce %}{% endblock %}
+<div class="announcement">
+  <div class="message">
+    <div class="message-item">
+      <span class="twemoji"> {% include ".icons/fontawesome/solid/comments.svg" %} </span>
     </div>
-  </aside>
-  {% endif %}
+    <div class="message-item">
+      <div>We updated our design. New features coming soon...</div>
+    </div>
+  </div>
+  <button id="close" onclick="hideClicked()"">close</button>
 </div>
 
-<a href="https://twitter.com/squidfunk">
-  For updates follow <strong>@squidfunk</strong> on
-  <span class="twemoji twitter">
-    {% include ".icons/fontawesome/brands/twitter.svg" %}
-  </span>
-  <strong>Twitter</strong>
-</a>
+<!-- hide announcement -->
+<script>
+  // cname - cookie name, cvalue - cookie value, exdays - expiration days
+  const cname = 'hide-announcement';
+  const cvalue = 'true';
+  const exdays = 1;
+
+  // hide announcement on click
+  function hideClicked() {
+    const mdBanner = document.querySelector('.md-banner');
+    mdBanner.setAttribute('style', 'display: none');
+    // call function to set cookie
+    setCookie(cname, cvalue, exdays);
+  }
+
+  // show announcement if cookie is not set
+  function showAnnouncement() {
+    const mdBanner = document.querySelector('.md-banner');
+    mdBanner.setAttribute('style', 'display: block');
+  }
+
+  // check if cookie is set and if not show announcement
+  if (document.cookie.indexOf(cname + '=true') === -1) {
+    showAnnouncement();
+  }
+
+  // set cookie with 24 hours expiration
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    var expires = 'expires=' + d.toUTCString();
+    document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+  }
+
+  // function to get cookie
+  function getCookie(cname) {
+    var name = cname + '=';
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return '';
+  }
+</script>
 
 <style>
+  .announcement {
+    display: flex;
+    justify-content: space-between;
+  }
+  .message {
+    display: flex;
+    flex-direction: row;
+  }
+  .message-item {
+    margin: 0.2em;
+  }
+
   .md-banner {
+    display: none;
     overflow: auto;
     color: var(--md-footer-fg-color);
-    background-color: var(--md-footer-bg-color);
+    background-color: #202020;
   }
   @media print {
     .md-banner {
@@ -32,8 +91,46 @@
     background: var(--md-typeset-mark-color);
   }
   .md-banner__inner {
-    margin: px2rem(12px) auto;
-    padding: 0 px2rem(16px);
-    font-size: px2rem(14px);
+    margin: 0.2rem auto;
+    padding: 0 .8rem;
+    font-size: 0.7rem;
+  }
+
+  /* close button */
+  #close {
+    overflow: hidden;
+    position: relative;
+    border: none;
+    padding: 0;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--md-primary-bg-color);
+    font: inherit;
+    text-indent: 100%;
+    cursor: pointer;
+  }
+  #close:focus {
+    outline: solid 0 transparent;
+    box-shadow: 0 0 0 2px var(--md-primary-fg-color--light);
+  }
+  #close:hover {
+    background: var(--md-code-fg-color);
+  }
+  #close:before,
+  #close:after {
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 0.0625em);
+    width: 0.125em;
+    height: 70%;
+    border-radius: 0.125em;
+    transform: rotate(45deg);
+    background: currentcolor;
+    content: '';
+  }
+  #close:after {
+    transform: rotate(-45deg);
   }
 </style>
