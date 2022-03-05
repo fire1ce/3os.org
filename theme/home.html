@@ -66,8 +66,6 @@ config.theme.palette %} {% set font = config.theme.font %}
 
   .tx-hero__image {
     filter: grayscale(85%);
-    height: auto;
-    width: auto;
   }
   /* main page buttons */
   .tx-hero .md-button {
@@ -273,7 +271,8 @@ config.theme.palette %} {% set font = config.theme.font %}
   <div class="md-grid md-typeset">
     <div class="tx-hero">
       <div class="tx-hero__image">
-        <img src="illustration.svg" alt="illustration" draggable="false" />
+        <img src="illustration.svg" alt="illustration width="auto" height="auto"
+        draggable="false" />
       </div>
       <div class="tx-hero__content">
         <h1>3os Project</h1>
