@@ -60,6 +60,10 @@ plugins:
       tags_file: tags.md
   - meta-descriptions
   - external-markdown
+  - minify:
+    minify_html: true
+    htmlmin_opts:
+        remove_comments: true
   - redirects:
       redirect_maps:
           'guides/openwrt/tipsandtricks.md' : 'infrastructure/openwrt/tipsandtricks.md'
