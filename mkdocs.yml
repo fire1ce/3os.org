@@ -16,7 +16,7 @@ theme:
   language: en
   features:
     - navigation.tabs
-    - navigation.instant
+    # - navigation.instant
     - navigation.top
     - navigation.indexes
     - navigation.tracking
