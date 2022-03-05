@@ -1,5 +1,11 @@
-http://192.168.1.1:8080
+https://developers.cloudflare.com/workers/
+https://www.dslreports.com/speedtest
 https://help.ubnt.com/hc/en-us/articles/115015971688-EdgeRouter-OpenVPN-Server
+
+example@gmail.com
+you@gmail.com
+
+http://192.168.1.1:8080
 http://127.0.0.1:4444/
 http://localhost:4444/
 user@192.168.1.1
@@ -8,10 +14,7 @@ http://66.102.7.147/
 http://xss.rocks/xss.jpg
 http://www.google.com/ogle.com/
 http://ha.ckers.org@google/
-example@gmail.com
-you@gmail.com
 file:///github/workspace/docs/penetration-testing/cheatsheets/http:/google:ha.ckers.org
 file:///github/workspace/docs/penetration-testing/cheatsheets/http:/;URL=javascript:alert('XSS')
 javascript:alert('XSS')
 URL=javascript:alert('XSS')
-https://developers.cloudflare.com/workers/
