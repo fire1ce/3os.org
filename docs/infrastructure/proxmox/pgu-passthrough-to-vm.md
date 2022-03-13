@@ -6,13 +6,13 @@ description: Proxmox GPU passthrough to VM guide
 
 Hardware Requirements:
 
-* VT-d
-* Interrupt mapping
-* UEFI BIOS
+- VT-d
+- Interrupt mapping
+- UEFI BIOS
 
 ## Configuring Proxmox
 
-__Configuring the Grub__
+**Configuring the Grub**
 Assuming you are using an Intel CPU, either SSH directly into your Proxmox server.
 
 Edit
@@ -32,13 +32,13 @@ Then change it to look like this:
 === "For Intel CPU"
 
     ``` bash
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction video=efifb:off"
     ```
 
 === "For AMD CPU"
 
     ``` bash
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on"
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt pcie_acs_override=downstream,multifunction video=efifb:off"
     ```
 
 Save the config changed and then update GRUB.
@@ -96,13 +96,13 @@ lspci -v
 
 Your shell window should output a bunch of stuff. Look for the line(s) that show your video card. It'll look something like this:
 
-__01:00.0__ VGA compatible controller: NVIDIA Corporation GP104 [GeForce GTX 1070] (rev a1) (prog-if 00 [VGA controller])
+**01:00.0** VGA compatible controller: NVIDIA Corporation GP104 [GeForce GTX 1070] (rev a1) (prog-if 00 [VGA controller])
 
-__01:00.1__ Audio device: NVIDIA Corporation GP104 High Definition Audio Controller (rev a1)
+**01:00.1** Audio device: NVIDIA Corporation GP104 High Definition Audio Controller (rev a1)
 
-Make note of the first set of numbers (e.g. __01:00.0__ and __01:00.1__). We'll need them for the next step.
+Make note of the first set of numbers (e.g. **01:00.0** and **01:00.1**). We'll need them for the next step.
 
-Run the command below. Replace __01:00__ with whatever number was next to your GPU when you ran the previous command:
+Run the command below. Replace **01:00** with whatever number was next to your GPU when you ran the previous command:
 
 ```bash
 lspci -n -s 01:00
@@ -110,12 +110,12 @@ lspci -n -s 01:00
 
 Doing this should output your GPU card's Vendor IDs, usually one ID for the GPU and one ID for the Audio bus. It'll look a little something like this
 
-__01:00.0 0000: 10de:1b81 (rev a1)__
-__01:00.1 0000: 10de:10f0 (rev a1)__
+**01:00.0 0000: 10de:1b81 (rev a1)**
+**01:00.1 0000: 10de:10f0 (rev a1)**
 
-What we want to keep, are these vendor id codes: __10de:1b81__ and __10de:10f0__.
+What we want to keep, are these vendor id codes: **10de:1b81** and **10de:10f0**.
 
-Now we add the GPU's vendor id's to the VFIO __(remember to replace the id's with your own!)__:
+Now we add the GPU's vendor id's to the VFIO **(remember to replace the id's with your own!)**:
 
 ```bash
 echo "options vfio-pci ids=10de:1b81,10de:10f0 disable_vga=1"> /etc/modprobe.d/vfio.conf
@@ -144,41 +144,48 @@ cd /var/lib/vz/template
 wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
 ```
 
-Mount the __virtio-win.iso__ as a second cd before staring vm for the first time (you will need to install Hard Drive Drivers for windows).
+Mount the **virtio-win.iso** as a second cd before staring vm for the first time (you will need to install Hard Drive Drivers for windows).
 
 Create a new vm - follow the screenshots for configuration:
 
 1:
+
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_create_os.png" alt="terminal screenshot">
 </div>
 
 2:
+
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_create_system.png" alt="terminal screenshot">
 </div>
 
 3:
+
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_create_hardDisk.png" alt="terminal screenshot">
 </div>
 
 4:
+
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_create_cpu.png" alt="terminal screenshot">
 </div>
 
 5:
+
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_create_memory.png" alt="terminal screenshot">
 </div>
 
 6:
+
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_create_network.png" alt="terminal screenshot">
 </div>
 
 7:
+
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_create_network.png" alt="terminal screenshot">
 </div>
@@ -216,18 +223,17 @@ After the first boot run the installer from virtio-win disk so the windows will 
 
 At this point you should download the GPU Drivers and install them.
 
-__For the GPU Passthrough to work you will need to connect a real screen or use a dongle to mimic a real display.__
+**For the GPU Passthrough to work you will need to connect a real screen or use a dongle to mimic a real display.**
 
-__Enable Remote Desktop to control the vm remotely__
+**Enable Remote Desktop to control the vm remotely**
 
 At this point we will power-off the vm, set the Display to none - at this point we will lose the "console" noVNC option at proxmox.
 
 Since the vm now has only one gpu (PCI Passthrough), all the output will be forwarded to this card.
 
-Here is my final screenshot of the VM's Hardware configuration: 
+Here is my final screenshot of the VM's Hardware configuration:
 
 <div style="width:100%; margin:0 auto">
    <img src="/assets/images/guides/proxmox/vm_final.png"
     alt="terminal screenshot">
 </div>
-
