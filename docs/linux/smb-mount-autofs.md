@@ -14,7 +14,7 @@ nano /etc/auto.cifs
 Add this to the file: ("media" - is any name for your mount)
 
 ```bash
-media    -fstype=cifs,rw,noperm,vers=3.0,credentials=/etc/.credentials.txt    ://oscar.3os.re/ActiveShare/Media
+active-share    -fstype=cifs,rw,noperm,vers=3.0,credentials=/etc/.credentials.txt    ://oscar.3os.re/active-share
 ```
 
 Exit and save:
