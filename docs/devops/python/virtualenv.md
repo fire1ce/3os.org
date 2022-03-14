@@ -6,10 +6,10 @@ tags: [python, virtualenv]
 
 # Virtualenv
 
-## Avout Python Virtual Environment - **virtualenv**
+## About Python Virtual Environment - **virtualenv**
 
 **virtualenv** is a tool to create isolated Python environments. Since Python 3.3, a subset of it has been integrated into the standard library under the venv module.
-Using **virtualenv** is very useful for creating isolated Python environments for your projectsl,it will allow you installing Python packages and modules in a separate location from the rest of your host os wiout conflicting versions.
+Using **virtualenv** is very useful for creating isolated Python environments for your project,it will allow you installing Python packages and modules in a separate location from the rest of your host os without conflicting versions.
 
 ## Install virtualenv
 
@@ -38,7 +38,7 @@ virtualenv venv
     you can use any name insted of **venv**
     You can also use a Python interpreter of your choice
 
-Exmaple of creating a virtual environment with Python 2.7 environment:
+Example of creating a virtual environment with Python 2.7 environment:
 
 ```shell
 virtualenv -p /usr/bin/python2.7 venv
@@ -60,7 +60,7 @@ deactivate
 
 ## Check the Python Version in the Virtual Environment
 
-In oder to check the Python version in the virtual environment, we can run the following command then the virtual environment will is activated:
+In order to check the Python version in the virtual environment, we can run the following command then the virtual environment will is activated:
 
 ```shell
 which python
