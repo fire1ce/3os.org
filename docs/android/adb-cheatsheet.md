@@ -1,24 +1,28 @@
 ---
-description: ADB CheatSheet - In this CheatSheet, you will find a series of practical example commands for running ADB and getting the most of Android Debug Bridge powerful tool.
+description: ADB Cheat Sheet includes commands for ADB, Android Debug Bridge, is a command-line utility included with Google's Android SDK. ADB can control your device over USB from a computer.
+template: comments.html
+tags: [android, adb, cheat-sheet]
 ---
 
-# ADB CheatSheet
+# ADB Cheat Sheet
+
+ADB, Android Debug Bridge, is a command-line utility included with Google's Android SDK. ADB can control your device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands, and more. ADB is a powerful tool that can be used to control your Android device from a computer. Below are some of the most common commands you can use with ADB and their usage. You can find more information about ADB and its usage by visiting the [official website](https://developer.android.com/studio/command-line/adb.html).
 
 ## Common ADB Commands
 
-Push a file to Download folder of the Android Device
+### Push a file to Download folder of the Android Device
 
 ```bash
 adb push example.apk /mnt/sdcard/Download/
 ```
 
-Lists all the installed packages and get the full paths
+### Lists all the installed packages and get the full paths
 
 ```bash
 adb shell pm list packages -f
 ```
 
-Pulls a file from android device
+### Pulls a file from android device
 
 ```bash
 adb pull /mnt/sdcard/Download/example.apk
@@ -26,13 +30,13 @@ adb pull /mnt/sdcard/Download/example.apk
 
 ---
 
-Install apk from host to Android device
+### Install apk from host to Android device
 
 ```bash
 adb shell install example.apk
 ```
 
-Install apk from Android device storage
+### Install apk from Android device storage
 
 ```bash
 adb shell install /mnt/sdcard/Download/example.apk
@@ -40,7 +44,7 @@ adb shell install /mnt/sdcard/Download/example.apk
 
 ---
 
-Set network proxy
+### Set network proxy
 
 ```bash
 adb shell settings put global http_proxy <address>:<port>
@@ -52,7 +56,7 @@ Disable network proxy
 adb shell settings put global http_proxy :0
 ```
 
-## ADB Basics
+## ADB Basics Commands
 
 | Command                             | Description                                 |
 | ----------------------------------- | ------------------------------------------- |
