@@ -14,6 +14,12 @@ hide:
 
 ---
 
+## New Design and new features (15/03/22)
+
+> I've been working on the new design and new features for a while now.  
+> Most of the work was done on the backend for this website icluding CI/CD, and Cloudflare workers.  
+> Some of the new features include: Tags and Comments on pages. This feature will be implemented on most of the pages in the future.
+
 ## Added New Tools to Penetration Testing (24/10/21)
 
 > [Bettercap 1.6.2][bettercap-page-url] tool for man in the middle attack and ssl strip  
