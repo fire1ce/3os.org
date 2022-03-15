@@ -6,7 +6,7 @@ tags: [android, adb, cheat-sheet]
 
 # ADB Cheat Sheet
 
-ADB, Android Debug Bridge, is a command-line utility included with Google's Android SDK. ADB can control your device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands, and more. ADB is a powerful tool that can be used to control your Android device from a computer. Below are some of the most common commands you can use with ADB and their usage. You can find more information about ADB and its usage by visiting the [official website](https://developer.android.com/studio/command-line/adb.html).
+ADB, Android Debug Bridge, is a command-line utility included with Google's Android SDK. ADB can control your device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands, and more. ADB is a powerful tool that can be used to control your Android device from a computer. Below are some of the most common commands you can use with ADB and their usage. You can find more information about ADB and its usage by visiting the [official website][adb-docs-url]{target=\_blank}.
 
 ## Common ADB Commands
 
@@ -166,3 +166,9 @@ adb shell settings put global http_proxy :0
 | -------                                                      | -----------                              |
 | adb shell am start -a android.intent.action.VIEW -d URL      | Opens URL                                |
 | adb shell am start -t image/\* -a android.intent.action.VIEW | Opens gallery                            |
+
+<!-- appendices -->
+
+[adb-docs-url]: https://developer.android.com/studio/command-line/adb.html
+
+<!-- end appendices -->

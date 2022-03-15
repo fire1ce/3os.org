@@ -8,8 +8,6 @@ tags: [proxmox]
 
 ![pvekclean][pvekclean-img]
 
-[pvekclean-img]: /assets/images/pvekclean.png 'pvekclean'
-
 Easily remove old/unused PVE kernels on your Proxmox VE system
 
 ## Developers
@@ -17,8 +15,6 @@ Easily remove old/unused PVE kernels on your Proxmox VE system
 {{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Developers') }}
 
 The original [pvekclean github page][pvekclean-url]{target=\_blank}
-
-[pvekclean-url]: https://github.com/jordanhillis/pvekclean
 
 ## What is PVE Kernel Cleaner?
 
@@ -43,3 +39,10 @@ PVE Kernel Cleaner is a program to compliment Proxmox Virtual Environment which 
 ## Usage
 
 {{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Usage') }}
+
+<!-- appendices -->
+
+[pvekclean-img]: /assets/images/d6cd2947-9db0-cd6f-ad6a-d4298c3c54f7.png 'pvekclean'
+[pvekclean-url]: https://github.com/jordanhillis/pvekclean
+
+<!-- end appendices -->

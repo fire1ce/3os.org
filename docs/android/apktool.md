@@ -1,5 +1,7 @@
 ---
 description: Apktool A tool for reverse engineering 3rd party, closed, binary Android apps. you will find a series of practical example commands for running Apktool and getting the most of this powerful tool.
+template: comments.html
+tags: [android, penetration-testing, reverse-engineering, apktool]
 ---
 
 # Apktool
@@ -10,9 +12,11 @@ It is `NOT` intended for piracy and other non-legal uses. It could be used for l
 
 ## Download and Documentation
 
-[Official Apktool Website](https://ibotpeaches.github.io/Apktool/){target=\_blank}
+[Official Apktool Website][apktool-url]{target=\_blank}
 
-## How to Singe APK After Compile
+## How to Sign APK After Compile
+
+In order to install modified APK on Android device, you need to sign it with a certificate. Android APK won't be signed by default. You need to sign it manually.
 
 Install **apksigner**
 
@@ -35,3 +39,9 @@ apksigner sign --ks keystore.jks your.apk
 ```
 
 When installing the APK you will be prompted with a warning of "unknown certificate" just hit Install.
+
+<!-- appendices -->
+
+[apktool-url]: https://ibotpeaches.github.io/Apktool/
+
+<!-- end appendices -->

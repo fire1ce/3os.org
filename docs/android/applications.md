@@ -23,7 +23,7 @@ Feel free to suggest new applications and tools at comments section below.
 - [Packet Capture][packet-capture-url]{target=\_blank} - Packet capture/Network traffic sniffer.
 - [Material Terminal][material-terminal-url]{target=\_blank} - Terminal for Android.
 
-<!-- Url list -->
+<!-- appendices -->
 
 [magisk-manager-url]: https://magiskmanager.com/
 [edxposed-manager-url]: https://github.com/ElderDrivers/EdXposedManager/releases
@@ -35,4 +35,4 @@ Feel free to suggest new applications and tools at comments section below.
 [root-explorer-url]: https://play.google.com/store/apps/details?id=com.speedsoftware.rootexplorer
 [material-terminal-url]: https://play.google.com/store/apps/details?id=yarolegovich.materialterminal&hl=en
 
-<!--  -->
+<!-- end appendices -->
