@@ -14,7 +14,7 @@ hide:
 
 ---
 
-## New Design and new features (15/03/22)
+## New Design and Features (15/03/22)
 
 > I've been working on the new design and new features for a while now.  
 > Most of the work was done on the backend for this website icluding CI/CD, and Cloudflare workers.  
