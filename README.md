@@ -1,10 +1,10 @@
 # 3os.org
 
-<!-- <p align="center">
+<p align="center">
   <a href="https://3os.org/">
-    <img src="" width="320" alt="3os Project">
+    <img src="https://github.com/fire1ce/3os.org/raw/main/theme/logo/chart-donut-variant_transperent.png" width="220" alt="3os Project">
   </a>
-</p> -->
+</p>
 
 <p align="center">
   <strong>
