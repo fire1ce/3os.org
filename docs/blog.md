@@ -48,4 +48,4 @@ hide:
 > Added [ADB CheatSheet][adb cheatsheet] page to Penetration Testing - Android.  
 > You will find a series of practical example commands for running ADB and getting the most of Android Debug Bridge powerful tool
 
-[adb cheatsheet]: android/adb-cheatsheet.md
+[adb cheatsheet]: android/adb-cheat-sheet.md
