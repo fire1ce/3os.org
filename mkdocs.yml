@@ -147,4 +147,4 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 # Copyright
-copyright: 'Copyright &copy; 3os.org @2022'
+copyright: 'Copyright &copy; 3os.org 2022'
