@@ -4,12 +4,6 @@ hide:
   - navigation
 ---
 
-<style>
-  .md-content__button {
-    display: none;
-  }
-</style>
-
 # Blog - News & Updates
 
 ---
@@ -26,10 +20,6 @@ hide:
 > [Metasploit Framework][metasploit-page-url] Metasploit Framework, a tool for developing and executing exploit code against a remote target machine  
 > [Wifite][wifite-page-url] Wifite is an automated wireless attack tool
 
-[bettercap-page-url]: penetration-testing/tools/bettercap1.6.2.md
-[metasploit-page-url]: penetration-testing/tools/metasploit.md
-[wifite-page-url]: penetration-testing/tools/wifite.md
-
 ## Proxmark Section (12/09/21)
 
 > Added `Proxmark` section at Penetration Testing.  
@@ -37,15 +27,27 @@ hide:
 > New page [Proxmark3 CheatSheet][proxmark3-cheatsheet-page-url] - at very basic level  
 > New page [Mifare Classic 1K ISO14443A][mifare-page-url] - how to clone Mifare1k tags
 
-[about-proxmark-page-url]: penetration-testing/proxmark/about-proxmark.md
-[proxmark3-cheatsheet-page-url]: penetration-testing/proxmark/cheatsheet.md
-[mifare-page-url]: penetration-testing/proxmark/Mifare1k.md
-
 ---
 
 ## ADB CheatSheet (12/09/21)
 
-> Added [ADB CheatSheet][adb cheatsheet] page to Penetration Testing - Android.  
+> Added [ADB CheatSheet][adb-cheatsheet-url] page to Penetration Testing - Android.  
 > You will find a series of practical example commands for running ADB and getting the most of Android Debug Bridge powerful tool
 
-[adb cheatsheet]: android/adb-cheat-sheet.md
+<!-- appendices -->
+
+[bettercap-page-url]: /penetration-testing/tools/bettercap1.6.2/
+[metasploit-page-url]: /penetration-testing/tools/metasploit/
+[wifite-page-url]: /penetration-testing/tools/wifite/
+[about-proxmark-page-url]: /penetration-testing/proxmark/about-proxmark/
+[proxmark3-cheatsheet-page-url]: /penetration-testing/proxmark/cheatsheet/
+[mifare-page-url]: /penetration-testing/proxmark/Mifare1k/
+[adb-cheatsheet-url]: /android/adb-cheat-sheet/
+
+<style>
+  .md-content__button {
+    display: none;
+  }
+</style>
+
+<!-- end appendices -->
