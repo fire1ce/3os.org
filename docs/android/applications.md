@@ -13,15 +13,15 @@ Feel free to suggest new applications and tools at comments section below.
 
 ## List of Android Penetration Testing Tools and Applications
 
-- [Magisk Manager][magisk-manager-url]{target=\_blank} - systemless rooting system
+- [Magisk Manager][magisk-manager-url]{target=\_blank} - systemless rooting system.
 - [EdXposed Manager][edxposed-manager-url]{target=\_blank} - Companion Android application for EdXposed.
-- [BusyBox][busybox-url]{target=\_blank} - Android busyBox
-- [SQLite Editor Master][sqlite-editor-url]{target=\_blank} - SQLite Editor
-- [Root Explorer][root-explorer-url]{target=\_blank} File Manager for Root Users (Root Required)
-- [CiLocks][cilocks-url]{target=\_blank} - Python script to brute force android lockscreen password
-- [Network Analyzer][network-analyzer-url]{target=\_blank} - Network Analyzer for Android
-- [Packet Capture][packet-capture-url]{target=\_blank} - Packet capture/Network traffic sniffer
-- [Material Terminal][material-terminal-url]{target=\_blank} - Terminal for Android
+- [BusyBox][busybox-url]{target=\_blank} - Android busyBox.
+- [SQLite Editor Master][sqlite-editor-url]{target=\_blank} - SQLite Editor.
+- [Root Explorer][root-explorer-url]{target=\_blank} File Manager for Root Users (Root Required).
+- [CiLocks][cilocks-url]{target=\_blank} - Python script to brute force android lockscreen password.
+- [Network Analyzer][network-analyzer-url]{target=\_blank} - Network Analyzer for Android.
+- [Packet Capture][packet-capture-url]{target=\_blank} - Packet capture/Network traffic sniffer.
+- [Material Terminal][material-terminal-url]{target=\_blank} - Terminal for Android.
 
 <!-- Url list -->
 
