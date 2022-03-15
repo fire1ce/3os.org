@@ -10,16 +10,17 @@ gitdb==4.0.9
 GitPython==3.1.27
 htmlmin==0.1.12
 idna==3.3
-importlib-metadata==4.11.2
+importlib-metadata==4.11.3
 Jinja2==3.0.3
 jsmin==3.0.1
 Markdown==3.3.6
-MarkupSafe==2.1.0
+MarkupSafe==2.1.1
 mergedeep==1.3.4
 mkdocs==1.2.3
 mkdocs-awesome-pages-plugin==2.7.0
 mkdocs-embed-external-markdown==1.1.3
 mkdocs-exclude-search==0.6.4
+mkdocs-ezlinks-plugin==0.1.14
 mkdocs-git-revision-date-localized-plugin==1.0.0
 mkdocs-material==8.2.5
 mkdocs-material-extensions==1.0.3
@@ -29,6 +30,7 @@ mkdocs-redirects==1.0.3
 packaging==21.3
 pycryptodome==3.14.1
 Pygments==2.11.2
+pygtrie==2.4.2
 pymdown-extensions==9.2
 pyparsing==3.0.7
 python-dateutil==2.8.2

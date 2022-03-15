@@ -64,6 +64,7 @@ plugins:
       minify_html: true
       htmlmin_opts:
           remove_comments: true
+  - ezlinks
   - redirects:
       redirect_maps:
           'guides/openwrt/tipsandtricks.md' : 'infrastructure/openwrt/tipsandtricks.md'
