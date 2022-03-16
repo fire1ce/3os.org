@@ -34,6 +34,7 @@
   cursor: pointer;
   margin-bottom: 0.5rem;
   border-radius: 5px;
+  color: transparent;
 }
 
 .donate-button-patreon {
@@ -45,6 +46,7 @@
   cursor: pointer;
   margin-bottom: 0.5rem;
   border-radius: 5px;
+  color: transparent;
 }
 
 .donate-button-buymeacoffee {
@@ -56,6 +58,7 @@
   cursor: pointer;
   margin-bottom: 0.5rem;
   border-radius: 5px;
+  color: transparent;
 }
 
 /* Githubs Tables */
