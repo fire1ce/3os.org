@@ -27,7 +27,7 @@ theme:
 
   palette:
     - media: '(prefers-color-scheme: light)'
-      scheme: default
+      scheme: 3os
       primary: teal
       toggle:
         icon: material/toggle-switch-off-outline
@@ -65,6 +65,7 @@ plugins:
       htmlmin_opts:
           remove_comments: true
   - ezlinks
+  - progress
   - redirects:
       redirect_maps:
           'guides/openwrt/tipsandtricks.md' : 'infrastructure/openwrt/tipsandtricks.md'

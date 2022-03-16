@@ -1,5 +1,17 @@
-/* border-radius of the code section*/
+/* custom color palette */
+[data-md-color-scheme='3os'] {
+  --md-primary-fg-color: #006158;
+  --md-typeset-a-color: #009485;
+}
+[data-md-color-scheme='slate'] {
+  --md-primary-fg-color: #006158;
+  --md-typeset-a-color: #00c5b1;
+}
 
+[data-md-color-scheme='slate'] {
+  --md-hue: 215;
+}
+/* border-radius of the code section*/
 .md-typeset code {
   border-radius: 5px;
 }
