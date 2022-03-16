@@ -29,7 +29,7 @@ pip install frida-tools
 pip install objection
 ```
 
-Download the proper version from: [Frida Server Downloads](frida-releases){target=\_blank}
+Download the proper version from: [Frida Server Downloads][frida-releases]{target=\_blank}
 
 !!! danger
 
@@ -38,8 +38,6 @@ Download the proper version from: [Frida Server Downloads](frida-releases){targe
 
 Extract and rename the file to **frida-server**  
 Move the file to the Adnroid Phone to **/data/local/tmp/**
-
-[frida-releases]: https://github.com/frida/frida/releases
 
 ## Usage
 
@@ -103,3 +101,9 @@ android sslpinning disable
 ```bash
 android proxy set 192.168.5.102 8081
 ```
+
+<!-- appendices -->
+
+[frida-releases]: https://github.com/frida/frida/releases
+
+<!-- end appendices -->

@@ -24,7 +24,6 @@ description: Useful Links & Tools
 | [Clear Browsing Data](https://chrome.google.com/webstore/detail/clear-browsing-data/bjilljlpencdcpihofiobpnfgcakfdbe?hl=en)                     | Clear Browsing Data                             |
 | [HTTPS Everywhere](https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp?hl=en)                           | Automatically use HTTPS                         |
 | [Pushbullet](https://chrome.google.com/webstore/detail/pushbullet/chlffgpmiacpedhhbkiomidkjlcfhogd?hl=en)                                       | Connectivity App                                |
-| [Social Book Post Manager](https://chrome.google.com/webstore/detail/social-book-post-manager/ljfidlkcmdmmibngdfikhffffdmphjae?hl=en)           | Batch delete posts in Facebook                  |
 | [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)                                 | Ad Block                                        |
 | [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)                                     | Edit cookie per page                            |
 | [Wappalyzer](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg)                                             | Uncovers the technologies used on websites      |
