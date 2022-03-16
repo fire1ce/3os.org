@@ -38,14 +38,14 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  font: false
+  font: Rubik
   icon:
     logo: material/chart-donut-variant
   favicon: assets/favicon.png
 # Custom theme additions
 extra_css:
-  - css/fonts.css
   - css/extra.css
+  # - css/fonts.css
 
 # Plugins
 plugins:
