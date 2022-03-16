@@ -2,17 +2,22 @@
 {% extends "base.html" %}
 
 <!-- Robik font preload -->
+
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    rel="preload"
-    as="style"
-    href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-  />
-  <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+    media="print"
+    onload="this.media='all'"
   />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </noscript>
 </head>
 
 <!-- announcement HTML -->
