@@ -50,7 +50,8 @@ if (title) {
 <meta property="twitter:title" content="${title[1]}">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="${req.url}">
-<meta property="twitter:image" content="https://3os.org/3os-preview.png">`,
+<meta property="twitter:image" content="https://3os.org/3os-preview.png">
+<link rel="icon" href="https://3os.org/assets/favicon.ico" type="image/x-icon">`,
   );
 }
 
