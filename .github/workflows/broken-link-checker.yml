@@ -1,13 +1,9 @@
 name: broken-link-checker
 
-
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * *'
-  push:
-    branches:
-      - main
 
 jobs:
   linkChecker:
@@ -27,4 +23,3 @@ jobs:
           title: Link Checker Report
           content-filepath: ./lychee/out.md
           labels: report, automated issue
-
