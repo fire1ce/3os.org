@@ -45,7 +45,7 @@ theme:
     logo: material/chart-donut-variant
   favicon: assets/favicon.ico
   
-# Custom theme additions
+# Custom theme configuration
 extra_css:
   - css/extra.css
   # - css/fonts.css
