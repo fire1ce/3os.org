@@ -39,7 +39,7 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
   font: 
-    text: Rubik # Preload add to main.html
+    text: Rubik
     code: Rubik Mono
   icon:
     logo: material/chart-donut-variant
