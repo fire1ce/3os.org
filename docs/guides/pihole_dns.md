@@ -1,4 +1,5 @@
 ---
+title: Pi-hole with DOH on Docker
 description: Pi-hole as DNS Server with DNS over HTTPS (DOH) Based on Docker Containers. Pi-hole, DNS ads, tracking blocking on Ubuntu with DNS over HTTP, list of blacklist
 ---
 
