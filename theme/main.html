@@ -1,26 +1,6 @@
 <!-- Elements added to main will be displayed on all pages -->
 {% extends "base.html" %}
 
-<!-- Robik font preload -->
-
-<head>
-  <link
-    rel="preload"
-    href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-    as="style"
-    onload="this.media='all'"
-  />
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-      rel="stylesheet"
-      type="text/css"
-      media="print"
-      onload="this.media='all'"
-    />
-  </noscript>
-</head>
-
 <!-- announcement HTML -->
 {% block announce %}{% include "announcement.html" %}{% endblock %}
 
