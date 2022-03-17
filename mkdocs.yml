@@ -43,7 +43,7 @@ theme:
     code: Rubik Mono
   icon:
     logo: material/chart-donut-variant
-  favicon: assets/favicon.png
+  favicon: assets/favicon.ico
   
 # Custom theme additions
 extra_css:
