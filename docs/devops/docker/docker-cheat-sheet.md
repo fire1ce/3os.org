@@ -1,8 +1,9 @@
 ---
+title: Cli Commands Cheat Sheet
 description: Docker General useful cli commands, show all containers, update all downloaded images, find container IP, logs, copying files to docker and more...
 ---
 
-# Docker Cli Commands
+# Docker Cli Commands Cheat Sheet
 
 ## Show all Containers
 
