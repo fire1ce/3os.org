@@ -102,6 +102,8 @@ iptables -P FORWARD ACCEPT
 | [docker rm][docker-rm-url]         | Deletes a container.                             |
 | [docker update][docker-update-url] | Updates a container's resource limits.           |
 
+<!-- ci test -->
+
 [docker-create-url]: https://docs.docker.com/engine/reference/commandline/create/
 [docker-rename-url]: https://docs.docker.com/engine/reference/commandline/rename/
 [docker-run-url]: https://docs.docker.com/engine/reference/commandline/run/
