@@ -1,10 +1,11 @@
 ---
+title: SSL Pinning Bypass
 description: Android SSL Pinning bypass using Frida. Frida is dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers.
 template: comments.html
-tags: [android, frida, ssl, pinning]
+tags: [android, frida, ssl-pinning]
 ---
 
-# Android SSL Pinning Bypass
+# Android SSL Pinning Bypass with Frida
 
 ## Whats SSL Pinning?
 

@@ -1,10 +1,11 @@
 ---
+title: Apktool
 description: Apktool A tool for reverse engineering 3rd party, closed, binary Android apps. you will find a series of practical example commands for running Apktool and getting the most of this powerful tool.
 template: comments.html
 tags: [android, penetration-testing, reverse-engineering, apktool]
 ---
 
-# Apktool
+# Android Apktool for Reverse Engineering
 
 A tool for reverse engineering 3rd party, closed, binary Android apps. It can decode resources to nearly original form and rebuild them after making some modifications. It also makes working with an app easier because of the project like file structure and automation of some repetitive tasks like building apk, etc.
 
