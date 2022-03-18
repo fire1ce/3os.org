@@ -1,6 +1,9 @@
 name: broken-link-checker
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * *'
