@@ -7,8 +7,6 @@ tags: [android, application, penetration-testing]
 
 # Penetration Testing Application for Android
 
-## Penetration Testing for Android
-
 List for Android penetration testing applications and tools that can be used to aid in penetration testing. The following are the most commonly used applications.
 Feel free to suggest new applications and tools at comments section below.
 
