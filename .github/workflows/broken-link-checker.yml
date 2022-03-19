@@ -3,7 +3,7 @@ name: broken-link-checker
 on:
   push:
     branches:
-      - main
+      - gh-pages
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * *'
