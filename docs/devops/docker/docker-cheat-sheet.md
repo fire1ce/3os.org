@@ -1,11 +1,11 @@
 ---
-title: Containers Cheat Sheet
+title: Docker Cheat Sheet
 description: Docker commands cheat sheet for managing the Docker environment. Docker is an open source platform that can be used to build, submit, and run applications through container
 template: comments.html
 tags: [docker, cheat-sheet]
 ---
 
-# Docker Containers Cheat Sheet
+# Docker Cheat Sheet
 
 Docker is an open source platform that can be used to build, submit, and run applications through container packaging software. Docker has many commands and options and it is very difficult to remember each command. If you're new to Docker, or even experienced Docker, it can be helpful to have a quick reference to the most commonly used Docker commands cheat sheet for managing the Docker environment.
 
