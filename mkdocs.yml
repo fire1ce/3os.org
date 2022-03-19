@@ -85,9 +85,9 @@ plugins:
           'guides/ubiquiti/udm-pro.md' : 'infrastructure/ubiquiti/udm-pro.md'
           'penetration-testing/other/vmware-fusion.md' : 'infrastructure/vmware/vmware-fusion.md'
           'android/frida-server.md' : 'android/ssl-pinning-bypass.md'
-          'devops/docker/cli-commands.md' : 'devops/docker/docker-cheat-sheet.md'
-          'devops/docker/purging-and-cleaning.md': 'devops/docker/docker-cheat-sheet.md'
-          'devops/docker/ssh-to-docker-container.md': 'devops/docker/docker-cheat-sheet.md'
+          'devops/docker/cli-commands.md' : 'devops/docker/common-docker-commands.md'
+          'devops/docker/purging-and-cleaning.md': 'devops/docker/common-docker-commands.md'
+          'devops/docker/ssh-to-docker-container.md': 'devops/docker/common-docker-commands.md'
 
 
 

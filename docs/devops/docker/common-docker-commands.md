@@ -1,31 +1,27 @@
 ---
-title: Docker Cheat Sheet
-description: Docker commands cheat sheet for managing the Docker environment. Docker is an open source platform that can be used to build, submit, and run applications through container
+title: Common Docker Commands
+description: This is a short summary of the most commonly used Docker commands. If you're new to Docker, or even experienced Docker, it can be helpful to have a quick reference to the most commonly used Docker commands for managing the Docker environment
 template: comments.html
 tags: [docker, cheat-sheet]
 ---
 
-# Docker Cheat Sheet
+# Common Docker Commands
 
-Docker is an open source platform that can be used to build, submit, and run applications through container packaging software. Docker has many commands and options and it is very difficult to remember each command. If you're new to Docker, or even experienced Docker, it can be helpful to have a quick reference to the most commonly used Docker commands cheat sheet for managing the Docker environment.
+This is a short summary of the most commonly used Docker commands. If you're new to Docker, or even experienced Docker, it can be helpful to have a quick reference to the most commonly used Docker commands for managing the Docker environment.
 
-## Common Docker Commands
-
-This is a short summary of the most commonly used Docker commands. You can find more detailed information about Docker and its usage at this page below.
-
-### Show all containers including running and stopped
+## Show all Containers Including Running and Stopped
 
 ```shell
 docker ps -a
 ```
 
-### Show docker container logs
+## Show Docker Container Logs
 
 ```shell
 docker logs <container_id>
 ```
 
-## Get adShell to a container
+## Get Into Container Shell
 
 ```shell
 docker exec -it <container_id> /bin/bash
@@ -37,7 +33,31 @@ or
 docker exec -it <container_id> /bin/sh
 ```
 
-### Find container IP address
+## Stoping Containers
+
+```shell
+docker stop <container_id>
+```
+
+foce stop with `kill`
+
+```shell
+docker kill <container_id>
+```
+
+## Removing Containers
+
+```shell
+docker rm <container_id>
+```
+
+force remove
+
+```shell
+docker rm -f <container_id>
+```
+
+## Find Container IP Address
 
 {% raw %}
 
@@ -47,19 +67,19 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <co
 
 {% endraw %}
 
-### Copy files into docker container
+## Copy Files into Docker Container
 
 ```shell
 docker cp <local file> <container name/id>:<remote file>
 ```
 
-### Copy files from docker container
+## Copy Files from Docker Container
 
 ```shell
 docker cp <container name/id>:<remote file> <local file>
 ```
 
-### Purging
+## Purging
 
 Purging All Unused or Dangling Images, Containers, Volumes, and Networks Docker provides a single command that will clean up any resources — images, containers, volumes, and networks — that are dangling (not associated with a container):
 
@@ -72,18 +92,6 @@ To additionally remove any stopped containers and all unused images (not just da
 ```shell
 docker system prune -a
 ```
-
-## Installation
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Installation') }}
-
-## Containers
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Containers') }}
-
-## Images
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Images') }}
 
 ## Networks
 
