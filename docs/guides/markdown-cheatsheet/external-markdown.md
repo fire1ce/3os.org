@@ -5,7 +5,7 @@ tags: [markdown-cheatsheet, mkdocs, external-markdown]
 
 # Embed External Markdown
 
-{{ external_markdown('https://raw.githubusercontent.com/fire1ce/mkdocs-embed-external-markdown/main/README.md', 'About') }}
+{{ external_markdown('https://raw.githubusercontent.com/fire1ce/mkdocs-embed-external-markdown/main/README.md', '## About') }}
 
 For more detailed inforation follow the link: [Mkdocs Embed External Markdown Plugin][mkdocs-embed-external-markdown]{target=\_blank}
 
@@ -13,4 +13,4 @@ For more detailed inforation follow the link: [Mkdocs Embed External Markdown Pl
 
 ## Usage
 
-{{ external_markdown('https://raw.githubusercontent.com/fire1ce/mkdocs-embed-external-markdown/main/README.md', 'Usage') }}
+{{ external_markdown('https://raw.githubusercontent.com/fire1ce/mkdocs-embed-external-markdown/main/README.md', '## Usage') }}
