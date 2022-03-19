@@ -12,7 +12,7 @@ Easily remove old/unused PVE kernels on your Proxmox VE system
 
 ## Developers
 
-{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Developers') }}
+{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', '## Developers') }}
 
 The original [pvekclean github page][pvekclean-url]{target=\_blank}
 
@@ -22,23 +22,23 @@ PVE Kernel Cleaner is a program to compliment Proxmox Virtual Environment which 
 
 ## Features
 
-{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Features') }}
+{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', '## Features') }}
 
 ## Prerequisites
 
-{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Prerequisites') }}
+{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', '## Prerequisites') }}
 
 ## Installing
 
-{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Installing') }}
+{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', '## Installing') }}
 
 ## Updating
 
-{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Updating') }}
+{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', '## Updating') }}
 
 ## Usage
 
-{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', 'Usage') }}
+{{ external_markdown('https://raw.githubusercontent.com/jordanhillis/pvekclean/master/README.md', '## Usage') }}
 
 <!-- appendices -->
 
