@@ -1,5 +1,5 @@
 ---
-description: Simple QR Code Generator for your wifi network. Scan & Connect This will generate a QR code what can be used with any iOS/Android device to access a given Wifi without manually adding a network and password. Just scan the QR Code and you are connected. This is a fully static code - no data is send to any server!
+description: Simple QR Code Generator for your wifi network. Scan & Connect This will generate a QR code what can be used with any iOS/Android device to access a given Wifi.
 ---
 
 # Wifi QR Image Generator
@@ -18,5 +18,5 @@ This is a fully static code - no data is send to any server!
 
 ## Credit & Sources
 
-This code was taken from this site [qistoph Github Page](https://github.com/qistoph/WiFiQR/){target=_blank}.
+This code was taken from this site [qistoph Github Page](https://github.com/qistoph/WiFiQR/){target=\_blank}.
 It was fully reviewed for any malicious code or functionality and slightly modified to fit this site
