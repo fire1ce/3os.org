@@ -44,16 +44,20 @@ _Result:_
 
 ![minion][internal-source]
 
-[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the link'
+[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 ---
 
 ## Embedding Images With Width Attributes
 
 ```markdown title="width=200 example"
-<img src="/assets/images/markdown-cheatsheet/minion.png" width=200 title="Minion">
+![minion][internal-source]{: style="width:200px"}
+
+[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 ```
 
 _Result:_
 
-<img src="/assets/images/markdown-cheatsheet/minion.png" width=200 title="Minion">
+![minion][internal-source]{: style="width:200px"}
+
+[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
