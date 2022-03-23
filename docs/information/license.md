@@ -6,4 +6,4 @@ description: MIT License
 
 ## MIT License
 
-{{ external_markdown('https://raw.githubusercontent.com/fire1ce/3os.org/main/license.mdddd', '## MIT License') }}
+{{ external_markdown('https://raw.githubusercontent.com/fire1ce/3os.org/main/license.md', '## MIT License') }}
