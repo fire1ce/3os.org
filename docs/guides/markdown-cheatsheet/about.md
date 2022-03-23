@@ -1,5 +1,6 @@
 ---
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Markdown is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor. As the initial description of Markdown contained ambiguities and unanswered questions, many implementations and extensions of Markdown appeared over the years to answer these issues.
+title: About Markdown
+description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Markdown is a lightweight markup language with plain text formatting syntax.
 tags: [markdown-cheatsheet, mkdocs]
 ---
 

@@ -1,22 +1,21 @@
 ---
-description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Diagrams based on Mermaid.js.
+title: Diagrams
+description: This Markdown cheat sheet provides a quick overview of Diagrams based on Mermaid.js a very popular and flexible solution for drawing diagrams.
 tags: [markdown-cheatsheet, mkdocs, diagram, mermaid]
 ---
 
-# Diagrams
+# Mermaid Diagrams
 
 Diagrams help to communicate complex relationships and interconnections between
 different technical components, and are a great addition to project
-documentation. Material for MkDocs integrates with [Mermaid.js], a very
+documentation. Material for MkDocs integrates with [Mermaid.js][mermaid.js-url]{target=\_blank}, a very
 popular and flexible solution for drawing diagrams.
-
-[mermaid.js]: https://mermaid-js.github.io/mermaid/
 
 ## Usage
 
 ### Using Flowcharts
 
-[Flowcharts] are diagrams that represent workflows or processes. The steps
+[Flowcharts][flowcharts-url]{target=\_blank} are diagrams that represent workflows or processes. The steps
 are rendered as nodes of various kinds and are connected by edges, describing
 the necessary order of steps:
 
@@ -42,11 +41,9 @@ graph LR
   B ---->|No| E[Yay!];
 ```
 
-[flowcharts]: https://mermaid-js.github.io/mermaid/#/flowchart
-
 ### Using Sequence Diagrams
 
-[Sequence diagrams] describe a specific scenario as sequential interactions
+[Sequence diagrams][sequence-diagrams-url]{target=\_blank} describe a specific scenario as sequential interactions
 between multiple objects or actors, including the messages that are exchanged
 between those actors:
 
@@ -78,11 +75,9 @@ sequenceDiagram
   Bob-->>John: Jolly good!
 ```
 
-[sequence diagrams]: https://mermaid-js.github.io/mermaid/#/sequenceDiagram
-
 ### Using State Diagrams
 
-[State diagrams] are a great tool to describe the behavior of a system,
+[State diagrams][state-diagrams-url]{target=\_blank} are a great tool to describe the behavior of a system,
 decomposing it into a finite number of states, and transitions between those
 states:
 
@@ -118,11 +113,9 @@ stateDiagram-v2
     State4 --> [*]
 ```
 
-[state diagrams]: https://mermaid-js.github.io/mermaid/#/stateDiagram
-
 ### Using Class Diagrams
 
-[Class diagrams] are central to object oriented programing, describing the
+[Class diagrams][class-diagrams-url]{target=\_blank} are central to object oriented programing, describing the
 structure of a system by modelling entities as classes and relationships between
 them:
 
@@ -188,11 +181,9 @@ classDiagram
   }
 ```
 
-[class diagrams]: https://mermaid-js.github.io/mermaid/#/classDiagram
-
 ### Using Entity-Relationship Diagrams
 
-An [entity-relationship diagram] is composed of entity types and specifies
+An [entity-relationship diagram][entity-relationship-diagram-url]{target=\_blank} is composed of entity types and specifies
 relationships that exist between entities. It describes inter-related things in
 a specific domain of knowledge:
 
@@ -214,4 +205,13 @@ erDiagram
   CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
 
-[entity-relationship diagram]: https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram
+<!-- appendices -->
+
+[mermaid.js-url]: https://mermaid-js.github.io/mermaid/
+[flowcharts-url]: https://mermaid-js.github.io/mermaid/#/flowchart
+[sequence-diagrams-url]: https://mermaid-js.github.io/mermaid/#/sequenceDiagram
+[state-diagrams-url]: https://mermaid-js.github.io/mermaid/#/stateDiagram
+[class-diagrams-url]: https://mermaid-js.github.io/mermaid/#/classDiagram
+[entity-relationship-diagram-url]: https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram
+
+<!-- end appendices -->

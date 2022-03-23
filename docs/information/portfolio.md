@@ -1,4 +1,10 @@
-# Portfolio
+---
+title: Stas Yakobov's Portfolio
+description: Stas Yakobov's compilation of relevant work samples and documents gathered during his career.
+tags: [portfolio, resume]
+---
+
+# Stas Yakobov's Portfolio
 
 <style>
   .md-typeset img {

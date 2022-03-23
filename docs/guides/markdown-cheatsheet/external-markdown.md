@@ -1,5 +1,5 @@
 ---
-description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes embedded external makrdown from
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for includes embedded external makrdown from
 tags: [markdown-cheatsheet, mkdocs, external-markdown]
 ---
 

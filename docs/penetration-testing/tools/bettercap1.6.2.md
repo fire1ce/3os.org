@@ -1,5 +1,5 @@
 ---
-description: Bettercap 1.6.2 is a tool for Man In The Middle Attack and SSL Strip . You will find a series of practical example commands for running Bettercap 1.6.2 and getting the most of this powerful tool.
+description: Bettercap 1.6.2 is a tool for Man In The Middle Attack and SSL Strip . You will find a series of practical example commands for running Bettercap 1.6.2.
 ---
 
 ## Bettercap 1.6.2 Installation

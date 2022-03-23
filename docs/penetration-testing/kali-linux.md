@@ -1,5 +1,5 @@
 ---
-description: Penetration Testing - Kali Linux how to, guides, examples, and simple usage and tools, Minimal Headless Kali Linux installation, Kali Linux cloud, Kali Linux Metasploit Install, Kali Linux AutoRecon Installation, Kali Linux Bettercap 1.6.2 Installation, MobSF - Mobile Security Framework Docker,SSH Broken Pipe in Kali Linux - Fix
+description: Kali Linux how to, guides, examples, and simple usage and tools, Minimal Headless Kali Linux installation, Kali Linux cloud.
 ---
 
 # Kali Linux
@@ -8,9 +8,9 @@ description: Penetration Testing - Kali Linux how to, guides, examples, and simp
 
 This is a simple guide to install Minimal Headless Kali Linux by converting a Debian Linux to Kali Linux distro without any unnecessary tools. Basicity you install the tools you need.
 
-| __Platforms__                                                     | __Minimum Monthly Price__                |
-| ----------------------------------------------------------------- | ---------------------------------------- |
-| [DigitalOcean.com](https://m.do.co/c/2f680de0d76e){target=_blank} | 5$ (This link provides 100$ for 60 days) |
+| **Platforms**                                                      | **Minimum Monthly Price**                |
+| ------------------------------------------------------------------ | ---------------------------------------- |
+| [DigitalOcean.com](https://m.do.co/c/2f680de0d76e){target=\_blank} | 5$ (This link provides 100$ for 60 days) |
 
 First of all we will need a clean Debian Linux local or at any cloud provider with ssh access
 

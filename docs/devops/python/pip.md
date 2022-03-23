@@ -1,8 +1,10 @@
 ---
-description: Pip Cli Useful Commands
+description: Cheet Sheet fot Pip a package manager for Python packages, or modules if you like.
 ---
 
 # Pip Python Package Manager
+
+PIP is a package manager for Python packages, or modules if you like.
 
 ## List installed packages with pip
 

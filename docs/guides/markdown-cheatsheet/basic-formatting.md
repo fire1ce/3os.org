@@ -1,11 +1,12 @@
 ---
-description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Markddown Headings and Markddown Text Highlighting, Horizontal Line.
+title: Basic Formatting
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for Markddown Text Highlighting, Horizontal Line.
 tags:
   [markdown-cheatsheet, mkdocs, headings, text-highlighting, horizontal-line]
 toc_depth: 2
 ---
 
-# Basic Formatting
+# Markdown Basic Formatting
 
 ## Text Styling
 

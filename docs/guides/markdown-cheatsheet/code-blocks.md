@@ -1,5 +1,5 @@
 ---
-description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Code Blocks, Code Blocks with Syntax Highlighting, Code Blocks with titles, Code Blocks with numbers.
+description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for Code Blocks, Code Blocks with Syntax Highlighting, Code Blocks with titles, Code Blocks with numbers.
 tags: [markdown-cheatsheet, mkdocs, code-blocks]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Markddown Tables and Markddown Lists, Markdown Quotes.
+description: This Markdown cheat sheet provide a quick overview of all the Markdown syntax elements for  Tables and Markddown Lists, Markdown Quotes.
 tags: [markdown-cheatsheet, mkdocs, tables, lists, quotes]
 ---
 
