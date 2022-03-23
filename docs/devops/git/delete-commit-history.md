@@ -2,7 +2,7 @@
 title: Removing Sensitive Data
 description: Removing sensitive data such as a password, SSH key, API tokens, license keys and so on from the Github repository history
 template: comments.html
-tags: [github, security]
+tags: [github, history, security]
 ---
 
 # Removing Sensitive Data from a Repository History

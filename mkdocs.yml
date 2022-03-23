@@ -88,6 +88,8 @@ plugins:
           'devops/docker/cli-commands.md' : 'devops/docker/common-docker-commands.md'
           'devops/docker/purging-and-cleaning.md': 'devops/docker/common-docker-commands.md'
           'devops/docker/ssh-to-docker-container.md': 'devops/docker/common-docker-commands.md'
+          'devops/git/git.md' : 'devops/git/git-cli-cheat-sheet.md'
+          'devops/git/submodule.md' : 'devops/git/git-submodules.md'
 
 
 
