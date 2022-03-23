@@ -46,7 +46,7 @@ This project is licensed under the MIT License - see the [LICENSE][license-url] 
 [made-with-markdown-badge]: https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg
 [made-with-markdown-url]: https://3os.org/guides/markdown-cheatsheet/about/
 [contributions-welcome-badge]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
-[contributions-welcome-url]: https://github.com/fire1ce/3os.org/tree/master/src
+[contributions-welcome-url]: https://github.com/fire1ce/3os.org/tree/main/docs
 [mit-license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 [mit-license-url]: https://mit-license.org/
 [license-url]: https://github.com/fire1ce/3os.org/blob/main/license.md

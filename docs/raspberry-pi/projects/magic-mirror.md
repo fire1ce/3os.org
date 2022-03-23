@@ -2,7 +2,6 @@
 description: Raspberry Pi - Magic Mirror Installation how to, guides, examples, and simple usage
 ---
 
-
 # Magic Mirror
 
 <div style="width:80%; margin:0 auto">
@@ -52,7 +51,6 @@ Extended ports:
 <div style="width:80%; margin:0 auto">
    <img src="/assets/images/raspberry-pi/magicMirror/IMG_1768.jpg" alt="MagicMirror">
 </div>
-
 
 Assembly With screen, Raspberry Pi, cable routing, black material which do not pass light where there is no screen:
 
@@ -119,7 +117,8 @@ add this:
 dtoverlay=vc4-fkms-v3d
 ```
 
-----
+---
+
 (Please note, you will need the x11-xserver-utils package installed.)
 
 edit ~/.config/lxsession/LXDE-pi/autostart:
@@ -229,9 +228,9 @@ sudo apt-get remove nodejs nodejs-legacy nodered
 
 Installation:
 
-```bash
-bash -c "$(curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh)"
-```
+[magicmirror-installation][magicmirror-installation-url]{target=\_blank}
+
+[magicmirror-installation-url]: https://docs.magicmirror.builders/getting-started/installation.html
 
 `say no to PM2 auto start - will be install manually`
 
