@@ -1,5 +1,5 @@
 ---
-description: Clickjacking Test Page
+description: Page for the Clickjacking vulnerability in web applications testing tool.
 ---
 
 # Clickjacking Test Page
