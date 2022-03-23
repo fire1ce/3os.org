@@ -15,8 +15,10 @@ Git submodules allow you to keep a git repository as a subdirectory of another g
 
 You need to know the remote git repository url and where you want to place that it in your repository.
 
+for example:
+
 ```shell
-git submodule add https://example.com/submodule-repo.git path/to/submodule
+git submodule add https://github.com/fire1ce/3os.org path/to/submodule
 git add .
 git commit -m "adds submodule path/to/submodule"
 ```
@@ -25,8 +27,10 @@ git commit -m "adds submodule path/to/submodule"
 
 When you clone a repository that contains submodules there are a few extra steps to be taken.
 
+for example:
+
 ```shell
-git clone http://example.com/repo.git repo
+git clone https://github.com/fire1ce/3os.org repo
 cd repo
 git submodule init
 git submodule update
@@ -35,7 +39,7 @@ git submodule update
 If you’re sure you want to fetch all submodules (and their submodules), you can also use this fancy one-liner:
 
 ```shell
-git clone --recurse-submodules http://example.com/repo.git
+git clone --recurse-submodules https://github.com/fire1ce/3os.org
 ```
 
 ## Submodule Update
