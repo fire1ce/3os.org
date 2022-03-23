@@ -6,7 +6,7 @@ description: Kali Linux how to, guides, examples, and simple usage and tools, Mi
 
 ## Minimal Headless Kali Linux installation - Works for Cloud VM Installation (NO GUI)
 
-This is a simple guide to install Minimal Headless Kali Linux by converting a Debian Linux to Kali Linux distro without any unnecessary tools. Basicity you install the tools you need.
+This is a simple guide to install Minimal Headless Kali Linux by converting a Debian Linux to Kali Linux distro without any unnecessary tools. Basically you install the tools you need.
 
 | **Platforms**                                                      | **Minimum Monthly Price**                |
 | ------------------------------------------------------------------ | ---------------------------------------- |
