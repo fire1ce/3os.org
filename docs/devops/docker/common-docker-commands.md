@@ -93,37 +93,9 @@ To additionally remove any stopped containers and all unused images (not just da
 docker system prune -a
 ```
 
-## Networks
+## Monitor System Resource Utilization for Running Containers
 
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Networks') }}
-
-## Registry & Repository
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Registry & Repository') }}
-
-## Dockerfile
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Dockerfile') }}
-
-## Links
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Links') }}
-
-## Volumes
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Volumes') }}
-
-## Best Practices
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Best Practices') }}
-
-## Security
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Security') }}
-
-## Tips
-
-{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Tips') }}
+{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '### Monitor system resource utilization for running containers') }}
 
 ## Credit
 

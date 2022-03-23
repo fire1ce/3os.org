@@ -1,5 +1,5 @@
 ---
-title: Docker Containers Cheat Sheet
+title: Containers Cheat Sheet
 description: Docker cheat sheet for managing containers. List of all containers, container logs, container shell, stop, remove, and more.
 template: comments.html
 tags: [docker, cheat-sheet]
@@ -18,3 +18,9 @@ A Docker container image is a lightweight, standalone, executable package of sof
 ## Credit
 
 Thanks to [@wsargent][wsargent-url]{target=\_blank} for creating this cheat sheet.
+
+<!-- appendices -->
+
+[wsargent-url]: https://github.com/wsargent/docker-cheat-sheet
+
+<!-- end appendices -->

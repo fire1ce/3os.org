@@ -1,5 +1,5 @@
 ---
-title: Docker Images Cheat Sheet
+title: Images Cheat Sheet
 description: Docker cheat sheet for managing images. List of all images, image create, image build, image pull, image push, image remove, and more.
 template: comments.html
 tags: [docker, cheat-sheet]
@@ -18,3 +18,9 @@ A Docker image is a file used to execute code in a Docker container. Docker imag
 ## Credit
 
 Thanks to [@wsargent][wsargent-url]{target=\_blank} for creating this cheat sheet.
+
+<!-- appendices -->
+
+[wsargent-url]: https://github.com/wsargent/docker-cheat-sheet
+
+<!-- end appendices -->
