@@ -1,4 +1,5 @@
 ---
+title: Icons & Emojis
 description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Icons & Emojis.
 tags: [markdown-cheatsheet, mkdocs, icons, emojis]
 ---

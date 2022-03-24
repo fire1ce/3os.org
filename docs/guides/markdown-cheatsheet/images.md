@@ -1,9 +1,10 @@
 ---
+title: Images
 description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Images.
 tags: [markdown-cheatsheet, mkdocs, images]
 ---
 
-# Images
+# Markdown Images
 
 Markdown is a text format so naturally you can type in the Markdown representation of an image using examples below to put an image reference directly into the editor.
 

@@ -1,9 +1,10 @@
 ---
+title: Code Blocks
 description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for Code Blocks, Code Blocks with Syntax Highlighting, Code Blocks with titles, Code Blocks with numbers.
 tags: [markdown-cheatsheet, mkdocs, code-blocks]
 ---
 
-# Code Blocks
+# Markdown Code Blocks
 
 Code blocks and examples are an essential part of technical project
 documentation. Material for MkDocs provides different ways to set up syntax

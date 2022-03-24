@@ -1,9 +1,10 @@
 ---
+title: Admonitions
 description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Admonitions.
 tags: [markdown-cheatsheet, mkdocs, admonition]
 ---
 
-# Admonitions
+# Markdown Admonitions
 
 Admonitions, also known as _call-outs_, are an excellent choice for including
 side content without significantly interrupting the document flow. Material for

@@ -1,4 +1,5 @@
 ---
+Title: Embed External Markdown
 description: This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for includes embedded external makrdown from
 tags: [markdown-cheatsheet, mkdocs, external-markdown]
 ---
