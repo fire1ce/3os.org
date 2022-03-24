@@ -1,6 +1,6 @@
 nav:
   - Blog: blog.md
-  - Guides: guides
+  - Guides & Tools: guides
   - DevOps: devops
   - Infrastructure: infrastructure
   - Linux: linux

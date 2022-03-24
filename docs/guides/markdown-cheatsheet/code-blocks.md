@@ -75,8 +75,7 @@ def bubble_sort(items):
 
 Specific lines can be highlighted by passing the line numbers to the `hl_lines`
 argument placed right after the language shortcode. Note that line counts start
-at `1`, regardless of the starting line number specified as part of
-[`linenums`][adding line numbers]:
+at `1`.
 
 ````markdown title="Code block with highlighted lines"
 ```py hl_lines="2 3"
@@ -102,9 +101,9 @@ def bubble_sort(items):
 
 ## Highlighting Inline Code Blocks
 
-When [InlineHilite] is enabled, syntax highlighting can be applied to inline
+When `InlineHilite` is enabled, syntax highlighting can be applied to inline
 code blocks by prefixing them with a shebang, i.e. `#!`, directly followed by
-the corresponding [language shortcode][list of available lexers].
+the corresponding `language shortcode`
 
 _Example:_
 
@@ -115,3 +114,7 @@ The `#!python range()` function is used to generate a sequence of numbers.
 _Result:_
 
 The `#!python range()` function is used to generate a sequence of numbers.
+
+<!-- appendices -->
+
+<!-- end appendices -->

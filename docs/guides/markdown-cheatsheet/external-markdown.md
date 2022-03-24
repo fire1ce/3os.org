@@ -14,3 +14,7 @@ For more detailed inforation follow the link: [Mkdocs Embed External Markdown Pl
 ## Usage
 
 {{ external_markdown('https://raw.githubusercontent.com/fire1ce/mkdocs-embed-external-markdown/main/README.md', '## Usage') }}
+
+<!-- appendices -->
+
+<!-- end appendices -->

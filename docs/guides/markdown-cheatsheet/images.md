@@ -61,3 +61,7 @@ _Result:_
 ![minion][internal-source]{: style="width:200px"}
 
 [internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+
+<!-- appendices -->
+
+<!-- end appendices -->

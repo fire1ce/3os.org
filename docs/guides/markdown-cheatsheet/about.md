@@ -12,9 +12,16 @@ Markdown is a lightweight markup language with plain text formatting syntax. It 
 
 ## Material for MkDocs <small>Markdown</small>
 
-This website is built with [MkDocs](https://www.mkdocs.org/){target=\_blank}. MkDocs is a static site generator that can be used to generate websites with a clean and simple user interface. It is a free and open source project.
+This website is built with [MkDocs][mkdocs-url]{target=\_blank}. MkDocs is a static site generator that can be used to generate websites with a clean and simple user interface. It is a free and open source project.
 
 !!! warning
 
     **Most of the advanced features used to generate this website and the Markdown syntax used
-    from [Material Theme for MkDocs](https://squidfunk.github.io/mkdocs-material/){target=\_blank} and may not apply to other websites.**
+    from [Material Theme for MkDocs][material-mkdocs-url]{target=\_blank} and may not apply to other websites.**
+
+<!-- appendices -->
+
+[mkdocs-url]: https://www.mkdocs.org/ 'MkDocs'
+[material-mkdocs-url]: https://squidfunk.github.io/mkdocs-material/ 'Material for MkDocs'
+
+<!-- end appendices -->

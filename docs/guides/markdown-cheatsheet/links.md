@@ -88,3 +88,7 @@ _Result:_
 [Send Email][mail-to-link]{:rel=nofollow}
 
 [mail-to-link]: mailto:example@example.com 'Send Email'
+
+<!-- appendices -->
+
+<!-- end appendices -->
