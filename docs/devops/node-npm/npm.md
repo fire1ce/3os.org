@@ -1,8 +1,13 @@
 ---
-description: npm & Node.js Cli Useful Commands
+title: Npm Command-line Utility
+description: Cheat sheet for NPM. Npm command-line utility for interacting with package installation, version management, and dependency management Useful Commands for Npm
+template: comments.html
+tags: [npm, cheat-sheet, node]
 ---
 
-# NPM & Node.js Cli Commands
+# Npm Command-line Utility
+
+npm is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day.
 
 ## Updating Node & npm to Latest Stable Version
 
@@ -55,3 +60,6 @@ To update all global packages, on the command line, run:
 npm update -g
 ```
 
+<!-- appendices -->
+
+<!-- end appendices -->

@@ -1,6 +1,6 @@
 ---
 title: ADB Cheat Sheet
-description: ADB Cheat Sheet includes commands for ADB, Android Debug Bridge, is a command-line utility included with Google's Android SDK. ADB can control your device over USB from a computer.
+description: Cheat sheet for ADB. ADB, Android Debug Bridge, is a command-line utility for Android. ADB can control your device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands
 template: comments.html
 tags: [android, adb, cheat-sheet]
 ---

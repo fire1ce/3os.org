@@ -1,6 +1,6 @@
 ---
 title: Submodules Cheat Sheet
-description: Git submodules allow you to keep a git repository as a subdirectory. Git Submodule Cli Useful Commands cheat sheet.
+description: Cheat sheet for Pip Git sumboduls. Git submodules allow you to keep a git repository as a subdirectory. Git Submodule Cli Useful Commands cheat sheet.
 template: comments.html
 tags: [github, cheat-sheet, submodules]
 ---
@@ -69,3 +69,7 @@ Commit this change to your own repo, so others are locked to this new version of
 - Run `rm -rf .git/modules/path_to_submodule` (no trailing slash).
 - Commit `git commit -m "Removed submodule"`
 - Delete the now untracked submodule files `rm -rf path_to_submodule`
+
+<!-- appendices -->
+
+<!-- end appendices -->

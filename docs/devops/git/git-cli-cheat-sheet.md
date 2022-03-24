@@ -1,6 +1,6 @@
 ---
 title: Git Cli Cheat Sheet
-description: Git version control system designed to quickly and efficiently manage projects cheet sheet for the command line.
+description: Cheat sheet for Git. Git version control system designed to quickly and efficiently manage projects cheet sheet for the command line.
 template: comments.html
 tags: [github, git, cheat-sheet]
 ---

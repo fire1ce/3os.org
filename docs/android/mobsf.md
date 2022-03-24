@@ -11,7 +11,7 @@ Mobile Security Framework (MobSF) is an automated, all-in-one mobile application
 
 Follow the projet at github: [MobSF/Mobile-Security-Framework-MobSF][mobsf-url]{target=\_blank}
 
-![mobsf webgui][mobsf-webgui-img]
+![mobsf webgui][mobsf-webgui-img]{: style="width:90%"}
 
 ## Running MobSF as Docker
 

@@ -1,7 +1,8 @@
 ---
-description: Python Virtual Environment - virtualenv. How to install and Use virtualenv with Python. virtualenv is a tool to create isolated Python environments. Since Python 3.3, a subset of it has been integrated into the standard library under the venv module.
+title: Virtualenv
+description: Cheat sheet for virtualenv. Python Virtual Environment - virtualenv. How to install and Use virtualenv with Python. virtualenv is a tool to create isolated Python environments.
 template: comments.html
-tags: [python, virtualenv]
+tags: [python, virtualenv, cheat-sheet]
 ---
 
 # Virtualenv
@@ -68,4 +69,8 @@ which python
 
 The output should point to the Python interpreter in the virtual environment (**/venv/bin/python**).
 
+<!-- appendices -->
+
 [pip-url]: https://pip.pypa.io/en/stable/ 'pip.pypa.io'
+
+<!-- end appendices -->

@@ -1,47 +1,62 @@
 ---
-description: Cheet Sheet fot Pip a package manager for Python packages, or modules if you like.
+title: Pip Package Manager
+description: Cheat sheet for Pip. Pip Python Package Manager Cheat Sheet. Pip is the package installer for Python. You can use it to install packages from the Python Package Index and other indexes.
+template: comments.html
+tags: [python, pip, package-manager, cheat-sheet]
 ---
 
-# Pip Python Package Manager
+# Pip Python Package Manager Cheat Sheet
 
-PIP is a package manager for Python packages, or modules if you like.
+Pip is the package installer for Python. You can use it to install packages from the Python Package Index and other indexes.
 
-## List installed packages with pip
+## List Installed Packages With Pip
 
-```python
+```shell
 pip list
 ```
 
-## List outdated packages
+## List Outdated Packages
 
-```python
+```shell
 pip list --outdated
 ```
 
-## Instal or update package to specific version
+## Instal Or Update Package To Specific Version
 
 exmaple with MySQL_python package:
 
-```python
+```shell
 pip install MySQL_python==1.2.2
 ```
 
-## Update package to the latest avalable version
+## Update Package To The Latest Avalable Version
 
 exmaple with MySQL_python package:
 
-```python
+```shell
 pip install MySQL_python --upgrade
 ```
 
 ## Update Pip Itself
 
-```python
+```shell
 pip install --upgrade pip
 ```
 
 ## Update All Packages Installed With Pip
 
-```python
+```shell
 pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U
 ```
+
+## Generate requirements.txt For a Project
+
+Run this command at terminal at the root of the project:
+
+```shell
+pip freeze > requirements.txt
+```
+
+<!-- appendices -->
+
+<!-- end appendices -->
