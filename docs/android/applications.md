@@ -12,7 +12,7 @@ Feel free to suggest new applications and tools at comments section below.
 
 ## List of Android Penetration Testing Tools and Applications
 
-- [Magisk Manager][magisk-manager-url]{target=\_blank} - systemless rooting system.
+- [Magisk Manager][magisk-manager-url]{target=\_blank} - Systemless rooting system.
 - [EdXposed Manager][edxposed-manager-url]{target=\_blank} - Companion Android application for EdXposed.
 - [BusyBox][busybox-url]{target=\_blank} - Android busyBox.
 - [SQLite Editor Master][sqlite-editor-url]{target=\_blank} - SQLite Editor.
@@ -21,6 +21,7 @@ Feel free to suggest new applications and tools at comments section below.
 - [Network Analyzer][network-analyzer-url]{target=\_blank} - Network Analyzer for Android.
 - [Packet Capture][packet-capture-url]{target=\_blank} - Packet capture/Network traffic sniffer.
 - [Material Terminal][material-terminal-url]{target=\_blank} - Terminal for Android.
+- [Gplaycli][gplaycli-url]{target=\_blank} Cli Tool to download APK form PlayStore.
 
 <!-- appendices -->
 
@@ -33,5 +34,6 @@ Feel free to suggest new applications and tools at comments section below.
 [network-analyzer-url]: https://play.google.com/store/apps/details?id=net.techet.netanalyzerlite.an 'Network Analyzer Play Store Page'
 [root-explorer-url]: https://play.google.com/store/apps/details?id=com.speedsoftware.rootexplorer 'Root Explorer Play Store Page'
 [material-terminal-url]: https://play.google.com/store/apps/details?id=yarolegovich.materialterminal&hl=en 'Material Terminal Play Store Page'
+[gplaycli-url]: https://github.com/matlink/gplaycli 'Gplaycli Github Page'
 
 <!-- end appendices -->
