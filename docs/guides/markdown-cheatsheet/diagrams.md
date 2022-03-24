@@ -207,11 +207,11 @@ erDiagram
 
 <!-- appendices -->
 
-[mermaid.js-url]: https://mermaid-js.github.io/mermaid/
-[flowcharts-url]: https://mermaid-js.github.io/mermaid/#/flowchart
-[sequence-diagrams-url]: https://mermaid-js.github.io/mermaid/#/sequenceDiagram
-[state-diagrams-url]: https://mermaid-js.github.io/mermaid/#/stateDiagram
-[class-diagrams-url]: https://mermaid-js.github.io/mermaid/#/classDiagram
-[entity-relationship-diagram-url]: https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram
+[mermaid.js-url]: https://mermaid-js.github.io/mermaid/ 'Mermaid.js'
+[flowcharts-url]: https://mermaid-js.github.io/mermaid/#/flowchart 'Mermaid.js Flowcharts'
+[sequence-diagrams-url]: https://mermaid-js.github.io/mermaid/#/sequenceDiagram 'Mermaid.js Sequence Diagrams'
+[state-diagrams-url]: https://mermaid-js.github.io/mermaid/#/stateDiagram 'Mermaid.js State Diagrams'
+[class-diagrams-url]: https://mermaid-js.github.io/mermaid/#/classDiagram 'Mermaid.js Class Diagrams'
+[entity-relationship-diagram-url]: https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram 'Mermaid.js Entity-Relationship Diagrams'
 
 <!-- end appendices -->

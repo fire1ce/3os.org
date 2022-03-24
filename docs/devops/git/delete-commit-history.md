@@ -53,6 +53,6 @@ git push -f origin main
 
 <!-- appendices -->
 
-[github-instructions-url]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+[github-instructions-url]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository 'Github Instructions'
 
 <!-- end appendices -->

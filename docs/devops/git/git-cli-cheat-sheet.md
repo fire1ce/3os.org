@@ -222,6 +222,6 @@ Strictly speaking, the `git fetch origin` and `-u` argument to `git push origin 
 
 <!-- appendices -->
 
-[gitignore-url]: https://github.com/github/gitignore
+[gitignore-url]: https://github.com/github/gitignore 'Gitignore Templates'
 
 <!-- end appendices -->

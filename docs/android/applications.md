@@ -24,14 +24,14 @@ Feel free to suggest new applications and tools at comments section below.
 
 <!-- appendices -->
 
-[magisk-manager-url]: https://magiskmanager.com/
-[edxposed-manager-url]: https://github.com/ElderDrivers/EdXposedManager/releases
-[busybox-url]: https://play.google.com/store/apps/details?id=stericson.busybox
-[sqlite-editor-url]: https://play.google.com/store/apps/details?id=com.dundastech.sqlitemasterlight
-[packet-capture-url]: https://www.apkmirror.com/apk/grey-shirts/packet-capture/packet-capture-1-4-7-release/packet-capture-1-4-7-android-apk-download/
-[cilocks-url]: https://github.com/tegal1337/CiLocks
-[network-analyzer-url]: https://play.google.com/store/apps/details?id=net.techet.netanalyzerlite.an
-[root-explorer-url]: https://play.google.com/store/apps/details?id=com.speedsoftware.rootexplorer
-[material-terminal-url]: https://play.google.com/store/apps/details?id=yarolegovich.materialterminal&hl=en
+[magisk-manager-url]: https://magiskmanager.com/ 'Magisk Manager Official Website'
+[edxposed-manager-url]: https://github.com/ElderDrivers/EdXposedManager/releases 'EdXposed Manager Github Page'
+[busybox-url]: https://play.google.com/store/apps/details?id=stericson.busybox 'BusyBox Play Store Page'
+[sqlite-editor-url]: https://play.google.com/store/apps/details?id=com.dundastech.sqlitemasterlight 'SQLite Editor Play Store Page'
+[packet-capture-url]: https://www.apkmirror.com/apk/grey-shirts/packet-capture/packet-capture-1-4-7-release/packet-capture-1-4-7-android-apk-download/ 'Packet Capture APK Mirror'
+[cilocks-url]: https://github.com/tegal1337/CiLocks 'CiLocks Github Page'
+[network-analyzer-url]: https://play.google.com/store/apps/details?id=net.techet.netanalyzerlite.an 'Network Analyzer Play Store Page'
+[root-explorer-url]: https://play.google.com/store/apps/details?id=com.speedsoftware.rootexplorer 'Root Explorer Play Store Page'
+[material-terminal-url]: https://play.google.com/store/apps/details?id=yarolegovich.materialterminal&hl=en 'Material Terminal Play Store Page'
 
 <!-- end appendices -->

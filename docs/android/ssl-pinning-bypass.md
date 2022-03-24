@@ -105,6 +105,6 @@ android proxy set 192.168.5.102 8081
 
 <!-- appendices -->
 
-[frida-releases]: https://github.com/frida/frida/releases
+[frida-releases]: https://github.com/frida/frida/releases 'Frida Server Downloads'
 
 <!-- end appendices -->

@@ -21,6 +21,6 @@ Thanks to [@wsargent][wsargent-url]{target=\_blank} for creating this cheat shee
 
 <!-- appendices -->
 
-[wsargent-url]: https://github.com/wsargent/docker-cheat-sheet
+[wsargent-url]: https://github.com/wsargent/docker-cheat-sheet 'wsargent Github Page'
 
 <!-- end appendices -->

@@ -43,6 +43,6 @@ When installing the APK you will be prompted with a warning of "unknown certific
 
 <!-- appendices -->
 
-[apktool-url]: https://ibotpeaches.github.io/Apktool/
+[apktool-url]: https://ibotpeaches.github.io/Apktool/ 'Apktool Official Website'
 
 <!-- end appendices -->
