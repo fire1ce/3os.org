@@ -18,3 +18,6 @@ file:///github/workspace/docs/penetration-testing/cheatsheets/http:/google:ha.ck
 file:///github/workspace/docs/penetration-testing/cheatsheets/http:/;URL=javascript:alert('XSS')
 javascript:alert('XSS')
 URL=javascript:alert('XSS')
+opt/homebrew/var/run/supervisor.sock
+http://0.0.0.0:8808/
+http://[::]:8808/
