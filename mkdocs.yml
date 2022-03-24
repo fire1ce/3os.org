@@ -99,8 +99,10 @@ extra:
       link: https://github.com/fire1ce
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/stas-yakobov
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/3os.org
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/fire1ce
+    - icon: fontawesome/brands/reddit
+      link: https://www.reddit.com/user/fire1ce/
 
 # Extensions
 markdown_extensions:
