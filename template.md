@@ -17,7 +17,7 @@ Curabitur nibh diam, ultricies eu ultrices eu, porta eget massa. Curabitur sempe
 
 <!-- appendices -->
 
-[3os-url]: https://3os.org/
+[3os-url]: https://3os.org/ '3os Homepage'
 [image-url]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 <!-- end appendices -->
