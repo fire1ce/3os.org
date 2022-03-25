@@ -1,26 +1,26 @@
 ---
-description: How to Install Python on MacOS the Right Way and Use Python Virtual Environment
+description: How to Install Python on macOS the Right Way and Use Python Virtual Environment
 ---
 
-# How to Install and use Python on MacOS the Right Way
+# How to Install and use Python on macOS the Right Way
 
 ## Intro
 
-Using and developing with Python on MacOS sometimes may be frustrating...
+Using and developing with Python on macOS sometimes may be frustrating...
 
-The reason for that is that MacOS uses __Python 2__ for its core system with __pip__ as a package manager. When __Xcode Command Line Tools__ are installed __Python 3__ and __pip3__ package manager will be available at the cli. When using __Python2, Python3__ and their package managers this way, all the packages will be installed at the system level and my effect the native packages and their dependences , this can __break__ or lead to __unwanted bugs__ in OS.
+The reason for that is that macOS uses **Python 2** for its core system with **pip** as a package manager. When **Xcode Command Line Tools** are installed **Python 3** and **pip3** package manager will be available at the cli. When using **Python2, Python3** and their package managers this way, all the packages will be installed at the system level and my effect the native packages and their dependences , this can **break** or lead to **unwanted bugs** in OS.
 
-The right way to use python at MacOS is to use __Virtual Environments__ for python. This way all the system related versions of python and their packages won't be affected and use by you.
+The right way to use python at macOS is to use **Virtual Environments** for python. This way all the system related versions of python and their packages won't be affected and use by you.
 
 ## Installing and configuring pyenv, pyenv-virtualenv
 
-In order to use pyenv, pyenv-virtualenv without conflicting with the native MacOS python we need to add some configuration to our ~/.zshrc config (for mac os catalina) or your bash config if you are still using bash.
+In order to use pyenv, pyenv-virtualenv without conflicting with the native macOS python we need to add some configuration to our ~/.zshrc config (for mac os catalina) or your bash config if you are still using bash.
 
-__It's very imported to maintain the order of the configuration for the loading order__
+**It's very imported to maintain the order of the configuration for the loading order**
 
-* First of all we need to include your Executable Paths. In the example we added all the common paths, including the paths for pyenv, pyenv-virtualenv. If you have any other path that you use, you can add them at the same line or create a new line below this one.
-* Second to Executable Paths we will add two if statements that will check if the pyenv,pyenv-virtualenv are installed, if they are it will load them. If they aren't and you are using the same zsh or bash config it will ignore loading them
-* Third is a fix for __brew, brew doctor__. When using this method it may conflict with brew as it uses python as well. If you run run __brew doctor__ without the fix, it will show config warnings related to the python configuration files.
+- First of all we need to include your Executable Paths. In the example we added all the common paths, including the paths for pyenv, pyenv-virtualenv. If you have any other path that you use, you can add them at the same line or create a new line below this one.
+- Second to Executable Paths we will add two if statements that will check if the pyenv,pyenv-virtualenv are installed, if they are it will load them. If they aren't and you are using the same zsh or bash config it will ignore loading them
+- Third is a fix for **brew, brew doctor**. When using this method it may conflict with brew as it uses python as well. If you run run **brew doctor** without the fix, it will show config warnings related to the python configuration files.
 
 Configuration for ~/.zshrc or ~/.zprofile
 
@@ -101,10 +101,10 @@ So far we cleaned your system and installed and configured pyenv, pyenv-virtuale
 
 ## How to use pyenv-virtualenv
 
-Now let's understand how to use Python Virtual Environment with __pyenv-virtualenv__
+Now let's understand how to use Python Virtual Environment with **pyenv-virtualenv**
 
 Full documentation can be found at the original repo at git hub:
-[pyenv-virtualenv github](https://github.com/pyenv/pyenv-virtualenv "pyenv-virtualenv github")
+[pyenv-virtualenv github](https://github.com/pyenv/pyenv-virtualenv 'pyenv-virtualenv github')
 
 We will list here some basic examples for a quick start and basic understanding
 
@@ -116,7 +116,7 @@ pyenv virtualenv 3.9.5 my-project-name
 
 This will create a virtualenv based on Python 3.9.5 under $(pyenv root)/versions in a folder called my-project-name
 
-__Activating virtualenv automatically for project__
+**Activating virtualenv automatically for project**
 
 The best way we found to activate the virtualenv at your project is to link the projects directory to the virtualenv.
 
@@ -129,7 +129,7 @@ pyenv local my-project-name
 This will activate the linked virtualenv every time you cd to this directory automatically
 From now you can use pip to install any packages you need for your project, the location of the installed packages will be at $(pyenv root)/versions/<virtualenv name>
 
-__Activating virtualenv manually for project__
+**Activating virtualenv manually for project**
 
 You can also activate and deactivate a pyenv virtualenv manually:
 
@@ -158,4 +158,4 @@ or
 pyenv virtualenv-delete my-virtual-env
 ```
 
-You and your MacOS should be ready for using python the __right way__ without conflicting any system or Xcode Command Line Tools (used by brew)
+You and your macOS should be ready for using python the **right way** without conflicting any system or Xcode Command Line Tools (used by brew)
