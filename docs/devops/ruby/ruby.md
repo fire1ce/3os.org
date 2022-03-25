@@ -67,7 +67,6 @@ it will start a server on port 8808.
 
 ```terminal
 # Server started at http://0.0.0.0:8808
-# Server started at http://[::]:8808
 ```
 
 <!-- appendices -->
