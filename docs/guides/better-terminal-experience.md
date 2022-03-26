@@ -11,13 +11,13 @@ tags: [macos, linux, terminal, zsh, oh-my-zsh]
 
 ## Intoduction
 
-I have been using **terminal** for a long time, it's one of my essential tools for my everyday work and hobbies.  
-The default **terminal** experience is not very user friendly, and I find it sometimes **frustrating** to use for basic tasks.  
-So I decided to make a **better terminal experience** for macOS and Linux without too much effort from user side.  
-This guide will help you to install and configure the **better terminal experience** in less than 5 minutes.
+I have been using terminal for a long time, it's one of my essential tools for my everyday work and hobbies.  
+The default terminal experience is not very user friendly, and I find it sometimes frustrating to use for basic tasks.  
+So I decided to make a better terminal experience for macOS and Linux without too much effort from user side.  
+This guide will help you to install and configure the \*\*better terminal experience in less than 5 minutes.
 
 **Better Terminal Experience** guide based on [ZSH Shell][zsh-url]{target=\_blank} with [Oh My Zsh][ohmyz.sh-url]{target=\_blank} on top of it.  
-Using built-in theme called **Bira**, [zsh auto suggestions][zsh-autosuggestions-url]{target=\_blank} plugin that suggests commands as you type based on history and completions and [zsh syntax highlighting][zsh-syntax-highlighting-url]{target=\_blank} plugin that highlighting of commands whilst they are typed at a zsh prompt into an interactive terminal.
+Using built-in theme called `Bira`, [zsh auto suggestions][zsh-autosuggestions-url]{target=\_blank} plugin that suggests commands as you type based on history and completions and [zsh syntax highlighting][zsh-syntax-highlighting-url]{target=\_blank} plugin that highlighting of commands whilst they are typed at a zsh prompt into an interactive terminal.
 
 ### Whats' ZSH
 
@@ -164,7 +164,7 @@ Change the `export ZSH="users-home-dir-path"` to users' home directory path.
 
 ```shell
 # Path to your oh-my-zsh installation.
-export ZSH="/Home/${USER}/.oh-my-zsh"
+export ZSH="/home/${USER}/.oh-my-zsh"
 ```
 
 ### Oh My Zsh Manual Configuration
