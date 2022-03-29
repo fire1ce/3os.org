@@ -2,7 +2,7 @@ beautifulsoup4==4.10.0
 bracex==2.2.1
 certifi==2021.10.8
 charset-normalizer==2.0.12
-click==8.0.4
+click==8.1.0
 csscompressor==0.9.5
 ghp-import==2.0.2
 htmlmin==0.1.12
