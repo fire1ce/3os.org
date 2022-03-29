@@ -55,7 +55,7 @@ supervisorctl update
 Install with pip as system package:
 
 ```shell
-sudo pip install supervisor
+brew install supervisor
 ```
 
 The default location of the supervisor configuration file is at `/System/Volumes/Data/opt/homebrew/etc/supervisord.conf`.
