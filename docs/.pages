@@ -1,6 +1,6 @@
 nav:
   - Blog: blog.md
-  - Guides: guides
+  - Automation: automation
   - DevOps: devops
   - Infrastructure: infrastructure
   - Linux: linux
@@ -9,3 +9,5 @@ nav:
   - Raspberry Pi: raspberry-pi
   - Android: android
   - Penetration Testing: penetration-testing
+  - Homelab: homelab
+  - Utilitiess: utilities

@@ -2,7 +2,7 @@ beautifulsoup4==4.10.0
 bracex==2.2.1
 certifi==2021.10.8
 charset-normalizer==2.0.12
-click==8.1.0
+click==8.1.2
 csscompressor==0.9.5
 ghp-import==2.0.2
 htmlmin==0.1.12
@@ -23,7 +23,7 @@ mkdocs-material-extensions==1.0.3
 mkdocs-meta-descriptions-plugin==1.0.2
 mkdocs-minify-plugin==0.5.0
 mkdocs-plugin-progress==1.2.0
-mkdocs-redirects==1.0.3
+mkdocs-redirects==1.0.4
 packaging==21.3
 poetry-mkdocs-test==0.0.5
 Pygments==2.11.2

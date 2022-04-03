@@ -6,7 +6,7 @@ description: Raspberry Pi Tips & Tricks how to, guides, snippets, examples, and 
 
 ## Enable SSH on Raspberry Pi Without a Screen
 
-Put the micro SD card into your computer 
+Put the micro SD card into your computer
 You'll have to locate the boot directory at your SD card
 
 for example:

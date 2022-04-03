@@ -1,6 +1,15 @@
-# OpenWrt Tips and Tricks
+---
+title: Disable IPV6
+description: How to disable IPV6 on your OpenWrt router
+template: comments.html
+tags: [template, markdown]
+---
 
-## Disable ipv6
+# OpenWrt Disable IPV6
+
+The following steps will disable IPV6 on your OpenWrt router . All the setps are performed via the command line. You can performe them in the console of the router but the preferred way is via SSH.
+
+Follow the following steps to disable IPV6 on your OpenWrt router:
 
 ```bash
 uci set 'network.lan.ipv6=0'
@@ -10,7 +19,7 @@ uci set 'dhcp.lan.dhcpv6=disabled'
 uci commit
 ```
 
-and then disable RA and DHCPv6 so no IPv6 IPs are handed out:
+Disable RA and DHCPv6 so no IPv6 IPs are handed out:
 
 ```bash
 uci -q delete dhcp.lan.dhcpv6

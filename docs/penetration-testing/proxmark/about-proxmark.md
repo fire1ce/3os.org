@@ -12,18 +12,18 @@ The Proxmark is an RFID swiss-army tool, allowing for both high and low level in
 
 There are few Promark Devices, and you can find them at the offical website. I personally use the device at the picture above, you can get one at
 
-* [Proxmark3 - Amazon](https://amzn.to/3AcCQvL){target=_blank}
-* [Proxmark3 - Aliexpress](https://s.click.aliexpress.com/e/_APt1x8){target=_blank}
+- [Proxmark3 - Amazon](https://amzn.to/3AcCQvL){target=\_blank}
+- [Proxmark3 - Aliexpress](https://s.click.aliexpress.com/e/_APt1x8){target=\_blank}
 
 it's cheap and suites my needs
 
-The RFID tags i use are __duel band__ tags 13.56Mhz and 125KHz
+The RFID tags i use are **duel band** tags 13.56Mhz and 125KHz
 
-* [RFID tags - Amazon](https://amzn.to/2XdKnfv){target=_blank}
-* [RFID tags - Aliexpress](https://s.click.aliexpress.com/e/_AA0WMy){target=_blank}
+- [RFID tags - Amazon](https://amzn.to/2XdKnfv){target=\_blank}
+- [RFID tags - Aliexpress](https://s.click.aliexpress.com/e/_AA0WMy){target=\_blank}
 
 Useful Links:
 
-* [Official Proxmark Website](https://proxmark.com/){target=_blank}
-* [Official Proxmark3 Github Repo](https://github.com/Proxmark/proxmark3){target=_blank}
-* [Andprox - Android client](https://github.com/AndProx/AndProx){target=_blank}
+- [Official Proxmark Website](http://www.proxmark.org/){target=\_blank}
+- [Official Proxmark3 Github Repo](https://github.com/Proxmark/proxmark3){target=\_blank}
+- [Andprox - Android client](https://github.com/AndProx/AndProx){target=\_blank}

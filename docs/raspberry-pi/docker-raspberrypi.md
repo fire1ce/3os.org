@@ -6,9 +6,13 @@ description: How to install Docker and Docker-compose on Raspberry Pi
 
 ## How to install docker on Raspberry Pi
 
-```bash
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+```shell
+sudo apt install -y docker.io
+```
+
+### Runing Docker as root
+
+```shell
 sudo usermod -aG docker pi
 ```
 
@@ -19,7 +23,7 @@ The Docker daemon binds to a Unix socket instead of a TCP port. By default that 
 If you don’t want to preface the docker command with sudo, create a Unix group called docker and add users to it. When the Docker daemon starts, it creates a Unix socket accessible by members of the docker group.
 
 !!! warning
-    The docker group grants privileges equivalent to the root user.
+The docker group grants privileges equivalent to the root user.
 
 ```bash
 sudo groupadd docker
@@ -28,9 +32,6 @@ newgrp docker
 ```
 
 ## How to install docker-compose on Raspberry Pi
-
-!!! note
-    Docker must be installed
 
 ```bash
 sudo apt install docker-compose

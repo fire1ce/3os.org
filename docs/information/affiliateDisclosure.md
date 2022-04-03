@@ -1,5 +1,7 @@
 ---
+title: Affiliate Disclosure
 description: Affiliate Disclosure. This website can include advertising, supported content, paid inserts, affiliate links or other types of monetization.
+tags: [information, affiliate]
 ---
 
 # Affiliate Disclosure

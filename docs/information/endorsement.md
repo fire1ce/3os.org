@@ -1,4 +1,12 @@
+---
+title: Website Endorsements
+description: Website endorsement for our partners and friends who support our mission.
+tags: [information, endorsements]
+---
+
 # Website Endorsements
+
+Website endorsement for our partners and friends who support our mission.
 
 ## adventure.app
 

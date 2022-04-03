@@ -1,5 +1,7 @@
 ---
-description: We use cookies and other similar technologies to help provide our Services, to advertise to you and to analyse how you use our Services and whether advertisements are being viewed. We also allow third parties to use tracking technologies for similar purposes. If you are using our Services via a browser you can restrict, block or remove cookies through your web browser settings. The Help menu on the menu bar of most browsers also tells you how to prevent your browser from accepting new cookies, how to delete old cookies, how to have the browser notify you when you receive a new cookie and how to disable cookies altogether.
+tile: Cookies Policy
+description: Cookies Policy for this website and the related services. This website can include advertising, supported content, paid inserts, affiliate links or other types of monetization.
+tags: [information, Cookies]
 ---
 
 # Cookies Policy
