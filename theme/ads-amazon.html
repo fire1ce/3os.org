@@ -1,26 +1,21 @@
 {% extends "main.html" %} {% block content %} {{ super() }}
 
-<!-- amazon ads -->
-
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=6b6cef12-ec54-4c5e-88c7-6613dca880e2"></script>
-
 <!-- Giscus -->
 <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
-<script
-  src="https://giscus.app/client.js"
-  data-repo="fire1ce/3os.org"
-  data-repo-id="MDEwOlJlcG9zaXRvcnk0MDA2MDcxODk="
-  data-category="General"
-  data-category-id="DIC_kwDOF-DH1c4CBNDl"
-  data-mapping="pathname"
-  data-reactions-enabled="1"
-  data-emit-metadata="1"
-  data-input-position="bottom"
-  data-theme="light"
-  data-lang="en"
-  crossorigin="anonymous"
-  async
-></script>
+<script type="text/javascript">
+  amzn_assoc_placement = 'adunit0';
+  amzn_assoc_tracking_id = '3os-20';
+  amzn_assoc_ad_mode = 'search';
+  amzn_assoc_ad_type = 'smart';
+  amzn_assoc_marketplace = 'amazon';
+  amzn_assoc_region = 'US';
+  amzn_assoc_default_search_phrase = 'computer components';
+  amzn_assoc_default_category = 'All';
+  amzn_assoc_linkid = 'b0ca1605e3d64443dc876e3c041b5b7a';
+  amzn_assoc_design = 'in_content';
+  amzn_assoc_search_bar = 'false';
+</script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 
 <!-- Reload on palette change -->
 <script>

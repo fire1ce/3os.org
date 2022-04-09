@@ -14,7 +14,7 @@ Edit
 nano /etc/default/grub
 ```
 
-Find the line that starts with __GRUB_CMDLINE_LINUX_DEFAULT__
+Find the line that starts with **GRUB_CMDLINE_LINUX_DEFAULT**
 
 Add intel_iommu=on and i915.enable_gvt=1 to the list parameters, for example:
 
@@ -47,7 +47,6 @@ vfio-mdev
 
 Find the PCI address of the iGPU.
 
-
 ```bash
 lspci -nnv | grep VGA
 ```
@@ -60,12 +59,12 @@ This should result in output similar to this:
 
 Here, the PCI address of the iGPU is ==00:02.0==. Make note of that address.
 
-Open the web gui and navigate to the __Hardware__ tab of the VM you want to add a vGPU to.  
-Click __Add__ above the device list and then choose __PCI Device__.  
+Open the web gui and navigate to the **Hardware** tab of the VM you want to add a vGPU to.  
+Click **Add** above the device list and then choose **PCI Device**.
 
-Open the __Device__ dropdown and select the iGPU, which you can find using it’s PCI address. Note that this list uses a different format for the PCI addresses, __00:02.0__ is listed as __0000:00:02.0__.
+Open the **Device** dropdown and select the iGPU, which you can find using it’s PCI address. Note that this list uses a different format for the PCI addresses, **00:02.0** is listed as **0000:00:02.0**.
 
-Select the desired __MDev Type__. The listed resolutions only refers to the maximum screen resolution in the VM. They have no effect on the hardware transcoding capabilities.
+Select the desired **MDev Type**. The listed resolutions only refers to the maximum screen resolution in the VM. They have no effect on the hardware transcoding capabilities.
 
 Choose the device with the better "hardware" to the vm.
 
@@ -74,4 +73,3 @@ Keep in mind that if you do set it as the primary GPU, the Proxmox console will 
 Click Add.
 
 Restart your virtual machine.
-
