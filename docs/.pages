@@ -1,7 +1,8 @@
 nav:
-  - Blog: blog.md
+
   - Automation: automation
   - DevOps: devops
+  - Development: development
   - Infrastructure: infrastructure
   - Linux: linux
   - macOS: mac-os
@@ -10,4 +11,4 @@ nav:
   - Android: android
   - Penetration Testing: penetration-testing
   - Homelab: homelab
-  - Utilitiess: utilities
+  - Utilities: utilities
