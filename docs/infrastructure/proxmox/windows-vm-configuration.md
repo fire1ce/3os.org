@@ -1,30 +1,27 @@
 ---
-title: Windwos VM GPU Passthrough
-description: Configuring Proxmox Windwos 10 or 11 to utilize GPU Passthrough using Proxmox setp by step guide
+title: Windows VM Configuration
+description: Windows 10 or Windows 11 Virutal Machines with VirtIO Disks and Networking using Proxmox guide. Supports Proxmox's GPU passthroughs feature.
 template: comments.html
-tags: [Proxmox, GPU Passthrough, Windows]
+tags: [Proxmox, Windows Virtual Machines, VirtIO]
 ---
 
-# Configuring Proxmox Windwos VM for GPU Passthrough
+# Proxmox Windows Virtual Machine Configuration
 
-In odred to utilize the GPU passthrough feature of Proxmox, you will need to install the Windows VM with specific way.
-This guide will show you how to configure and prepare the VM in Proxmox step by step in order to be able to utilize the GPU passthrough feature.
-Tested on Windows 10 and Windows 11.
+This guide will walk you through configuring Windows 10 or Windows 11 Virutal Machines with VirtIO Disks and Networking using Proxmox.
+This configuration was tested to work with the `GPU passthroughs` feature from one of the folowing guides:
 
-To configure Proxmox for GPU passthrough follow one of the following guides depending on the type of GPU passthrough you want to use:
-
-- [just a url][3os-url]
-- [just a url][3os-url]
-- [just a url][3os-url]
+- [GPU Passthrough to VM][gpu-passthrough-to-vm] - Full GPU passthrough to VM guide
+- [iGPU Passthrough to VM][igpu-passthrough-to-vm] - Cpu's GPU passthrough to VM guide (Intel)
+- [GPU Split Passthrough][gpu-split-passthrough] - Spliting (Nvidia) to Multiple GPUs passthrough to VM guide
 
 ## Prerequirements
 
-Before we begin, we need to download the [VirtIO Drivers for Windwos][virtio-drivers-url]{target=\_blank} `iso` directly to your proxmox ios files locations or upload it as any other iso file.
+Before we begin, we need to download the [VirtIO Drivers for Windwos][virtio-drivers-url]{target=\_blank} `iso`. Upload it via the GUI as any other ISO file.
 
-Proxmox path exmaple:
+You can allso use ssh and download it directly from the Proxmox server.
 
 ```shell
-/var/lib/vz/template/isovirtio-win-0.1.215.iso
+wget -P /var/lib/vz/template/iso https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
 ```
 
 ## Create a VM in Proxmox
@@ -148,19 +145,21 @@ Select `Do nor use any media` on the CD/DVD with the Windows iso.
 
 ![post-remove-iso][post-remove-iso-image]
 
-At this point we are done preparing the Windwos VM for GPU passthrough.
+At this point we are done with the installation of the Windows VM.
 
-You can now use one of the following guides depending on the type of GPU passthrough you want to use:
+Follow those guides for utlizing a GPU passthrough to VM:
 
-- [just a url][3os-url]
-- [just a url][3os-url]
-- [just a url][3os-url]
+- [GPU Passthrough to VM][gpu-passthrough-to-vm] - Full GPU passthrough to VM guide
+- [iGPU Passthrough to VM][igpu-passthrough-to-vm] - Cpu's GPU passthrough to VM guide (Intel)
+- [GPU Split Passthrough][gpu-split-passthrough] - Spliting (Nvidia) to Multiple GPUs passthrough to VM guide
 
 <!-- appendices -->
 
 <!-- urls -->
 
-[3os-url]: https://3os.org/ '3os Homepage'
+[gpu-passthrough-to-vm]: https://3os.org/infrastructure/proxmox/pgu-passthrough-to-vm/ 'GPU Passthrough to VM'
+[igpu-passthrough-to-vm]: https://3os.org/infrastructure/proxmox/igpu-passthrough-to-vm/ 'iGPU Passthrough to VM'
+[gpu-split-passthrough]: https://3os.org/infrastructure/proxmox/pgu-split-passthrough/ 'GPU Split Passthrough'
 [virtio-drivers-url]: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 'VirtIO Drivers'
 
 <!-- images -->

@@ -50,3 +50,11 @@ uci -q delete network.globals.ula_prefix
 uci commit network
 /etc/init.d/network restart
 ```
+
+<!-- appendices -->
+
+<!-- urls -->
+
+<!-- images -->
+
+<!-- end appendices -->
