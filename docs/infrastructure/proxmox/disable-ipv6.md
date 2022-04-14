@@ -2,9 +2,7 @@
 description: Proxmox Tips and Tricks - A collection of useful tips and tricks for Proxmox
 ---
 
-# Proxmox Tips and Tricks
-
-## Disable IPV6 Support
+# Disable IPV6 Support
 
 Edit the /etc/sysctl.conf file
 Append the following to the end of the file

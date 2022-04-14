@@ -1,5 +1,4 @@
 nav:
-  - tipsandtricks.md
   - proxmox-networking.md
   - ...
   - pvekclean.md

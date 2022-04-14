@@ -19,7 +19,7 @@ This guide will help you to install and configure the \*\*better terminal experi
 **Better Terminal Experience** guide based on [ZSH Shell][zsh-url]{target=\_blank} with [Oh My Zsh][ohmyz.sh-url]{target=\_blank} on top of it.  
 Using built-in theme called `Bira`, [zsh auto suggestions][zsh-autosuggestions-url]{target=\_blank} plugin that suggests commands as you type based on history and completions and [zsh syntax highlighting][zsh-syntax-highlighting-url]{target=\_blank} plugin that highlighting of commands whilst they are typed at a zsh prompt into an interactive terminal.
 
-### Whats' ZSH
+### What's ZSH
 
 Z-shell (Zsh) is a Unix shell that can be used as an interactive login shell and as a shell scripting command interpreter. Zsh is an enhanced Bourne shell with many enhancements, including some Bash, ksh and tcsh features.
 
@@ -213,10 +213,10 @@ Open new terminal windown and enjoy Better Terminal Experience!
 
 [zsh-url]: https://www.zsh.org/ 'ZSH'
 [ohmyz.sh-url]: https://ohmyz.sh/ 'Oh-My-Zsh'
-[terminal-screenshot-image]: /assets/images/a0514d0c-abca-11ec-93a6-ffaf1c727a0d.jpg 'Terminal Screenshot'
 [zsh-autosuggestions-url]: https://github.com/zsh-users/zsh-autosuggestions 'ZSH Autosuggestions github page'
 [zsh-syntax-highlighting-url]: https://github.com/zsh-users/zsh-syntax-highlighting 'ZSH Syntax-Highlighting github page'
 [iterm2-url]: https://iterm2.com/ 'iTerm2 homepage'
 [homebrew-url]: https://brew.sh/ 'Homebrew homepage'
+[terminal-screenshot-image]: /assets/images/a0514d0c-abca-11ec-93a6-ffaf1c727a0d.jpg 'Terminal Screenshot'
 
 <!-- end appendices -->

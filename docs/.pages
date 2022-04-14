@@ -10,5 +10,5 @@ nav:
   - Raspberry Pi: raspberry-pi
   - Android: android
   - Penetration Testing: penetration-testing
-  - Homelab: homelab
+#  - Homelab: homelab
   - Utilities: utilities

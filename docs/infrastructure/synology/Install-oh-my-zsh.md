@@ -1,29 +1,56 @@
 ---
-description: how to install ZSH and oh-my-zsh on synology dsm nas
+title: oh-my-zsh on Synology NAS
+description: Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maecenas euismod neque rhoncus suscipit viverra. Nulla venenatis enim vel mauris ornare viverra.
+template: comments.html
+tags: [template, markdown]
 ---
 
-# Install zsh and oh-my-zsh
+# How to install oh-my-zsh on Synology NAS
 
-Add community package source to package center
-Open package center -> preference. Now we are at General tab. Allow install package from Synology Inc. and trusted publishers.
+## Intoduction
 
-Switch to Package Sources tab and add the source of synocommunity: `https://packages.synocommunity.com `
-Now you can see a list of packages in the Community tab
+The following steps will instruct you how to install oh-my-zsh on Synology DSM NAS.
 
-Install zsh from package center
-Simply search and install zsh from package center. Package name
-"Z shell".
+### Whats' ZSH
 
-Change shell when ssh login
-It is not safe to edit /etc/passwd to set default shell, since in DSM cannot use chsh command, so I found a trick to switch shell as long as you ssh login
+Z-shell (Zsh) is a Unix shell that can be used as an interactive login shell and as a shell scripting command interpreter. Zsh is an enhanced Bourne shell with many enhancements, including some Bash, ksh and tcsh features.
 
-Locate zsh's location:
+### What's Oh-My-Zsh
 
-```bash
-which zsh
+Oh My Zsh is an open source, community-driven framework for managing your [zsh][zsh-url]{target=\_blank} configuration.
+
+## Community Packages for Synology DSM
+
+In order to install oh-my-zsh, we need to add 3rd party packages to Synology DSM.
+[SynoCommunity][synocommunity.com] provides packages for Synology-branded NAS devices.
+
+DSM 6 and below:
+
+Log into your NAS as administrator and go to Main Menu → Package Center → Settings and set Trust Level to Synology Inc. and trusted publishers.
+
+In the Package Sources tab, click Add, type SynoCommunity as Name and `https://packages.synocommunity.com/` as Location and then press OK to validate.
+
+![syno-community-install][syno-community-install-image]
+
+Go back to the Package Center and enjoy SynoCommunity's packages in the Community tab.
+
+## Install `Z shell (with modules)`
+
+Install `Z shell (with modules)` from package center Community tab.
+
+![Z shell (with modules) package][z-shell-with-modules-package-image]
+
+## Change The Default Shell to `ZSH`
+
+The following steps will be performed via SSH
+
+edit `~/.profile`
+
+```shell
+vi ~/.profile
 ```
 
-The default shell on DSM was ash when ssh into, edit ~/.profile append the codes below with the zsh location:
+Sppend the codes below to the end of the file:
 
 ```bash
 if [[ -x /usr/local/bin/zsh ]]; then
@@ -32,9 +59,37 @@ if [[ -x /usr/local/bin/zsh ]]; then
 fi
 ```
 
-Now logout and login again, shell should be zsh
+Open new SSH session to Synology NAS the shell should be `zsh`
 
-Install oh my zsh
-To install oh my zsh, you need git, you can install git from package center. Simply search git and choose "Git Server" to install
+## Install Oh My Zsh
 
-Then according to https://github.com/robbyrussell/oh-my-zsh, you can have it.
+From new SSH session with `zsh` shell, install Oh My Zsh with the one of following command:
+
+with curl:
+
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+with wget:
+
+```shell
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+At this point you should have a working `oh-my-zsh` working on your Synology NAS.
+
+<!-- appendices -->
+
+<!-- urls -->
+
+[zsh-url]: https://www.zsh.org/ 'ZSH'
+[ohmyz.sh-url]: https://ohmyz.sh/ 'Oh-My-Zsh'
+[synocommunity.com]: https://synocommunity.com/ 'Synology Community'
+
+<!-- images -->
+
+[syno-community-install-image]: /assets/images/e38b4c1c-bbc9-11ec-b13f-033bc9ab9d10.jpg 'SynoCommunity install'
+[z-shell-with-modules-package-image]: /assets/images/76a71404-bbca-11ec-847d-87c4502ecefc.jpg 'Z shell (with modules) package'
+
+<!-- end appendices -->
