@@ -9,7 +9,7 @@ tags: [proxmox, igpu, passthrough]
 
 ## Introduction
 
-Intel Integrated Graphics (iGPU) is a GPU that is integrated into the CPU. The GPU is a part of the CPU and is used to render graphics. Proxmox may be configured to use iGPU passthrough to VM to allow the VM to use the iGPU for hardware acceleration for example using video encoding/decoding and Transcoding for series like Plex and Emby.
+Intel Integrated Graphics (iGPU) is a GPU that is integrated into the CPU. The GPU is a part of the CPU and is used to render graphics. Proxmox may be configured to use iGPU split passthrough to VM to allow the VM to use the iGPU for hardware acceleration for example using video encoding/decoding and Transcoding for series like Plex and Emby.
 This guide will show you how to configure Proxmox to use iGPU passthrough to VM.
 
 !!! Warning ""
@@ -19,39 +19,38 @@ This guide will show you how to configure Proxmox to use iGPU passthrough to VM.
 !!! Failure "Supported CPUs"
 
     `iGPU GVT-g Split Passthrough` is supported only on Intel's **5th generation to 10th generation** CPUs!
+    Known supported CPUs: Broadwell, Skylake, Kaby Lake, Coffee Lake, Comet Lake.
 
-There are two ways to use iGPU passthrough to VM. The first way is to use the `Full iGPU Passthrough` to VM. The second way is to use the `iGPU GVT-g` technology which allows as to split the iGPU into two parts. We will be covering the `iGPU GVT-g Split Passthrough`. If you want to use the Full `iGPU Full Passthrough` you can find the guide [here][igpu-full-passthrough-url].
-
-For better results its recommend to use this [Windwos 10/11 Virutal Machine configuration for proxmox][windows-vm-configuration-url].
+There are two ways to use iGPU passthrough to VM. The first way is to use the `Full iGPU Passthrough` to VM. The second way is to use the `iGPU GVT-g` technology which allows as to split the iGPU into two parts. We will be covering the `Split iGPU Passthrough`. If you want to use the split `Full iGPU Passthrough` you can find the guide [here][igpu-full-passthrough-url].
 
 ## Proxmox Configuration for GVT-g Split Passthrough
 
-The following exmaples uses `SSH` connection to the Proxmox server. The editor is `nano` but feel free to use any other editor.
-We will be edditing the `grup` configuration file.
+The following examples uses `SSH` connection to the Proxmox server. The editor is `nano` but feel free to use any other editor.
+We will be editing the `grub` configuration file.
 
-Edit the `grup` configuration file.
+Edit the `grub` configuration file.
 
 ```shell
 nano /etc/default/grub
 ```
 
-Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` By defalt the should look like this:
+Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` by default they should look like this:
 
 ```shell
 GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 ```
 
-We want to allow `passthrough` and `Blacklists` known graphics drivers to privent proxmox from utilizing the iGPU.
+We want to allow `passthrough` and `Blacklists` known graphics drivers to prevent proxmox from utilizing the iGPU.
 
 Your `GRUB_CMDLINE_LINUX_DEFAULT` should look like this:
 
 ```shell
-GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on 915.enable_gvt=1 video=simplefb:off video=vesafb:off video=efifb:off video=vesa:off disable_vga=1 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu,snd_hda_intel,snd_hda_codec_hdmi"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on i915.enable_gvt=1 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
 ```
 
 !!! Note
 
-    Note: This will blacklist most of the graphics drivers from proxmox. If you have a specific driver you need to use for Proxmox Host you need to remove it from `modprobe.blacklist`
+    This will blacklist most of the graphics drivers from proxmox. If you have a specific driver you need to use for Proxmox Host you need to remove it from `modprobe.blacklist`
 
 Save and exit the editor.
 
@@ -78,17 +77,23 @@ vfio_iommu_type1
 vfio_pci
 vfio_virqfd
 
-# Modules required for Intel GVT
+# Modules required for Intel GVT-g Split
 kvmgt
-exngt
-vfio-mdev
 ```
 
 Save and exit the editor.
 
+Update configuration changes made in your /etc filesystem
+
+```shell
+update-initramfs -u -k all
+```
+
 **Reboot Proxmox to apply the changes**
 
 ## Windows Virtual Machine iGPU Passthrough Configuration
+
+For better results its recommend to use this [Windwos 10/11 Virutal Machine configuration for proxmox][windows-vm-configuration-url].
 
 Find the PCI address of the iGPU.
 
@@ -104,47 +109,48 @@ This should result in output similar to this:
 
 If you have multiple VGA, look for the one that has the `Intel` in the name.
 
-![lspci-nnv-vga][lspci-nnv-vga-image]
-
 Here, the PCI address of the iGPU is `00:02.0`.
 
-Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU to.  
+![Proxmox lspci vga][proxmox-lspci-vga-image]
+
+For best performance the VM should be configured the `Machine` type to ==q35==.  
+This will allow the VM to utilize PCI-Express passthrough.
+
+Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU.  
 Click `Add` above the device list and then choose `PCI Device`
 
-![Add PCI Device][add-pci-device-image]
+!['Windows VM Add PCI Device][windows-vm-add-pci-device-image]
 
 Open the `Device` dropdown and select the iGPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `00:02.0` is listed as `0000:00:02.0`.
 
-![Add iGPU to VM][add-igpu-to-vm-image]
+![Add iGPU MDev to VM][general-add-igpu-mdev-to-vm-image]
 
 Click `Mdev Type`, You should be presented with a list of the available split passthrough devices choose the better performing one for the vm.
 
-![Add iGPU split to VM][add-igpu-split-to-vm-image]
+![Windows VM Add iGPU Split to VM][windows-vm-add-igpu-split-to-vm-image]
 
 Select `ROM-Bar`, `PCI-Express` and then click `Add`.
 
-![iGPU PCI Split Settings][igpu-pci-split-settings-image]
+![Windows VM iGPU PCI Split Settings][windows-vm-igpu-pci-split-settings-image]
 
-!!! tip
+The Windows Virtual Machine Proxmox Setting should look like this:
 
-    I've found that the most consistent way to utilize the GPU acceleration is to disable Proxmox's Virtual Graphics card of the vm. The drawback of disabling the Virtual Graphics card is that it will not be able to access the vm via proxmox's vnc console. The workaround is to enable Remote Desktop (RDP) on the VM before disabling the Virtual Graphics card and accessing the VM via RDP or use any other remove desktop client. If you loose the ability to access the VM via RDP you can temporarily remove the GPU PCI Device and re-enable the virtual graphics card
-
-![VM iGPU Hardware Settings][vm-igpu-hardware-settings-image]
+![Windows VM iGPU Split Hardware Settings][windows-vm-igpu-split-hardware-settings-image]
 
 Power on the Windows Virtual Machine.
 
-Connect to the VM via Remote Desktop (RDP) or any other remote access protocol you prefer.
-Install the latest version of [Intel's Graphics Driver][intel-gpu-drivers-url]{target=\_blank}.
+Open the VM's Console.
+Install the latest version of [Intel's Graphics Driver][intel-gpu-drivers-url]{target=\_blank} or use the [Intel Driver & Support Assistant][intel-driver-and-support-assistant-url]{target=\_blank} installer.
 
 If all when well you should see the following output in `Device Manager` and [GPU-Z][gpu-z-url]{target=\_blank}:
 
 ![GPU-Z and Device Manager iGPU][gpu-z-and-device-manager-igpu-image]
 
-That's it!
+That's it! You should now be able to use the iGPU for hardware acceleration inside the VM and still have proxmox's output on the screen.
 
 ## Linux Virtual Machine iGPU Passthrough Configuration
 
-We will be using Ubuntu Server 20.04 LTS. for this guide.
+We will be using Ubuntu Server 20.04 LTS for this guide.
 
 From Proxmox Terminal find the PCI address of the iGPU.
 
@@ -160,53 +166,87 @@ This should result in output similar to this:
 
 If you have multiple VGA, look for the one that has the `Intel` in the name.
 
-![lspci-nnv-vga][lspci-nnv-vga-image]
+![Proxmox lspci vga][proxmox-lspci-vga-image]
 
 Here, the PCI address of the iGPU is `00:02.0`.
 
-For best performance the VM should be configured the `Machine` type to `q35`. This will alow the VM to utilize PCI-Express passthrough.
+VM should be configured the `Machine` type to ==i440fx==.  
 Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU to.  
 Click `Add` above the device list and then choose `PCI Device`
 
-![Add PCI Device Ubuntu][add-pci-device-ubuntu-image]
+![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-image]
 
 Open the `Device` dropdown and select the iGPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `00:02.0` is listed as `0000:00:02.0`.
 
-![Add iGPU to VM Ubuntu][add-igpu-to-vm-ubuntu-image]
+![Add iGPU MDev to VM][general-add-igpu-mdev-to-vm-image]
 
-Select `All Functions`, `ROM-Bar`, `PCI-Express` and then click `Add`.
+Click `Mdev Type`, You should be presented with a list of the available split passthrough devices choose the better performing one for the vm.
 
-Here is the screenshot of the VM settings:
+![Add iGPU Split Mdev to VM][ubuntu-vm-add-igpu-split-to-vm-image]
 
-![VM Hardware Setting Ubuntu][vm-hardware-setting-ubuntu-image]
+Select `ROM-Bar`, and then click `Add`.
 
-!!! Note
+![Ubuntu VM iGPU PCI Split Settings][ubuntu-vm-igpu-pci-split-settings-image]
 
-    VM's Console of the vm will freez at boot time. This is due to the fact that the VM is using the iGPU. Therefor, you will loose the ability to access the VM via proxmox's vnc console. The workaround is to enable [Serial Console Display][serial-terminal-url] - This will alow you to access the VM's console via the serial console from proxmox's shell.
+The Ubuntu Virtual Machine Proxmox Setting should look like this:
 
-![VM Console Ubuntu][vm-console-ubuntu-image]
+![Ubuntu VM iGPU Split Hardware Settings][ubuntu-vm-igpu-split-hardware-settings-image]
 
-## iGPU Split GVT-g Passthrough
-
-All 5th generation to 10th generation inc
-
-or newer Intel Core as well as Xeon E3 v4 CPUs support Intel’s Graphics Virtualization Technology. One variant of this technology suite (called GVT-g) allows you to “split” an Intel integrated GPU into multiple virtual GPUs. Using this feature, you can not only add hardware acceleration to more than virtual machine. It also allows you to keep the video output from your hypervisor, since it will always have access to part of the iGPU.
-
-```bash
-GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on i915.enable_gvt=1"
-```
+Boot the VM. To test the iGPU passthrough was successful, you can use the following command:
 
 ```shell
-# Modules required for PCI passthrough
-vfio
-vfio_iommu_type1
-vfio_pci
-vfio_virqfd
+ sudo lspci -nnv | grep VGA
+```
 
-# Modules required for Intel GVT
-kvmgt
-exngt
-vfio-mdev
+The output should incliude the Intel iGPU:
+
+```shell
+00:10.0 VGA compatible controller [0300]: Intel Corporation UHD Graphics 630 (Desktop) [8086:3e92] (prog-if 00 [VGA controller])
+```
+
+Now we need to chack if the GPU's Driver initalization is working.
+
+```shell
+cd /dev/dri && ls -la
+```
+
+The output should incliude the `renderD128`
+
+![VM renderD128][vm-renderd128-image]
+
+That's it! You should now be able to use the iGPU for hardware acceleration inside the VM and still have proxmox's output on the screen.
+
+## Debug
+
+Dbug Messages - Shows Hardware initialization and errors
+
+```shell
+dmesg -w
+```
+
+Display PCI devices information
+
+```shell
+lspci
+```
+
+Display Driver in use for PCI devices
+
+```shell
+lspci -k
+```
+
+Display IOMMU Groups the PCI devices are assigned to
+
+```shell
+#!/bin/bash
+shopt -s nullglob
+for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
+    echo "IOMMU Group ${g##*/}:"
+    for d in $g/devices/*; do
+        echo -e "\t$(lspci -nns ${d##*/})"
+    done;
+done;
 ```
 
 <!-- appendices -->
@@ -218,21 +258,30 @@ vfio-mdev
 [windows-vm-configuration-url]: /infrastructure/proxmox/windows-vm-configuration/ 'Windows VM Configuration'
 [serial-terminal-url]: /infrastructure/proxmox/serial-terminal/ 'Serial Terminal'
 [intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/products/80939/graphics.html 'Intel GPU Drivers'
+[intel-driver-and-support-assistant-url]: https://www.intel.com/content/www/us/en/support/detect.html 'Intel Driver and Support Assistant'
 [gpu-z-url]: https://www.techpowerup.com/gpuz/ 'GPU-Z Homepage'
 
 <!-- images -->
 
-[lspci-nnv-vga-image]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'lspci -nnv | grep VGA'
-[add-pci-device-image]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Add PCI Device'
-[add-igpu-to-vm-image]: /assets/images/d3a4d31c-b918-11ec-ac96-a7ff358e0685.jpg 'Add iGPU to VM'
-[add-igpu-to-vm-image]: /assets/images/d3a4d31c-b918-11ec-ac96-a7ff358e0685.jpg 'Add iGPU to VM'
-[add-igpu-split-to-vm-image]: /assets/images/393f9ce0-bc41-11ec-976a-cb1d91990157.jpg 'Add iGPU split to VM'
-[igpu-pci-split-settings-image]: /assets/images/0bb26720-bc42-11ec-97d5-0f6751fb6075.jpg 'iGPU PCI Split Settings'
-[vm-igpu-hardware-settings-image]: /assets/images/496fa0ba-b91c-11ec-bcb5-3759896bab7f.jpg 'VM iGPU Hardware Settings'
+<!-- Proxmox/general Images-->
+
+[proxmox-lspci-vga-image]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
+[general-add-igpu-mdev-to-vm-image]: /assets/images/2cf3d69c-bd89-11ec-af8c-67974c4ba3f0.jpg 'Add iGPU MDev to VM'
+
+<!-- Windows Images-->
+
+[windows-vm-add-pci-device-image]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
+[windows-vm-add-igpu-split-to-vm-image]: /assets/images/393f9ce0-bc41-11ec-976a-cb1d91990157.jpg 'Windows VM Add iGPU Split to VM'
+[windows-vm-igpu-pci-split-settings-image]: /assets/images/0bb26720-bc42-11ec-97d5-0f6751fb6075.jpg 'Windows VM iGPU PCI Split Settings'
+[windows-vm-igpu-split-hardware-settings-image]: /assets/images/d1d0f06c-bd9f-11ec-993d-77cc04f321dc.jpg 'Windows VM iGPU Split Hardware Settings'
 [gpu-z-and-device-manager-igpu-image]: /assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
-[add-pci-device-ubuntu-image]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Add PCI Device Ubuntu'
-[add-igpu-to-vm-ubuntu-image]: /assets/images/43a2c458-bc34-11ec-83a8-2f7d0e19f668.jpg 'Add iGPU to VM Ubuntu'
-[vm-console-ubuntu-image]: /assets/images/0f0cce22-bc35-11ec-8aa2-b74f9be36455.jpg 'VM Console Ubuntu'
-[vm-hardware-setting-ubuntu-image]: /assets/images/b177a31c-bc35-11ec-9045-2b011e6c011d.jpg 'VM Hardware Setting Ubuntu'
+
+<!-- Ubuntu Images-->
+
+[ubuntu-vm-add-pci-device-image]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
+[ubuntu-vm-add-igpu-split-to-vm-image]: /assets/images/3802e9b8-bd8b-11ec-a4ba-8305e0d2d682.jpg 'Ubuntu VM Add iGPU Split to VM'
+[ubuntu-vm-igpu-pci-split-settings-image]: /assets/images/c605680c-bd8c-11ec-81f9-4755a5d3fa24.jpg 'Ubuntu VM iGPU PCI Split Settings'
+[ubuntu-vm-igpu-split-hardware-settings-image]: /assets/images/375ed1c8-bd8d-11ec-94c6-cf0bac60954a.jpg 'Ubuntu VM iGPU Split Hardware Settings'
+[vm-renderd128-image]: /assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
 
 <!-- end appendices -->

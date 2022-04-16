@@ -125,7 +125,7 @@ Windows won't be able to load network drivers while installing. When prompted wi
 
 ### Install all the VirtIO Drivers for Windows
 
-Open the VirtIO CD and run the `virtio-win-gt-x64.exe` installer. This will install all the missing drivers for the VM.
+Open the VirtIO CD and run the `virtio-win-gt-x64.exe`, `virtio-win-guest-tools` installer. This will install all the missingv irtio drivers for the VM and guest OS tools.
 
 ![post-virtoi-install][post-virtoi-install-image]
 
