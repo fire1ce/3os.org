@@ -12,7 +12,7 @@ This configuration was tested to work with the `GPU passthroughs` feature from o
 
 - [GPU Passthrough to VM][gpu-passthrough-to-vm] - Full GPU passthrough to VM guide
 - [iGPU Passthrough to VM][igpu-passthrough-to-vm] - Cpu's GPU passthrough to VM guide (Intel)
-- [GPU Split Passthrough][gpu-split-passthrough] - Spliting (Nvidia) to Multiple GPUs passthrough to VM guide
+- [iGPU Split Passthrough][igpu-split-passthrough] - Spliting (CPU's GPU) to Multiple GPUs passthrough to VM guide
 
 ## Prerequirements
 
@@ -157,9 +157,9 @@ Follow those guides for utlizing a GPU passthrough to VM:
 
 <!-- urls -->
 
-[gpu-passthrough-to-vm]: https://3os.org/infrastructure/proxmox/pgu-passthrough-to-vm/ 'GPU Passthrough to VM'
-[igpu-passthrough-to-vm]: https://3os.org/infrastructure/proxmox/igpu-passthrough-to-vm/ 'iGPU Passthrough to VM'
-[gpu-split-passthrough]: https://3os.org/infrastructure/proxmox/pgu-split-passthrough/ 'GPU Split Passthrough'
+[gpu-passthrough-to-vm]: /infrastructure/proxmox/pgu-passthrough-to-vm/ 'GPU Passthrough to VM'
+[igpu-passthrough-to-vm]: /infrastructure/proxmox/igpu-passthrough-to-vm/ 'iGPU Passthrough to VM'
+[igpu-split-passthrough]: /infrastructure/proxmox/igpu-split-passthrough/ 'iGPU Split Passthrough'
 [virtio-drivers-url]: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 'VirtIO Drivers'
 
 <!-- images -->
