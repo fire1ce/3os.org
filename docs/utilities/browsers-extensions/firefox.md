@@ -1,19 +1,20 @@
 ---
 title: Firefox Extensions
-description: Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maecenas euismod neque rhoncus suscipit viverra. Nulla venenatis enim vel mauris ornare viverra.
+description: List of extensions for Firefox browser.
 template: comments.html
-tags: [template, markdown]
+tags: [firefox, extensions]
 ---
 
 # Firefox Extensions
 
-Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maecenas euismod neque rhoncus suscipit viverra. Nulla venenatis enim vel mauris ornare viverra. Nulla sed sapien augue. Ut quis hendrerit nibh. Integer consequat porttitor pharetra. Vivamus scelerisque venenatis libero, in ultrices justo pretium non. In a vulputate mi. Aliquam non turpis eu ex placerat pretium. Sed euismod semper est ac fringilla. Nunc quis egestas lorem [just a url][3os-url]{target=\_blank}.
+List of extensions for Firefox browser.
 
-## Section
-
-Curabitur nibh diam, ultricies eu ultrices eu, porta eget massa. Curabitur semper fringilla ornare. Phasellus gravida sollicitudin imperdiet. Mauris sed risus id nulla malesuada tincidunt et a neque. Etiam ipsum magna, sollicitudin vitae venenatis at, commodo in nisl. Morbi vitae dolor hendrerit, rhoncus nulla a, efficitur nunc. Integer vitae est commodo eros porttitor accumsan quis sit amet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque non interdum mauris. Proin gravida ex sit amet interdum laoreet. Praesent id consequat dui, ut dignissim odio.
-
-![minion][image-url]{: style="width:200px"}
+| Firefox Extensions                                                                                    | Description                     |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/)                       | Proxy Management                |
+| [Wappalyzer](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)                              | Identifies software on websites |
+| [Clear Browsing Data](https://addons.mozilla.org/en-US/firefox/addon/clear-browsing-data/?src=search) | Delete browsing data            |
+| [1Password](https://addons.mozilla.org/en-US/firefox/addon/1password-x-password-manager/)             | Password Manager                |
 
 <!-- appendices -->
 

@@ -44,7 +44,7 @@ We want to allow `passthrough` and `Blacklists` known graphics drivers to preven
 Your `GRUB_CMDLINE_LINUX_DEFAULT` should look like this:
 
 ```shell
-GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on video=simplefb:off video=vesafb:off video=efifb:off video=vesa:off disable_vga=1 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu,snd_hda_intel,snd_hda_codec_hdmi,i915"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction video=simplefb:off video=vesafb:off video=efifb:off video=vesa:off disable_vga=1 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu,snd_hda_intel,snd_hda_codec_hdmi,i915"
 ```
 
 !!! Note
@@ -55,13 +55,13 @@ Save and exit the editor.
 
 Update the grub configuration to apply the changes the next time the system boots.
 
-```bash
+```shell
 update-grub
 ```
 
 Next we need to add `vfio` modules to allow PCI passthrough.
 
-Eddit the `/etc/modules` file.
+Edit the `/etc/modules` file.
 
 ```shell
 nano /etc/modules
@@ -149,13 +149,13 @@ We will be using Ubuntu Server 20.04 LTS. for this guide.
 
 From Proxmox Terminal find the PCI address of the iGPU.
 
-```bash
+```shell
 lspci -nnv | grep VGA
 ```
 
 This should result in output similar to this:
 
-```bash
+```shell
 00:02.0 VGA compatible controller [0300]: Intel Corporation CometLake-S GT2 [UHD Graphics 630] [8086:3e92] (prog-if 00 [VGA controller])
 ```
 
@@ -190,7 +190,7 @@ The output should incliude the Intel iGPU:
 00:10.0 VGA compatible controller [0300]: Intel Corporation UHD Graphics 630 (Desktop) [8086:3e92] (prog-if 00 [VGA controller])
 ```
 
-Now we need to chack if the GPU's Driver initalization is working.
+Now we need to check if the GPU's Driver initalization is working.
 
 ```shell
 cd /dev/dri && ls -la
@@ -242,7 +242,6 @@ done;
 [igpu-full-passthrough-url]: /infrastructure/proxmox/igpu-passthrough-to-vm/#igpu-full-passthrough 'iGPU Full Passthrough'
 [igpu-split-gvt-g-passthrough-url]: /infrastructure/proxmox/igpu-split-passthrough/#igpu-split-gvt-g-passthrough 'iGPU Split GVT-g Passthrough'
 [windows-vm-configuration-url]: /infrastructure/proxmox/windows-vm-configuration/ 'Windows VM Configuration'
-[serial-terminal-url]: /infrastructure/proxmox/serial-terminal/ 'Serial Terminal'
 [intel-driver-and-support-assistant-url]: https://www.intel.com/content/www/us/en/support/detect.html 'Intel Driver and Support Assistant'
 [intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/products/80939/graphics.html 'Intel GPU Drivers'
 [gpu-z-url]: https://www.techpowerup.com/gpuz/ 'GPU-Z Homepage'

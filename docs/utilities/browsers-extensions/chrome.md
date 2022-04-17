@@ -1,19 +1,24 @@
 ---
 title: Chrome Extensions
-description: Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maecenas euismod neque rhoncus suscipit viverra. Nulla venenatis enim vel mauris ornare viverra.
+description: List of extensions for Chrome browser.
 template: comments.html
-tags: [template, markdown]
+tags: [chrome, extensions]
 ---
 
 # Chrome Extensions
 
-Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maecenas euismod neque rhoncus suscipit viverra. Nulla venenatis enim vel mauris ornare viverra. Nulla sed sapien augue. Ut quis hendrerit nibh. Integer consequat porttitor pharetra. Vivamus scelerisque venenatis libero, in ultrices justo pretium non. In a vulputate mi. Aliquam non turpis eu ex placerat pretium. Sed euismod semper est ac fringilla. Nunc quis egestas lorem [just a url][3os-url]{target=\_blank}.
+List of extensions for Chrome browser.
 
-## Section
-
-Curabitur nibh diam, ultricies eu ultrices eu, porta eget massa. Curabitur semper fringilla ornare. Phasellus gravida sollicitudin imperdiet. Mauris sed risus id nulla malesuada tincidunt et a neque. Etiam ipsum magna, sollicitudin vitae venenatis at, commodo in nisl. Morbi vitae dolor hendrerit, rhoncus nulla a, efficitur nunc. Integer vitae est commodo eros porttitor accumsan quis sit amet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque non interdum mauris. Proin gravida ex sit amet interdum laoreet. Praesent id consequat dui, ut dignissim odio.
-
-![minion][image-url]{: style="width:200px"}
+| Chrome Extensions                                                                                                                               | Description                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| [1Password](https://chrome.google.com/webstore/detail/1password-extension-deskt/aomjjhallfgjeglblehebfpbcfeobpgk?hl=en)                         | Password Manager (Desktop App Required)         |
+| [Clear Browsing Data](https://chrome.google.com/webstore/detail/clear-browsing-data/bjilljlpencdcpihofiobpnfgcakfdbe?hl=en)                     | Clear Browsing Data                             |
+| [HTTPS Everywhere](https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp?hl=en)                           | Automatically use HTTPS                         |
+| [Pushbullet](https://chrome.google.com/webstore/detail/pushbullet/chlffgpmiacpedhhbkiomidkjlcfhogd?hl=en)                                       | Connectivity App                                |
+| [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)                                 | Ad Block                                        |
+| [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)                                     | Edit cookie per page                            |
+| [Wappalyzer](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg)                                             | Uncovers the technologies used on websites      |
+| [IP Address and Domain Information](https://chrome.google.com/webstore/detail/ip-address-and-domain-inf/lhgkegeccnckoiliokondpaaalbhafoa?hl=de) | Find detailed information about each IP address |
 
 <!-- appendices -->
 
