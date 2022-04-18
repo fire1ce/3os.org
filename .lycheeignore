@@ -23,3 +23,8 @@ http://0.0.0.0:8808/
 https://1.1.1.1/dns-query
 https://8.8.8.8/dns-query
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+
+https://amzn.to/*
+file:///github/workspace/theme/partials/*
+
+
