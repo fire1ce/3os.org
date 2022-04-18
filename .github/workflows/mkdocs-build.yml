@@ -2,12 +2,9 @@
 name: mkdocs-build
 
 on:
-  workflow_run:
-    workflows: [compress-and-resize-images]
-    types: [completed]
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   schedule:
     - cron: '0 4 * * *'
   workflow_dispatch:
