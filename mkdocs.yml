@@ -70,7 +70,10 @@ plugins:
   - progress
   - redirects:
       redirect_maps:
-
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  # - git-authors
 
 
 
