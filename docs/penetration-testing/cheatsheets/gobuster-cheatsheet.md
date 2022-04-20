@@ -1,5 +1,6 @@
 ---
 description: Gobuster CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Gobuster and getting the most of this powerful tool.
+template: comments.html
 ---
 
 # Gobuster CheatSheet
