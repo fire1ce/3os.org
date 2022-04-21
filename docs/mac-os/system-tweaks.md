@@ -18,7 +18,7 @@ xcode-select --install
 
 ## Import ed25519/RSA Keys to macOS Keychain
 
-Copy your ed25519, ed25519.pub __or__ id_rsa, id_rsa.pub to _~/.ssh/_ folder
+Copy your ed25519, ed25519.pub **or** id*rsa, id_rsa.pub to *~/.ssh/\_ folder
 
 !!! Example "Store the key in the Macos Keychain"
 
@@ -316,7 +316,7 @@ touch .hushlogin
 sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 ```
 
-## Fix Missing __/Users/Shared__ Folder
+## Fix Missing **/Users/Shared** Folder
 
 Create he missing /Users/Shared folder
 

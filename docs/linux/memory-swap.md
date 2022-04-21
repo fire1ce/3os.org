@@ -21,4 +21,3 @@ grep VmSwap /proc/*/status 2>/dev/null | sort -nk2 | tail -n5
 ```bash
 echo 3 > /proc/sys/vm/drop_caches && swapoff -a && swapon -a
 ```
-

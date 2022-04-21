@@ -7,7 +7,7 @@ tags: [macos, linux, terminal, zsh, oh-my-zsh]
 
 # Better Terminal Experience
 
-![Terminal Screenshot][terminal-screenshot-image]
+![Terminal Screenshot][terminal-screenshot-img]
 
 ## Intoduction
 
@@ -217,6 +217,6 @@ Open new terminal windown and enjoy Better Terminal Experience!
 [zsh-syntax-highlighting-url]: https://github.com/zsh-users/zsh-syntax-highlighting 'ZSH Syntax-Highlighting github page'
 [iterm2-url]: https://iterm2.com/ 'iTerm2 homepage'
 [homebrew-url]: https://brew.sh/ 'Homebrew homepage'
-[terminal-screenshot-image]: /assets/images/a0514d0c-abca-11ec-93a6-ffaf1c727a0d.jpg 'Terminal Screenshot'
+[terminal-screenshot-img]: /assets/images/a0514d0c-abca-11ec-93a6-ffaf1c727a0d.jpg 'Terminal Screenshot'
 
 <!-- end appendices -->

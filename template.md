@@ -13,7 +13,7 @@ Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maec
 
 Curabitur nibh diam, ultricies eu ultrices eu, porta eget massa. Curabitur semper fringilla ornare. Phasellus gravida sollicitudin imperdiet. Mauris sed risus id nulla malesuada tincidunt et a neque. Etiam ipsum magna, sollicitudin vitae venenatis at, commodo in nisl. Morbi vitae dolor hendrerit, rhoncus nulla a, efficitur nunc. Integer vitae est commodo eros porttitor accumsan quis sit amet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque non interdum mauris. Proin gravida ex sit amet interdum laoreet. Praesent id consequat dui, ut dignissim odio.
 
-![minion][image-url]{: style="width:200px"}
+![minion][minion-img]{: style="width:200px"}
 
 <!-- appendices -->
 
@@ -23,12 +23,8 @@ Curabitur nibh diam, ultricies eu ultrices eu, porta eget massa. Curabitur sempe
 
 <!-- images -->
 
-[image-url]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[minion-img]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 <!--css-->
-<style>
-  .md-typeset img {
-    display: inline;
-</style>
 
 <!-- end appendices -->

@@ -2,7 +2,6 @@
 description: Ubuntu, Debian, Raspberry Pi unattended upgrades guide
 ---
 
-
 # Unattended Upgrades
 
 ```bash

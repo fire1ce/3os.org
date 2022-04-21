@@ -122,7 +122,7 @@ If you have multiple VGA, look for the one that has the `Intel` in the name.
 
 Here, the PCI address of the iGPU is `00:02.0`.
 
-![Proxmox lspci vga][proxmox-lspci-vga-image]
+![Proxmox lspci vga][proxmox-lspci-vga-img]
 
 For best performance the VM should be configured the `Machine` type to ==q35==.  
 This will allow the VM to utilize PCI-Express passthrough.
@@ -130,23 +130,23 @@ This will allow the VM to utilize PCI-Express passthrough.
 Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU.  
 Click `Add` above the device list and then choose `PCI Device`
 
-!['Windows VM Add PCI Device][windows-vm-add-pci-device-image]
+!['Windows VM Add PCI Device][windows-vm-add-pci-device-img]
 
 Open the `Device` dropdown and select the iGPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `00:02.0` is listed as `0000:00:02.0`.
 
-![Add iGPU MDev to VM][general-add-igpu-mdev-to-vm-image]
+![Add iGPU MDev to VM][general-add-igpu-mdev-to-vm-img]
 
 Click `Mdev Type`, You should be presented with a list of the available split passthrough devices choose the better performing one for the vm.
 
-![Windows VM Add iGPU Split to VM][windows-vm-add-igpu-split-to-vm-image]
+![Windows VM Add iGPU Split to VM][windows-vm-add-igpu-split-to-vm-img]
 
 Select `ROM-Bar`, `PCI-Express` and then click `Add`.
 
-![Windows VM iGPU PCI Split Settings][windows-vm-igpu-pci-split-settings-image]
+![Windows VM iGPU PCI Split Settings][windows-vm-igpu-pci-split-settings-img]
 
 The Windows Virtual Machine Proxmox Setting should look like this:
 
-![Windows VM iGPU Split Hardware Settings][windows-vm-igpu-split-hardware-settings-image]
+![Windows VM iGPU Split Hardware Settings][windows-vm-igpu-split-hardware-settings-img]
 
 Power on the Windows Virtual Machine.
 
@@ -155,7 +155,7 @@ Install the latest version of [Intel's Graphics Driver][intel-gpu-drivers-url]{t
 
 If all when well you should see the following output in `Device Manager` and [GPU-Z][gpu-z-url]{target=\_blank}:
 
-![GPU-Z and Device Manager iGPU][gpu-z-and-device-manager-igpu-image]
+![GPU-Z and Device Manager iGPU][gpu-z-and-device-manager-igpu-img]
 
 That's it! You should now be able to use the iGPU for hardware acceleration inside the VM and still have proxmox's output on the screen.
 
@@ -177,7 +177,7 @@ This should result in output similar to this:
 
 If you have multiple VGA, look for the one that has the `Intel` in the name.
 
-![Proxmox lspci vga][proxmox-lspci-vga-image]
+![Proxmox lspci vga][proxmox-lspci-vga-img]
 
 Here, the PCI address of the iGPU is `00:02.0`.
 
@@ -185,23 +185,23 @@ VM should be configured the `Machine` type to ==i440fx==.
 Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU to.  
 Click `Add` above the device list and then choose `PCI Device`
 
-![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-image]
+![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-img]
 
 Open the `Device` dropdown and select the iGPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `00:02.0` is listed as `0000:00:02.0`.
 
-![Add iGPU MDev to VM][general-add-igpu-mdev-to-vm-image]
+![Add iGPU MDev to VM][general-add-igpu-mdev-to-vm-img]
 
 Click `Mdev Type`, You should be presented with a list of the available split passthrough devices choose the better performing one for the vm.
 
-![Add iGPU Split Mdev to VM][ubuntu-vm-add-igpu-split-to-vm-image]
+![Add iGPU Split Mdev to VM][ubuntu-vm-add-igpu-split-to-vm-img]
 
 Select `ROM-Bar`, and then click `Add`.
 
-![Ubuntu VM iGPU PCI Split Settings][ubuntu-vm-igpu-pci-split-settings-image]
+![Ubuntu VM iGPU PCI Split Settings][ubuntu-vm-igpu-pci-split-settings-img]
 
 The Ubuntu Virtual Machine Proxmox Setting should look like this:
 
-![Ubuntu VM iGPU Split Hardware Settings][ubuntu-vm-igpu-split-hardware-settings-image]
+![Ubuntu VM iGPU Split Hardware Settings][ubuntu-vm-igpu-split-hardware-settings-img]
 
 Boot the VM. To test the iGPU passthrough was successful, you can use the following command:
 
@@ -223,7 +223,7 @@ cd /dev/dri && ls -la
 
 The output should incliude the `renderD128`
 
-![VM renderD128][vm-renderd128-image]
+![VM renderD128][vm-renderd128-img]
 
 That's it! You should now be able to use the iGPU for hardware acceleration inside the VM and still have proxmox's output on the screen.
 
@@ -275,23 +275,23 @@ done;
 
 <!-- Proxmox/general Images-->
 
-[proxmox-lspci-vga-image]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
-[general-add-igpu-mdev-to-vm-image]: /assets/images/2cf3d69c-bd89-11ec-af8c-67974c4ba3f0.jpg 'Add iGPU MDev to VM'
+[proxmox-lspci-vga-img]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
+[general-add-igpu-mdev-to-vm-img]: /assets/images/2cf3d69c-bd89-11ec-af8c-67974c4ba3f0.jpg 'Add iGPU MDev to VM'
 
 <!-- Windows Images-->
 
-[windows-vm-add-pci-device-image]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
-[windows-vm-add-igpu-split-to-vm-image]: /assets/images/393f9ce0-bc41-11ec-976a-cb1d91990157.jpg 'Windows VM Add iGPU Split to VM'
-[windows-vm-igpu-pci-split-settings-image]: /assets/images/0bb26720-bc42-11ec-97d5-0f6751fb6075.jpg 'Windows VM iGPU PCI Split Settings'
-[windows-vm-igpu-split-hardware-settings-image]: /assets/images/d1d0f06c-bd9f-11ec-993d-77cc04f321dc.jpg 'Windows VM iGPU Split Hardware Settings'
-[gpu-z-and-device-manager-igpu-image]: /assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
+[windows-vm-add-pci-device-img]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
+[windows-vm-add-igpu-split-to-vm-img]: /assets/images/393f9ce0-bc41-11ec-976a-cb1d91990157.jpg 'Windows VM Add iGPU Split to VM'
+[windows-vm-igpu-pci-split-settings-img]: /assets/images/0bb26720-bc42-11ec-97d5-0f6751fb6075.jpg 'Windows VM iGPU PCI Split Settings'
+[windows-vm-igpu-split-hardware-settings-img]: /assets/images/d1d0f06c-bd9f-11ec-993d-77cc04f321dc.jpg 'Windows VM iGPU Split Hardware Settings'
+[gpu-z-and-device-manager-igpu-img]: /assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
 
 <!-- Ubuntu Images-->
 
-[ubuntu-vm-add-pci-device-image]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
-[ubuntu-vm-add-igpu-split-to-vm-image]: /assets/images/3802e9b8-bd8b-11ec-a4ba-8305e0d2d682.jpg 'Ubuntu VM Add iGPU Split to VM'
-[ubuntu-vm-igpu-pci-split-settings-image]: /assets/images/c605680c-bd8c-11ec-81f9-4755a5d3fa24.jpg 'Ubuntu VM iGPU PCI Split Settings'
-[ubuntu-vm-igpu-split-hardware-settings-image]: /assets/images/375ed1c8-bd8d-11ec-94c6-cf0bac60954a.jpg 'Ubuntu VM iGPU Split Hardware Settings'
-[vm-renderd128-image]: /assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
+[ubuntu-vm-add-pci-device-img]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
+[ubuntu-vm-add-igpu-split-to-vm-img]: /assets/images/3802e9b8-bd8b-11ec-a4ba-8305e0d2d682.jpg 'Ubuntu VM Add iGPU Split to VM'
+[ubuntu-vm-igpu-pci-split-settings-img]: /assets/images/c605680c-bd8c-11ec-81f9-4755a5d3fa24.jpg 'Ubuntu VM iGPU PCI Split Settings'
+[ubuntu-vm-igpu-split-hardware-settings-img]: /assets/images/375ed1c8-bd8d-11ec-94c6-cf0bac60954a.jpg 'Ubuntu VM iGPU Split Hardware Settings'
+[vm-renderd128-img]: /assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
 
 <!-- end appendices -->

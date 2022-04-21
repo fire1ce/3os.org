@@ -12,7 +12,7 @@ Find out the names of the partition with df
 df
 ```
 
-You need to unmount the partition before you can delete them and marge __backup the data of the partition you would like to delete__ this exmaple will use "centos-home" as the partition that will be merged to the root partition.
+You need to unmount the partition before you can delete them and marge **backup the data of the partition you would like to delete** this exmaple will use "centos-home" as the partition that will be merged to the root partition.
 
 ```bash
 unmount -a

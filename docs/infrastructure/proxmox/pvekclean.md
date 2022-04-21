@@ -1,5 +1,6 @@
 ---
-description: PVE Kernel Cleaner is a program to compliment Proxmox Virtual Environment which is an open-source server virtualization environment. PVE Kernel Cleaner allows you to easily remove old/unused PVE kernels on your Proxmox VE system.
+title: PVE Kernel Cleaner
+description: PVE Kernel Cleaner allows you to easily remove old/unused PVE kernels on your Proxmox VE system.
 template: comments.html
 tags: [proxmox]
 ---

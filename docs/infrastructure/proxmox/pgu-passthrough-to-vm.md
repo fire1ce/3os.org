@@ -181,7 +181,7 @@ This should result in output similar to this:
 If you have multiple VGA, look for the one that has the `Intel` in the name.  
 Here, the PCI address of the GPU is `01:00.0`.
 
-![Proxmox lspci vga][proxmox-lspci-vga-image]
+![Proxmox lspci vga][proxmox-lspci-vga-img]
 
 For best performance the VM should be configured the `Machine` type to ==q35==.  
 This will allow the VM to utilize PCI-Express passthrough.
@@ -189,19 +189,19 @@ This will allow the VM to utilize PCI-Express passthrough.
 Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU.  
 Click `Add` above the device list and then choose `PCI Device`
 
-![Windows VM Add PCI Device][windows-vm-add-pci-device-image]
+![Windows VM Add PCI Device][windows-vm-add-pci-device-img]
 
 Open the `Device` dropdown and select the GPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `01:00.0` is listed as `0000:01:00.0`.
 
-![Add GPU to VM][general-vm-add-gpu-to-vm-image]
+![Add GPU to VM][general-vm-add-gpu-to-vm-img]
 
 Select `All Functions`, `ROM-Bar`, `Primary GPU`, `PCI-Express` and then click `Add`.
 
-![Windows VM GPU PCI Settings][windows-vm-gpu-pci-settings-image]
+![Windows VM GPU PCI Settings][windows-vm-gpu-pci-settings-img]
 
 The Windows Virtual Machine Proxmox Setting should look like this:
 
-![Windows VM GPU Hardware Settings][windows-vm-gpu-hardware-settings-image]
+![Windows VM GPU Hardware Settings][windows-vm-gpu-hardware-settings-img]
 
 Power on the Windows Virtual Machine.
 
@@ -210,7 +210,7 @@ Install the latest version of GPU Driver for your GPU.
 
 If all when well you should see the following output in `Device Manager` and [GPU-Z][gpu-z-url]{target=\_blank}:
 
-![GPU-Z and Device Manager GPU][gpu-z-and-device-manager-gpu-image]
+![GPU-Z and Device Manager GPU][gpu-z-and-device-manager-gpu-img]
 
 That's it!
 
@@ -233,24 +233,24 @@ This should result in output similar to this:
 If you have multiple VGA, look for the one that has the `Intel` in the name.
 Here, the PCI address of the GPU is `01:00.0`.
 
-![lspci-nnv-vga][proxmox-lspci-vga-image]
+![lspci-nnv-vga][proxmox-lspci-vga-img]
 
 For best performance the VM should be configured the `Machine` type to ==q35==.  
 This will allow the VM to utilize PCI-Express passthrough.
 
-![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-image]
+![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-img]
 
 Open the `Device` dropdown and select the GPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `01:00.0` is listed as `0000:01:00.0`.
 
-![Add GPU to VM][general-vm-add-gpu-to-vm-image]
+![Add GPU to VM][general-vm-add-gpu-to-vm-img]
 
 Select `All Functions`, `ROM-Bar`, `PCI-Epress` and then click `Add`.
 
-![Ubuntu VM GPU PCI Settings][ubuntu-vm-gpu-pci-settings-image]
+![Ubuntu VM GPU PCI Settings][ubuntu-vm-gpu-pci-settings-img]
 
 The Ubuntu Virtual Machine Proxmox Setting should look like this:
 
-![Ubuntu VM GPU Hardware Settings][ubuntu-vm-gpu-hardware-settings-image]
+![Ubuntu VM GPU Hardware Settings][ubuntu-vm-gpu-hardware-settings-img]
 
 Boot the VM. To test the GPU passthrough was successful, you can use the following command in the VM:
 
@@ -341,19 +341,19 @@ done;
 
 <!-- Proxmox/general Images-->
 
-[proxmox-lspci-vga-image]: /assets/images/8886bc4a-be38-11ec-ba3b-d3e0526955c4.jpg 'Proxmox lspci vga'
-[general-vm-add-gpu-to-vm-image]: /assets/images/a7d93848-be38-11ec-9607-2ba8ccd0b5ab.jpg 'Add GPU to VM'
+[proxmox-lspci-vga-img]: /assets/images/8886bc4a-be38-11ec-ba3b-d3e0526955c4.jpg 'Proxmox lspci vga'
+[general-vm-add-gpu-to-vm-img]: /assets/images/a7d93848-be38-11ec-9607-2ba8ccd0b5ab.jpg 'Add GPU to VM'
 
 <!-- Windows Images-->
 
-[windows-vm-add-pci-device-image]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
-[windows-vm-gpu-pci-settings-image]: /assets/images/d48456fc-be38-11ec-a8da-c747b71c446f.jpg 'Windows VM GPU PCI Settings'
-[windows-vm-gpu-hardware-settings-image]: /assets/images/157b55e8-be3e-11ec-a2c2-97d25fe194df.jpg 'Windows VM GPU Hardware Settings'
-[gpu-z-and-device-manager-gpu-image]: /assets/images/13d3484a-be39-11ec-9c17-d311291bdb58.jpg 'GPU-Z and Device Manager GPU'
+[windows-vm-add-pci-device-img]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
+[windows-vm-gpu-pci-settings-img]: /assets/images/d48456fc-be38-11ec-a8da-c747b71c446f.jpg 'Windows VM GPU PCI Settings'
+[windows-vm-gpu-hardware-settings-img]: /assets/images/157b55e8-be3e-11ec-a2c2-97d25fe194df.jpg 'Windows VM GPU Hardware Settings'
+[gpu-z-and-device-manager-gpu-img]: /assets/images/13d3484a-be39-11ec-9c17-d311291bdb58.jpg 'GPU-Z and Device Manager GPU'
 
 <!-- Ubuntu Images-->
 
-[ubuntu-vm-add-pci-device-image]: /assets/images/3d942380-be3d-11ec-99fc-0778f9dc8acd.jpg 'Ubuntu VM Add PCI Device'
-[ubuntu-vm-gpu-pci-settings-image]: /assets/images/4dc679d8-be3d-11ec-8ef7-03c9f9ba3344.jpg 'Ubuntu VM GPU PCI Settings'
-[ubuntu-vm-gpu-hardware-settings-image]: /assets/images/6953aefa-be3d-11ec-bfe8-7f9219dc10e2.jpg 'Ubuntu VM GPU Hardware Settings'
+[ubuntu-vm-add-pci-device-img]: /assets/images/3d942380-be3d-11ec-99fc-0778f9dc8acd.jpg 'Ubuntu VM Add PCI Device'
+[ubuntu-vm-gpu-pci-settings-img]: /assets/images/4dc679d8-be3d-11ec-8ef7-03c9f9ba3344.jpg 'Ubuntu VM GPU PCI Settings'
+[ubuntu-vm-gpu-hardware-settings-img]: /assets/images/6953aefa-be3d-11ec-bfe8-7f9219dc10e2.jpg 'Ubuntu VM GPU Hardware Settings'
 [ubuntu-vm-gpu-nvidia-smi]: /assets/images/a6de4412-be40-11ec-85e6-338ef50c9599.jpg 'Ubuntu VM GPU Nvidia-smi'

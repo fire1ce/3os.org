@@ -106,7 +106,7 @@ This should result in output similar to this:
 If you have multiple VGA, look for the one that has the `Intel` in the name.  
 Here, the PCI address of the iGPU is `00:02.0`.
 
-![Proxmox lspci vga][proxmox-lspci-vga-image]
+![Proxmox lspci vga][proxmox-lspci-vga-img]
 
 For best performance the VM should be configured the `Machine` type to ==q35==.  
 This will allow the VM to utilize PCI-Express passthrough.
@@ -114,15 +114,15 @@ This will allow the VM to utilize PCI-Express passthrough.
 Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU.  
 Click `Add` above the device list and then choose `PCI Device`
 
-![Windows VM Add PCI Device][windows-vm-add-pci-device-image]
+![Windows VM Add PCI Device][windows-vm-add-pci-device-img]
 
 Open the `Device` dropdown and select the iGPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `00:02.0` is listed as `0000:00:02.0`.
 
-![Add iGPU to VM][general-vm-add-igpu-to-vm-image]
+![Add iGPU to VM][general-vm-add-igpu-to-vm-img]
 
 Select `All Functions`, `ROM-Bar`, `PCI-Express` and then click `Add`.
 
-![Windows VM iGPU PCI Settings][windows-vm-igpu-pci-settings-image]
+![Windows VM iGPU PCI Settings][windows-vm-igpu-pci-settings-img]
 
 !!! tip
 
@@ -130,7 +130,7 @@ Select `All Functions`, `ROM-Bar`, `PCI-Express` and then click `Add`.
 
 The Windows Virtual Machine Proxmox Setting should look like this:
 
-![Windows VM iGPU Hardware Settings][windows-vm-igpu-hardware-settings-image]
+![Windows VM iGPU Hardware Settings][windows-vm-igpu-hardware-settings-img]
 
 Power on the Windows Virtual Machine.
 
@@ -139,7 +139,7 @@ Install the latest version of [Intel's Graphics Driver][intel-gpu-drivers-url]{t
 
 If all when well you should see the following output in `Device Manager` and [GPU-Z][gpu-z-url]{target=\_blank}:
 
-![GPU-Z and Device Manager iGPU][gpu-z-and-device-manager-igpu-image]
+![GPU-Z and Device Manager iGPU][gpu-z-and-device-manager-igpu-img]
 
 That's it!
 
@@ -162,21 +162,21 @@ This should result in output similar to this:
 If you have multiple VGA, look for the one that has the `Intel` in the name.
 Here, the PCI address of the iGPU is `00:02.0`.
 
-![lspci-nnv-vga][proxmox-lspci-vga-image]
+![lspci-nnv-vga][proxmox-lspci-vga-img]
 
-![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-image]
+![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-img]
 
 Open the `Device` dropdown and select the iGPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `00:02.0` is listed as `0000:00:02.0`.
 
-![Add iGPU to VM][general-vm-add-igpu-to-vm-image]
+![Add iGPU to VM][general-vm-add-igpu-to-vm-img]
 
 Select `All Functions`, `ROM-Bar` and then click `Add`.
 
-![Ubuntu VM iGPU PCI Settings][ubuntu-vm-igpu-pci-settings-image]
+![Ubuntu VM iGPU PCI Settings][ubuntu-vm-igpu-pci-settings-img]
 
 The Ubuntu Virtual Machine Proxmox Setting should look like this:
 
-![Ubuntu VM iGPU Hardware Settings][ubuntu-vm-igpu-hardware-settings-image]
+![Ubuntu VM iGPU Hardware Settings][ubuntu-vm-igpu-hardware-settings-img]
 
 Boot the VM. To test the iGPU passthrough was successful, you can use the following command:
 
@@ -198,7 +198,7 @@ cd /dev/dri && ls -la
 
 The output should incliude the `renderD128`
 
-![VM renderD128][vm-renderd128-image]
+![VM renderD128][vm-renderd128-img]
 
 That's it! You should now be able to use the iGPU for hardware acceleration inside the VM and still have proxmox's output on the screen.
 
@@ -250,21 +250,21 @@ done;
 
 <!-- Proxmox/general Images-->
 
-[proxmox-lspci-vga-image]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
-[general-vm-add-igpu-to-vm-image]: /assets/images/d3a4d31c-b918-11ec-ac96-a7ff358e0685.jpg 'Add iGPU to VM'
+[proxmox-lspci-vga-img]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
+[general-vm-add-igpu-to-vm-img]: /assets/images/d3a4d31c-b918-11ec-ac96-a7ff358e0685.jpg 'Add iGPU to VM'
 
 <!-- Windows Images-->
 
-[windows-vm-add-pci-device-image]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
-[windows-vm-igpu-pci-settings-image]: /assets/images/cc1c3650-b91b-11ec-8215-bb07cf790912.jpg 'Windows VM iGPU PCI Settings'
-[windows-vm-igpu-hardware-settings-image]: /assets/images/496fa0ba-b91c-11ec-bcb5-3759896bab7f.jpg 'Windows VM iGPU Hardware Settings'
-[gpu-z-and-device-manager-igpu-image]: /assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
+[windows-vm-add-pci-device-img]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
+[windows-vm-igpu-pci-settings-img]: /assets/images/cc1c3650-b91b-11ec-8215-bb07cf790912.jpg 'Windows VM iGPU PCI Settings'
+[windows-vm-igpu-hardware-settings-img]: /assets/images/496fa0ba-b91c-11ec-bcb5-3759896bab7f.jpg 'Windows VM iGPU Hardware Settings'
+[gpu-z-and-device-manager-igpu-img]: /assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
 
 <!-- Ubuntu Images-->
 
-[ubuntu-vm-add-pci-device-image]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
-[ubuntu-vm-igpu-pci-settings-image]: /assets/images/1bb4b41e-bdb1-11ec-9af2-4b05eacea61c.jpg 'Ubuntu VM iGPU PCI Settings'
-[ubuntu-vm-igpu-hardware-settings-image]: /assets/images/b177a31c-bc35-11ec-9045-2b011e6c011d.jpg 'Ubuntu VM iGPU Hardware Settings'
-[vm-renderd128-image]: /assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
+[ubuntu-vm-add-pci-device-img]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
+[ubuntu-vm-igpu-pci-settings-img]: /assets/images/1bb4b41e-bdb1-11ec-9af2-4b05eacea61c.jpg 'Ubuntu VM iGPU PCI Settings'
+[ubuntu-vm-igpu-hardware-settings-img]: /assets/images/b177a31c-bc35-11ec-9045-2b011e6c011d.jpg 'Ubuntu VM iGPU Hardware Settings'
+[vm-renderd128-img]: /assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
 
 <!-- end appendices -->

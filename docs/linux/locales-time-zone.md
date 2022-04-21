@@ -14,7 +14,7 @@ dpkg-reconfigure locales
 
 ## Set System Time With Time Zone (timedatectl ntp)
 
-Find your time zone with __timedatectl list-timezones__ use __grep__ for easier results:
+Find your time zone with **timedatectl list-timezones** use **grep** for easier results:
 
 ```bash
 timedatectl list-timezones | grep "Toronto"

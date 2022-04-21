@@ -7,7 +7,7 @@ tags: [pi-hole, doh, docker, dns, dns-over-https]
 
 # Pi-hole as DNS Server with DNS over HTTPS (DOH) Based on Docker Containers
 
-![pihole-webgui][webgui-image]{: style="width:600px"}
+![pihole-webgui][webgui-img]{: style="width:600px"}
 
 ## What's Pi-hole?
 
@@ -25,7 +25,7 @@ My setup fully depends on pi-hole dns server, that's why I use two servers one a
 
 I've configured my router as a DNS server for all the DHCP clients with primary and the secondary DNS as my pi-hole servers. This way all the clients requests the router to resolve the DNS and the router forwards the request to the pi-hole servers.
 
-![network flow][network-flow-image]{: style="width:600px"}
+![network flow][network-flow-img]{: style="width:600px"}
 
 - **Pi-hole-1 runs on ubuntu server (virtual machine)**
 - **Pi-hole-2 runs on [Raspberry Pi][amazon-raspberry-url]{target=\_blank}**
@@ -137,7 +137,7 @@ We are done with the installation.
 
 <!-- images -->
 
-[webgui-image]: /assets/images/guides/pihole-dns/webgui.png 'pihole webgui'
-[network-flow-image]: /assets/images/guides/pihole-dns/diagram.png 'network flow'
+[webgui-img]: /assets/images/guides/pihole-dns/webgui.png 'pihole webgui'
+[network-flow-img]: /assets/images/guides/pihole-dns/diagram.png 'network flow'
 
 <!-- end appendices -->

@@ -6,25 +6,25 @@ description: macOS Applications tweaks and tips for better experience, productiv
 
 ## iTerm2 Tweaks and Tips
 
-__Using Alt/Cmd + Right/Left Arrow in iTerm__
+**Using Alt/Cmd + Right/Left Arrow in iTerm**
 
 Go to iTerm Preferences → Profiles, select your profile, then the Keys tab. Click Load Preset... and choose Natural Text Editing.
 
-__Remove the Right Arrow Before the Cursor Line__
+**Remove the Right Arrow Before the Cursor Line**
 
 you can turn it off by going in to Preferences > Profiles > (your profile) > Terminal, scroll down to "Shell Integration", and turn off "Show mark indicators".
 
 ## Add External Wireless USB Adapter Support macOS (Wifi)
 
 If you have an external Wireless USB Adapter macOS won't let you use or control it.
-Thanks to __chris1111__ for his git repository with supported software that's allows you to use external wireless usb parallel to the internal wifi card. Follow this link to for supported devices installation:
+Thanks to **chris1111** for his git repository with supported software that's allows you to use external wireless usb parallel to the internal wifi card. Follow this link to for supported devices installation:
 
-* [chris1111's Wireless-USB-Adapter Github Page](https://github.com/chris1111/Wireless-USB-Adapter){target=_blank}
-* [Wireless-USB-Adapter Releases Download](https://github.com/chris1111/Wireless-USB-Adapter/releases){target=_blank}
+- [chris1111's Wireless-USB-Adapter Github Page](https://github.com/chris1111/Wireless-USB-Adapter){target=\_blank}
+- [Wireless-USB-Adapter Releases Download](https://github.com/chris1111/Wireless-USB-Adapter/releases){target=\_blank}
 
 ## Disable FortiClinet Auto Start-up
 
-Change RunAtLoad to __false__ in both:
+Change RunAtLoad to **false** in both:
 
 /Library/LaunchAgents/com.fortinet.forticlient.credential_store.plist
 /Library/LaunchAgents/com.fortinet.forticlient.fct_launcher.plist
@@ -46,21 +46,21 @@ do shell script "open -n <path to application>"
 ```
 
 !!! example
-    do shell script "open -n /Applications/'Visual Studio Code.app'"
+do shell script "open -n /Applications/'Visual Studio Code.app'"
 
 File > Export
 
 Use the following settings:
 
-* Export As: __Your New Application Name__
-* Where: __Applications__
-* File Format: __Application__
+- Export As: **Your New Application Name**
+- Where: **Applications**
+- File Format: **Application**
 
 ^^Change The Icon of Your New Application:^^
 
-In __Finder__ got to __Applications__ folder.
-Right Click on the new __Your New Application__ application we just created and click __Get Info__.
-Drug the original application icon (or any other) to the  in the left corner of the "get info" menu.
+In **Finder** got to **Applications** folder.
+Right Click on the new **Your New Application** application we just created and click **Get Info**.
+Drug the original application icon (or any other) to the in the left corner of the "get info" menu.
 
 ## Lunch Firefox Profile Manager as Application
 
@@ -76,12 +76,12 @@ File > Export
 
 Use the following settings:
 
-* Save As: __Firefox Profile Manager__
-* Where: __Applications__
-* File Format: __Application__
+- Save As: **Firefox Profile Manager**
+- Where: **Applications**
+- File Format: **Application**
 
 ^^Change The Icon of Your New Firefox Profile Manager Application:^^
 
-In __Finder__ got to __Applications__ folder.
-Right Click on the new __Firefox Profile Manager__ application we just created and click __Get Info__.
+In **Finder** got to **Applications** folder.
+Right Click on the new **Firefox Profile Manager** application we just created and click **Get Info**.
 Drug the original application to the icon in the left corner of the "get info" menu.
