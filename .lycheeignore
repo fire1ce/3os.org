@@ -1,15 +1,20 @@
+http://localhost/*
+https://localhost/*
+http://127.0.0.1/*
+https://127.0.0.1/*
+http://192.168.1.1/*
+http://192.168.1.2/*
+http://0.0.0.0/*
+https://1.1.1.1/*
+https://8.8.8.8/*
+example@gmail.com
+you@gmail.com
+
 https://developers.cloudflare.com/workers/
 https://www.dslreports.com/speedtest
 https://help.ubnt.com/hc/en-us/articles/115015971688-EdgeRouter-OpenVPN-Server
 
-example@gmail.com
-you@gmail.com
-
-http://192.168.1.1:8080
-http://127.0.0.1:4444/
-http://localhost:4444/
 user@192.168.1.1
-http://192.168.1.2:8080/
 http://66.102.7.147/
 http://xss.rocks/xss.jpg
 http://www.google.com/ogle.com/
@@ -19,12 +24,8 @@ file:///github/workspace/docs/penetration-testing/cheatsheets/http:/;URL=javascr
 javascript:alert('XSS')
 URL=javascript:alert('XSS')
 opt/homebrew/var/run/supervisor.sock
-http://0.0.0.0:8808/
-https://1.1.1.1/dns-query
-https://8.8.8.8/dns-query
+
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
 
 https://amzn.to/*
 file:///github/workspace/theme/partials/*
-
-
