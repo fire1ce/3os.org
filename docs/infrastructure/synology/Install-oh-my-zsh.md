@@ -22,15 +22,15 @@ Oh My Zsh is an open source, community-driven framework for managing your [zsh][
 ## Community Packages for Synology DSM
 
 In order to install oh-my-zsh, we need to add 3rd party packages to Synology DSM.
-[SynoCommunity][synocommunity.com] provides packages for Synology-branded NAS devices.
+[Synology Community Packages][synocommunity-url]{target=\_blank} provides packages for Synology-branded NAS devices.
 
 DSM 6 and below:
 
 Log into your NAS as administrator and go to Main Menu → Package Center → Settings and set Trust Level to Synology Inc. and trusted publishers.
 
-In the Package Sources tab, click Add, type SynoCommunity as Name and `https://packages.synocommunity.com/` as Location and then press OK to validate.
+In the Package Sources tab, click Add, type SynoCommunity as Name and `https://packages.synocommunity-url/` as Location and then press OK to validate.
 
-![syno-community-install][syno-community-install-image]
+![syno-community-install][syno-community-install-img]
 
 Go back to the Package Center and enjoy SynoCommunity's packages in the Community tab.
 
@@ -38,7 +38,7 @@ Go back to the Package Center and enjoy SynoCommunity's packages in the Communit
 
 Install `Z shell (with modules)` from package center Community tab.
 
-![Z shell (with modules) package][z-shell-with-modules-package-image]
+![Z shell (with modules) package][z-shell-with-modules-package-img]
 
 ## Change The Default Shell to `ZSH`
 
@@ -85,11 +85,11 @@ At this point you should have a working `oh-my-zsh` working on your Synology NAS
 
 [zsh-url]: https://www.zsh.org/ 'ZSH'
 [ohmyz.sh-url]: https://ohmyz.sh/ 'Oh-My-Zsh'
-[synocommunity.com]: https://synocommunity.com/ 'Synology Community'
+[synocommunity-url]: https://synocommunity-url/ 'Synology Community Packages'
 
 <!-- images -->
 
-[syno-community-install-image]: /assets/images/e38b4c1c-bbc9-11ec-b13f-033bc9ab9d10.jpg 'SynoCommunity install'
-[z-shell-with-modules-package-image]: /assets/images/76a71404-bbca-11ec-847d-87c4502ecefc.jpg 'Z shell (with modules) package'
+[syno-community-install-img]: /assets/images/e38b4c1c-bbc9-11ec-b13f-033bc9ab9d10.jpg 'SynoCommunity install'
+[z-shell-with-modules-package-img]: /assets/images/76a71404-bbca-11ec-847d-87c4502ecefc.jpg 'Z shell (with modules) package'
 
 <!-- end appendices -->
