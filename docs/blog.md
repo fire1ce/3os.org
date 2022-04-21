@@ -14,7 +14,7 @@ hide:
 > [Syncthings][syncthings-url-url] is an application that allows you to synchronize files between multiple devices. This means that creating, editing, or deleting files on one computer can be automatically copied to other devices.  
 > [iGPU Passthrough][igpu-passthrough-url] In Proxmox Server  
 > [iGPU Split Passthrough][igpu-split-passthrough-url] In Proxmox Server  
-> [GPU Passthrough][pgu-passthrough-to-vm-url] In Proxmox Server
+> [GPU Passthrough][pgu-passthrough-to-vm-url] In Proxmox Server  
 > [Windows SSH Server][windows-ssh-server] - conifure Windows SSH Server with RSA keys and PowerShell shell.
 
 ## New Design and Features (15/03/22)
