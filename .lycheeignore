@@ -1,3 +1,4 @@
+# Generic Addresses
 http://localhost/*
 https://localhost/*
 http://127.0.0.1/*
@@ -7,15 +8,19 @@ http://192.168.1.2/*
 http://0.0.0.0/*
 https://1.1.1.1/*
 https://8.8.8.8/*
-example@gmail.com
-you@gmail.com
+# Email And SSH Users
+example@*
+you@*
 root@*
+user@*
+# Amazon ads
+https://amzn.to/*
 
+# Other
 https://developers.cloudflare.com/workers/
 https://www.dslreports.com/speedtest
 https://help.ubnt.com/hc/en-us/articles/115015971688-EdgeRouter-OpenVPN-Server
 
-user@192.168.1.1
 http://66.102.7.147/
 http://xss.rocks/xss.jpg
 http://www.google.com/ogle.com/
@@ -28,5 +33,4 @@ opt/homebrew/var/run/supervisor.sock
 
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
 
-https://amzn.to/*
 file:///github/workspace/theme/partials/*

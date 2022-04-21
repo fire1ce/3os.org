@@ -166,7 +166,9 @@ Photos Library.photoslibrary
 
 Example of working `Syncthing` Web UI:
 
-![Syncthing Web UI][syncthing-web-ui-img]<!-- appendices -->
+![Syncthing Web UI][syncthing-web-ui-img]
+
+<!-- appendices -->
 
 <!-- urls -->
 
