@@ -51,10 +51,10 @@ hide:
 [proxmark3-cheatsheet-page-url]: /penetration-testing/proxmark/cheatsheet/
 [mifare-page-url]: /penetration-testing/proxmark/Mifare1k/
 [adb-cheatsheet-url]: /android/adb-cheat-sheet/
-[igpu-passthrough-url]: /infrastructure/proxmox/igpu-passthrough-to-vm.md
-[igpu-split-passthrough-url]: /infrastructure/proxmox/igpu-split-passthrough.md
-[pgu-passthrough-to-vm-url]: /infrastructure/proxmox/pgu-passthrough-to-vm.md
-[syncthings-url-url]: /automation/syncthings.md
+[igpu-passthrough-url]: /infrastructure/proxmox/igpu-passthrough-to-vm/
+[igpu-split-passthrough-url]: /infrastructure/proxmox/igpu-split-passthrough/
+[pgu-passthrough-to-vm-url]: /infrastructure/proxmox/pgu-passthrough-to-vm/
+[syncthings-url-url]: /automation/syncthings/
 
 <style>
   .md-content__button {
