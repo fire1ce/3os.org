@@ -9,6 +9,7 @@ https://1.1.1.1/*
 https://8.8.8.8/*
 example@gmail.com
 you@gmail.com
+root@*
 
 https://developers.cloudflare.com/workers/
 https://www.dslreports.com/speedtest

@@ -174,7 +174,7 @@ Example of working `Syncthing` Web UI:
 [syncthing-downloads-url]: https://syncthing.net/downloads/ 'Syncthing Downloads'
 [homebrew-url]: https://brew.sh/ 'Homebrew'
 [sync-trayzor-url]: https://github.com/canton7/SyncTrayzor 'SyncTrayzor Github Page'
-[synocommunity-url]: https://synocommunity-url/ 'Synology Community Packages'
+[synocommunity-url]: https://synocommunity.com/ 'Synology Community Packages'
 [syncthing-web-ui-url]: http://127.0.0.1:8384 'Syncthing Web UI'
 
 <!-- images -->

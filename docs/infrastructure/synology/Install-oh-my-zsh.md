@@ -85,7 +85,7 @@ At this point you should have a working `oh-my-zsh` working on your Synology NAS
 
 [zsh-url]: https://www.zsh.org/ 'ZSH'
 [ohmyz.sh-url]: https://ohmyz.sh/ 'Oh-My-Zsh'
-[synocommunity-url]: https://synocommunity-url/ 'Synology Community Packages'
+[synocommunity-url]: https://synocommunity.com/ 'Synology Community Packages'
 
 <!-- images -->
 
