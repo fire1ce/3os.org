@@ -1,55 +1,11 @@
 ---
-title: Proxmox Networking
-description: How to disable IPv6 on Proxmox VE Server.
+title: Disable IPv6 on Proxmox
+description: How to permenantly disable IPv6 on Proxmox VE Server.
 template: comments.html
 tags: [proxmox, ipv6]
 ---
 
-# Proxmox Networking
-
-## Network Interface Configurations
-
-Static Example
-
-```config
-auto ens33
-iface ens33 inet static
-           address 192.168.0.10
-           netmask 255.255.255.0
-           dns-nameservers 192.168.0.1
-           gateway 192.168.0.1
-```
-
-DHCP Example
-
-```config
-auto eth0
-iface eth0 inet dhcp
-```
-
-Bridge: Static Example
-
-```config
-auto vmbr0
-iface vmbr0 inet static
-        address 192.168.100.20/24
-        gateway 192.168.100.1
-        bridge-ports eth0
-        bridge-stp off
-        bridge-fd 0
-```
-
-Bridge: DHCP Example
-
-```config
-auto vmbr0
-iface vmbr0 inet dhcp
-        bridge-ports eth0
-        bridge-stp off
-        bridge-fd 0
-```
-
-## Disable IPv6 on Proxmox VE
+# Disable IPv6 on Proxmox
 
 By default, Proxmox IPv6 is enabled after installation. This means that the IPv6 stack is active and the host can communicate with other hosts on the same network via IPv6 protocol.
 

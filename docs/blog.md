@@ -9,13 +9,17 @@ hide:
 
 ---
 
+## New Content (22/04/22)
+
+> [Proxmox SSL with Let's Encrypt and Cloudflare DNS Challenge][proxmox-lets-encrypt-cloudflare-url]
+
 ## New Content (21/04/22)
 
 > [Syncthings][syncthings-url-url] is an application that allows you to synchronize files between multiple devices. This means that creating, editing, or deleting files on one computer can be automatically copied to other devices.  
 > [iGPU Passthrough][igpu-passthrough-url] In Proxmox Server  
 > [iGPU Split Passthrough][igpu-split-passthrough-url] In Proxmox Server  
 > [GPU Passthrough][pgu-passthrough-to-vm-url] In Proxmox Server  
-> [Windows SSH Server][windows-ssh-server] - conifure Windows SSH Server with RSA keys and PowerShell shell.
+> [Windows SSH Server][windows-ssh-server-url] - conifure Windows SSH Server with RSA keys and PowerShell shell.
 
 ## New Design and Features (15/03/22)
 
@@ -52,11 +56,12 @@ hide:
 [proxmark3-cheatsheet-page-url]: /penetration-testing/proxmark/cheatsheet/
 [mifare-page-url]: /penetration-testing/proxmark/Mifare1k/
 [adb-cheatsheet-url]: /android/adb-cheat-sheet/
-[igpu-passthrough-url]: /infrastructure/proxmox/igpu-passthrough-to-vm/
-[igpu-split-passthrough-url]: /infrastructure/proxmox/igpu-split-passthrough/
-[pgu-passthrough-to-vm-url]: /infrastructure/proxmox/pgu-passthrough-to-vm/
+[igpu-passthrough-url]: /infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/
+[igpu-split-passthrough-url]: /infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/
+[pgu-passthrough-to-vm-url]: /infrastructure/proxmox/gpu-passthrough/pgu-passthrough-to-vm/
 [syncthings-url-url]: /automation/syncthings/
-[windows-ssh-server]: /windows/ssh-server/
+[windows-ssh-server-url]: /windows/ssh-server/
+[proxmox-lets-encrypt-cloudflare-url]: /infrastructure/proxmox/lets-encrypt-cloudflare/
 
 <style>
   .md-content__button {
