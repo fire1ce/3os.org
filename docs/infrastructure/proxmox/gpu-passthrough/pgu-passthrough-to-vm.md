@@ -133,9 +133,33 @@ Update configuration changes made in your /etc filesystem
 update-initramfs -u -k all
 ```
 
+Save and exit the editor.
+
+Update configuration changes made in your /etc filesystem
+
+```shell
+update-initramfs -u -k all
+```
+
 **Reboot Proxmox to apply the changes**
 
-After the reboot, check that the GPU is in a separate IOMMU Group by using the following command:
+Verify that IOMMU is enabled
+
+```shell
+dmesg | grep -e DMAR -e IOMMU
+```
+
+There should be a line that looks like `DMAR: IOMMU enabled`. If there is no output, something is wrong.
+
+```shell hl_lines="2"
+[0.000000] Warning: PCIe ACS overrides enabled; This may allow non-IOMMU protected peer-to-peer DMA
+[0.067203] DMAR: IOMMU enabled
+[2.573920] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
+[2.580393] pci 0000:00:00.2: AMD-Vi: Found IOMMU cap 0x40
+[2.581776] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank).
+```
+
+Check that the GPU is in a separate IOMMU Group by using the following command:
 
 ```shell
 #!/bin/bash

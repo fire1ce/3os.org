@@ -102,6 +102,22 @@ update-initramfs -u -k all
 
 **Reboot Proxmox to apply the changes**
 
+Verify that IOMMU is enabled
+
+```shell
+dmesg | grep -e DMAR -e IOMMU
+```
+
+There should be a line that looks like `DMAR: IOMMU enabled`. If there is no output, something is wrong.
+
+```shell hl_lines="2"
+[0.000000] Warning: PCIe ACS overrides enabled; This may allow non-IOMMU protected peer-to-peer DMA
+[0.067203] DMAR: IOMMU enabled
+[2.573920] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
+[2.580393] pci 0000:00:00.2: AMD-Vi: Found IOMMU cap 0x40
+[2.581776] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank).
+```
+
 ## Windows Virtual Machine iGPU Passthrough Configuration
 
 For better results its recommend to use this [Windwos 10/11 Virutal Machine configuration for proxmox][windows-vm-configuration-url].
