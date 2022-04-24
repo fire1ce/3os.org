@@ -8,6 +8,7 @@ http://192.168.1.2/*
 http://0.0.0.0/*
 https://1.1.1.1/*
 https://8.8.8.8/*
+file:///github/*
 # Email And SSH Users
 example@*
 you@*
@@ -33,4 +34,3 @@ opt/homebrew/var/run/supervisor.sock
 
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
 
-file:///github/workspace/theme/partials/*
