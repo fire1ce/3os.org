@@ -132,7 +132,7 @@ services:
 
 <!-- images -->
 
-[magicmirror-final-img]: /assets/images/7b9035d6-c3b8-11ec-983a-277c87c79876.jpg 'Magic Mirror Final'
+[magicmirror-final-img]: /assets/images/7b9035d6-c3b8-11ec-983a-277c87c79876.JPG 'Magic Mirror Final'
 [lcd-controller-img]: /assets/images/e6531a42-c3bc-11ec-926f-efeac023c51f.JPG 'LCD Controller'
 [imac-rasperry-pi-img]: /assets/images/96f0cf48-c3bd-11ec-bd26-3bb9671d2760.JPG 'iMac Raspberry Pi'
 [pir-button-test-img]: /assets/images/849ac868-c3c1-11ec-bced-43218d8bdf1c.JPG 'PIR Button Test'
@@ -140,7 +140,7 @@ services:
 [wood-frame-img]: /assets/images/89d51168-c3ca-11ec-8696-bb85fc9f7c43.JPG 'Wood Frame'
 [frame-tv-mount-img]: /assets/images/5a524640-047a-44bd-a380-096ab786cd44.JPG 'Frame TV Mount'
 [frame-electronics-img]: /assets/images/9bd60754-c3cb-11ec-8b9f-eb26a00d1231.jpg 'Frame Electronics'
-[frame-screen-test-img]: /assets/images/d2bebf22-c3cb-11ec-a455-afd361c4ca85.jpg 'Frame Screen Test'
+[frame-screen-test-img]: /assets/images/d2bebf22-c3cb-11ec-a455-afd361c4ca85.JPG 'Frame Screen Test'
 [glass-cover-img]: /assets/images/1f5e958c-c3cc-11ec-9baa-43c39fc35135.JPG 'Glass Cover'
 [magicmirror-final-side-img]: /assets/images/ab8824e2-c3cc-11ec-b5ba-536c8b1ec876.JPG 'Magic Mirror Final Side'
 
