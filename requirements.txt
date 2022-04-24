@@ -1,4 +1,4 @@
-Babel==2.9.1
+Babel==2.10.1
 beautifulsoup4==4.11.1
 bracex==2.2.1
 certifi==2021.10.8
@@ -22,13 +22,13 @@ mkdocs-embed-external-markdown==2.2.1
 mkdocs-exclude-search==0.6.4
 mkdocs-ezlinks-plugin==0.1.14
 mkdocs-git-revision-date-localized-plugin==1.0.1
-mkdocs-material==8.2.9
+mkdocs-material==8.2.10
 mkdocs-material-extensions==1.0.3
 mkdocs-meta-descriptions-plugin==1.0.2
 mkdocs-minify-plugin==0.5.0
 mkdocs-plugin-progress==1.2.0
 packaging==21.3
-Pygments==2.11.2
+Pygments==2.12.0
 pygtrie==2.4.2
 pymdown-extensions==9.3
 pyparsing==3.0.8
