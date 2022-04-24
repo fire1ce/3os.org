@@ -137,7 +137,7 @@ services:
 [imac-rasperry-pi-img]: /assets/images/96f0cf48-c3bd-11ec-bd26-3bb9671d2760.JPG 'iMac Raspberry Pi'
 [pir-button-test-img]: /assets/images/849ac868-c3c1-11ec-bced-43218d8bdf1c.JPG 'PIR Button Test'
 [row-glass-img]: /assets/images/b1db6a1e-c3c9-11ec-b82b-4f85c9b1fe37.JPG 'Row Glass'
-[wood-frame-img]: /assets/images/89d51168-c3ca-11ec-8696-bb85fc9f7c43.JPG.JPG 'Wood Frame'
+[wood-frame-img]: /assets/images/89d51168-c3ca-11ec-8696-bb85fc9f7c43.JPG 'Wood Frame'
 [frame-tv-mount-img]: /assets/images/5a524640-047a-44bd-a380-096ab786cd44.JPG 'Frame TV Mount'
 [frame-electronics-img]: /assets/images/9bd60754-c3cb-11ec-8b9f-eb26a00d1231.jpg 'Frame Electronics'
 [frame-screen-test-img]: /assets/images/d2bebf22-c3cb-11ec-a455-afd361c4ca85.jpg 'Frame Screen Test'
