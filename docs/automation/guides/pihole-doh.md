@@ -40,9 +40,9 @@ We Will be using `docker-compose` to deploy the pi-hole server with DoH provider
 
 The following docker-compose.yml includes two images: [Pi-hole container][github-docker-pi-hole-url]{target=\_blank}, and [cloudflared container][github-docker-cloudflared-url]{target=\_blank}. When you run `docker-compose up` the containers will be created and started.
 I't will create internal network for the pihole and two instances of cloudflared. When a request comes in the pihole will forward the request to the cloudflared instances one of them will use Cloudflare DNS servers and the other will use Google's DNS servers.
-There is no need to configure the pihole's DNS server at the UI since the confiuuration is done by `docker-compose.yml` file.
+There is no need to configure the pihole's DNS server at the UI since the configuration is done by `docker-compose.yml` file.
 
-When using this setup two folders will be created on the Host machine for presistent storage of the containers: `config, dnsmasq.d`.
+When using this setup two folders will be created on the Host machine for persistent storage of the containers: `config, dnsmasq.d`.
 Those folders will be mounted to the containers when its running/restarted/recreated. Those folders will be created at the root folder of the docker-compose.yml file.
 
 Create a folder for the deployment of the containers at your host machine.  

@@ -7,7 +7,7 @@ tags: [template, markdown]
 
 # OpenWrt Disable IPV6
 
-The following steps will disable IPV6 on your OpenWrt router . All the setps are performed via the command line. You can performe them in the console of the router but the preferred way is via SSH.
+The following steps will disable IPV6 on your OpenWrt router . All the steps are performed via the command line. You can performe them in the console of the router but the preferred way is via SSH.
 
 Follow the following steps to disable IPV6 on your OpenWrt router:
 

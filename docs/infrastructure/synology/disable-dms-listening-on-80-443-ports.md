@@ -9,7 +9,7 @@ tags: [template, markdown]
 
 Synology NAS (DSM) is a network storage device, with some additional features like native support for virtualization, and docker support.
 One of the issues is that the default ports 80 and 443 are used by the web server even if you change the default ports of the Synology's DSM to other ports.
-In some cases, you want to use these ports for other purposes, such as a reverse proxy as an entry point for the web serivces.
+In some cases, you want to use these ports for other purposes, such as a reverse proxy as an entry point for the web services.
 The following steps will help you to free the default ports 80 and 443 on the Synology NAS (DSM) for other purposes.
 
 ## Configure the Synology NAS (DSM) to Listen on Other Ports
@@ -22,7 +22,7 @@ Login to the Synology NAS (DSM) as administrator user open `Control Panel` and f
 
 ![DSM Change Default Port][dsm-change-default-port-img]
 
-Click `Save` to save the changes. Then, relogin to the Synology NAS (DSM) with the new port as administrator user as we did above.
+Click `Save` to save the changes. Then, re-login to the Synology NAS (DSM) with the new port as administrator user as we did above.
 
 ## Disable the Synology NAS (DSM) to Listen on 80, 443 Ports
 
@@ -47,7 +47,7 @@ It removes the port 80, 443 from the `Nginx` config and restarts the `Nginx` ser
     synoservicecfg --restart nginx
     ```
 
-In order to presist the changes, we will create a `Scheduled Task` to run the above script on each reboot.
+In order to persist the changes, we will create a `Scheduled Task` to run the above script on each reboot.
 
 Head to `Control Panel` and find `Task Scheduler`, then click `Create` and select `Triggerd Task` - `User-defined script`.
 
@@ -61,7 +61,7 @@ At `Create Task` - `General` page, fill in the following information:
 
 ![DSM Create Task][dsm-create-task-img]
 
-At `Task Settings` tab, under `Run command` fill the `User-defined script` with the following acording to the Synology NAS (DSM) version:
+At `Task Settings` tab, under `Run command` fill the `User-defined script` with the following depending on Synology NAS (DSM) version:
 
 === "DSM 7.x.x"
 
@@ -84,7 +84,7 @@ Suggestion: Select the Notification when the task is terminated abnormally.
 ![DSM Task Settings][dsm-task-settings-img]
 
 Click `OK`. The new task should be created. You can check the task by clicking `Run` in the `Task Scheduler` page.
-Prefered to reboot the Synology NAS (DSM) to make shure the changes are applied at boot.
+Preferred to reboot the Synology NAS (DSM) to make sure the changes are applied at boot.
 
 <!-- images -->
 

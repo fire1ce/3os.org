@@ -7,7 +7,7 @@ tags: [python, supervisor, processes-manager, cheat-sheet]
 
 # Supervisor Python Processes Management
 
-Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. [Offical Supervisord Docs][supervisord-docs-url]{target=\_blank}.
+Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. [Official Supervisord Docs][supervisord-docs-url]{target=\_blank}.
 
 Example of Supervisord Web UI listening on localhost:9999
 
@@ -38,7 +38,7 @@ You need to provide the path to the supervisor configuration file with - **-c /p
 supervisorctl -c /System/Volumes/Data/opt/homebrew/etc/supervisord.conf
 ```
 
-### Realod Changes from Config File to Supervisor
+### Reload Changes from Config File to Supervisor
 
 ```shell
 supervisorctl reread

@@ -11,7 +11,7 @@ tags: [syncthing, automation, linux, macos, synology, windows]
 
 [Syncthing][syncthing-homepage-url]{target=\_blank} is a continuous file synchronization program. Syncthing is an application that allows you to synchronize files between multiple devices. This means that creating, editing, or deleting files on one computer can be automatically copied to other devices.
 
-Oficial website: [syncthing.net][syncthing-homepage-url]{target=\_blank}
+Official website: [syncthing.net][syncthing-homepage-url]{target=\_blank}
 
 ## Debian/Ubuntu Installation
 
@@ -38,7 +38,7 @@ sudo apt install syncthing
 
 ### Configuration Syncthing as a Service
 
-Configuring Syncthing as a service will provice as the ability to start and stop and enable/disable the service at boot.
+Configuring Syncthing as a service will provide as the ability to start and stop and enable/disable the service at boot.
 
 Create a systemd unit file for managing the Syncthing service.
 

@@ -107,9 +107,9 @@ We are done with the installation and the configuration. You should already be a
 
 Google's API is limited to 100 threads per request - a single script's run. This means that every 5 minutes it runs it will mark 100 emails as read. Since the script is run every 5 minutes, it won't take long to mark all emails as read automatically. If you aren't able to wait you can do it mark emails as read manually.
 
-### Trubleshooting
+### Troubleshooting
 
-I've seen this script working without any issues for months, But suddenly you may receive an email with the `Automatically Mark Archived Email as Read` failling to run all the time. The reason is that the script `lost` the Gmail permissions. The solutiuon is to run the script manually and grant the script the necessary permissions as the first time.
+I've seen this script working without any issues for months, But suddenly you may receive an email with the `Automatically Mark Archived Email as Read` failing to run all the time. The reason is that the script `lost` the Gmail permissions. The solution is to run the script manually and grant the script the necessary permissions as the first time.
 
 <!-- appendices -->
 

@@ -7,7 +7,7 @@ tags: [template, markdown]
 
 # Install oh-my-zsh on OpenWrt
 
-You can install oh-my-zsh on OpenWrt, make shure to use the `Prevent User Lockout` option since many users been locked out of their sessions since the `zsh` shell was not installed or loaded properly.
+You can install oh-my-zsh on OpenWrt, make sure to use the `Prevent User Lockout` option since many users been locked out of their sessions since the `zsh` shell was not installed or loaded properly.
 
 ## Whats' ZSH
 

@@ -19,7 +19,7 @@ I will assume you have already have SSH keys generated, SSH server configured on
 
 ## Allow `User Home` at DSM Level
 
-`User Home` enable to create a personal home folder for each user, except for guest. This will alow as to create user's `.ssh` folder and `authorized_keys` file.
+`User Home` enable to create a personal home folder for each user, except for guest. This will allow as to create user's `.ssh` folder and `authorized_keys` file.
 
 - Log into Synology web UI as an administrator user
 - Control Panel -> User & Groups -> Advanced, scroll down to “User Home”
@@ -61,7 +61,7 @@ No you need to copy you public keys to `authorized_keys` file, you can do it man
 echo <public-key-sting> >> ~/.ssh/authorized_keys
 ```
 
-You can do it automatically by using the following command from a clinet with the ssh key you want to add:
+You can do it automatically by using the following command from a client with the ssh key you want to add:
 
 ```shell
 ssh-copy-id -i ~/.ssh/id_rsa <user@ip-address>

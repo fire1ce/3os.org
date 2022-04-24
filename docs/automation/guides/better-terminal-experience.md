@@ -9,7 +9,7 @@ tags: [macos, linux, terminal, zsh, oh-my-zsh]
 
 ![Terminal Screenshot][terminal-screenshot-img]
 
-## Intoduction
+## Introduction
 
 I have been using terminal for a long time, it's one of my essential tools for my everyday work and hobbies.  
 The default terminal experience is not very user friendly, and I find it sometimes frustrating to use for basic tasks.  
@@ -61,7 +61,7 @@ Answer **Yes** when asked to change the default shell to zsh.
 
 Oh My Zsh crates a default configuration file called `.zshrc` in the user's home directory.
 
-We need to eddit the configuration file. You can use any editor to edit the file.
+We need to edit the configuration file. You can use any editor to edit the file.
 
 nano example:
 
@@ -171,7 +171,7 @@ export ZSH="/home/${USER}/.oh-my-zsh"
 
 Oh My Zsh crates a default configuration file called `.zshrc` in the user's home directory.
 
-We need to eddit the configuration file. You can use any editor to edit the file.
+We need to edit the configuration file. You can use any editor to edit the file.
 
 nano example:
 
@@ -207,7 +207,7 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 ```
 
 Save and exit the file.  
-Open new terminal windown and enjoy Better Terminal Experience!
+Open new terminal window and enjoy Better Terminal Experience!
 
 <!-- appendices -->
 

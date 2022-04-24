@@ -7,12 +7,12 @@ tags: [Proxmox, Windows Virtual Machines, VirtIO]
 
 # Proxmox Windows Virtual Machine Configuration
 
-This guide will walk you through configuring Windows 10 or Windows 11 Virutal Machines with VirtIO Disks and Networking using Proxmox.
-This configuration was tested to work with the `GPU passthroughs` feature from one of the folowing guides:
+This guide will walk you through configuring Windows 10 or Windows 11 Virtual Machines with VirtIO Disks and Networking using Proxmox.
+This configuration was tested to work with the `GPU passthroughs` feature from one of the following guides:
 
 - [GPU Passthrough to VM][gpu-passthrough-to-vm] - Full GPU passthrough to VM guide
 - [iGPU Passthrough to VM][igpu-passthrough-to-vm] - Cpu's GPU passthrough to VM guide (Intel)
-- [iGPU Split Passthrough][igpu-split-passthrough] - Spliting (CPU's GPU) to Multiple GPUs passthrough to VM guide
+- [iGPU Split Passthrough][igpu-split-passthrough] - Splitting (CPU's GPU) to Multiple GPUs passthrough to VM guide
 
 ## Prerequirements
 
@@ -90,7 +90,7 @@ This how the hardware of the VM should look like befor starting the Windows inst
 
 ## Windows Installation
 
-The Windows installation process is the same as any other Windows OS installation. The only caviat is that you need to install the drivers for the Storage devices and Network devices.
+The Windows installation process is the same as any other Windows OS installation. The only caveat is that you need to install the drivers for the Storage devices and Network devices.
 
 ### Choose Custom: Install Windows only (advanced)
 
@@ -103,7 +103,7 @@ When prompted to select the storage device to install windows the device won't s
 
 ### Load the VirtIO Drivers
 
-Browse to the VirtIO Disk find a foler called `viostor` and select the appropriate windows driver.
+Browse to the VirtIO Disk find a folder called `viostor` and select the appropriate windows driver.
 
 ![win-virtio-driver][win-virtio-driver-img]
 
@@ -125,7 +125,7 @@ Windows won't be able to load network drivers while installing. When prompted wi
 
 ### Install all the VirtIO Drivers for Windows
 
-Open the VirtIO CD and run the `virtio-win-gt-x64.exe`, `virtio-win-guest-tools` installer. This will install all the missingv irtio drivers for the VM and guest OS tools.
+Open the VirtIO CD and run the `virtio-win-gt-x64.exe`, `virtio-win-guest-tools` installer. This will install all the missing virtio drivers for the VM and guest OS tools.
 
 ![post-virtoi-install][post-virtoi-install-img]
 
@@ -147,11 +147,11 @@ Select `Do nor use any media` on the CD/DVD with the Windows iso.
 
 At this point we are done with the installation of the Windows VM.
 
-Follow those guides for utlizing a GPU passthrough to VM:
+Follow those guides for utilizing a GPU passthrough to VM:
 
 - [GPU Passthrough to VM][gpu-passthrough-to-vm] - Full GPU passthrough to VM guide
 - [iGPU Passthrough to VM][igpu-passthrough-to-vm] - Cpu's GPU passthrough to VM guide (Intel)
-- [GPU Split Passthrough][gpu-split-passthrough] - Spliting (Nvidia) to Multiple GPUs passthrough to VM guide
+- [GPU Split Passthrough][gpu-split-passthrough] - Splitting (Nvidia) to Multiple GPUs passthrough to VM guide
 
 <!-- appendices -->
 
