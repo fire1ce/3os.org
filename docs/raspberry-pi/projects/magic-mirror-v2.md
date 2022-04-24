@@ -9,7 +9,7 @@ tags: [raspberry-pi, magicmirror]
 
 ![Magic Mirror Final][magicmirror-final-img]
 
-To be honest, it's not my fist time building a Magic Mirror project. My first magicmirror can be found [here][old-magicmirror-project-url].
+To be honest, it's not my first time building a Magic Mirror project. My first magicmirror can be found [here][old-magicmirror-project-url].
 The Magic Mirror 2.0 is based on [Raspberry Pi 4][amazon-raspberry-pi-4-url]{target=\_blank} with Docker Container.
 
 ## References
