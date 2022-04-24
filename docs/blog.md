@@ -11,9 +11,9 @@ hide:
 
 ## New Content (24/04/22)
 
-> Magic Mirror 2.0  
-> External Power Button For Raspberry Pi Wake, Power Off, Restart(Double Press)  
-> Raspberry Pi - Motion Sensor Display Control
+> [Magic Mirror 2.0][magicmirror-v2-url]  
+> [External Power Button][external-power-button-url]] For Raspberry Pi Wake, Power Off, Restart(Double Press)  
+> Raspberry Pi - [Motion Sensor Display Control][motion-sensor-display-control-url]
 
 ## New Content (22/04/22)
 
@@ -25,12 +25,12 @@ hide:
 > [iGPU Passthrough][igpu-passthrough-url] In Proxmox Server  
 > [iGPU Split Passthrough][igpu-split-passthrough-url] In Proxmox Server  
 > [GPU Passthrough][pgu-passthrough-to-vm-url] In Proxmox Server  
-> [Windows SSH Server][windows-ssh-server-url] - conifure Windows SSH Server with RSA keys and PowerShell shell.
+> [Windows SSH Server][windows-ssh-server-url] - configure Windows SSH Server with RSA keys and PowerShell shell.
 
 ## New Design and Features (15/03/22)
 
 > I've been working on the new design and new features for a while now.  
-> Most of the work was done on the backend for this website icluding CI/CD, and Cloudflare workers.  
+> Most of the work was done on the backend for this website including CI/CD, and Cloudflare workers.  
 > Some of the new features include: Tags and Comments on pages. This feature will be implemented on most of the pages in the future.
 
 ## Added New Tools to Penetration Testing (24/10/21)
@@ -68,6 +68,9 @@ hide:
 [syncthings-url-url]: /automation/syncthings/
 [windows-ssh-server-url]: /windows/ssh-server/
 [proxmox-lets-encrypt-cloudflare-url]: /infrastructure/proxmox/lets-encrypt-cloudflare/
+[magicmirror-v2-url]: /raspberry-pi/projects/magic-mirror-v2/
+[motion-sensor-display-control-url]: /raspberry-pi/motion-sensor-display-control/
+[external-power-button-url]: /raspberry-pi/external-power-button/
 
 <style>
   .md-content__button {
