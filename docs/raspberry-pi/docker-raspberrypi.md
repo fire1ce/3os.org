@@ -1,5 +1,8 @@
 ---
-description: How to install Docker and Docker-compose on Raspberry Pi
+title: Docker on Raspberry Pi
+description: How to install Docker and Docker-compose on Raspberry Pi and user configuration
+template: comments.html
+tags: [docker, raspberry-pi, docker-compose]
 ---
 
 # Docker and Docker-compose on Raspberry Pi
