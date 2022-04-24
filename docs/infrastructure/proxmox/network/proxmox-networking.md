@@ -7,7 +7,7 @@ tags: [proxmox, network]
 
 # Proxmox Networking
 
-Offical Proxmox networking documentation can be found [here][proxmox-network-configuration-url]{target=\_blank}.
+Official Proxmox networking documentation can be found [here][proxmox-network-configuration-url]{target=\_blank}.
 
 ## Basics
 
@@ -19,7 +19,7 @@ Offical Proxmox networking documentation can be found [here][proxmox-network-con
 systemctl restart networking.service
 ```
 
-## Exmaple of Multi Network Interface Server
+## Example of Multi Network Interface Server
 
 The next examples will be based on the following network nics, `ip addr` output:
 
@@ -48,9 +48,9 @@ The next examples will be based on the following network nics, `ip addr` output:
        valid_lft forever preferred_lft forever
 ```
 
-In order Identify physical network interfaces coresponding to Network Interfaces name in proxmox you can follow [this guide][identify-nics-url]
+In order Identify physical network interfaces corresponding to Network Interfaces name in Proxmox you can follow [this guide][identify-nics-url]
 
-Brakedown of the `ip addr` output:
+Breakdown of the `ip addr` output:
 
 1. `lo` is a loopback interface.
 2. `enp7s0` is a 2.5G network interface.
@@ -142,7 +142,7 @@ iface vmbr0 inet dhcp
 
 ## DHCP Bridge with VLAN Aware Configuration
 
-The following example showsa a DHCP as above but with VLAN Aware bridge.
+The following example shows a DHCP as above but with VLAN Aware bridge.
 
 ```config
 auto vmbr0
