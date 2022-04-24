@@ -9,6 +9,12 @@ hide:
 
 ---
 
+## New Content (24/04/22)
+
+> Magic Mirror 2.0  
+> External Power Button For Raspberry Pi Wake, Power Off, Restart(Double Press)  
+> Raspberry Pi - Motion Sensor Display Control
+
 ## New Content (22/04/22)
 
 > [Proxmox SSL with Let's Encrypt and Cloudflare DNS Challenge][proxmox-lets-encrypt-cloudflare-url]
