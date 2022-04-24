@@ -2,7 +2,7 @@
 title: Magic Mirror 2.0
 description: Magic Mirror 2.0 is a Raspberry Pi based mirror that can be used to display information from various sources.
 template: comments.html
-tags: [template, markdown]
+tags: [raspberry-pi, magicmirror]
 ---
 
 # Magic Mirror 2.0
