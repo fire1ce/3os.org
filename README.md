@@ -8,7 +8,7 @@
 
 <p align="center">
   <strong>
-    <a href="https://3os.org/">3os Project</a> 
+    <a href="https://3os.org/">3os Project</a>
   </strong>
 </p>
 
@@ -27,7 +27,7 @@ We are welcoming you to contribute your knowledge to this project. Submit git pu
 
 ### Discussion
 
-Feel free to open a discussion on any topic at comments section at any time. github issues section.
+Feel free to open a discussion on any topic at comments section at any time. Github issues section.
 
 ### Build
 
