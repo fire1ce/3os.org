@@ -21,3 +21,4 @@ Pipfile.lock
 # .vscode
 node_modules/
 .vscode/settings.json
+.venv
