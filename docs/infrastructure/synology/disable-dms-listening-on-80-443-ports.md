@@ -34,7 +34,7 @@ It removes the port 80, 443 from the `Nginx` config and restarts the `Nginx` ser
 === "DSM 7.x.x"
 
     ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService. mustache
+    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
 
     synosystemctl restart nginx
     ```
@@ -42,7 +42,7 @@ It removes the port 80, 443 from the `Nginx` config and restarts the `Nginx` ser
 === "DSM 6.x.x"
 
     ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService. mustache
+    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
 
     synoservicecfg --restart nginx
     ```
@@ -66,7 +66,7 @@ At `Task Settings` tab, under `Run command` fill the `User-defined script` with 
 === "DSM 7.x.x"
 
     ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService. mustache
+    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
 
     synosystemctl restart nginx
     ```
@@ -74,7 +74,7 @@ At `Task Settings` tab, under `Run command` fill the `User-defined script` with 
 === "DSM 6.x.x"
 
     ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService. mustache
+    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
 
     synoservicecfg --restart nginx
     ```
