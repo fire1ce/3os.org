@@ -133,14 +133,6 @@ Update configuration changes made in your /etc filesystem
 update-initramfs -u -k all
 ```
 
-Save and exit the editor.
-
-Update configuration changes made in your /etc filesystem
-
-```shell
-update-initramfs -u -k all
-```
-
 **Reboot Proxmox to apply the changes**
 
 Verify that IOMMU is enabled
