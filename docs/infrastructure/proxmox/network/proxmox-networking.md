@@ -154,7 +154,7 @@ iface vmbr0 inet dhcp
            bridge-vids 2-4094
 ```
 
-## Peronsal Network Configuration
+## Personal Network Configuration
 
 Here's a sample of the `/etc/network/interfaces` file for a personal network:
 
