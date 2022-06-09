@@ -26,11 +26,11 @@ function mainCtrl(a) {
   }
   (a.iid = null),
     (a.checkStatus = null),
-    (a.generate = function() {
+    (a.generate = function () {
       for (a.checkStatus = !1; !a.checkStatus; )
         (a.iid = d()), (a.checkStatus = e(a.iid));
     }),
-    (a.check = function() {
+    (a.check = function () {
       a.checkStatus = e(a.iid);
     });
 }
