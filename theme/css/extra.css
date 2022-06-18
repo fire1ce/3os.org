@@ -31,6 +31,13 @@
   max-width: 1560px;
 }
 
+/* ads padding side bar*/
+
+.ads-sidebar {
+  padding: 0 0.6rem;
+}
+
+
 /* support buttons */
 
 .donation {
