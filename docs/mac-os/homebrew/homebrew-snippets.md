@@ -1,12 +1,15 @@
 ---
-description: Homebrew tweaks, guides and snippets
+title: Brew Snippets
+description: Homebrew usage snippets for macOS. This is a collection of snippets that I use to install and manage homebrew packages.
+template: comments.html
+tags: [macOS, homebrew]
 ---
 
-# Homebrew Snippets
+# Brew Snippets
 
 ## Brew Pinns - Freez and Unfreez Specific Packages
 
-This will alow you to pin specific packages to your Homebrew installation and then unfreeze them.
+This will alow you to pin (freez update) to specific packages to your Homebrew installation and then unfreeze them.
 
 List of packages that you freeze
 
@@ -26,7 +29,7 @@ Unfreeze Version
 brew unpin <formula>
 ```
 
-## Uninstall brew package and dependencies
+## Uninstall Brew Package and Dependencies
 
 Remove package's dependencies (does not remove package):
 

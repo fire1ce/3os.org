@@ -1,8 +1,11 @@
 ---
-description: How to Install Python on macOS the Right Way and Use Python Virtual Environment
+title: Pyenv-virtualenv Multi Version
+description: Multiple Version Python Virtual Environment Manager for Python development in macOS.
+template: comments.html
+tags: [MacOS, Python]
 ---
 
-# How to Install and use Python on macOS the Right Way
+# Pyenv-virtualenv - Multiple Version Python Virtual Environment Manager
 
 ## Intro
 

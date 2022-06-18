@@ -1,5 +1,8 @@
 ---
+title: UI Tweaks
 description: macOS macOS UI tweaks and tips, for better experience, productivity and workflow
+template: comments.html
+tags: [macOS]
 ---
 
 # UI Tweaks
