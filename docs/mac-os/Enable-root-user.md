@@ -36,7 +36,7 @@ Or choose Edit > Disable Root User.
 
 To Disable the Root User repeat the steps above, but change the last step to Disable Root User.
 
-## Log in as The Root User
+## Login as The Root User
 
 When the root user is enabled, you have the privileges of the root user only while logged in as the root user.
 
