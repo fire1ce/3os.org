@@ -9,6 +9,11 @@ hide:
 
 ---
 
+## Updated MacOS Section (18/06/22)
+
+> Updated the MacOS section of the website.
+> Some content has been added and removed due to deprecation at MacOS section.
+
 ## New Content (24/04/22)
 
 > [Magic Mirror 2.0][magicmirror-v2-url]  
