@@ -34,7 +34,8 @@
 /* ads padding side bar*/
 
 .ads-sidebar {
-  padding: 0 0.6rem;
+  margin: auto;
+  padding: 0.5rem;
 }
 
 
