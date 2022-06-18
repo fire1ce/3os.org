@@ -55,6 +55,7 @@
 {% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page and
 page.meta and page.meta.hide %} {% set hidden = "hidden" if "toc" in
 page.meta.hide %} {% endif %}
+
 <div
   class="md-sidebar md-sidebar--secondary"
   data-md-component="sidebar"
@@ -65,6 +66,27 @@ page.meta.hide %} {% endif %}
 >
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">{% include "partials/toc.html" %}</div>
+
+    <!-- google ads section -->
+    <!-- <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5886334466795247"
+      crossorigin="anonymous"
+    ></script>
+
+    <ins
+      class="adsbygoogle"
+      style="display: inline-block; width: 260px; height: 260px"
+      data-ad-client="ca-pub-5886334466795247"
+      data-adtest="on"
+      data-ad-slot="1827451329"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script> -->
+
     <!-- donation section -->
     <div class="donation">
       <h3>Support us</h3>
