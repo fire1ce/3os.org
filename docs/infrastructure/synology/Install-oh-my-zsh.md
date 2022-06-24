@@ -28,7 +28,7 @@ DSM 6 and below:
 
 Log into your NAS as administrator and go to Main Menu → Package Center → Settings and set Trust Level to Synology Inc. and trusted publishers.
 
-In the Package Sources tab, click Add, type SynoCommunity as Name and `https://packages.synocommunity-url/` as Location and then press OK to validate.
+In the Package Sources tab, click Add, type SynoCommunity as Name and `https://packages.synocommunity.com/` as Location and then press OK to validate.
 
 ![syno-community-install][syno-community-install-img]
 
