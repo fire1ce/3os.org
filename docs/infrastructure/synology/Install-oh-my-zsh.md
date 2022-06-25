@@ -40,17 +40,23 @@ Install `Z shell (with modules)` from package center Community tab.
 
 ![Z shell (with modules) package][z-shell-with-modules-package-img]
 
+## Install `Git`
+
+Install `Git` from package center Community tab.
+
+![Git package][git-package-img]
+
 ## Change The Default Shell to `ZSH`
 
 The following steps will be performed via SSH
 
-edit `~/.profile`
+edit `~/.profile` the file may be missing, so create it if it doesn't exist.
 
 ```shell
 vi ~/.profile
 ```
 
-Sppend the codes below to the end of the file:
+Append the codes below to the end of the file or add if empty.
 
 ```bash
 if [[ -x /usr/local/bin/zsh ]]; then
@@ -91,5 +97,6 @@ At this point you should have a working `oh-my-zsh` working on your Synology NAS
 
 [syno-community-install-img]: /assets/images/e38b4c1c-bbc9-11ec-b13f-033bc9ab9d10.jpg 'SynoCommunity install'
 [z-shell-with-modules-package-img]: /assets/images/76a71404-bbca-11ec-847d-87c4502ecefc.jpg 'Z shell (with modules) package'
+[git-package-img]: /assets/images/7dcaaea2-f474-11ec-a4a2-57286e786d91.jpg 'git package'
 
 <!-- end appendices -->
