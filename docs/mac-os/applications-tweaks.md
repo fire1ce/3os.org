@@ -18,7 +18,8 @@ do shell script "open -n <path to application>"
 ```
 
 !!! example
-do shell script "open -n /Applications/'Visual Studio Code.app'"
+
+    do shell script "open -n /Applications/'Visual Studio Code.app'"
 
 File > Export
 
