@@ -155,13 +155,83 @@ Syncthing supports of `Ignore Patterns` you can use it to `Ignore Files` synchro
 Here is a list of the `Ignore Patterns` for system files:
 
 ```list
-Photos Library.photoslibrary
+// Apple macOS
 (?d).DS_Store
+(?d).localized
+(?d)._*
+(?d).Icon*
+(?d).fseventsd
+(?d).Spotlight-V100
+(?d).DocumentRevisions-V100
+(?d).TemporaryItems
+(?d).Trashes
+(?d).Trash-1000
+(?d).iCloud
+(?d)Photos Library.photoslibrary
+
+// GNU/Linux
+(?d).directory
+(?d).Trash-*
+
+// Microsoft Windows
+(?d)desktop.ini
+(?d)ehthumbs.db
+(?d)Thumbs.db
+(?d)$RECYCLE.BIN
+(?d)System Volume Information
+
+// QNAP QTS
+(?d).AppleDB
+(?d).@_thumb
+(?d).@__thumb
+
+// Synology DSM
 (?d)@eaDir
-(?d)Icon
-(?d).AppleDouble
-(?d).LSOverride
-(?d).LSOverride
+
+// Adobe Lightroom
+*Previews.lrdata root-pixels.db
+
+// Dropbox
+.dropbox
+.dropbox.attr
+
+// Firefox & Chrome
+*.part
+*.crdownload
+
+// Microsoft Office
+~*
+
+// Parallels Desktop for Mac
+.parallels-vm-directory
+
+// Resilio Sync
+.sync
+*.bts
+*.!Sync
+.SyncID
+.SyncIgnore
+.SyncArchive
+*.SyncPart
+*.SyncTemp
+*.SyncOld
+
+// Temporary and backup files
+*.temporary
+*.tmp
+*._mp
+*.old
+*.syd
+*.dir
+*.gid
+*.chk
+*.dmp
+*.nch
+.*.swp
+*~
+
+// Vim
+*.*.sw[a-p]
 ```
 
 Example of working `Syncthing` Web UI:
