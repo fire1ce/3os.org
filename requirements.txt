@@ -22,7 +22,7 @@ mkdocs-embed-external-markdown==2.2.1
 mkdocs-exclude-search==0.6.4
 mkdocs-ezlinks-plugin==0.1.14
 mkdocs-git-revision-date-localized-plugin==1.0.1
-mkdocs-material==8.3.6
+mkdocs-material==8.3.8
 mkdocs-material-extensions==1.0.3
 mkdocs-meta-descriptions-plugin==1.0.2
 mkdocs-minify-plugin==0.5.0
@@ -38,7 +38,7 @@ pytz==2022.1
 PyYAML==6.0
 pyyaml_env_tag==0.1
 requests==2.28.0
-setuptools==62.4.0
+setuptools==62.6.0
 six==1.16.0
 smmap==5.0.0
 soupsieve==2.3.2.post1
