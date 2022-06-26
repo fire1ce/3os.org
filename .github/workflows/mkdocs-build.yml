@@ -14,13 +14,14 @@ jobs:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - name: Set workspace as safe directory
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: Checkout main
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      # Deploy MkDocs
+      - name: Set workspace as safe directory
+        # run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+        run: git config --global --add safe.directory /github/workspace
       - name: Deploy MkDocs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
