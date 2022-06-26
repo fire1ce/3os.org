@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set workspace as safe directory
-        run: run: git config --global --add safe.directory /__w/3os.org/3os.org
+        run: git config --global --add safe.directory /__w/3os.org/3os.org
       - name: Checkout main
         uses: actions/checkout@v3
         with:
