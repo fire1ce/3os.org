@@ -7,7 +7,7 @@ tags: [proxmox, virtualization]
 
 # Proxmox Cloud Image Template
 
-## What Cloud Images
+## About Cloud Images
 
 Cloud images are operating system templates and every instance starts out as an identical clone of every other instance. It is the user data that gives every cloud instance its personality and cloud-init is the tool that applies user data to your instances automatically.
 
@@ -99,7 +99,7 @@ Now had to the Proxmox web interface. Select the new vm and `Cloud-Init` tab.
 
 ![Cloud-Init-Tab][cloud-init-tab-img]
 
-Configure the default setting for the cloud image template. This will alow the VM to start with predefined user, password, ssh keys and network configuration.
+Configure the default setting for the cloud image template. This will allow the VM to start with predefined user, password, ssh keys and network configuration.
 
 ![Cloud-Init-Settings][cloud-init-settings-img]
 
