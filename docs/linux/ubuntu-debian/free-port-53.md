@@ -7,7 +7,7 @@ tags: [Ubuntu, dns]
 
 # Free Port 53 on Ubuntu
 
-## Whats using port 53?
+## What's Using Port 53?
 
 When you install Ubuntu (in my case its Server version). It uses systemd-resolved as internal DNS Forwarder.
 
@@ -15,7 +15,7 @@ systemd-resolved is a system service that provides network name resolution to lo
 
 ![Netstat output][netstat-output-img]
 
-## How to free port 53 on Ubuntu
+## How to Free Port 53 on Ubuntu
 
 If we want to use port 53 for other purposes, we need to free it for example a `Pihole DNS` server.
 
