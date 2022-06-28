@@ -13,17 +13,23 @@ Output of `ip addr` command:
 
 ![Default IPv6 Proxmox][default-ipv6-proxmox-img]
 
-You can disable IPv6 on Proxmox VE by editing the `/etc/sysctl.conf` file.
+You can disable IPv6 on Proxmox VE by editing the `/etc/default/grub` file.
 
 ```shell
-nano /etc/sysctl.conf
+nano /etc/default/grub
 ```
 
 Append the following to the end of the file
 
 ```bash
-net.ipv6.conf.all.disable_ipv6=1
-net.ipv6.conf.default.disable_ipv6=1
+GRUB_CMDLINE_LINUX="ipv6.disable=1"
+GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1"
+```
+
+Update the grub configuration.
+
+```shell
+update-grub
 ```
 
 Save and exit. Reboot Proxmox Server to apply the changes.
