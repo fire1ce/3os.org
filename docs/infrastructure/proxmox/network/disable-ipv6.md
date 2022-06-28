@@ -1,11 +1,11 @@
 ---
 title: Disable IPv6 on Proxmox
-description: How to permenantly disable IPv6 on Proxmox VE Server.
+description: How to permanently disable IPv6 on Proxmox VE Server.
 template: comments.html
 tags: [proxmox, ipv6]
 ---
 
-# Disable IPv6 on Proxmox
+# Disable IPv6 on Proxmox Permanently
 
 By default, Proxmox IPv6 is enabled after installation. This means that the IPv6 stack is active and the host can communicate with other hosts on the same network via IPv6 protocol.
 

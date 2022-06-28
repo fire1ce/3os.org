@@ -10,32 +10,6 @@ description: Ubuntu & Debian Linux - snippetsm guides, examples and usage
 ufw disable
 ```
 
-## Disable IPv6 Persistent
-
-Disable IPv6 using GRUB
-Perform the following steps with root privileges to disable IPv6 in Ubuntu 18.04/16.04 Permanently using grub method.
-
-Edit:
-
-```bash
-/etc/default/grub
-```
-
-Modify _GRUB_CMDLINE_LINUX_ and _GRUB_CMDLINE_LINUX_DEFAULT_ to append ipv6.disable=1:
-
-```bash
-GRUB_CMDLINE_LINUX="ipv6.disable=1"
-GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1"
-```
-
-Update the grub configuration:
-
-```bash
-update-grub
-```
-
-Reboot the server
-
 ## Remove Snap Store from Ubuntu
 
 ```bash
