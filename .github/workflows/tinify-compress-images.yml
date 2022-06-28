@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'docs/assets/images/**'
+  workflow_dispatch:
 
 jobs:
   compress:
