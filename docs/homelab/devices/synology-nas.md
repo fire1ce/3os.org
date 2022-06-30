@@ -34,8 +34,6 @@ One of my main devices is a [Synology DS218+ NAS][amzn-synology-ds218-plus-nas-u
 
 ![Synology DS218+ back][synology-ds218-back-img]
 
----
-
 ![Synology Disks][synology-disks-img]
 
 <!-- appendices -->
