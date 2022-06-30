@@ -11,16 +11,18 @@ tags: [HomeLab, Synology, NAS]
 
 ---
 
-One of main devices in my `Homlab` is a [Synology DS218+ NAS][amzn-synology-ds218-plus-nas-url]{target=\_blank}. It purpose mainly for backups and sync tasks. It's been upgraded to 8GB of RAM and has two [SAMSUNG 870 QVO SSD 4TB][amzn-samsung-870-qvo-ssd-4tb-url]{target=\_blank}, running in redundant mode. The fan was replaced with [Noctua NF-A9 FLX Fan][amzn-noctua-nf-a9-flx-url]{target=\_blank} for quieter operation. With additional [SABRENT USB 5Gbe Ethernet][amzn-sabrent-usb-5gbe-ethernet-url]{target=\_blank}.
+One of then main devices in my `HomeLab` is a [Synology DS218+ NAS][amzn-synology-ds218-plus-nas-url]{target=\_blank}. It purpose mainly for backup and data synchronization tasks.
+
+[Synology DS218+ NAS][amzn-synology-ds218-plus-nas-url]{target=\_blank} was upgraded to 8GB of RAM. It has two [SAMSUNG 870 QVO 4TB SSD][amzn-samsung-870-qvo-ssd-4tb-url]{target=\_blank}, running in redundant mode. The 1GbE network was upgraded with [SABRENT USB 5GbE Ethernet][amzn-sabrent-usb-5gbe-ethernet-url]{target=\_blank} and the fan was replaced with [Noctua NF-A9 FLX Fan][amzn-noctua-nf-a9-flx-url]{target=\_blank} for quieter operation.
 
 ---
 
 !!! example "Parts List"
 
     - [Synology DS218+ NAS][amzn-synology-ds218-plus-nas-url]{target=\_blank}.
-    - 2x [SAMSUNG 870 QVO SSD 4TB][amzn-samsung-870-qvo-ssd-4tb-url]{target=\_blank}.
+    - 2x [SAMSUNG 870 QVO 4TB SSD][amzn-samsung-870-qvo-ssd-4tb-url]{target=\_blank}.
     - [Noctua NF-A9 FLX Fan][amzn-noctua-nf-a9-flx-url]{target=\_blank}.
-    - [SABRENT USB 5Gbe Ethernet][amzn-sabrent-usb-5gbe-ethernet-url]{target=\_blank}.
+    - [SABRENT USB 5GbE Ethernet][amzn-sabrent-usb-5gbe-ethernet-url]{target=\_blank}.
     - 2x [Crucial 4GB DDR3l-1600][amzn-crucial-4gb-ddr3l-1600-url]{target=\_blank}.
 
 !!! info "Used for"
@@ -44,7 +46,7 @@ One of main devices in my `Homlab` is a [Synology DS218+ NAS][amzn-synology-ds21
 [amzn-synology-ds218-plus-nas-url]: https://amzn.to/3uC7v5B 'Synology DS218+ NAS'
 [amzn-samsung-870-qvo-ssd-4tb-url]: https://amzn.to/3bGMqQH 'SAMSUNG 870 QVO SSD 4TB'
 [amzn-noctua-nf-a9-flx-url]: https://amzn.to/3a5eqgp 'Noctua NF-A9 FLX'
-[amzn-sabrent-usb-5gbe-ethernet-url]: https://amzn.to/3a2nqmm 'SABRENT USB 5Gbe Ethernet'
+[amzn-sabrent-usb-5gbe-ethernet-url]: https://amzn.to/3a2nqmm 'SABRENT USB 5GbE Ethernet'
 [amzn-crucial-4gb-ddr3l-1600-url]: https://amzn.to/3nqh6bA 'Crucial 4GB DDR3l-1600'
 
 <!-- images -->
