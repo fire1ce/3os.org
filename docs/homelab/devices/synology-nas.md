@@ -2,7 +2,7 @@
 title: Synology NAS
 description: HomeLab Synology NAS device. Synology DS218+ NAS is used mainly for home lab for data backup, synchronization, storage and Docker containers.
 template: comments.html
-tags: [Synology, NAS]
+tags: [HomeLab, Synology, NAS]
 ---
 
 # Synology DS218+ NAS
