@@ -1,6 +1,6 @@
 ---
 title: Synology NAS
-description: Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maecenas euismod neque rhoncus suscipit viverra. Nulla venenatis enim vel mauris ornare viverra.
+description: HomeLab Synology NAS device. Synology DS218+ NAS is used mainly for home lab for data backup, synchronization, storage and Docker containers.
 template: comments.html
 tags: [Synology, NAS]
 ---
@@ -11,7 +11,7 @@ tags: [Synology, NAS]
 
 ---
 
-One of my main devices is a [Synology DS218+ NAS][amzn-synology-ds218-plus-nas-url]{target=\_blank}. It purpose mainly for backups and sync tasks. It's been upgraded to 8GB of RAM and has two [SAMSUNG 870 QVO SSD 4TB][amzn-samsung-870-qvo-ssd-4tb-url]{target=\_blank}, running in redundant mode. The fan was replaced with [Noctua NF-A9 FLX Fan][amzn-noctua-nf-a9-flx-url]{target=\_blank} for quieter operation. With additional [SABRENT USB 5Gbe Ethernet][amzn-sabrent-usb-5gbe-ethernet-url]{target=\_blank}.
+One of main devices in my `Homlab` is a [Synology DS218+ NAS][amzn-synology-ds218-plus-nas-url]{target=\_blank}. It purpose mainly for backups and sync tasks. It's been upgraded to 8GB of RAM and has two [SAMSUNG 870 QVO SSD 4TB][amzn-samsung-870-qvo-ssd-4tb-url]{target=\_blank}, running in redundant mode. The fan was replaced with [Noctua NF-A9 FLX Fan][amzn-noctua-nf-a9-flx-url]{target=\_blank} for quieter operation. With additional [SABRENT USB 5Gbe Ethernet][amzn-sabrent-usb-5gbe-ethernet-url]{target=\_blank}.
 
 ---
 
@@ -26,7 +26,7 @@ One of my main devices is a [Synology DS218+ NAS][amzn-synology-ds218-plus-nas-u
 !!! info "Used for"
 
     - Data backup.
-    - Data sync.
+    - Data synchronization.
     - Data storage.
     - Docker containers.
 
