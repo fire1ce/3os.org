@@ -1,15 +1,15 @@
 nav:
 
-  - Automation: automation
-  - DevOps: devops
-  - Development: development
-  - Infrastructure: infrastructure
-  - Linux: linux
-  - macOS: mac-os
-  - Windows: windows
-  - Raspberry Pi: raspberry-pi
-  - Android: android
-  - Penetration Testing: penetration-testing
-#  - Homelab: homelab
-  - Utilities: utilities
-  - What's New: blog.md
+- Automation: automation
+- DevOps: devops
+- Development: development
+- Infrastructure: infrastructure
+- Linux: linux
+- macOS: mac-os
+- Windows: windows
+- Raspberry Pi: raspberry-pi
+- Android: android
+- Penetration Testing: penetration-testing
+- Homelab: homelab
+- Utilities: utilities
+- What's New: blog.md
