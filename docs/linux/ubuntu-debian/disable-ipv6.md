@@ -15,12 +15,16 @@ You can disable Ubuntu/Debian by editing the `/etc/default/grub` file.
 nano /etc/default/grub
 ```
 
-Append the following to the end of the file
+add `ipv6.disable=1` to the end of `GRUB_CMDLINE_LINUX_DEFAULT` and `GRUB_CMDLINE_LINUX` line. Don't change the other values at those lines.
 
 ```bash
-GRUB_CMDLINE_LINUX="ipv6.disable=1"
 GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1"
+GRUB_CMDLINE_LINUX="ipv6.disable=1"
 ```
+
+The config should look like this:
+
+![Grub Configuration][grub-configuration-img]
 
 Update the grub configuration.
 
@@ -35,5 +39,7 @@ Save and exit. `Reboot` to apply the changes.
 <!-- urls -->
 
 <!-- images -->
+
+[grub-configuration-img]: /assets/images/f1f18772-f881-11ec-9918-afad89ede03c.jpg 'Grub Configuration'
 
 <!-- end appendices -->
