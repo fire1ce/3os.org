@@ -1,76 +1,67 @@
 ---
-title: Virtualenv
-description: Cheat sheet for virtualenv. Python Virtual Environment - virtualenv. How to install and Use virtualenv with Python. virtualenv is a tool to create isolated Python environments.
+title: Virtual Environment
+description: Cheat sheet for venv. Python Virtual Environment - venv. How to install and Use venv with Python. venv is a tool to create isolated Python environments.
 template: comments.html
-tags: [python, virtualenv, cheat-sheet]
+tags: [python, venv, cheat-sheet]
 ---
 
-# Virtualenv
+# Python Virtual Environment
 
-## About Python Virtual Environment - **virtualenv**
+## About Python Virtual Environment - **venv**
 
-**virtualenv** is a tool to create isolated Python environments. Since Python 3.3, a subset of it has been integrated into the standard library under the venv module.
-Using **virtualenv** is very useful for creating isolated Python environments for your project,it will allow you installing Python packages and modules in a separate location from the rest of your host os without conflicting versions.
+**venv** is a tool to create isolated Python environments. Since Python 3.3, a subset of it has been integrated into the standard library under the venv module.
+Using **venv** is very useful for creating isolated Python environments for your project,it will allow you installing Python packages and modules in a separate location from the rest of your host os without conflicting versions.
 
-## Install virtualenv
+## Install venv
 
-In order to install virtualenv, we need to install [**pip**][pip-url]{target=\_blank}
-
-```shell
-sudo apt install python3-pip
-```
-
-Now we can install the **virtualenv** with **pip** command:
+In order to install `venv`, we need to install the following packages:
 
 ```shell
-sudo pip3 install virtualenv
+sudo apt install python3-venv
 ```
 
-## Create a Virtual Environment
+## Initialization of a Virtual Environment
 
-cd to your project directory and run the following command to create a virtual environment:
+Go to the root destination of your project and run the following command:
 
 ```shell
-virtualenv venv
+python3 -m venv .venv
 ```
 
-!!! note
+This will create a virtual environment in the current directory. The virtual environment folder will be named `.venv`.
 
-    you can use any name insted of **venv**
-    You can also use a Python interpreter of your choice
+## Activation of a Virtual Environment
 
-Example of creating a virtual environment with Python 2.7 environment:
+In order to activate a virtual environment, from the root directory of your project, run the following command:
 
 ```shell
-virtualenv -p /usr/bin/python2.7 venv
+source .venv/bin/activate
 ```
 
-## Activate the Virtual Environment
-
-In order to use the virtual environment, we need to activate it:
-
-```shell
-source venv/bin/activate
-```
-
-To deactivate:
-
-```shell
-deactivate
-```
-
-## Check the Python Version in the Virtual Environment
-
-In order to check the Python version in the virtual environment, we can run the following command then the virtual environment will is activated:
+Check if the virtual environment is activated by running the following command:
 
 ```shell
 which python
 ```
 
-The output should point to the Python interpreter in the virtual environment (**/venv/bin/python**).
+The output should be with `../.venv/bin/python` as the output.
+
+Bonus:
+
+You can add an alias to your bash profile to make it easier to activate the virtual environment:
+
+```shell
+alias activate='source .venv/bin/activate'
+```
+
+## Deactivation of a Virtual Environment
+
+When you are done with the virtual environment, you can deactivate it by running the following command:
+
+```shell
+deactivate
+```
 
 <!-- appendices -->
-
-[pip-url]: https://pip.pypa.io/en/stable/ 'pip.pypa.io'
 
 <!-- end appendices -->
