@@ -1,5 +1,8 @@
 ---
-description: Linux - Files Handling how to, guides, examples, and simple usage
+title: Files Handling
+description: Linux files handling with the Linux file system tips and tricks for the Linux user. This is a collection of tips and tricks for the Linux user.
+template: comments.html
+tags: [linux, files-handling]
 ---
 
 # Files Handling
@@ -8,26 +11,44 @@ description: Linux - Files Handling how to, guides, examples, and simple usage
 
 Ncdu is a disk usage analyzer with an ncurses interface.
 
-```bash
+```shell
 apt-get install ncdu
 ```
 
 ## Delete Large File List - _Argument list too long_
 
-```bash
+```shell
 find . -name '*'|xargs rm
 ```
 
 ## Change permissions (chmod) to folders and files
 
-```bash
+```shell
 find . -type d -exec chmod 755 {} +
 find . -type f -exec chmod 644 {} +
 ```
 
-## Change Permissions and Group with UID 1000
+## Recursively chown user and group
 
-```bash
-chgrp 1000 -R  FOLDER
-chown 1000 -R FOLDER
+```shell
+chown -R user:group /some/path/here
+```
+
+## Recursively chmod to 775/664
+
+```shell
+chmod -R a=,a+rX,u+w,g+w /some/path/here
+```
+
+```shell
+          ^  ^    ^   ^ adds write to group
+          |  |    | adds write to user
+          |  | adds read to all and execute to all folders (which controls access)
+          | sets all to `000`
+```
+
+## Find UID/GID for user
+
+```shell
+id <username>
 ```
