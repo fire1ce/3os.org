@@ -1,52 +1,59 @@
 ---
-description: how to guide to SMB Mount With autofs
+title: SMB Mount With autofs
+description: Using autofs to mount SMB shares on Linux systems.
+template: comments.html
+tags: [smb, share, autofs, mount]
 ---
 
 # SMB Mount With autofs
 
-install autofs cifs-utils
+Install autofs cifs-utils
 
-```bash
-touch /etc/auto.cifs
+```shell
+apt install -y autofs cifs-utils
+```
+
+Eddit auto.cifs file
+
+```shell
 nano /etc/auto.cifs
 ```
 
 Add this to the file: ("media" - is any name for your mount)
 
-```bash
-active-share    -fstype=cifs,rw,noperm,vers=3.0,credentials=/etc/.credentials.txt    ://oscar.3os.re/active-share
+```shell
+media    -fstype=cifs,rw,noperm,vers=3.0,credentials=/etc/.credentials.txt    ://oscar.3os.re/active-share/media
 ```
 
-Exit and save:
+Create credentials file
 
-```bash
-touch /etc/.credentials.txt
+```shell
 nano /etc/.credentials.txt
 ```
 
 Add you credentials for the smb mount:
 
-```bash
+```shell
 username=YourUser
 password=YourPassword
 ```
 
 Exit and save:
 
-```bash
+```shell
 nano /etc/auto.master
 ```
 
 At the end of the file add: ("/mnt" - mount location, /etc/auto.cifs your config for mounting the SMB Share)
 
-```bash
+```shell
 /mnt    /etc/auto.cifs --timeout=600 --ghost
 ```
 
 Save end exit.
 Test the mounting.
 
-```bash
+```shell
 systemctl start autofs
 cd /mnt/media/
 ls
@@ -55,20 +62,20 @@ ls
 You should see the mount over there.
 Enable autofs on boot:
 
-```bash
+```shell
 systemctl enable autofs
 ```
 
 ## SMB Mount on Linux With Credentials
 
-```bash
+```shell
 sudo apt-get install cifs-utils
 nano ~/.smbcredentials
 ```
 
 add this to the config.
 
-```bash
+```shell
 username=msusername
 password=mspassword
 ```
@@ -76,13 +83,13 @@ password=mspassword
 Save the file, exit the editor.
 Change the permissions of the file to prevent unwanted access to your credentials:
 
-```bash
+```shell
 chmod 600 ~/.smbcredentials
 ```
 
 Then edit your /etc/fstab file (with root privileges) to add this line (replacing the insecure line in the example above, if you added it):
 
-```bash
+```shell
 //servername/sharename /media/windowsshare cifs vers=1.0,credentials=/home/ubuntuusername/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
 ```
 
@@ -90,7 +97,7 @@ Save the file, exit the editor.
 
 Finally, test the fstab entry by issuing:
 
-```bash
+```shell
 sudo mount -a
 ```
 
