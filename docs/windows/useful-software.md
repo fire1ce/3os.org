@@ -12,7 +12,7 @@ description: Windows Tips & Guides, examples and simple usage and useful softwar
 
 | Application                                                                                                  | Description                 |
 | ------------------------------------------------------------------------------------------------------------ | --------------------------- |
-| [KMS_VL_ALL](https://github.com/lixuy/KMS_VL_ALL){target=\_blank}                                            | Windows & Office Activation |
+| [MAS](https://github.com/massgravel/Microsoft-Activation-Scripts){target=\_blank}                            | Windows & Office Activation |
 | [Windows Tweaker 4 for Windows 10](https://www.thewindowsclub.com/downloads/UWT4.zip){target=\_blank}        | Windows Tweaker             |
 | [Defender Control](https://github.com/qtKite/defender-control){target=\_blank}                               | Windows Defender control    |
 | [Link Shell Extension](https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html){target=\_blank} | Symlinks For Windows        |
