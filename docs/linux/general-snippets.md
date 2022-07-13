@@ -8,13 +8,13 @@ description: Linux General how to, guides, examples, and simple usage
 
 To disable
 
-```bash
+```shell
 touch ~/.hushlogin
 ```
 
 To re-enable
 
-```bash
+```shell
 rm -rf ~/.hushlogin
 ```
 
@@ -22,19 +22,19 @@ rm -rf ~/.hushlogin
 
 The command you want is named `tee`:
 
-```bash
+```shell
 foo | tee output.file
 ```
 
 For example, if you only care about stdout:
 
-```bash
+```shell
 ls -a | tee output.file
 ```
 
 If you want to include stderr, do:
 
-```bash
+```shell
 program [arguments...] 2>&1 | tee outfile
 ```
 
@@ -42,7 +42,7 @@ program [arguments...] 2>&1 | tee outfile
 
 Furthermore, if you want to append to the log file, use tee -a as:
 
-```bash
+```shell
 program [arguments...] 2>&1 | tee -a outfile
 ```
 
@@ -50,39 +50,39 @@ program [arguments...] 2>&1 | tee -a outfile
 
 First find the location of the Application/Service:
 
-```bash
+```shell
 find / -name ApplicationName
 ```
 
 Go to the path where the application is located
 
-```bash
+```shell
 cd "../../../ApplicationName"
 ```
 
 Run this command for ZSH:
 
-```bash
+```shell
 echo 'export PATH="'$(pwd)':$PATH"' >> ~/.zshrc && source ~/.zshrc
 ```
 
-Run this command for "Bash Profile":
+Run this command for "shell Profile":
 
-```bash
+```shell
 echo 'export PATH="'$(pwd)':$PATH"' >> ~/.profile && source ~/.profile
 ```
 
-Run this command for "Bash":
+Run this command for "shell":
 
-```bash
-echo 'export PATH="'$(pwd)':$PATH"' >> ~/.bashrc && source ~/.bashrc
+```shell
+echo 'export PATH="'$(pwd)':$PATH"' >> ~/.shellrc && source ~/.shellrc
 ```
 
 ## Create Symbolic Links
 
 To create a symbolic link in Unix/Linux, at the terminal prompt, enter:
 
-```bash
+```shell
 ln -s source_file target_file
 ```
 
@@ -90,7 +90,7 @@ to remove symbolic link use the `rm` command on the link
 
 ## Open Last Edited File
 
-```bash
+```shell
 less `ls -dx1tr /usr/local/cpanel/logs/cpbackup/*|tail -1`
 ```
 
@@ -98,6 +98,6 @@ less `ls -dx1tr /usr/local/cpanel/logs/cpbackup/*|tail -1`
 
 Kill cgi after 30 secs:
 
-```bash
+```shell
 for i in `ps -eo pid,etime,cmd|grep cgi|awk '$2 > "00:30" {print $1}'`; do kill $i; done
 ```
