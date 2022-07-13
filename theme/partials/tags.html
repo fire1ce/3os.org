@@ -1,8 +1,7 @@
 {% import "partials/language.html" as lang with context %}
 
 <!-- Determine whether to show tags -->
-{% if page and page.meta and page.meta.hide %} {% set hidden = "hidden" if
-"tags" in page.meta.hide %} {% endif %}
+{% if page and page.meta and page.meta.hide %} {% set hidden = "hidden" if "tags" in page.meta.hide %} {% endif %}
 
 <!-- Tags -->
 {% if tags %}
@@ -19,16 +18,13 @@
 <div class="md-source-file">
   <small>
     <!-- mkdocs-git-revision-date-localized-plugin -->
-    {% if page.meta.git_revision_date_localized %} {% if
-    page.meta.git_creation_date_localized %}
-    {{lang.t("source.file.date.created") }}:
-    {{page.meta.git_creation_date_localized }} | {% endif %}
-    {{lang.t("source.file.date.updated") }}:
-    {{page.meta.git_revision_date_localized }}
+    {% if page.meta.git_revision_date_localized %} {% if page.meta.git_creation_date_localized %}
+    {{lang.t("source.file.date.created") }}: {{page.meta.git_creation_date_localized }} | {% endif %}
+    {{lang.t("source.file.date.updated") }}: {{page.meta.git_revision_date_localized }}
 
     <!-- mkdocs-git-revision-date-plugin -->
-    {% elif page.meta.revision_date %} {{ lang.t("source.file.date.updated") }}:
-    {{ page.meta.revision_date }} {% endif %}
+    {% elif page.meta.revision_date %} {{ lang.t("source.file.date.updated") }}: {{ page.meta.revision_date }} {% endif
+    %}
   </small>
 </div>
 
