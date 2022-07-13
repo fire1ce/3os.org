@@ -1,7 +1,7 @@
 {% import "partials/language.html" as lang with context %}
 
 <!-- Determine whether to show tags -->
-{% if page and page.meta and page.meta.hide %} {% set hidden = "hidden" if "tags" in page.meta.hide %} {% endif %}
+{% if page.meta and page.meta.hide %} {% set hidden = "hidden" if "tags" in page.meta.hide %} {% endif %}
 
 <!-- Tags -->
 {% if tags %}

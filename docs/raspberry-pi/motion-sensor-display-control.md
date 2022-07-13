@@ -18,6 +18,7 @@ Python script to control connected display to [Raspberry Pi][amazon-raspberry-pi
 <!-- urls -->
 
 [official-github-repo-url]: https://github.com/fire1ce/raspberry-pi-pir-motion-display-control 'Official Github Repo'
+[amazon-raspberry-pi-4-url]: https://amzn.to/3xJJLyG 'Amazon Raspberry Pi 4'
 
 <!-- images -->
 

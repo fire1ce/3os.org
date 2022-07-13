@@ -34,7 +34,7 @@ The second thing i've added is a [Power Button][aliexpress-button-url]{target=\_
 
 I couldn't find any open source projects for the functionality I needed of the power button and the Motion Sensor. So I've decided to create my own solution. Bellow are the scripts that I've created:
 
-- [External Power Button Wake/Power Off/Restart][motion-sensor-display-control-url]
+- [External Power Button Wake/Power Off/Restart][external-power-button-for-raspberry-pi-url]
 - [Motion Sensor Display Control][motion-sensor-display-control-url]
 
 Thats how i've tested the functionality of the power button and the motion sensor.
@@ -125,8 +125,8 @@ services:
 [aliexpress-lcd-contoller-url]: https://s.click.aliexpress.com/e/_9RQ0KF 'Aliexpress LCD Controller'
 [aliexpress-pir-sensor-url]: https://s.click.aliexpress.com/e/_AfCHaP 'Aliexpress PIR Sensor'
 [aliexpress-button-url]: https://s.click.aliexpress.com/e/_A6J5Jp 'Aliexpress Button'
-[external-power-button-for-raspberry-pi-url]: docs/raspberry-pi/external-power-button/ 'External Power Button'
-[motion-sensor-display-control-url]: docs/raspberry-pi/motion-sensor-display-control/ 'Motion Sensor Display Control'
+[external-power-button-for-raspberry-pi-url]: /raspberry-pi/external-power-button/ 'External Power Button'
+[motion-sensor-display-control-url]: /raspberry-pi/motion-sensor-display-control/ 'Motion Sensor Display Control'
 [amazon-glass-mirror-film-url]: https://amzn.to/3OyMmBu 'Amazon Glass Mirror Film'
 [amazon-tv-mount-url]: https://amzn.to/3xTDuQW 'Amazon TV Mount'
 
