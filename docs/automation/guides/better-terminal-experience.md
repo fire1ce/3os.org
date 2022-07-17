@@ -62,8 +62,8 @@ Answer **Yes** when asked to change the default shell to zsh.
 Install Autosuggestions, Syntax-Highlighting Plugins using git clone:
 
 ```shell
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ## Configuration
@@ -93,13 +93,9 @@ plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew colori
 ```
 
 The autosuggestions plugin has a bug with copy and paste so there is a workaround for that.  
-Append the following to the end of the config to activate the workaround and to load the plugins:
+Append the following to the end of the config to activate the workaround.
 
 ```shell
-## Shell Integration and plugins
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 ## Fix for Slow zsh-autosuggestions copy&paste
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
@@ -109,7 +105,7 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 Save and exit the file.  
 Open new terminal window and enjoy Better Terminal Experience!
 
-## Bonus: Personal theme, preconfigured config
+## Bonus: Personal Theme, preconfigured
 
 I've made a personal theme 3os based on the Bira theme with some tweaks.
 

@@ -105,10 +105,6 @@ if which screenfetch >/dev/null; then
   screenfetch
 fi
 
-## Shell Integration and plugins
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 ## Fix for Slow zsh-autosuggestions copy&paste
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
