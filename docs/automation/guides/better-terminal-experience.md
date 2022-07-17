@@ -107,7 +107,7 @@ Open new terminal window and enjoy Better Terminal Experience!
 
 ## Bonus: Personal Theme, preconfigured
 
-I've made a personal theme 3os based on the Bira theme with some tweaks.
+I've made a personal theme **3os** based on the **Bira** theme with some tweaks.
 
 ![Personal Terminal Screenshot][personal-terminal-screenshot-img]
 
