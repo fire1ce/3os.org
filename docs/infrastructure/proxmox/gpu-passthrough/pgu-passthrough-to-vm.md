@@ -1,8 +1,8 @@
 ---
 title: GPU Passthrough to VM
-description: Vestibulum quam turpis, lacinia lacinia ex finibus, egestas malesuada nunc. Maecenas euismod neque rhoncus suscipit viverra. Nulla venenatis enim vel mauris ornare viverra.
+description: Proxmox full gpu passthrough to VM configuration for hardware acceleration.
 template: comments.html
-tags: [template, markdown]
+tags: [proxmox, gpu, passthrough]
 ---
 
 # Proxmox GPU Passthrough to VM

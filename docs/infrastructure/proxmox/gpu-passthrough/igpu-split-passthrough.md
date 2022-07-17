@@ -1,7 +1,6 @@
 ---
 title: iGPU Split Passthrough
-description: Proxmox iGPU passthrough to VM configuration for Hardware Acceleration (HW Aceleration) for example using video encoding/decoding and Transcoding for series like Plex and Emby.
-template: comments.html
+description: Proxmox iGPU split passthrough to VM configuration for hardware acceleration.
 tags: [proxmox, igpu, passthrough]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: iGPU Passthrough to VM
-description: Proxmox iGPU passthrough to VM configuration for Hardware Acceleration (HW Aceleration) for example using video encoding/decoding and Transcoding for series like Plex and Emby.
+description: Proxmox iGPU passthrough to VM configuration for hardware acceleration.
 template: comments.html
 tags: [proxmox, igpu, passthrough]
 ---
