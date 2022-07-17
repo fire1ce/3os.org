@@ -77,100 +77,13 @@ Edit `~/.nanorc` file with the syntax below
     === "M1 (ARM)"
 
         ```shell
-        include /opt/homebrew/share/nano/asm.nanorc
-        include /opt/homebrew/share/nano/autoconf.nanorc
-        include /opt/homebrew/share/nano/awk.nanorc
-        include /opt/homebrew/share/nano/c.nanorc
-        include /opt/homebrew/share/nano/changelog.nanorc
-        include /opt/homebrew/share/nano/cmake.nanorc
-        include /opt/homebrew/share/nano/css.nanorc
-        include /opt/homebrew/share/nano/debian.nanorc
-        include /opt/homebrew/share/nano/default.nanorc
-        include /opt/homebrew/share/nano/elisp.nanorc
-        include /opt/homebrew/share/nano/fortran.nanorc
-        include /opt/homebrew/share/nano/gentoo.nanorc
-        include /opt/homebrew/share/nano/go.nanorc
-        include /opt/homebrew/share/nano/groff.nanorc
-        include /opt/homebrew/share/nano/guile.nanorc
-        include /opt/homebrew/share/nano/html.nanorc
-        include /opt/homebrew/share/nano/java.nanorc
-        include /opt/homebrew/share/nano/javascript.nanorc
-        include /opt/homebrew/share/nano/json.nanorc
-        include /opt/homebrew/share/nano/lua.nanorc
-        include /opt/homebrew/share/nano/makefile.nanorc
-        include /opt/homebrew/share/nano/man.nanorc
-        include /opt/homebrew/share/nano/mgp.nanorc
-        include /opt/homebrew/share/nano/mutt.nanorc
-        include /opt/homebrew/share/nano/nanohelp.nanorc
-        include /opt/homebrew/share/nano/nanorc.nanorc
-        include /opt/homebrew/share/nano/nftables.nanorc
-        include /opt/homebrew/share/nano/objc.nanorc
-        include /opt/homebrew/share/nano/ocaml.nanorc
-        include /opt/homebrew/share/nano/patch.nanorc
-        include /opt/homebrew/share/nano/perl.nanorc
-        include /opt/homebrew/share/nano/php.nanorc
-        include /opt/homebrew/share/nano/po.nanorc
-        include /opt/homebrew/share/nano/postgresql.nanorc
-        include /opt/homebrew/share/nano/pov.nanorc
-        include /opt/homebrew/share/nano/python.nanorc
-        include /opt/homebrew/share/nano/ruby.nanorc
-        include /opt/homebrew/share/nano/rust.nanorc
-        include /opt/homebrew/share/nano/sh.nanorc
-        include /opt/homebrew/share/nano/spec.nanorc
-        include /opt/homebrew/share/nano/tcl.nanorc
-        include /opt/homebrew/share/nano/tex.nanorc
-        include /opt/homebrew/share/nano/texinfo.nanorc
-        include /opt/homebrew/share/nano/xml.nanorc
+        echo 'include "/opt/homebrew/share/nano/*.nanorc"' >> ~/.nanorc
         ```
 
     === "Intel Based"
 
         ```shell
-        ssh-add --apple-use-keychain ~/.ssh/id_rsa
-        include /usr/local/share/nano/asm.nanorc
-        include /usr/local/share/nano/autoconf.nanorc
-        include /usr/local/share/nano/awk.nanorc
-        include /usr/local/share/nano/c.nanorc
-        include /usr/local/share/nano/changelog.nanorc
-        include /usr/local/share/nano/cmake.nanorc
-        include /usr/local/share/nano/css.nanorc
-        include /usr/local/share/nano/debian.nanorc
-        include /usr/local/share/nano/default.nanorc
-        include /usr/local/share/nano/elisp.nanorc
-        include /usr/local/share/nano/fortran.nanorc
-        include /usr/local/share/nano/gentoo.nanorc
-        include /usr/local/share/nano/go.nanorc
-        include /usr/local/share/nano/groff.nanorc
-        include /usr/local/share/nano/guile.nanorc
-        include /usr/local/share/nano/html.nanorc
-        include /usr/local/share/nano/java.nanorc
-        include /usr/local/share/nano/javascript.nanorc
-        include /usr/local/share/nano/json.nanorc
-        include /usr/local/share/nano/lua.nanorc
-        include /usr/local/share/nano/makefile.nanorc
-        include /usr/local/share/nano/man.nanorc
-        include /usr/local/share/nano/mgp.nanorc
-        include /usr/local/share/nano/mutt.nanorc
-        include /usr/local/share/nano/nanohelp.nanorc
-        include /usr/local/share/nano/nanorc.nanorc
-        include /usr/local/share/nano/nftables.nanorc
-        include /usr/local/share/nano/objc.nanorc
-        include /usr/local/share/nano/ocaml.nanorc
-        include /usr/local/share/nano/patch.nanorc
-        include /usr/local/share/nano/perl.nanorc
-        include /usr/local/share/nano/php.nanorc
-        include /usr/local/share/nano/po.nanorc
-        include /usr/local/share/nano/postgresql.nanorc
-        include /usr/local/share/nano/pov.nanorc
-        include /usr/local/share/nano/python.nanorc
-        include /usr/local/share/nano/ruby.nanorc
-        include /usr/local/share/nano/rust.nanorc
-        include /usr/local/share/nano/sh.nanorc
-        include /usr/local/share/nano/spec.nanorc
-        include /usr/local/share/nano/tcl.nanorc
-        include /usr/local/share/nano/tex.nanorc
-        include /usr/local/share/nano/texinfo.nanorc
-        include /usr/local/share/nano/xml.nanorc
+        echo 'include "/usr/local/share/nano/*.nanorc"' >> ~/.nanorc
         ```
 
 ## Disable/Enable Gatekeeper
