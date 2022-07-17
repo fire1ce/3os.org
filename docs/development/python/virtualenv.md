@@ -9,14 +9,14 @@ tags: [python, venv, cheat-sheet]
 
 ## About Python Virtual Environment - **venv**
 
-**venv** is a tool to create isolated Python environments. Since Python 3.3, a subset of it has been integrated into the standard library under the venv module.
-Using **venv** is very useful for creating isolated Python environments for your project,it will allow you installing Python packages and modules in a separate location from the rest of your host os without conflicting versions.
+**venv** is a tool to create isolated Python environments. Since Python 3.3, a subset of it has been integrated into the standard library under the venv module.  
+The venv module provides support for creating lightweight “virtual environments” with their own site directories, optionally isolated from system site directories. Each virtual environment has its own Python binary (which matches the version of the binary that was used to create this environment) and can have its own independent set of installed Python packages in its site directories.
 
 ## Install venv
 
 In order to install `venv`, we need to install the following packages:
 
-```shell
+```shell title="apt example"
 sudo apt install python3-venv
 ```
 

@@ -7,6 +7,8 @@ tags: [MacOS, Python]
 
 # Pyenv-virtualenv - Multiple Version Python Virtual Environment Manager
 
+For easy non-multiple version Python Virtual Environment follow this [Venv Python Virtual Environment][venv-python-virtual-environment-url]
+
 ## Intro
 
 Using and developing with Python on macOS sometimes may be frustrating...
@@ -162,3 +164,14 @@ pyenv virtualenv-delete my-virtual-env
 ```
 
 You and your macOS should be ready for using python the **right way** without conflicting any system or Xcode Command Line Tools (used by brew)
+
+<!-- appendices -->
+
+<!-- urls -->
+
+[venv-python-virtual-environment-url]: /development/python/virtualenv/ 'Venv Python Virtual Environment'
+
+<!-- images -->
+<!--css-->
+
+<!-- end appendices -->

@@ -1,5 +1,5 @@
 ---
-title: Disable IPv6
+title: Disable IPv6 via Grub
 description: How to permanently disable IPv6 on Ubuntu and Debian.
 template: comments.html
 tags: [ubuntu, debian, ipv6]

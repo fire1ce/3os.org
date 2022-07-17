@@ -1,8 +1,11 @@
 ---
+title: Links and Tools
 description: Penetration Testing - Tools and Usefully Links for Penetration Testing
+template: comments.html
+tags: [pt, tools]
 ---
 
-# Links
+# Links for Penetration Testing Tools
 
 ## Usefully Tools for Pentesters
 
