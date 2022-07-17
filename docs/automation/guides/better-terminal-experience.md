@@ -27,91 +27,7 @@ Z-shell (Zsh) is a Unix shell that can be used as an interactive login shell and
 
 Oh My Zsh is an open source, community-driven framework for managing your [zsh][zsh-url]{target=\_blank} configuration.
 
-## MacOS Installation
-
-My personal preference is to use [iTerm2][iterm2-url]{target=\_blank} as a replacement for macOS default Terminal.
-
-### Homebrew Package Manager
-
-We need a package manager to install all the required packages. [Homebrew](https://brew.sh/){target=\_blank} is a package manager for macOS. if you don't have it, you can install it with the following command:
-
-```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-### Requirements Installation
-
-Using Homebrew, we can install the following packages: zsh, git, wget, zsh-autosuggestions zsh-syntax-highlighting
-
-```shell
-brew install git wget zsh zsh-autosuggestions zsh-syntax-highlighting
-```
-
-### Oh My Zsh Installation
-
-We can proceed to install Oh My Zsh with the following command:
-
-```shell
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-```
-
-Answer **Yes** when asked to change the default shell to zsh.
-
-### Oh My Zsh Configuration
-
-Oh My Zsh crates a default configuration file called `.zshrc` in the user's home directory.
-
-We need to edit the configuration file. You can use any editor to edit the file.
-
-nano example:
-
-```shell
-nano ~/.zshrc
-```
-
-We need to add or change the following lines to the configuration file:
-
-Find the theme and change it to `bira`
-
-```shell
-ZSH_THEME="bira"
-```
-
-find the `plugins` and change it to the following:
-
-```shell
-plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize macos pyenv colorize adb aws command-not-found virtualenv poetry)
-```
-
-Since we have intel and arm based macs the homebrew path is different. So i've made it to load the proper plugins based on the cpu architecture.  
-The autosuggestions plugin has a bug with copy and paste so there is a workaround for that.  
-Append the following to the end of the config:
-
-```shell
-# Loads the plugins from /usr/local for intel based
-if [ $(arch) = "i386" ]; then
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-# Loads the plugins from /opt/homebrew/ for arm based
-if [ $(arch) = "arm64" ]; then
-  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-# Fix for Slow zsh-autosuggestions copy&paste
-autoload -Uz bracketed-paste-magic
-zle -N bracketed-paste bracketed-paste-magic
-zstyle ':bracketed-paste-magic' active-widgets '.self-*'
-```
-
-Save and exit the file.  
-Open new terminal windown and enjoy Better Terminal Experience!
-
-## Linux Installation
-
-The instructions bellow are for Debian Linux with **apt** as package manager. If you are using another package manager, just change the commands to install the packages.
+## Installation
 
 ### Requirements
 
@@ -121,9 +37,17 @@ The instructions bellow are for Debian Linux with **apt** as package manager. If
 
 Install the following requirements packages with the following commands:
 
-```shell
-apt install -y git zsh wget
-```
+=== "Linux apt example"
+
+    ```shell
+    apt install -y git zsh wget
+    ```
+
+=== "MacOS homebrew example"
+
+    ```shell
+    brew install git wget zsh
+    ```
 
 ### Oh My Zsh
 
@@ -142,32 +66,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 ```
 
-### Auto Config Installation
-
-!!! Danger
-
-    The following commands will overwrite your current config if exists.
-
-    Make sure you have a backup of your config before proceeding!!!
-
-```shell
-wget -O ~/.zshrc https://3os.org/assets/zshrc_config
-```
-
-For **non root** user eddit the config file:
-
-```shell
-nano ~/.zshrc
-```
-
-Change the `export ZSH="users-home-dir-path"` to users' home directory path.
-
-```shell
-# Path to your oh-my-zsh installation.
-export ZSH="/home/${USER}/.oh-my-zsh"
-```
-
-### Oh My Zsh Manual Configuration
+## Configuration
 
 Oh My Zsh crates a default configuration file called `.zshrc` in the user's home directory.
 
@@ -190,7 +89,7 @@ ZSH_THEME="bira"
 find the `plugins` and change it to the following:
 
 ```shell
-plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew pip colorize macos pyenv colorize adb aws command-not-found virtualenv poetry)
+plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew colorize macos pip pyenv virtualenv adb aws command-not-found zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
 The autosuggestions plugin has a bug with copy and paste so there is a workaround for that.  
@@ -200,6 +99,7 @@ Append the following to the end of the config to activate the workaround and to 
 ## Shell Integration and plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ## Fix for Slow zsh-autosuggestions copy&paste
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
@@ -208,6 +108,23 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 Save and exit the file.  
 Open new terminal window and enjoy Better Terminal Experience!
+
+## Bonus: Personal theme, preconfigured config
+
+I've made a personal theme 3os based on the Bira theme with some tweaks.
+
+![Personal Terminal Screenshot][personal-terminal-screenshot-img]
+
+!!! Danger
+
+    **The following commands will overwrite your current config if exists.**
+
+    **Make sure you have a backup of your config before proceeding!!!**
+
+```shell
+wget -O ~/.oh-my-zsh/themes/3os.zsh-theme https://3os.org/assets/zsh/3os.zsh-theme
+wget -O ~/.zshrc https://3os.org/assets/zsh/zshrc_config
+```
 
 <!-- appendices -->
 
@@ -218,5 +135,6 @@ Open new terminal window and enjoy Better Terminal Experience!
 [iterm2-url]: https://iterm2.com/ 'iTerm2 homepage'
 [homebrew-url]: https://brew.sh/ 'Homebrew homepage'
 [terminal-screenshot-img]: /assets/images/a0514d0c-abca-11ec-93a6-ffaf1c727a0d.jpg 'Terminal Screenshot'
+[personal-terminal-screenshot-img]: /assets/images/0e1913a6-0616-11ed-872f-4f150aadb6cd.jpg 'Personal Terminal Screenshot'
 
 <!-- end appendices -->
