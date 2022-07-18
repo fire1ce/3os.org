@@ -1,6 +1,6 @@
 ---
 title: Let's Encrypt with Cloudflare
-description: Guide to how to setup a valid SSL certificate with Let's Encrypt and Cloudflare DNS for Proxmox VE.
+description: Install valid SSL certificate with Let's Encrypt and Cloudflare DNS for Proxmox VE.
 template: comments.html
 tags: [proxmox, cloudflare, letsencrypt]
 ---
