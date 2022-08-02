@@ -9,16 +9,9 @@
 
 <!-- site nav -->
 
-{% block site_nav %} {% if nav %} {% if page and page.meta and page.meta.hide %}
-{% set hidden = "hidden" if "navigation" in page.meta.hide %} {% endif %}
-<div
-  class="md-sidebar md-sidebar--primary"
-  data-md-component="sidebar"
-  data-md-type="navigation"
-  {{
-  hidden
-  }}
->
+{% block site_nav %} {% if nav %} {% if page and page.meta and page.meta.hide %} {% set hidden = "hidden" if
+"navigation" in page.meta.hide %} {% endif %}
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">{% include "partials/nav.html" %}</div>
     <!-- donation section -->
@@ -52,18 +45,10 @@
     <!-- donation end -->
   </div>
 </div>
-{% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page and
-page.meta and page.meta.hide %} {% set hidden = "hidden" if "toc" in
-page.meta.hide %} {% endif %}
+{% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page and page.meta and page.meta.hide %} {% set
+hidden = "hidden" if "toc" in page.meta.hide %} {% endif %}
 
-<div
-  class="md-sidebar md-sidebar--secondary"
-  data-md-component="sidebar"
-  data-md-type="toc"
-  {{
-  hidden
-  }}
->
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">{% include "partials/toc.html" %}</div>
 
@@ -74,6 +59,14 @@ page.meta.hide %} {% endif %}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5886334466795247"
         crossorigin="anonymous"
       ></script>
+      <!-- Amazon ads section -->
+
+      <div id="amzn-assoc-ad-bdf2935b-6c64-40bc-831b-37fcecb37fb3"></div>
+      <script
+        async
+        src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=bdf2935b-6c64-40bc-831b-37fcecb37fb3"
+      ></script>
+
       <!-- OnThisPage -->
       <ins
         class="adsbygoogle"
@@ -89,15 +82,8 @@ page.meta.hide %} {% endif %}
     <!-- donation section -->
     <div class="donation">
       <h3>Support us</h3>
-      <form
-        method="get"
-        type="buymeacoffee"
-        target="_blank"
-        action="https://www.buymeacoffee.com/fire1ce"
-      >
-        <button class="donate-button-buymeacoffee" type="submit">
-          donate with buymeacoffee
-        </button>
+      <form method="get" type="buymeacoffee" target="_blank" action="https://www.buymeacoffee.com/fire1ce">
+        <button class="donate-button-buymeacoffee" type="submit">donate with buymeacoffee</button>
       </form>
       <form
         method="post"
@@ -105,19 +91,10 @@ page.meta.hide %} {% endif %}
         target="_blank"
         action="https://www.paypal.com/donate/?hosted_button_id=Y5NSXQQ6VPSK6&Z3JncnB0"
       >
-        <button class="donate-button-paypal" type="submit">
-          donate with paypal
-        </button>
+        <button class="donate-button-paypal" type="submit">donate with paypal</button>
       </form>
-      <form
-        method="get"
-        type="patreon"
-        target="_blank"
-        action="https://www.patreon.com/fire1ce"
-      >
-        <button class="donate-button-patreon" type="submit">
-          donate with patreon
-        </button>
+      <form method="get" type="patreon" target="_blank" action="https://www.patreon.com/fire1ce">
+        <button class="donate-button-patreon" type="submit">donate with patreon</button>
       </form>
     </div>
     <!-- donation end -->

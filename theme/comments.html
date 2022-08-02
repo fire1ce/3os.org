@@ -1,12 +1,18 @@
 {% extends "main.html" %} {% block content %} {{ super() }}
 
+<!-- Amazon ads -->
+<div id="amzn-assoc-ad-bdf2935b-6c64-40bc-831b-37fcecb37fb3"></div>
+<script
+  async
+  src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=bdf2935b-6c64-40bc-831b-37fcecb37fb3"
+></script>
 <!-- google ads -->
-
 <script
   async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5886334466795247"
   crossorigin="anonymous"
 ></script>
+
 <!-- Comments banner -->
 <ins
   class="adsbygoogle"
@@ -57,10 +63,7 @@
 
         /* Instruct Giscus to change theme */
         var frame = document.querySelector('.giscus-frame');
-        frame.contentWindow.postMessage(
-          {giscus: {setConfig: {theme}}},
-          'https://giscus.app',
-        );
+        frame.contentWindow.postMessage({giscus: {setConfig: {theme}}}, 'https://giscus.app');
       }
     });
   });
