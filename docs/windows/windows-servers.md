@@ -1,5 +1,8 @@
 ---
+title: Windows Servers
 description: Windows Servers Tips & Guides, examples and simple usage and useful software
+template: comments.html
+tags: [utilities, windows, servers]
 ---
 
 # Windows Servers
@@ -8,17 +11,17 @@ description: Windows Servers Tips & Guides, examples and simple usage and useful
 
 At Server Manager click `Configure this local server`
 
-* Computer name - rename the server's name
-* Remote Desktop - allow RDP
-* Ethernet instance - disable IPV6
-* Feedback & Diagnostics - set `Feedback frequency` to `Never`
-* IE Enhanced Security Configuration - Off
-* Time zone - set the current timezone, At `Internet Time` tab chanche `time.windwos.com` to `time.nist.gov`
+- Computer name - rename the server's name
+- Remote Desktop - allow RDP
+- Ethernet instance - disable IPV6
+- Feedback & Diagnostics - set `Feedback frequency` to `Never`
+- IE Enhanced Security Configuration - Off
+- Time zone - set the current timezone, At `Internet Time` tab chanche `time.windwos.com` to `time.nist.gov`
 
 Open gpedit.msc with Run
 
-* Local Computer Policy -> Administrative Templates -> System -> Display Shutdown Even Tracker - Disable
-* Local Computer Policy -> Windows Settings -> Security Settings -> Local Policies -> Security Options ->Interactive logon: Do not require CTRL+ALT+DEL - Enable
+- Local Computer Policy -> Administrative Templates -> System -> Display Shutdown Even Tracker - Disable
+- Local Computer Policy -> Windows Settings -> Security Settings -> Local Policies -> Security Options ->Interactive logon: Do not require CTRL+ALT+DEL - Enable
 
 ## Convert Evaluation Copy to Full Version
 
@@ -55,4 +58,3 @@ Windows Server 2019 Datacenter:
 ```powershell
 dism /online /set-edition:ServerDatacenter /productkey:WMDGN-G9PQG-XVVXX-R3X43-63DFG /accepteula
 ```
-

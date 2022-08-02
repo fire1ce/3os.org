@@ -1,6 +1,7 @@
 ---
 title: Better Fan Speeds
 description: Overrides UDM fan speeds with users predefined
+template: comments.html
 tags: [udm, ubiquiti, unifi]
 ---
 

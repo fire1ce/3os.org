@@ -1,5 +1,8 @@
 ---
+title: Useful Software
 description: Windows Tips & Guides, examples and simple usage and useful software
+template: comments.html
+tags: [utilities, windows]
 ---
 
 # Useful Software

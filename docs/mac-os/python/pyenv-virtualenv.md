@@ -2,7 +2,7 @@
 title: Pyenv-virtualenv Multi Version
 description: Multiple Version Python Virtual Environment Manager for Python development in macOS.
 template: comments.html
-tags: [MacOS, Python]
+tags: [maco, python]
 ---
 
 # Pyenv-virtualenv - Multiple Version Python Virtual Environment Manager

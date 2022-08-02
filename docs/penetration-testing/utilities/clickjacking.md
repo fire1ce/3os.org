@@ -1,6 +1,8 @@
 ---
+title: Clickjacking Test Page
 description: Page for the Clickjacking vulnerability in web applications testing tool.
 template: comments.html
+tags: [pt, tools, clickjacking]
 ---
 
 # Clickjacking Test Page

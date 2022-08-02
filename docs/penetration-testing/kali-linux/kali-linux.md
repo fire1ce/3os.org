@@ -1,5 +1,8 @@
 ---
+title: Kali Linux
 description: Kali Linux how to, guides, examples, and simple usage and tools, Minimal Headless Kali Linux installation, Kali Linux cloud.
+template: comments.html
+tags: [penetration-testing, kali-linux, kali]
 ---
 
 # Kali Linux

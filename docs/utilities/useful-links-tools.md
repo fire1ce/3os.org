@@ -1,5 +1,8 @@
 ---
+title: Useful Links & Tools
 description: Useful Links & Tools
+template: comments.html
+tags: [utilities]
 ---
 
 # Useful Links & Tools

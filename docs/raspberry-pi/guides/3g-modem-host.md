@@ -1,5 +1,8 @@
 ---
-description: Setup of 3g Modem On Raspberry Pi 
+title: 3g Modem Host Configuration
+description: Setup of 3g Modem On Raspberry Pi
+template: comments.html
+tags: [raspberry-pi, 3g-modem]
 ---
 
 # 3g Modem Host Configuration
@@ -36,10 +39,8 @@ nano /usr/bin/sakis3gConnect.sh
 ```
 
 !!! note
-    interactive connect (for testing)
-    ```bash
-    sakis3g --interactive
-    ```
+interactive connect (for testing)
+`bash sakis3g --interactive `
 
 Copy the following
 
@@ -50,7 +51,7 @@ Copy the following
 ```
 
 !!! note
-    When APN credentials are epmpy, APN_USER and APN_PASS should be a string with a space
+When APN credentials are epmpy, APN_USER and APN_PASS should be a string with a space
 
 Add executable permissions
 
@@ -65,7 +66,7 @@ You should have a new interface ppp0
 ## Configuring DHCP Server
 
 !! info
-    The following configuration assumes use of eth0 interface for the DHCP
+The following configuration assumes use of eth0 interface for the DHCP
 
 Edit
 
@@ -112,7 +113,7 @@ Save & Exit
 run
 
 ```bash
-echo 1 > /proc/sys/net/ipv4/ip_forward 
+echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
 Edit
@@ -134,7 +135,7 @@ service isc-dhcp-server restart
 service isc-dhcp-server status
 ```
 
-## Configure static ip for the th0 Interface & DHCP 
+## Configure static ip for the th0 Interface & DHCP
 
 edit:
 

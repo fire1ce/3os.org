@@ -1,6 +1,8 @@
 ---
-description: Nmap CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Nmap and getting the most of this powerful tool. Full documentation fot the nmap flags
+title: Nmap CheatSheet
+description: Nmap CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Nmap and getting the most of this powerful tool. Full documentation for the nmap flags
 template: comments.html
+tags: [penetration-testing, tools, cheatsheet]
 ---
 
 # Nmap CheatSheet

@@ -1,5 +1,8 @@
 ---
-description: Linux Memory & Swap how to, guides, examples, and simple usage
+title: Memory & Swap
+description: Linux memory and swap snipets and tips for the Linux user.
+template: comments.html
+tags: [linux]
 ---
 
 # Memory & Swap

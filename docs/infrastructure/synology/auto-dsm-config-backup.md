@@ -1,5 +1,8 @@
 ---
+title: Auto DSM Config Backup
 description: Auto DSM config backup with local script
+template: comments.html
+tags: [synology]
 ---
 
 # Auto DSM Config Backup

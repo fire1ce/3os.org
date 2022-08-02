@@ -1,5 +1,8 @@
 ---
-description: Linux - LVM Partition how to, guides
+title: LVM Partitions
+description: Linux removing lvm partition and merging in to root partition.
+template: comments.html
+tags: [linux, lvm]
 ---
 
 # LVM Partitions
@@ -12,7 +15,7 @@ Find out the names of the partition with df
 df
 ```
 
-You need to unmount the partition before you can delete them and marge **backup the data of the partition you would like to delete** this exmaple will use "centos-home" as the partition that will be merged to the root partition.
+You need to unmount the partition before you can delete them and marge **backup the data of the partition you would like to delete** this example will use "centos-home" as the partition that will be merged to the root partition.
 
 ```bash
 unmount -a

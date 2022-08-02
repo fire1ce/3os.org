@@ -1,5 +1,8 @@
 ---
+title: EdgeRouter
 description: Ubiquiti EdgeRouter useful commands tips and tricks
+template: comments.html
+tags: [ubiquiti, edgerouter]
 ---
 
 # EdgeRouter

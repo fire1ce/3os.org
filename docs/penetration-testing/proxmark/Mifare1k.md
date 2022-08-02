@@ -1,5 +1,8 @@
 ---
+title: Mifare Classic 1K ISO14443A
 description: How to clone Mifare Classic 1K ISO14443A NFC Tag with proxmark3
+template: comments.html
+tags: [pt, tools, rfid]
 ---
 
 # Mifare Classic 1K ISO14443A
@@ -15,7 +18,7 @@ Which results in a response along the lines of:
 ```bash
  #db# DownloadFPGA(len: 42096)
  UID : de 0f 3d cd
-ATQA : 00 04  
+ATQA : 00 04
  SAK : 08 [2]
 TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
 proprietary non iso14443-4 card found, RATS not supported
@@ -37,22 +40,22 @@ proxmark3> hf mf chk * ?
 This should show us the key we require looking something like
 
 ```bash
-No key specified, trying default keys  
-chk default key[ 0] ffffffffffff  
-chk default key[ 1] 000000000000  
-chk default key[ 2] a0a1a2a3a4a5  
-chk default key[ 3] b0b1b2b3b4b5  
-chk default key[ 4] aabbccddeeff  
-chk default key[ 5] 4d3a99c351dd  
-chk default key[ 6] 1a982c7e459a  
-chk default key[ 7] d3f7d3f7d3f7  
-chk default key[ 8] 714c5c886e97  
-chk default key[ 9] 587ee5f9350f  
-chk default key[10] a0478cc39091  
-chk default key[11] 533cb6c723f6  
-chk default key[12] 8fd0a4f256e9  
+No key specified, trying default keys
+chk default key[ 0] ffffffffffff
+chk default key[ 1] 000000000000
+chk default key[ 2] a0a1a2a3a4a5
+chk default key[ 3] b0b1b2b3b4b5
+chk default key[ 4] aabbccddeeff
+chk default key[ 5] 4d3a99c351dd
+chk default key[ 6] 1a982c7e459a
+chk default key[ 7] d3f7d3f7d3f7
+chk default key[ 8] 714c5c886e97
+chk default key[ 9] 587ee5f9350f
+chk default key[10] a0478cc39091
+chk default key[11] 533cb6c723f6
+chk default key[12] 8fd0a4f256e9
 --sector: 0, block:  3, key type:A, key count:13
-Found valid key:[ffffffffffff]  
+Found valid key:[ffffffffffff]
 ...omitted for brevity...
 --sector:15, block: 63, key type:B, key count:13
 Found valid key:[ffffffffffff]
@@ -73,7 +76,7 @@ proxmark3> hf mf dump
 
 At this point we’ve got everything we need from the card, we can take it off the reader.
 
-To copy that data onto a new card, place the [(Chinese backdoor) card](https://amzn.to/2XdKnfv){target=_blank} on the [Proxmark](https://amzn.to/3AcCQvL){target=_blank}.
+To copy that data onto a new card, place the [(Chinese backdoor) card](https://amzn.to/2XdKnfv){target=\_blank} on the [Proxmark](https://amzn.to/3AcCQvL){target=\_blank}.
 
 This restores the dumped data onto the new card. Now we just need to give the card the UID we got from the original hf search command
 

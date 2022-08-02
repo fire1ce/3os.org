@@ -1,5 +1,8 @@
 ---
-description: Fix Locales errors in terminal, setting ntp timezone
+title: Locales & Timezone
+description: Linux locales and timezone tips and tricks for the Linux user. This is a collection of tips and tricks for the Linux user.
+template: comments.html
+tags: [linux, locales, timezone]
 ---
 
 # Locales & Timezone

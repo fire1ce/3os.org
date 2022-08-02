@@ -2,7 +2,7 @@
 title: oh-my-zsh on Synology NAS
 description: Install oh-my-zsh on Synology NAS (DSM)
 template: comments.html
-tags: [template, markdown]
+tags: [synology, oh-my-zsh]
 ---
 
 # How to install oh-my-zsh on Synology NAS

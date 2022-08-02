@@ -1,8 +1,11 @@
 ---
-description: SSH Hardening with RSA Keys
+title: SSH Hardening with SSH Keys
+description: SSH Hardening with SSH key
+template: comments.html
+tags: [linux, ssh, rsa]
 ---
 
-# SSH Hardening with RSA Keys
+# SSH Hardening with SSH Keys
 
 ## Generating a new SSH key
 

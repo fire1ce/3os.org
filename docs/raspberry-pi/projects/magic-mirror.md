@@ -1,5 +1,8 @@
 ---
+title: Magic Mirror3g Modem Host Configuration
 description: Raspberry Pi - Magic Mirror Installation how to, guides, examples, and simple usage
+template: comments.html
+tags: [raspberry-pi, magic-mirror]
 ---
 
 # Magic Mirror

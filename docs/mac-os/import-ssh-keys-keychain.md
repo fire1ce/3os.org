@@ -2,7 +2,7 @@
 title: SSH Passphrase to Keychain
 description: Import ed25519/RSA SSH Keys passphrase to macOS Keychain
 template: comments.html
-tags: [template, markdown]
+tags: [macos]
 ---
 
 # Import ed25519/RSA Keys Passphrase to macOS Keychain

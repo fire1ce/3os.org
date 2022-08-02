@@ -1,5 +1,8 @@
 ---
-description: Penetration Testing - VMware Fusion Port Forwarding for Reverse Shells
+title: VMware Fusion
+description:VMware Fusion Port Forwarding for Reverse Shells
+template: comments.html
+tags: [vmware, vmware-fusion]
 ---
 
 # VMware Fusion

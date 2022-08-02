@@ -1,5 +1,8 @@
 ---
-description: htpasswd password encryption applet is written in JavaScript. It can be used to generate, check, and update htpasswd files.
+title: htpasswd Password Generator
+description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Markdown is a lightweight markup language with plain text formatting syntax.
+template: comments.html
+tags: [htpasswd]
 ---
 
 # htpasswd Password Generator

@@ -1,6 +1,7 @@
 ---
 title: UDM Cloudflare DDNS
 description: This will allow to to span a container with podman to handle DDNS updates for main internet IP address.
+template: comments.html
 tags: [udm, ubiquiti, unifi, cloudflare]
 ---
 

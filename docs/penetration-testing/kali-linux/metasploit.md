@@ -1,5 +1,8 @@
 ---
-description: Metasploit Framework, a tool for developing and executing exploit code against a remote target machine. You will find a series of practical example commands for running Metasploit and getting the most of this powerful tool.
+title: Metasploit Framework
+description: Metasploit Framework, a tool for developing and executing exploit code against a remote target machine
+template: comments.html
+tags: [pt, tools, metasploit]
 ---
 
 # Metasploit Framework

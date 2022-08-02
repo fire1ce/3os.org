@@ -1,5 +1,8 @@
 ---
+title: Proxmark3 CheatSheet
 description: roxmark3 CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Proxmark3 and getting the most of this powerful tool.
+template: comments.html
+tags: [pt, tools, rfid]
 ---
 
 # Proxmark3 CheatSheet

@@ -1,5 +1,8 @@
 ---
-description: Raspberry Pi Tips & Tricks how to, guides, snippets, examples, and simple usage, Raspberry Pi, Default User and Password, Install Oh-My-Zsh on Raspbian
+title: Snippets
+description: Raspberry Pi Tips & Tricks how to, guides, snippets, examples, and simple usage, Raspberry Pi, Default User and Password, Install Oh-My-Zsh on Raspberry os
+template: comments.html
+tags: [raspberry-pi]
 ---
 
 # Snippets

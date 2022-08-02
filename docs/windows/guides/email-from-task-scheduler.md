@@ -1,5 +1,8 @@
 ---
+title: Send Emails From The Windows Task Scheduler
 description: How to send emails from the windows task scheduler
+template: comments.html
+tags: [utilities, windows]
 ---
 
 # Send Emails From The Windows Task Scheduler

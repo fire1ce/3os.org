@@ -1,7 +1,6 @@
 ---
 title: MIT License
 description: MIT License for the website and its content and code.
-template: comments.html
 tags: [information, license]
 ---
 

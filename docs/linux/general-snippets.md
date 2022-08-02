@@ -1,5 +1,8 @@
 ---
-description: Linux General how to, guides, examples, and simple usage
+title: General Snippets
+description: Linux general snippets for the Linux user. This is a collection of tips and tricks for the Linux user.
+template: comments.html
+tags: [linux, snippets]
 ---
 
 # General Snippets

@@ -1,5 +1,8 @@
 ---
+title: Unattended Upgrades
 description: Ubuntu, Debian, Raspberry Pi unattended upgrades guide
+template: comments.html
+tags: [ubuntu]
 ---
 
 # Unattended Upgrades

@@ -2,7 +2,7 @@
 title: Terminal Snippets
 description: Terminal usage snippets for macOS. This is a collection of snippets that I use without specific category.
 template: comments.html
-tags: [template, markdown]
+tags: [macos]
 ---
 
 # Terminal Snippets
