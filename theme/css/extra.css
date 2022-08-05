@@ -81,6 +81,19 @@
   color: transparent;
 }
 
+.donate-button-github-sponsers {
+  width: 6rem;
+  height: 2rem;
+  background-image: url('/assets/images/support/github-sponsers.svg');
+  background-color: #ffffff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  color: transparent;
+}
+
 /* Githubs Tables */
 th,
 td {
