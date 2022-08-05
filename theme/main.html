@@ -14,35 +14,34 @@
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">{% include "partials/nav.html" %}</div>
-    <!-- donation section -->
-    <!-- <div class="donation">
-      <h3>Support us</h3>
-      <form
-        method="get"
-        type="buymeacoffee"
-        target="_blank"
-        action="https://www.buymeacoffee.com/fire1ce"
-      >
-        <button class="donate-button-buymeacoffee" type="submit"></button>
-      </form>
-      <form
-        method="post"
-        type="submit"
-        target="_blank"
-        action="https://www.paypal.com/donate/?hosted_button_id=Y5NSXQQ6VPSK6&Z3JncnB0="
-      >
-        <button class="donate-button-paypal" type="submit"></button>
-      </form>
-      <form
-        method="get"
-        type="patreon"
-        target="_blank"
-        action="https://www.patreon.com/fire1ce"
-      >
-        <button class="donate-button-patreon" type="submit"></button>
-      </form>
-    </div> -->
-    <!-- donation end -->
+
+    <!-- Amazon ads section -->
+    <div class="ads-sidebar">
+      <script type="text/javascript">
+        amzn_assoc_ad_type = 'banner';
+        amzn_assoc_marketplace = 'amazon';
+        amzn_assoc_region = 'US';
+        amzn_assoc_placement = 'assoc_banner_placement_default';
+        amzn_assoc_campaigns = 'primediscounted';
+        amzn_assoc_banner_type = 'category';
+        amzn_assoc_p = '22';
+        amzn_assoc_isresponsive = 'false';
+        amzn_assoc_banner_id = '0XFGSHWR25SPFN5J3YG2';
+        amzn_assoc_width = '250';
+        amzn_assoc_height = '250';
+        amzn_assoc_tracking_id = '3os-20';
+        amzn_assoc_linkid = '6fe598684a8136d2606d0d8e95cb0231';
+      </script>
+      <script src="https://z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
+    </div>
+    <!-- Amazon "3os-navigation-ads"-->
+    <div class="ads-sidebar">
+      <div id="amzn-assoc-ad-bdf2935b-6c64-40bc-831b-37fcecb37fb3"></div>
+      <script
+        async
+        src="https://z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=bdf2935b-6c64-40bc-831b-37fcecb37fb3"
+      ></script>
+    </div>
   </div>
 </div>
 {% endif %} {% if page.toc and not "toc.integrate" in features %} {% if page and page.meta and page.meta.hide %} {% set
@@ -58,13 +57,6 @@ hidden = "hidden" if "toc" in page.meta.hide %} {% endif %}
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5886334466795247"
         crossorigin="anonymous"
-      ></script>
-      <!-- Amazon ads section -->
-
-      <div id="amzn-assoc-ad-bdf2935b-6c64-40bc-831b-37fcecb37fb3"></div>
-      <script
-        async
-        src="https://z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=bdf2935b-6c64-40bc-831b-37fcecb37fb3"
       ></script>
 
       <!-- OnThisPage -->
@@ -82,8 +74,11 @@ hidden = "hidden" if "toc" in page.meta.hide %} {% endif %}
     <!-- donation section -->
     <div class="donation">
       <h3>Support us</h3>
-      <form method="get" type="buymeacoffee" target="_blank" action="https://www.buymeacoffee.com/fire1ce">
-        <button class="donate-button-buymeacoffee" type="submit">donate with buymeacoffee</button>
+      <form method="get" type="github-sponsers" target="_blank" action="https://github.com/sponsors/fire1ce">
+        <button class="donate-button-github-sponsers" type="submit">donate with github-sponsers</button>
+      </form>
+      <form method="get" type="patreon" target="_blank" action="https://www.patreon.com/fire1ce">
+        <button class="donate-button-patreon" type="submit">donate with patreon</button>
       </form>
       <form
         method="post"
@@ -93,8 +88,8 @@ hidden = "hidden" if "toc" in page.meta.hide %} {% endif %}
       >
         <button class="donate-button-paypal" type="submit">donate with paypal</button>
       </form>
-      <form method="get" type="patreon" target="_blank" action="https://www.patreon.com/fire1ce">
-        <button class="donate-button-patreon" type="submit">donate with patreon</button>
+      <form method="get" type="buymeacoffee" target="_blank" action="https://www.buymeacoffee.com/fire1ce">
+        <button class="donate-button-buymeacoffee" type="submit">donate with buymeacoffee</button>
       </form>
     </div>
     <!-- donation end -->

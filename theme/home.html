@@ -1,7 +1,7 @@
 <!-- Custom HTML site displayed as the Home chapter -->
 
-{% extends "main.html" %} {% block tabs %} {{ super() }} {% set palette =
-config.theme.palette %} {% set font = config.theme.font %}
+{% extends "main.html" %} {% block tabs %} {{ super() }} {% set palette = config.theme.palette %} {% set font =
+config.theme.font %}
 
 <style>
   body {
@@ -31,19 +31,8 @@ config.theme.palette %} {% set font = config.theme.font %}
 
   .tx-container {
     background-color: var(--md-primary-fg-color);
-    background-image: linear-gradient(
-        to bottom,
-        transparent,
-        transparent,
-        var(--md-code-bg-color)
-      ),
-      linear-gradient(
-        to top,
-        transparent,
-        transparent,
-        var(--md-primary-fg-color)
-      ),
-      url('circuitboard.svg');
+    background-image: linear-gradient(to bottom, transparent, transparent, var(--md-code-bg-color)),
+      linear-gradient(to top, transparent, transparent, var(--md-primary-fg-color)), url('circuitboard.svg');
     background-repeat: no-repeat;
   }
 
@@ -286,31 +275,13 @@ config.theme.palette %} {% set font = config.theme.font %}
   <div class="md-grid md-typeset">
     <div class="tx-hero">
       <div class="tx-hero__image">
-        <img
-          src="illustration.svg"
-          alt="illustration"
-          width="1200px"
-          height="1200px"
-          draggable="false"
-        />
+        <img src="illustration.svg" alt="illustration" width="1200px" height="1200px" draggable="false" />
       </div>
       <div class="tx-hero__content">
         <h1>3os Project</h1>
         <p>{{ config.site_description }}</p>
-        <a
-          href="/blog/"
-          title="{{ lang.t('source.link.title') }}"
-          class="md-button md-button--primary"
-        >
-          Blog
-        </a>
-        <a
-          href="https://github.com/fire1ce"
-          title="{{ lang.t('source.link.title') }}"
-          class="md-button"
-        >
-          Github
-        </a>
+        <a href="/blog/" title="{{ lang.t('source.link.title') }}" class="md-button md-button--primary"> Blog </a>
+        <a href="https://github.com/fire1ce" title="{{ lang.t('source.link.title') }}" class="md-button"> Github </a>
       </div>
     </div>
   </div>
@@ -328,8 +299,8 @@ config.theme.palette %} {% set font = config.theme.font %}
       Open-Source
     </h2>
     <p>
-      We provide an open-source knowledge base on various topics such as Devops,
-      security, penetration testing, networking and much more.
+      We provide an open-source knowledge base on various topics such as Devops, security, penetration testing,
+      networking and much more.
     </p>
   </div>
   <div class="feature-item">
@@ -342,9 +313,8 @@ config.theme.palette %} {% set font = config.theme.font %}
       Contribution
     </h2>
     <p>
-      We are welcoming you to contribute your knowledge to this project. Submit
-      git pull requests for new content, or help as fix and maintain the
-      documentation.
+      We are welcoming you to contribute your knowledge to this project. Submit git pull requests for new content, or
+      help as fix and maintain the documentation.
     </p>
   </div>
   <div class="feature-item">
@@ -356,9 +326,7 @@ config.theme.palette %} {% set font = config.theme.font %}
       </svg>
       Discussion
     </h2>
-    <p>
-      Feel free to open a discussion on any topic at comments section any time.
-    </p>
+    <p>Feel free to open a discussion on any topic at comments section any time.</p>
   </div>
   <div class="feature-item">
     <h2>
@@ -372,13 +340,10 @@ config.theme.palette %} {% set font = config.theme.font %}
     <p>
       This website is based on and built with
       <a href="https://www.mkdocs.org/">MkDocs</a> with
-      <a href="https://squidfunk.github.io/mkdocs-material/"
-        >Material for MkDocs</a
-      >
+      <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
       theme and my own modifications.
     </p>
   </div>
 </div>
 
-{% endblock %} {% block content %}{% endblock %} {% block footer %}{% include
-"footer.html" %}{% endblock %}
+{% endblock %} {% block content %}{% endblock %} {% block footer %}{% include "footer.html" %}{% endblock %}
