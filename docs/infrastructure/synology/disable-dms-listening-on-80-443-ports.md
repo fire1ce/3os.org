@@ -2,7 +2,7 @@
 title: Free 80,443 Ports
 description: Free 80,443 ports on Synology NAS for other applications.
 template: comments.html
-tags: [Synology, NAS, ports]
+tags: [synology, NAS, ports]
 ---
 
 # Free 80,443 Ports On Synology NAS (DSM)
