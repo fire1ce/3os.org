@@ -7,9 +7,11 @@ tags: [android, decompiler, java]
 
 # JADX - Dex to Java Decompiler
 
-Command line and GUI tools for producing Java source code from Android Dex and Apk files
-
 Github Repository: [skylot-jadx][jadx-github-repository-url]{target="\_blank"}
+
+## About JADX
+
+Command line and GUI tools for producing Java source code from Android Dex and Apk files
 
 :exclamation::exclamation::exclamation: Please note that in most cases **jadx** can't decompile all 100% of the code, so errors will occur. Check [Troubleshooting guide](https://github.com/skylot/jadx/wiki/Troubleshooting-Q&A#decompilation-issues) for workarounds
 
@@ -33,10 +35,21 @@ See these features in action here: [jadx-gui features overview](https://github.c
 
 <img src="https://user-images.githubusercontent.com/118523/142730720-839f017e-38db-423e-b53f-39f5f0a0316f.png" width="700"/>
 
+## Download
+
 {{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Download') }}
+
+## Installation
+
 {{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Install') }}
-{{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Use jadx as a library') }}
+
+## Usage
+
 {{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Usage') }}
+
+## Use jadx as a Library
+
+{{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Use jadx as a library') }}
 
 <!-- appendices -->
 
