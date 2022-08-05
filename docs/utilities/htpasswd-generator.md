@@ -1,6 +1,6 @@
 ---
 title: htpasswd Password Generator
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Markdown is a lightweight markup language with plain text formatting syntax.
+description: Generates a random password for htpasswd
 template: comments.html
 tags: [htpasswd]
 ---

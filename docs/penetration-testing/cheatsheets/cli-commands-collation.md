@@ -1,6 +1,6 @@
 ---
 title: Cli Commands Collation
-description:Penetration Tests CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Gobuster and getting the most of this powerful tool.
+description: Gobuster penetration tests cheatsheet - practical example commands for running Gobuster and getting the most of this powerful tool.
 template: comments.html
 tags: [pt, penetration-testing, cli, commands, collation]
 ---

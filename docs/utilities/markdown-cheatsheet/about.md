@@ -1,6 +1,6 @@
 ---
 title: About Markdown
-description: Markdown CheatSheet for MkDocs and Material Theme for MkDocs. Markdown is a lightweight markup language with plain text formatting syntax.
+description: About Markdown cheatsheet for MkDocs and Material.
 tags: [markdown-cheatsheet, mkdocs]
 ---
 

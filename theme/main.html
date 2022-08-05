@@ -50,6 +50,7 @@ hidden = "hidden" if "toc" in page.meta.hide %} {% endif %}
 <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">{% include "partials/toc.html" %}</div>
+    <!-- OnThisPage -->
 
     <!-- google ads section -->
     <div class="ads-sidebar">
@@ -58,8 +59,6 @@ hidden = "hidden" if "toc" in page.meta.hide %} {% endif %}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5886334466795247"
         crossorigin="anonymous"
       ></script>
-
-      <!-- OnThisPage -->
       <ins
         class="adsbygoogle"
         style="display: inline-block; width: 230px; height: 230px"

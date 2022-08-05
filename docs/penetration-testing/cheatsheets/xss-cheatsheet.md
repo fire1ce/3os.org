@@ -1,6 +1,6 @@
 ---
 title: XSS CheatSheet
-description:XSS CheatSheet - In this CheatSheet, you will find a series of practical example commands for running XSS and getting the most of this.
+description: XSS cheatsheet  for pentesting series of practical example commands for running XSS and getting the most of this.
 template: comments.html
 tags: [penetration-testing, tools, cheatsheet]
 ---
