@@ -72,6 +72,7 @@ In order to test that you are using Kali Linux
 ```bash
 uname -a
 ```
+Or you can check the contents of the `/etc/os-release` file for this Debian distribution.
 
 After we got our new Minimal Kali ready we need to cleanup some Debian's leftovers to finnish
 

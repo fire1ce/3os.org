@@ -19,7 +19,7 @@
 
 ## About 3os Project
 
-3os Project is collocation of technical documentation and guides for devops, developers, pentesters, systems administrators and other IT professionals website. We provide an open-source knowledge base on various topics such as Devops, security, penetration testing, networking and much more.
+3os Project is collocation of technical documentation and guides for DevOps engineers, developers, pentesters, systems administrators and other IT professionals website. We provide an open-source knowledge base on various topics such as DevOps, security, penetration testing, networking and much more.
 
 ### Contribution
 

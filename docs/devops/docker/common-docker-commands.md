@@ -21,7 +21,7 @@ docker ps -a
 docker logs <container_id>
 ```
 
-## Get Into Container Shell
+## Get A Container Shell
 
 ```shell
 docker exec -it <container_id> /bin/bash
@@ -32,6 +32,8 @@ or
 ```shell
 docker exec -it <container_id> /bin/sh
 ```
+
+depending on the shells available on the Docker image.
 
 ## Stoping Containers
 

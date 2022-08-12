@@ -13,7 +13,7 @@ tags: [macos, linux, terminal, zsh, oh-my-zsh]
 
 I have been using terminal for a long time, it's one of my essential tools for my everyday work and hobbies.  
 The default terminal experience is not very user friendly, and I find it sometimes frustrating to use for basic tasks.  
-So I decided to make a better terminal experience for macOS and Linux without too much effort from user side.  
+So I decided to improve my terminal experience for macOS and Linux without too much effort from the user side.  
 This guide will help you to install and configure the \*\*better terminal experience in less than 5 minutes.
 
 **Better Terminal Experience** guide based on [ZSH Shell][zsh-url]{target=\_blank} with [Oh My Zsh][ohmyz.sh-url]{target=\_blank} on top of it.  
