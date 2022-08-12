@@ -19,6 +19,7 @@ List of extensions for Chrome browser.
 | [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)                                     | Edit cookie per page                            |
 | [Wappalyzer](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg)                                             | Uncovers the technologies used on websites      |
 | [IP Address and Domain Information](https://chrome.google.com/webstore/detail/ip-address-and-domain-inf/lhgkegeccnckoiliokondpaaalbhafoa?hl=de) | Find detailed information about each IP address |
+| [JSON viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh) | Pretty print / display JSON content in the browser
 
 <!-- appendices -->
 

@@ -91,6 +91,12 @@ Undoes all commits after [commit], preserving changes locally
 git reset [commit]
 ```
 
+If you don't want to reset absolutely, but relatively that is also possible using
+```shell
+git reset HEAD~2
+```
+which undoes the last 2 commits.
+
 Discards all history and changes back to the specified commit
 
 ```shell
@@ -113,6 +119,12 @@ Switches to the specified branch and updates the working directory
 ```shell
 git switch -c [branch-name]
 ```
+or you can use
+
+```shell
+git checkout -b [branch-name]
+```
+to both create and switch to the branch simultaneously.
 
 Combines the specified branch’s history into the current branch. This is usually done in pull requests, but is an important Git operation.
 
@@ -168,7 +180,7 @@ git commit -m "[descriptive message]"
 
 ## The .gitignore file
 
-Sometimes it may be a good idea to exclude files from being tracked with Git. This is typically done in a special file named .gitignore. You can find helpful templates for `.gitignore` files at [github.com/github/gitignore][gitignore-url]{target=\_blank}.
+Sometimes it may be a good idea to exclude files from being tracked with Git. This is typically done in a special file named .gitignore. You can find helpful templates for `.gitignore` files at [github.com/github/gitignore][gitignore-url]{target=\_blank}. If there are certain files (like `.vscode` or `.ide`) that should be discluded from all projects, you can create a global `.gitignore` file to do so.
 
 ## Untrack Files Already Added to git Repository Based on .gitignore
 

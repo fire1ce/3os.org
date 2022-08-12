@@ -61,6 +61,7 @@ When you are done with the virtual environment, you can deactivate it by running
 ```shell
 deactivate
 ```
+Or alternatively you can exit the current shell.
 
 <!-- appendices -->
 
