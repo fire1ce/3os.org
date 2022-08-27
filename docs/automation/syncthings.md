@@ -142,15 +142,23 @@ For security reasons, I like to disable all the Discovery and Repay services.
 
 When you disable the Discovery service, you will have to manually add the connection to other devices.
 
-Example:
+### Manual Connection Example
 
 ```shell
 tcp://192.168.1.1:22000
 ```
 
+or
+
+```shell
+tcp://example.com:22000
+```
+
 ![Syncthing Manual Connection][syncthing-manual-connection-img]
 
-Syncthing supports of `Ignore Patterns` you can use it to `Ignore Files` synchronization.
+## Syncthing Files Ignore Patterns
+
+Syncthing supports of `Ignore Patterns` you can use it to `Ignore Files` synchronization. ==This will save you a lot of headaches with sync errors==
 
 Here is a list of the `Ignore Patterns` for system files:
 
