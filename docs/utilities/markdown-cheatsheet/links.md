@@ -47,14 +47,14 @@ _Result:_
 ```markdown title='Internal Anchor Links Example'
 [Jumps to section in page][internal-anchor-link]
 
-[internal-anchor-link]: /guides/markdown-cheatsheet/tables-lists-quotes/#lists 'Internal Anchor Links'
+[internal-anchor-link]: /utilities/markdown-cheatsheet/tables-lists-quotes/#lists 'Internal Anchor Links'
 ```
 
 _Result:_
 
 [Jumps to section in page][internal-anchor-link]
 
-[internal-anchor-link]: /guides/markdown-cheatsheet/tables-lists-quotes/#lists 'Internal Anchor Links'
+[internal-anchor-link]: /utilities/markdown-cheatsheet/tables-lists-quotes/#lists 'Internal Anchor Links'
 
 ---
 
