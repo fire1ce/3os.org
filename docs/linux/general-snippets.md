@@ -21,6 +21,28 @@ To re-enable
 rm -rf ~/.hushlogin
 ```
 
+## Change Sudo Password Requirement Timeout In Linux
+
+To change sudo password timeout limit in Linux, run:
+
+```shell
+sudo visudo
+```
+
+This command will open the **/etc/sudoers** file in **nano** editor.
+
+Find the following line:
+
+```shell
+Defaults env_reset
+```
+
+Change it like below the **30** is the number of minutes you want to set the timeout to.
+
+```shell
+Defaults env_reset, timestamp_timeout=30
+```
+
 ## Redirect Output to a File and Stdout With _tee_
 
 The command you want is named `tee`:
