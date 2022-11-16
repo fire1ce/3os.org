@@ -1,11 +1,11 @@
 ---
-title: About Promark3
+title: About Proxmark3
 description: The Proxmark is an RFID swiss-army tool, allowing for both high and low level interactions with the vast majority of RFID tags and systems world-wide.
 template: comments.html
 tags: [pt, tools, rfid]
 ---
 
-# About Promark3
+# About Proxmark3
 
 The Proxmark is an RFID swiss-army tool, allowing for both high and low level interactions with the vast majority of RFID tags and systems world-wide.
 
