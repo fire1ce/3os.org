@@ -20,9 +20,9 @@ jobs:
           set-safe-directory: false
           key: ${{ github.ref }}
           path: .cache
-      - name: Install package
-        run: |
-          sudo apt-get -y install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+      # - name: Install package
+      #   run: |
+      #     sudo apt-get -y install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
       - name: Deploy MkDocs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
