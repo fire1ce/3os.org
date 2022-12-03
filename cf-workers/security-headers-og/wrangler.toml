@@ -1,8 +1,6 @@
-name = "security-headers-og"
-type = "javascript"
-
 account_id = "1922b009e1f403ee16c22aecb9978ff9"
-workers_dev = true
+compatibility_date = "2022-07-12"
+main = "index.js"
+name = "security-headers-og"
 route = "*3os.org/*"
-zone_id = "4f0cee2867cf17115584fd624410d0fb"
-compatibility_date = "2022-03-03"
+workers_dev = true

@@ -4,6 +4,7 @@ venv/
 tmp/
 **/gen_
 **/gen_*
+.cache
 # OS generated files
 .DS_Store
 **/.DS_Store
