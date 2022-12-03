@@ -1,7 +1,7 @@
 Babel==2.11.0
 beautifulsoup4==4.11.1
 bracex==2.3.post1
-cairocffi==1.2.0
+cairocffi==1.4.0
 CairoSVG==2.5.2
 certifi==2022.9.24
 cffi==1.15.1
@@ -55,4 +55,5 @@ urllib3==1.26.13
 watchdog==2.1.9
 wcmatch==8.4.1
 webencodings==0.5.1
+wheel==0.38.4
 zipp==3.11.0
