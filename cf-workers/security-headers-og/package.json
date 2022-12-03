@@ -11,6 +11,6 @@
   "author": "fire1ce <stas@3os.org>",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   }
 }

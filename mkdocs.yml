@@ -37,13 +37,13 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  font: 
+  font:
     text: Rubik
     code: Rubik Mono
   icon:
     logo: material/chart-donut-variant
   favicon: assets/favicon.ico
-  
+
 # Custom theme configuration
 extra_css:
   - css/extra.css
@@ -65,15 +65,14 @@ plugins:
   - minify:
       minify_html: true
       htmlmin_opts:
-          remove_comments: true
+        remove_comments: true
   - ezlinks
   - progress
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: true
+  - social
   # - git-authors
-
-
 
 extra:
   social:
@@ -129,7 +128,7 @@ markdown_extensions:
       check_paths: true
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true
@@ -139,7 +138,6 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:pymdownx.superfences.fence_code_format # Copyright
 
-# Copyright
 copyright: 'Copyright &copy; 3os.org 2022'

@@ -1,4 +1,3 @@
-
 name: mkdocs-build
 
 on:
@@ -8,7 +7,7 @@ on:
   schedule:
     - cron: '0 4 * * *'
   workflow_dispatch:
-  
+
 jobs:
   build:
     name: Deploy docs
@@ -19,18 +18,16 @@ jobs:
         with:
           fetch-depth: 0
           set-safe-directory: false
+          key: ${{ github.ref }}
+          path: .cache
       - name: Deploy MkDocs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        with:
+          packages: libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+          version: 1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_DOMAIN: 3os.org
           CONFIG_FILE: ./mkdocs.yml
           EXTRA_PACKAGES: build-base
-          # GITHUB_DOMAIN: github.myenterprise.com
           REQUIREMENTS: ./requirements.txt
-
-
-
-
-
-
