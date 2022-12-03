@@ -1,6 +1,7 @@
 ---
 title: iGPU Split Passthrough
 description: Proxmox iGPU split passthrough to VM configuration for hardware acceleration.
+template: comments.html
 tags: [proxmox, igpu, passthrough]
 ---
 
