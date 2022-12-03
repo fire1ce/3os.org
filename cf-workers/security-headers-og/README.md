@@ -11,7 +11,7 @@ Full Documentation for the Cloudflare Worker Wrangler can be found at [Wrangler 
 ## Installing the Workers CLI
 
 ```shell
-npm install -g @cloudflare/wrangler
+npm install -g wrangler
 ```
 
 ## Configure the Workers CLI
@@ -34,13 +34,12 @@ Example:
 
 ```shell
 name = "security-headers"
-type = "javascript"
+main = "index.js"
 
 workers_dev = true
 route = "*3os.org/*"
 account_id = "$AccountID"
-zone_id = "$ZoneID"
-compatibility_date = "2022-03-03"
+compatibility_date = "2022-07-12"
 ```
 
 ## Run the Worker in the Cloudflare Workers CLI locally
