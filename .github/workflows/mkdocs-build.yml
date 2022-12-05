@@ -21,14 +21,11 @@ jobs:
       - name: Install package
         run: |
           sudo apt-get -y install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
-      - name: Update pip
-        run: |
-          python -m pip install --upgrade pip
       - name: Deploy MkDocs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_DOMAIN: 3os.org
           CONFIG_FILE: ./mkdocs.yml
-          EXTRA_PACKAGES: build-base
+          EXTRA_PACKAGES: build-base libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
           REQUIREMENTS: ./requirements.txt
