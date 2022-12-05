@@ -24,6 +24,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_DOMAIN: 3os.org
           CONFIG_FILE: ./mkdocs.yml
-          # EXTRA_PACKAGES: build-base python3-dev py3-setuptools cairo-dev freetype freetype-dev libffi-dev libjpeg libpng zlib zlib-dev lcms2 libwebp-dev libwebp tcl-dev openjpeg-dev libimagequant
           EXTRA_PACKAGES: build-base jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev cairo-dev libffi-dev libwebp-dev
           REQUIREMENTS: ./requirements.txt
