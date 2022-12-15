@@ -25,6 +25,7 @@ Oh My Zsh is an open source, community-driven framework for managing your [zsh][
 
 [zsh-url]: https://www.zsh.org/ 'ZSH'
 [ohmyz.sh-url]: https://ohmyz.sh/ 'Oh-My-Zsh'
+[openwrt-wiki-url]: https://openwrt.org/docs/guide-developer/write-shell-script#can_i_change_my_default_shell_from_ash_to_bash
 
 <!-- images -->
 
