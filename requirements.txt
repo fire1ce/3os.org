@@ -15,7 +15,7 @@ gitdb==4.0.10
 GitPython==3.1.29
 htmlmin==0.1.12
 idna==3.4
-importlib-metadata==5.1.0
+importlib-metadata==5.2.0
 Jinja2==3.1.2
 jsmin==3.0.1
 Markdown==3.3.7
@@ -26,10 +26,11 @@ mkdocs-awesome-pages-plugin==2.8.0
 mkdocs-embed-external-markdown==2.3.0
 mkdocs-exclude-search==0.6.4
 mkdocs-ezlinks-plugin==0.1.14
+mkdocs-git-authors-plugin==0.7.0
 mkdocs-git-revision-date-localized-plugin==1.1.0
 mkdocs-material==8.5.11
 mkdocs-material-extensions==1.1.1
-mkdocs-meta-descriptions-plugin==2.1.0
+mkdocs-meta-descriptions-plugin==2.2.0
 mkdocs-minify-plugin==0.6.2
 mkdocs-plugin-progress==1.2.0
 natsort==8.2.0
@@ -42,7 +43,7 @@ pygtrie==2.5.0
 pymdown-extensions==9.9
 pyparsing==3.0.9
 python-dateutil==2.8.2
-pytz==2022.6
+pytz==2022.7
 PyYAML==6.0
 pyyaml_env_tag==0.1
 requests==2.28.1
@@ -52,7 +53,7 @@ smmap==5.0.0
 soupsieve==2.3.2.post1
 tinycss2==1.2.1
 urllib3==1.26.13
-watchdog==2.1.9
+watchdog==2.2.0
 wcmatch==8.4.1
 webencodings==0.5.1
 wheel==0.38.4
