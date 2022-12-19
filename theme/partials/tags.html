@@ -16,6 +16,8 @@
 
 <!-- git_revision_date -->
 <div class="md-source-file">
+  <!-- mkdocs-git-authors-plugin -->
+  <small> Authors: {{ git_page_authors | default('enable mkdocs-git-authors-plugin') }} | </small>
   <small>
     <!-- mkdocs-git-revision-date-localized-plugin -->
     {% if page.meta.git_revision_date_localized %} {% if page.meta.git_creation_date_localized %}
