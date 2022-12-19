@@ -1,6 +1,7 @@
 ---
 title: Blog - News & Updates
 description: News and updates on 3os.org. Short descriptions on what's new or any major updates to the website.
+tags: []
 hide:
   - navigation
 ---
