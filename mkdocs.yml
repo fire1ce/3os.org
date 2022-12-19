@@ -72,7 +72,8 @@ plugins:
       type: timeago
       enable_creation_date: true
   - social
-  # - git-authors
+  - git-authors:
+      sort_authors_by: contribution
 
 extra:
   social:
@@ -139,5 +140,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format # Copyright
+
 
 copyright: 'Copyright &copy; 3os.org 2022'
