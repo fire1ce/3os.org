@@ -16,7 +16,7 @@ This configuration was tested to work with the `GPU passthroughs` feature from o
 
 ## Prerequirements
 
-Before we begin, we need to download the [VirtIO Drivers for Windwos][virtio-drivers-url]{target=\_blank} `iso`. Upload it via the GUI as any other ISO file.
+Before we begin, we need to download the [VirtIO Drivers for Windows][virtio-drivers-url]{target=\_blank} `iso`. Upload it via the GUI as any other ISO file.
 
 You can allso use ssh and download it directly from the Proxmox server.
 
@@ -36,7 +36,7 @@ Select `Advanced` options.
 
 ### OS
 
-Choose the iso file image for Windows 10 or 11. Change `Type` to `Microsoft Windows` and `Version` to your's windwos version.
+Choose the iso file image for Windows 10 or 11. Change `Type` to `Microsoft Windows` and `Version` to your's windows version.
 
 ![vm-os][vm-os-img]
 
@@ -78,7 +78,7 @@ Don't Start the VM after creating it.
 
 ### Add CD/DVD to VM
 
-We will need to use the [VirtIO Drivers for Windows][virtio-drivers-url]{target=\_blank} `iso` file to install the drivers while installing the Windwos VM.
+We will need to use the [VirtIO Drivers for Windows][virtio-drivers-url]{target=\_blank} `iso` file to install the drivers while installing the Windows VM.
 
 ![vm-cd-dvd][vm-cd-dvd-img]
 
@@ -158,8 +158,8 @@ Follow those guides for utilizing a GPU passthrough to VM:
 <!-- urls -->
 
 [gpu-passthrough-to-vm]: /infrastructure/proxmox/pgu-passthrough-to-vm/ 'GPU Passthrough to VM'
-[igpu-passthrough-to-vm]: /infrastructure/proxmox/igpu-passthrough-to-vm/ 'iGPU Passthrough to VM'
-[igpu-split-passthrough]: /infrastructure/proxmox/igpu-split-passthrough/ 'iGPU Split Passthrough'
+[igpu-passthrough-to-vm]: /infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/ 'iGPU Passthrough to VM'
+[igpu-split-passthrough]: /infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/ 'iGPU Split Passthrough'
 [virtio-drivers-url]: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 'VirtIO Drivers'
 
 <!-- images -->
