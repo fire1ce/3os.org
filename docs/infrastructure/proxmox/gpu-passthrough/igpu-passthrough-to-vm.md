@@ -105,7 +105,7 @@ There should be a line that looks like `DMAR: IOMMU enabled`. If there is no out
 
 ## Windows Virtual Machine iGPU Passthrough Configuration
 
-For better results its recommend to use this [Windwos 10/11 Virutal Machine configuration for proxmox][windows-vm-configuration-url].
+For better results its recommend to use this [Windows 10/11 Virtual Machine configuration for proxmox][windows-vm-configuration-url].
 
 Find the PCI address of the iGPU.
 
@@ -161,7 +161,7 @@ That's it!
 
 ## Linux Virtual Machine iGPU Passthrough Configuration
 
-We will be using Ubuntu Server 20.04 LTS. for this guide.
+We will be using Ubuntu Server 20.04 LTS for this guide.
 
 From Proxmox Terminal find the PCI address of the iGPU.
 
@@ -200,7 +200,7 @@ Boot the VM. To test the iGPU passthrough was successful, you can use the follow
  sudo lspci -nnv | grep VGA
 ```
 
-The output should incliude the Intel iGPU:
+The output should include the Intel iGPU:
 
 ```shell
 00:10.0 VGA compatible controller [0300]: Intel Corporation UHD Graphics 630 (Desktop) [8086:3e92] (prog-if 00 [VGA controller])
@@ -212,7 +212,7 @@ Now we need to check if the GPU's Driver initalization is working.
 cd /dev/dri && ls -la
 ```
 
-The output should incliude the `renderD128`
+The output should include the `renderD128`
 
 ![VM renderD128][vm-renderd128-img]
 
