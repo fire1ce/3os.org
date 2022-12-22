@@ -255,8 +255,8 @@ done;
 
 <!-- urls -->
 
-[igpu-full-passthrough-url]: /infrastructure/proxmox/igpu-passthrough-to-vm/#igpu-full-passthrough 'iGPU Full Passthrough'
-[igpu-split-gvt-g-passthrough-url]: /infrastructure/proxmox/igpu-split-passthrough/#igpu-split-gvt-g-passthrough 'iGPU Split GVT-g Passthrough'
+[igpu-full-passthrough-url]: /infrastructure/proxmox/gpu-passthrough-to-vm/#igpu-full-passthrough 'iGPU Full Passthrough'
+[igpu-split-gvt-g-passthrough-url]: /infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/ 'iGPU Split GVT-g Passthrough'
 [windows-vm-configuration-url]: /infrastructure/proxmox/windows-vm-configuration/ 'Windows VM Configuration'
 [intel-driver-and-support-assistant-url]: https://www.intel.com/content/www/us/en/support/detect.html 'Intel Driver and Support Assistant'
 [intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/products/80939/graphics.html 'Intel GPU Drivers'
