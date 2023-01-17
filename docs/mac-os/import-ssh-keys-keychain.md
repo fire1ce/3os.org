@@ -27,6 +27,12 @@ Copy your `ed25519, ed25519.pub` / `id_rsa, id_rsa.pub` to `~/.ssh/` folder
 
 Enter your key passphrase. You won't be asked for it again.
 
+List all keys in the keychain:
+
+```shell
+ssh-add -l
+```
+
 ## Configure SSH to always use the keychain
 
 If you haven't already, create an `~/.ssh/config` file. In other words, in the .ssh directory in your home dir, make a file called config.
