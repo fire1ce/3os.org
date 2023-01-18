@@ -23,6 +23,9 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
 
   palette:
     - media: '(prefers-color-scheme: light)'
