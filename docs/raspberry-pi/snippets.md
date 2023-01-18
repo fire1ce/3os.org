@@ -73,7 +73,7 @@ sudo nano /etc/rc.local
 Add this to the end (but before “exit 0”):
 
 ```bash
-service procps reload
+systemctl restart procps
 ```
 
 Save and close the file.
