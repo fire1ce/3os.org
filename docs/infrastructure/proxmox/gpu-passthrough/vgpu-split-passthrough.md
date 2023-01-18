@@ -21,5 +21,7 @@ Official GitLab repository: [polloloco/vgpu-proxmox][vgpu-proxmox-url]{target=\_
 
 [polloloco-url]: https://gitlab.com/polloloco 'polloloco GitLab Page'
 [vgpu-proxmox-url]: https://gitlab.com/polloloco/vgpu-proxmox 'vgpu-split-passthrough GitLab Page'
+[video tutorial to find the right driver]: https://gitlab.com/polloloco/vgpu-proxmox/-/raw/master/downloading_driver.mp4
+[downloading_driver.mp4]: https://gitlab.com/polloloco/vgpu-proxmox/-/raw/master/downloading_driver.mp4
 
 <!-- end appendices -->

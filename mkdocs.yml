@@ -52,7 +52,6 @@ extra_css:
 # Plugins
 plugins:
   - search:
-      prebuild_index: true
       lang: 'en'
   - exclude-search:
       exclude:
