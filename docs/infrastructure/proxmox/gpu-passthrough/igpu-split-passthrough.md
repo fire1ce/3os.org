@@ -20,7 +20,7 @@ This guide will show you how to configure Proxmox to use iGPU passthrough to VM.
 
     `iGPU GVT-g Split Passthrough` is supported only on Intel's **5th generation to 10th generation** CPUs!
 
-    Known supported CPUs familys:
+    Known supported CPU families:
 
     - **Broadwell**
 
