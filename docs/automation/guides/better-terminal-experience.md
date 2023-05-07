@@ -29,6 +29,62 @@ Oh My Zsh is an open source, community-driven framework for managing your [zsh][
 
 ## Installation
 
+You can copy and paste the following code with `nano <name_of_your_file>.sh`
+```
+#!/bin/bash
+
+# Install required packages
+echo "Installing required packages..."
+if [[ $(uname) == "Linux" ]]; then
+    sudo apt install -y git zsh wget
+elif [[ $(uname) == "Darwin" ]]; then
+    brew install git zsh wget
+fi
+
+# Install Oh My Zsh
+echo "Installing Oh My Zsh..."
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# Change default shell to Zsh
+read -p "Do you want to change the default shell to Zsh? (y/n)" -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    chsh -s $(which zsh)
+fi
+
+# Clone plugins
+echo "Cloning plugins..."
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+# Configure Zsh
+echo "Configuring Zsh..."
+sed -i 's/^ZSH_THEME=.*/ZSH_THEME="bira"/' ~/.zshrc
+sed -i '/^plugins=(/c\plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew colorize macos pip pyenv virtualenv adb aws command-not-found zsh-autosuggestions zsh-syntax-highlighting)' ~/.zshrc
+cat <<EOT >> ~/.zshrc
+
+## Fix for Slow zsh-autosuggestions copy&paste
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+EOT
+
+# Personal theme
+read -p "Do you want to install a personal theme? (y/n)" -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Installing personal theme..."
+    wget -O ~/.oh-my-zsh/themes/3os.zsh-theme https://3os.org/assets/zsh/3os.zsh-theme
+    wget -O ~/.zshrc https://3os.org/assets/zsh/zshrc_config
+fi
+
+echo "Done! Please open a new terminal window to enjoy the Better Terminal Experience."
+```
+Then you run 
+`chmod +x <name_of_your_file>.sh`
+Run the script
+`./<name_of_your_file>.sh`
+
 ### Requirements
 
 - git
