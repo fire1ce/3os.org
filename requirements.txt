@@ -32,7 +32,7 @@ mkdocs-exclude-search==0.6.5
 mkdocs-ezlinks-plugin==0.1.14
 mkdocs-git-authors-plugin==0.7.2
 mkdocs-git-revision-date-localized-plugin==1.2.0
-mkdocs-material==9.1.16
+mkdocs-material==9.1.17
 mkdocs-material-extensions==1.1.1
 mkdocs-meta-descriptions-plugin==2.2.0
 mkdocs-minify-plugin==0.6.4
@@ -43,7 +43,7 @@ packaging==23.1
 pathspec==0.11.1
 Pillow==9.5.0
 pip==23.1.2
-platformdirs==3.6.0
+platformdirs==3.8.0
 pycparser==2.21
 Pygments==2.15.1
 pygtrie==2.5.0
