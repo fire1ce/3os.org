@@ -288,14 +288,14 @@ Search for the latest Nvidia Driver for your GPU.
 sudo apt search nvidia-driver
 ```
 
-In the next step we will install the Nvidia Driver v510.
+In the next step we will install the Nvidia Driver v535.
 
 !!! note
 
-    **--no-install-recommends** is important for Headless Server. `nvidia-driver-510` will install xorg (GUI) `--no-install-recommends` flag will prevent the GUI from being installed.
+    **--no-install-recommends** is important for Headless Server. `nvidia-driver-535` will install xorg (GUI) `--no-install-recommends` flag will prevent the GUI from being installed.
 
 ```shell
-sudo apt install --no-install-recommends -y build-essential nvidia-driver-510 nvidia-headless-510 nvidia-utils-510 nvidia-cuda-toolkit
+sudo apt install --no-install-recommends -y build-essential nvidia-driver-535 nvidia-headless-535 nvidia-utils-535 nvidia-cuda-toolkit
 ```
 
 This will take a while to install. After the installation is complete, you should reboot the VM.
