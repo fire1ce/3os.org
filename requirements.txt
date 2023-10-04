@@ -41,7 +41,7 @@ mypy-extensions==1.0.0
 natsort==8.4.0
 packaging==23.1
 pathspec==0.11.1
-Pillow==9.5.0
+Pillow==10.0.1
 pip==23.1.2
 platformdirs==3.8.0
 pycparser==2.21
