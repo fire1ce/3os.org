@@ -156,7 +156,7 @@ adb shell settings put global http_proxy :0
 
 | Command                                                      | Description                              |
 | ------------------------------------------------------------ | ---------------------------------------- |
-| adb reboot-recovery                                          | Reboot device into recovery mode         |
+| adb reboot recovery                                          | Reboot device into recovery mode         |
 | adb reboot fastboot                                          | Reboot device into recovery mode         |
 | adb shell screencap -p "/path/to/screenshot.png"             | Capture screenshot                       |
 | adb shell screenrecord "/path/to/record.mp4"                 | Record device screen                     |
