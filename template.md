@@ -24,7 +24,7 @@ fringilla. Nunc quis egestas lorem [just a url][3os-url]{target=\_blank}.
 
 <!-- images -->
 
-[minion-img]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[minion-img]: ../assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 <!--css-->
 

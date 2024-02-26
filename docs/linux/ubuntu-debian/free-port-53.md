@@ -33,7 +33,7 @@ sudo systemctl restart systemd-resolved
 
 <!-- images -->
 
-[netstat-output-img]: /assets/images/6f1283a2-f6eb-11ec-a1c2-ef56aa217b30.jpg 'Netstat output'
+[netstat-output-img]: ../../assets/images/6f1283a2-f6eb-11ec-a1c2-ef56aa217b30.jpg 'Netstat output'
 
 <!--css-->
 

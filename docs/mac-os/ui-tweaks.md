@@ -26,7 +26,7 @@ killall Finder
 ## Change the Launchpad Grid Layout
 
 <div style="width:90%; margin:0 auto">
-    <img src="/assets/images/macOS/launchpad.jpg" alt="launchpad Grid 9x7">
+    <img src="../assets/images/macOS/launchpad.jpg" alt="launchpad Grid 9x7">
 </div>
 
 Change the _springboard-columns_ and _springboard-rows_ values according to your preference

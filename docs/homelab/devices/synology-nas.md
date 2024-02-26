@@ -51,9 +51,9 @@ One of then main devices in my `HomeLab` is a [Synology DS218+ NAS][amzn-synolog
 
 <!-- images -->
 
-[synology-ds218-plus-img]: /assets/images/1c537a72-f899-11ec-a56f-4fe05b7a77a5.jpeg 'Synology DS218+'
-[synology-ds218-back-img]: /assets/images/8e02266c-f8a0-11ec-ae98-0b43ae9fc642.jpeg 'Synology DS218+ back'
-[synology-disks-img]: /assets/images/a8c9213a-f8a0-11ec-be2e-d3277604224a.jpeg 'Synology Disks'
+[synology-ds218-plus-img]: ../../assets/images/1c537a72-f899-11ec-a56f-4fe05b7a77a5.jpeg 'Synology DS218+'
+[synology-ds218-back-img]: ../../assets/images/8e02266c-f8a0-11ec-ae98-0b43ae9fc642.jpeg 'Synology DS218+ back'
+[synology-disks-img]: ../../assets/images/a8c9213a-f8a0-11ec-be2e-d3277604224a.jpeg 'Synology Disks'
 
 <!--css-->
 

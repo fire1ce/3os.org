@@ -28,6 +28,6 @@ The awesome-pages plugin allows you to customize how your pages show up the navi
 [awesome-pages-url]: https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin 'MkDocs Awesome Pages Plugin Github Repository'
 [3os-url]: https://3os.org/
 [3os-url]: https://3os.org/
-[image-url]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[image-url]: ../assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 <!-- end appendices -->

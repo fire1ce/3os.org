@@ -130,7 +130,7 @@ wget -O ~/.zshrc https://3os.org/assets/zsh/zshrc_config
 [zsh-syntax-highlighting-url]: https://github.com/zsh-users/zsh-syntax-highlighting 'ZSH Syntax-Highlighting github page'
 [iterm2-url]: https://iterm2.com/ 'iTerm2 homepage'
 [homebrew-url]: https://brew.sh/ 'Homebrew homepage'
-[terminal-screenshot-img]: /assets/images/a0514d0c-abca-11ec-93a6-ffaf1c727a0d.jpg 'Terminal Screenshot'
-[personal-terminal-screenshot-img]: /assets/images/0e1913a6-0616-11ed-872f-4f150aadb6cd.jpg 'Personal Terminal Screenshot'
+[terminal-screenshot-img]: ../../assets/images/a0514d0c-abca-11ec-93a6-ffaf1c727a0d.jpg 'Terminal Screenshot'
+[personal-terminal-screenshot-img]: ../../assets/images/0e1913a6-0616-11ed-872f-4f150aadb6cd.jpg 'Personal Terminal Screenshot'
 
 <!-- end appendices -->

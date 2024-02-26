@@ -114,8 +114,8 @@ shutdown /s /f /t 0
 
 <!-- images -->
 
-[content-menu-img]: /assets/images/1b3e614e-ecad-11ec-b07c-3f92ba17e602.jpg 'Content Menu'
-[windows10debloater-img]: /assets/images/c1cd89f2-ecaf-11ec-b054-87c1d740b554.jpg 'Windows10Debloater'
+[content-menu-img]: ../assets/images/1b3e614e-ecad-11ec-b07c-3f92ba17e602.jpg 'Content Menu'
+[windows10debloater-img]: ../assets/images/c1cd89f2-ecaf-11ec-b054-87c1d740b554.jpg 'Windows10Debloater'
 
 <!--css-->
 

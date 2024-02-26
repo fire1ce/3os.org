@@ -32,7 +32,7 @@ Markdown is a text format so naturally you can type in the Markdown representati
 ```markdown title="Internal soruce example"
 ![minion][internal-source]
 
-[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[internal-source]: ../../assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 ```
 
 ```markdown title="External source example"
@@ -45,7 +45,7 @@ _Result:_
 
 ![minion][internal-source]
 
-[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[internal-source]: ../../assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 ---
 
@@ -54,14 +54,14 @@ _Result:_
 ```markdown title="width=200 example"
 ![minion][internal-source]{: style="width:200px"}
 
-[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[internal-source]: ../../assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 ```
 
 _Result:_
 
 ![minion][internal-source]{: style="width:200px"}
 
-[internal-source]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[internal-source]: ../../assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 <!-- appendices -->
 

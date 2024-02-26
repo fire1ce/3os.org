@@ -68,8 +68,8 @@ sudo -l
 
 <!-- images -->
 
-[sudo-config-img]: /assets/images/fb12505e-efb0-11ec-a168-bb2b078361cc.jpg 'sudo config'
-[iterm2-config-img]: /assets/images/1005eba0-efb2-11ec-ae3d-93f62b51db08.jpg 'iterm2 config'
+[sudo-config-img]: ../assets/images/fb12505e-efb0-11ec-a168-bb2b078361cc.jpg 'sudo config'
+[iterm2-config-img]: ../assets/images/1005eba0-efb2-11ec-ae3d-93f62b51db08.jpg 'iterm2 config'
 
 <!--css-->
 

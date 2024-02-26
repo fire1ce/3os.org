@@ -189,12 +189,12 @@ iface wlp5s0 inet manual
 
 <!-- urls -->
 
-[identify-nics-url]: /linux/Network/identify-nics/
+[identify-nics-url]: ../../../linux/Network/identify-nics.md
 [proxmox-network-configuration-url]: https://pve.proxmox.com/wiki/Network_Configuration 'Proxmox VE Server Network Configuration Wiki'
 
 <!-- images -->
 
-[default-ipv6-proxmox-img]: /assets/images/1ee15c1c-bd9a-11ec-926f-3b1ee33b95ee.jpg 'Default IPv6 Proxmox Image'
-[no-ipv6-proxmox-img]: /assets/images/542c7a30-bd9c-11ec-848e-932ce851a8c3.jpg 'No IPv6 Proxmox Image'
+[default-ipv6-proxmox-img]: ../assets/images/1ee15c1c-bd9a-11ec-926f-3b1ee33b95ee.jpg 'Default IPv6 Proxmox Image'
+[no-ipv6-proxmox-img]: ../assets/images/542c7a30-bd9c-11ec-848e-932ce851a8c3.jpg 'No IPv6 Proxmox Image'
 
 <!-- end appendices -->

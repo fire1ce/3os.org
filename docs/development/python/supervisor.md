@@ -171,7 +171,7 @@ stderr_logfile_backups=5 # # of stderr logfile backups (0 means none, default 10
 
 <!-- appendices -->
 
-[supervisord-web-ui]: /assets/images/58a43cfe-ab60-11ec-aa76-bf689f051be2.jpg 'Supervisor Web UI'
+[supervisord-web-ui]: ../../assets/images/58a43cfe-ab60-11ec-aa76-bf689f051be2.jpg 'Supervisor Web UI'
 [supervisord-docs-url]: http://supervisord.org/# 'Supervisor Documentation'
 
 <!-- end appendices -->

@@ -118,31 +118,31 @@ services:
 
 <!-- urls -->
 
+[old-magicmirror-project-url]: magic-mirror.md 'Magic Mirror Project'
+[external-power-button-for-raspberry-pi-url]: ../external-power-button.md 'External Power Button'
+[motion-sensor-display-control-url]: ../motion-sensor-display-control.md 'Motion Sensor Display Control'
 [magicmirror-homepage-url]: https://magicmirror.builders/ 'Magic Mirror Homepage'
 [magicmirror-docker-build-url]: https://khassel.gitlab.io/magicmirror/ 'Magic Mirror Docker Build'
-[old-magicmirror-project-url]: /raspberry-pi/projects/magic-mirror/ 'Magic Mirror Project'
 [amazon-raspberry-pi-4-url]: https://amzn.to/3xJJLyG 'Amazon Raspberry Pi 4'
 [aliexpress-lcd-contoller-url]: https://s.click.aliexpress.com/e/_9RQ0KF 'Aliexpress LCD Controller'
 [aliexpress-pir-sensor-url]: https://s.click.aliexpress.com/e/_AfCHaP 'Aliexpress PIR Sensor'
 [aliexpress-button-url]: https://s.click.aliexpress.com/e/_A6J5Jp 'Aliexpress Button'
-[external-power-button-for-raspberry-pi-url]: /raspberry-pi/external-power-button/ 'External Power Button'
-[motion-sensor-display-control-url]: /raspberry-pi/motion-sensor-display-control/ 'Motion Sensor Display Control'
 [amazon-glass-mirror-film-url]: https://amzn.to/3OyMmBu 'Amazon Glass Mirror Film'
 [amazon-tv-mount-url]: https://amzn.to/3xTDuQW 'Amazon TV Mount'
 
 <!-- images -->
 
-[magicmirror-final-img]: /assets/images/7b9035d6-c3b8-11ec-983a-277c87c79876.JPG 'Magic Mirror Final'
-[lcd-controller-img]: /assets/images/e6531a42-c3bc-11ec-926f-efeac023c51f.JPG 'LCD Controller'
-[imac-rasperry-pi-img]: /assets/images/96f0cf48-c3bd-11ec-bd26-3bb9671d2760.JPG 'iMac Raspberry Pi'
-[pir-button-test-img]: /assets/images/849ac868-c3c1-11ec-bced-43218d8bdf1c.JPG 'PIR Button Test'
-[row-glass-img]: /assets/images/b1db6a1e-c3c9-11ec-b82b-4f85c9b1fe37.JPG 'Row Glass'
-[wood-frame-img]: /assets/images/89d51168-c3ca-11ec-8696-bb85fc9f7c43.JPG 'Wood Frame'
-[frame-tv-mount-img]: /assets/images/5a524640-047a-44bd-a380-096ab786cd44.JPG 'Frame TV Mount'
-[frame-electronics-img]: /assets/images/9bd60754-c3cb-11ec-8b9f-eb26a00d1231.jpg 'Frame Electronics'
-[frame-screen-test-img]: /assets/images/d2bebf22-c3cb-11ec-a455-afd361c4ca85.JPG 'Frame Screen Test'
-[glass-cover-img]: /assets/images/1f5e958c-c3cc-11ec-9baa-43c39fc35135.JPG 'Glass Cover'
-[magicmirror-final-side-img]: /assets/images/ab8824e2-c3cc-11ec-b5ba-536c8b1ec876.JPG 'Magic Mirror Final Side'
+[magicmirror-final-img]: ../../assets/images/7b9035d6-c3b8-11ec-983a-277c87c79876.JPG 'Magic Mirror Final'
+[lcd-controller-img]: ../../assets/images/e6531a42-c3bc-11ec-926f-efeac023c51f.JPG 'LCD Controller'
+[imac-rasperry-pi-img]: ../../assets/images/96f0cf48-c3bd-11ec-bd26-3bb9671d2760.JPG 'iMac Raspberry Pi'
+[pir-button-test-img]: ../../assets/images/849ac868-c3c1-11ec-bced-43218d8bdf1c.JPG 'PIR Button Test'
+[row-glass-img]: ../../assets/images/b1db6a1e-c3c9-11ec-b82b-4f85c9b1fe37.JPG 'Row Glass'
+[wood-frame-img]: ../../assets/images/89d51168-c3ca-11ec-8696-bb85fc9f7c43.JPG 'Wood Frame'
+[frame-tv-mount-img]: ../../assets/images/5a524640-047a-44bd-a380-096ab786cd44.JPG 'Frame TV Mount'
+[frame-electronics-img]: ../../assets/images/9bd60754-c3cb-11ec-8b9f-eb26a00d1231.jpg 'Frame Electronics'
+[frame-screen-test-img]: ../../assets/images/d2bebf22-c3cb-11ec-a455-afd361c4ca85.JPG 'Frame Screen Test'
+[glass-cover-img]: ../../assets/images/1f5e958c-c3cc-11ec-9baa-43c39fc35135.JPG 'Glass Cover'
+[magicmirror-final-side-img]: ../../assets/images/ab8824e2-c3cc-11ec-b5ba-536c8b1ec876.JPG 'Magic Mirror Final Side'
 
 <!--css-->
 

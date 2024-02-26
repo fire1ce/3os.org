@@ -88,9 +88,9 @@ Preferred to reboot the Synology NAS (DSM) to make sure the changes are applied 
 
 <!-- images -->
 
-[dsm-change-default-port-img]: /assets/images/ce653b82-c3a7-11ec-8d1f-17eb1f5bd0eb.jpg 'DSM Change Default Port'
-[dsm-create-task-img]: /assets/images/944c1cbc-c3ad-11ec-b5f1-5f23693b3268.jpg 'DSM Create Task'
-[dsm-task-settings-img]: /assets/images/d163247e-c3ad-11ec-89c1-b30522ee9186.jpg 'DSM Task Settings'
+[dsm-change-default-port-img]: ../../assets/images/ce653b82-c3a7-11ec-8d1f-17eb1f5bd0eb.jpg 'DSM Change Default Port'
+[dsm-create-task-img]: ../../assets/images/944c1cbc-c3ad-11ec-b5f1-5f23693b3268.jpg 'DSM Create Task'
+[dsm-task-settings-img]: ../../assets/images/d163247e-c3ad-11ec-89c1-b30522ee9186.jpg 'DSM Task Settings'
 
 <!--css-->
 

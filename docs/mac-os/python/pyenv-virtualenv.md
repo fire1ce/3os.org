@@ -169,7 +169,7 @@ You and your macOS should be ready for using python the **right way** without co
 
 <!-- urls -->
 
-[venv-python-virtual-environment-url]: /development/python/virtualenv/ 'Venv Python Virtual Environment'
+[venv-python-virtual-environment-url]: ../../development/python/virtualenv.md 'Venv Python Virtual Environment'
 
 <!-- images -->
 <!--css-->

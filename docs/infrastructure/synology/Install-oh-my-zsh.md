@@ -95,8 +95,8 @@ At this point you should have a working `oh-my-zsh` working on your Synology NAS
 
 <!-- images -->
 
-[syno-community-install-img]: /assets/images/e38b4c1c-bbc9-11ec-b13f-033bc9ab9d10.jpg 'SynoCommunity install'
-[z-shell-with-modules-package-img]: /assets/images/76a71404-bbca-11ec-847d-87c4502ecefc.jpg 'Z shell (with modules) package'
-[git-package-img]: /assets/images/7dcaaea2-f474-11ec-a4a2-57286e786d91.jpg 'git package'
+[syno-community-install-img]: ../../assets/images/e38b4c1c-bbc9-11ec-b13f-033bc9ab9d10.jpg 'SynoCommunity install'
+[z-shell-with-modules-package-img]: ../../assets/images/76a71404-bbca-11ec-847d-87c4502ecefc.jpg 'Z shell (with modules) package'
+[git-package-img]: ../../assets/images/7dcaaea2-f474-11ec-a4a2-57286e786d91.jpg 'git package'
 
 <!-- end appendices -->

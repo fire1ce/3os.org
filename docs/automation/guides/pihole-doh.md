@@ -137,7 +137,7 @@ We are done with the installation.
 
 <!-- images -->
 
-[webgui-img]: /assets/images/guides/pihole-dns/webgui.png 'pihole webgui'
-[network-flow-img]: /assets/images/guides/pihole-dns/diagram.png 'network flow'
+[webgui-img]: ../../assets/images/guides/pihole-dns/webgui.png 'pihole webgui'
+[network-flow-img]: ../../assets/images/guides/pihole-dns/diagram.png 'network flow'
 
 <!-- end appendices -->

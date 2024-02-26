@@ -47,14 +47,14 @@ _Result:_
 ```markdown title='Internal Anchor Links Example'
 [Jumps to section in page][internal-anchor-link]
 
-[internal-anchor-link]: /utilities/markdown-cheatsheet/tables-lists-quotes/#lists 'Internal Anchor Links'
+[internal-anchor-link]: tables-lists-quotes.md#lists 'Internal Anchor Links'
 ```
 
 _Result:_
 
 [Jumps to section in page][internal-anchor-link]
 
-[internal-anchor-link]: /utilities/markdown-cheatsheet/tables-lists-quotes/#lists 'Internal Anchor Links'
+[internal-anchor-link]: tables-lists-quotes.md#lists 'Internal Anchor Links'
 
 ---
 
@@ -63,7 +63,7 @@ _Result:_
 ```markdown title='Image With Links Example'
 [![This is Image with link][image-link]][url-link]{target=\_blank}
 
-[image-link]: /assets/images/markdown-cheatsheet/minion200x200.png 'Minion'
+[image-link]: ../../assets/images/markdown-cheatsheet/minion200x200.png 'Minion'
 [url-link]: https://github.com/fire1ce 'Go to Github'
 ```
 
@@ -71,7 +71,7 @@ _Result:_
 
 [![This is Image with link][image-link]][url-link]{target=\_blank}
 
-[image-link]: /assets/images/markdown-cheatsheet/minion200x200.png 'Minion'
+[image-link]: ../../assets/images/markdown-cheatsheet/minion200x200.png 'Minion'
 [url-link]: https://github.com/fire1ce 'Go to Github'
 
 ---

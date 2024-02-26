@@ -129,7 +129,7 @@ alias pm2update='npm install pm2@latest -g && pm2 update && pm2 save'
 
 <!-- appendices -->
 
-[pm2-list-img]: /assets/images/814c798a-ab67-11ec-b95c-3b6db8d32176.png 'pm2 list image'
+[pm2-list-img]: ../../assets/images/814c798a-ab67-11ec-b95c-3b6db8d32176.png 'pm2 list image'
 [pm2-official-documentation-url]: https://pm2.keymetrics.io/docs/usage/quick-start/ 'PM2 Official Documentation'
 [amazon-rasberry-pi-url]: https://amzn.to/3Le9zGq 'Amazon Raspberry Pi'
 
