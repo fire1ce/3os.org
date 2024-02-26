@@ -48,7 +48,7 @@
 .donate-button-paypal {
   width: 6rem;
   height: 2rem;
-  background-image: url('/assets/images/support/paypal.svg');
+  background-image: url('../assets/images/support/paypal.svg');
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -60,7 +60,7 @@
 .donate-button-patreon {
   width: 6rem;
   height: 2rem;
-  background-image: url('/assets/images/support/patreon.svg');
+  background-image: url('../assets/images/support/patreon.svg');
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -72,7 +72,7 @@
 .donate-button-buymeacoffee {
   width: 6rem;
   height: 2rem;
-  background-image: url('/assets/images/support/buymeacoffee.svg');
+  background-image: url('../assets/images/support/buymeacoffee.svg');
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -84,7 +84,7 @@
 .donate-button-github-sponsers {
   width: 6rem;
   height: 2rem;
-  background-image: url('/assets/images/support/github-sponsers.svg');
+  background-image: url('../assets/images/support/github-sponsers.svg');
   background-color: #ffffff;
   background-size: contain;
   background-repeat: no-repeat;

@@ -1,11 +1,10 @@
-
 name: compress-and-resize-images
 on:
   push:
     branches:
       - main
     paths:
-      - 'docs/assets/images/**'
+      - 'docs../assets/images/**'
 
 jobs:
   compress:
@@ -19,4 +18,3 @@ jobs:
           api_key: ${{ secrets.TINIFY_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           resize_width: 1024
-

@@ -79,16 +79,16 @@ Now the certificate is installed and ready to use. The renewal process is done a
 
 <!-- images -->
 
-[proxmox-datacenter-acme-img]: /assets/images/cf47b38c-c24d-11ec-a4fa-27a0a5d86a74.jpg 'Proxmox Datacenter ACME'
-[proxmox-acme-account-img]: /assets/images/70c8abf0-c251-11ec-be47-07c6c26d75fe.jpg 'Proxmox ACME Account'
-[proxmox-acme-account-output-img]: /assets/images/031314a0-c252-11ec-92e3-cb7e2b4fcc57.jpg 'Proxmox ACME Account Output'
-[proxmox-api-cloudflare-plugin-img]: /assets/images/8a9bbbac-c252-11ec-9871-5bcb63df5ade.jpg 'Proxmox API Cloudflare Plugin'
-[proxmox-acme-page-img]: /assets/images/7f3f35a8-c253-11ec-b95c-1b2519157bc5.jpg 'Proxmox ACME Page'
-[proxmox-system-certificate-img]: /assets/images/35d878a6-c254-11ec-82e1-e7b3b5d34983.jpg 'Proxmox System Certificate'
-[proxmox-acme-edit-img]: /assets/images/a7cb4ef2-c254-11ec-8d83-7b18dfbf3c3f.jpg 'Proxmox ACME Edit'
-[proxmox-add-create-domain-img]: /assets/images/04c8614e-c255-11ec-979b-f3e490973775.jpg 'Proxmox Add Create Domain'
-[proxmox-order-certificate-img]: /assets/images/a782d34c-c255-11ec-8f01-43f638c0c2de.jpg 'Proxmox Order Certificate'
-[proxmox-certificate-order-output-img]: /assets/images/17e6d3ea-c256-11ec-a060-037aafbf469f.jpg 'Proxmox Certificate Order Output'
+[proxmox-datacenter-acme-img]: ../../assets/images/cf47b38c-c24d-11ec-a4fa-27a0a5d86a74.jpg 'Proxmox Datacenter ACME'
+[proxmox-acme-account-img]: ../../assets/images/70c8abf0-c251-11ec-be47-07c6c26d75fe.jpg 'Proxmox ACME Account'
+[proxmox-acme-account-output-img]: ../../assets/images/031314a0-c252-11ec-92e3-cb7e2b4fcc57.jpg 'Proxmox ACME Account Output'
+[proxmox-api-cloudflare-plugin-img]: ../../assets/images/8a9bbbac-c252-11ec-9871-5bcb63df5ade.jpg 'Proxmox API Cloudflare Plugin'
+[proxmox-acme-page-img]: ../../assets/images/7f3f35a8-c253-11ec-b95c-1b2519157bc5.jpg 'Proxmox ACME Page'
+[proxmox-system-certificate-img]: ../../assets/images/35d878a6-c254-11ec-82e1-e7b3b5d34983.jpg 'Proxmox System Certificate'
+[proxmox-acme-edit-img]: ../../assets/images/a7cb4ef2-c254-11ec-8d83-7b18dfbf3c3f.jpg 'Proxmox ACME Edit'
+[proxmox-add-create-domain-img]: ../../assets/images/04c8614e-c255-11ec-979b-f3e490973775.jpg 'Proxmox Add Create Domain'
+[proxmox-order-certificate-img]: ../../assets/images/a782d34c-c255-11ec-8f01-43f638c0c2de.jpg 'Proxmox Order Certificate'
+[proxmox-certificate-order-output-img]: ../../assets/images/17e6d3ea-c256-11ec-a060-037aafbf469f.jpg 'Proxmox Certificate Order Output'
 
 <!--css-->
 

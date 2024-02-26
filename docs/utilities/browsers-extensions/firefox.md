@@ -19,6 +19,6 @@ List of extensions for Firefox browser.
 <!-- appendices -->
 
 [3os-url]: https://3os.org/ '3os Homepage'
-[image-url]: /assets/images/markdown-cheatsheet/minion.png 'Title of the image'
+[image-url]: ../assets/images/markdown-cheatsheet/minion.png 'Title of the image'
 
 <!-- end appendices -->

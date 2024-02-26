@@ -52,6 +52,6 @@ services:
 <!-- appendices -->
 
 [mobsf-url]: https://github.com/MobSF/Mobile-Security-Framework-MobSF 'MobSF Github Page'
-[mobsf-webgui-img]: /assets/images/6f0ec169-8a64-4019-9bbb-c0f542c00972.png 'mobsf webgui'
+[mobsf-webgui-img]: ../assets/images/6f0ec169-8a64-4019-9bbb-c0f542c00972.png 'mobsf webgui'
 
 <!-- end appendices -->

@@ -155,14 +155,14 @@ sudo systemd-machine-id-setup
 
 <!-- urls -->
 
-[vm-disk-expander-url]: /infrastructure/proxmox/vm-disk-expander/ 'VM Disk Expander'
+[vm-disk-expander-url]: vm-disk-expander.md 'VM Disk Expander'
 [ubuntu-cloud-images-url]: https://cloud-images.ubuntu.com/ 'Ubuntu Cloud Images'
 
 <!-- images -->
 
-[cloud-init-tab-img]: /assets/images/b64dcd76-f565-11ec-8713-e3bd1fbe1fc8.jpg 'Cloud-Init-Tab'
-[cloud-init-settings-img]: /assets/images/24c2ddfa-f566-11ec-b270-871b30f0c3d5.jpg 'Cloud-Init-Settings'
-[clone-settings-img]: /assets/images/97e770a6-f567-11ec-8722-d31a81422ae4.jpg 'Clone-Settings'
+[cloud-init-tab-img]: ../../assets/images/b64dcd76-f565-11ec-8713-e3bd1fbe1fc8.jpg 'Cloud-Init-Tab'
+[cloud-init-settings-img]: ../../assets/images/24c2ddfa-f566-11ec-b270-871b30f0c3d5.jpg 'Cloud-Init-Settings'
+[clone-settings-img]: ../../assets/images/97e770a6-f567-11ec-8722-d31a81422ae4.jpg 'Clone-Settings'
 
 <!--css-->
 

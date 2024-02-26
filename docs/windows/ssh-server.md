@@ -118,9 +118,9 @@ It should look something like this:
 
 <!-- images -->
 
-[ssh-installed-img]: /assets/images/0bafb0da-c18c-11ec-a0f0-db42d5ba669d.jpg 'SSH Server Installation'
-[ssh-connection-img]: /assets/images/f285a87e-c18d-11ec-8189-f712e9b20b30.jpg 'SSH Connection'
-[ssh-windows-powershell-img]: /assets/images/4b56c486-c190-11ec-8406-5b42a0c9b07a.jpg 'SSH Connection with PowerShell'
+[ssh-installed-img]: ../assets/images/0bafb0da-c18c-11ec-a0f0-db42d5ba669d.jpg 'SSH Server Installation'
+[ssh-connection-img]: ../assets/images/f285a87e-c18d-11ec-8189-f712e9b20b30.jpg 'SSH Connection'
+[ssh-windows-powershell-img]: ../assets/images/4b56c486-c190-11ec-8406-5b42a0c9b07a.jpg 'SSH Connection with PowerShell'
 
 <!--css-->
 

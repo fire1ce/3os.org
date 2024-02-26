@@ -255,9 +255,9 @@ done;
 
 <!-- urls -->
 
-[igpu-full-passthrough-url]: /infrastructure/proxmox/gpu-passthrough-to-vm/#igpu-full-passthrough 'iGPU Full Passthrough'
-[igpu-split-gvt-g-passthrough-url]: /infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/ 'iGPU Split GVT-g Passthrough'
-[windows-vm-configuration-url]: /infrastructure/proxmox/windows-vm-configuration/ 'Windows VM Configuration'
+[igpu-full-passthrough-url]: gpu-passthrough-to-vm.md#igpu-full-passthrough 'iGPU Full Passthrough'
+[igpu-split-gvt-g-passthrough-url]: igpu-split-passthrough.md 'iGPU Split GVT-g Passthrough'
+[windows-vm-configuration-url]: ../windows-vm-configuration.md 'Windows VM Configuration'
 [intel-driver-and-support-assistant-url]: https://www.intel.com/content/www/us/en/support/detect.html 'Intel Driver and Support Assistant'
 [intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/products/80939/graphics.html 'Intel GPU Drivers'
 [gpu-z-url]: https://www.techpowerup.com/gpuz/ 'GPU-Z Homepage'
@@ -266,21 +266,21 @@ done;
 
 <!-- Proxmox/general Images-->
 
-[proxmox-lspci-vga-img]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
-[general-vm-add-igpu-to-vm-img]: /assets/images/d3a4d31c-b918-11ec-ac96-a7ff358e0685.jpg 'Add iGPU to VM'
+[proxmox-lspci-vga-img]: ../../../assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
+[general-vm-add-igpu-to-vm-img]: ../../../assets/images/d3a4d31c-b918-11ec-ac96-a7ff358e0685.jpg 'Add iGPU to VM'
 
 <!-- Windows Images-->
 
-[windows-vm-add-pci-device-img]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
-[windows-vm-igpu-pci-settings-img]: /assets/images/cc1c3650-b91b-11ec-8215-bb07cf790912.jpg 'Windows VM iGPU PCI Settings'
-[windows-vm-igpu-hardware-settings-img]: /assets/images/496fa0ba-b91c-11ec-bcb5-3759896bab7f.jpg 'Windows VM iGPU Hardware Settings'
-[gpu-z-and-device-manager-igpu-img]: /assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
+[windows-vm-add-pci-device-img]: ../../../assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
+[windows-vm-igpu-pci-settings-img]: ../../../assets/images/cc1c3650-b91b-11ec-8215-bb07cf790912.jpg 'Windows VM iGPU PCI Settings'
+[windows-vm-igpu-hardware-settings-img]: ../../../assets/images/496fa0ba-b91c-11ec-bcb5-3759896bab7f.jpg 'Windows VM iGPU Hardware Settings'
+[gpu-z-and-device-manager-igpu-img]: ../../../assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
 
 <!-- Ubuntu Images-->
 
-[ubuntu-vm-add-pci-device-img]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
-[ubuntu-vm-igpu-pci-settings-img]: /assets/images/1bb4b41e-bdb1-11ec-9af2-4b05eacea61c.jpg 'Ubuntu VM iGPU PCI Settings'
-[ubuntu-vm-igpu-hardware-settings-img]: /assets/images/b177a31c-bc35-11ec-9045-2b011e6c011d.jpg 'Ubuntu VM iGPU Hardware Settings'
-[vm-renderd128-img]: /assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
+[ubuntu-vm-add-pci-device-img]: ../../../assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
+[ubuntu-vm-igpu-pci-settings-img]: ../../../assets/images/1bb4b41e-bdb1-11ec-9af2-4b05eacea61c.jpg 'Ubuntu VM iGPU PCI Settings'
+[ubuntu-vm-igpu-hardware-settings-img]: ../../../assets/images/b177a31c-bc35-11ec-9045-2b011e6c011d.jpg 'Ubuntu VM iGPU Hardware Settings'
+[vm-renderd128-img]: ../../../assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
 
 <!-- end appendices -->

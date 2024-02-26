@@ -61,22 +61,22 @@ hide:
 
 <!-- appendices -->
 
-[bettercap-page-url]: /penetration-testing/tools/bettercap1.6.2/
-[metasploit-page-url]: /penetration-testing/tools/metasploit/
-[wifite-page-url]: /penetration-testing/tools/wifite/
-[about-proxmark-page-url]: /penetration-testing/proxmark/about-proxmark/
-[proxmark3-cheatsheet-page-url]: /penetration-testing/proxmark/cheatsheet/
-[mifare-page-url]: /penetration-testing/proxmark/Mifare1k/
-[adb-cheatsheet-url]: /android/adb-cheat-sheet/
-[igpu-passthrough-url]: /infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/
-[igpu-split-passthrough-url]: /infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/
-[pgu-passthrough-to-vm-url]: /infrastructure/proxmox/gpu-passthrough/pgu-passthrough-to-vm/
-[syncthings-url-url]: /automation/syncthings/
-[windows-ssh-server-url]: /windows/ssh-server/
-[proxmox-lets-encrypt-cloudflare-url]: /infrastructure/proxmox/lets-encrypt-cloudflare/
-[magicmirror-v2-url]: /raspberry-pi/projects/magic-mirror-v2/
-[motion-sensor-display-control-url]: /raspberry-pi/motion-sensor-display-control/
-[external-power-button-url]: /raspberry-pi/external-power-button/
+[bettercap-page-url]: penetration-testing/kali-linux/bettercap1.6.2.md
+[metasploit-page-url]: penetration-testing/kali-linux/metasploit.md
+[wifite-page-url]: penetration-testing/kali-linux/wifite.md
+[about-proxmark-page-url]: penetration-testing/proxmark/about-proxmark.md
+[proxmark3-cheatsheet-page-url]: penetration-testing/proxmark/cheatsheet.md
+[mifare-page-url]: penetration-testing/proxmark/mifare-tags.md
+[adb-cheatsheet-url]: android/adb-cheat-sheet.md
+[igpu-passthrough-url]: infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm.md
+[igpu-split-passthrough-url]: infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough.md
+[pgu-passthrough-to-vm-url]: infrastructure/proxmox/gpu-passthrough/gpu-passthrough-to-vm.md
+[syncthings-url-url]: automation/syncthings.md
+[windows-ssh-server-url]: windows/ssh-server.md
+[proxmox-lets-encrypt-cloudflare-url]: infrastructure/proxmox/lets-encrypt-cloudflare.md
+[magicmirror-v2-url]: raspberry-pi/projects/magic-mirror-v2.md
+[motion-sensor-display-control-url]: raspberry-pi/motion-sensor-display-control.md
+[external-power-button-url]: raspberry-pi/external-power-button.md
 
 <style>
   .md-content__button {

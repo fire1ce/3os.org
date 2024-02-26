@@ -40,6 +40,6 @@ Save and exit. `Reboot` to apply the changes.
 
 <!-- images -->
 
-[grub-configuration-img]: /assets/images/f1f18772-f881-11ec-9918-afad89ede03c.jpg 'Grub Configuration'
+[grub-configuration-img]: ../../assets/images/f1f18772-f881-11ec-9918-afad89ede03c.jpg 'Grub Configuration'
 
 <!-- end appendices -->

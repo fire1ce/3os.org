@@ -259,11 +259,11 @@ Example of working `Syncthing` Web UI:
 
 <!-- images -->
 
-[syncthing-logo-img]: /assets/images/38e8b558-c171-11ec-90fd-b729b54a6117.jpeg 'Syncthing Logo'
-[synology-permission-img]: /assets/images/7e575fea-c176-11ec-901c-df3a98406bd7.jpg 'Synology Permission'
-[syncthing-disable-discovery-img]: /assets/images/ceb5e792-c179-11ec-ad88-9b78dd851902.jpg 'Syncthing Disable Discovery'
-[syncthing-manual-connection-img]: /assets/images/3fa4685c-c17a-11ec-94bb-b32aa327a5b7.jpg 'Syncthing Manual Connection'
-[syncthing-web-ui-img]: /assets/images/448ea1b0-c17b-11ec-a195-77168778849d.jpg 'Syncthing Web UI'
+[syncthing-logo-img]: ../assets/images/38e8b558-c171-11ec-90fd-b729b54a6117.jpeg 'Syncthing Logo'
+[synology-permission-img]: ../assets/images/7e575fea-c176-11ec-901c-df3a98406bd7.jpg 'Synology Permission'
+[syncthing-disable-discovery-img]: ../assets/images/ceb5e792-c179-11ec-ad88-9b78dd851902.jpg 'Syncthing Disable Discovery'
+[syncthing-manual-connection-img]: ../assets/images/3fa4685c-c17a-11ec-94bb-b32aa327a5b7.jpg 'Syncthing Manual Connection'
+[syncthing-web-ui-img]: ../assets/images/448ea1b0-c17b-11ec-a195-77168778849d.jpg 'Syncthing Web UI'
 
 <!--css-->
 

@@ -77,7 +77,7 @@ At this point you should be able to connect to Synology DSM via SSH using the ke
 
 <!-- images -->
 
-[synology-control-panel-image]: /assets/images/fc2ca070-ba36-11ec-a838-2bfdfa0e9d3f.jpg 'Synology Control Panel'
+[synology-control-panel-image]: ../../assets/images/fc2ca070-ba36-11ec-a838-2bfdfa0e9d3f.jpg 'Synology Control Panel'
 
 <!--css-->
 <style>

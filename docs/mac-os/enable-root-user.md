@@ -48,9 +48,9 @@ Logout of your current account, then log in as the root user. user name ‚Äùroot‚
 
 <!-- images -->
 
-[user-and-groups-img]: /assets/images/334cb53a-ef2b-11ec-ab52-ebf010b57462.jpg 'User and Groups'
-[directory-utility-img]: /assets/images/f2ee518c-ef2b-11ec-9ca3-bb1ecfcef48f.jpg 'Directory Utility'
-[enable-root-user-img]: /assets/images/616b2b62-ef2c-11ec-ae47-2f82399a54e5.jpg 'Enable Root User'
+[user-and-groups-img]: ../assets/images/334cb53a-ef2b-11ec-ab52-ebf010b57462.jpg 'User and Groups'
+[directory-utility-img]: ../assets/images/f2ee518c-ef2b-11ec-9ca3-bb1ecfcef48f.jpg 'Directory Utility'
+[enable-root-user-img]: ../assets/images/616b2b62-ef2c-11ec-ae47-2f82399a54e5.jpg 'Enable Root User'
 
 <!--css-->
 

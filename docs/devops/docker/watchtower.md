@@ -55,7 +55,7 @@ services:
 
 <!-- appendices -->
 
-[watchtower-logo-img]: /assets/images/ff061dba-a7a0-11ec-bba5-d7f313e92b3a.png 'Watchtower logo'
+[watchtower-logo-img]: ../../assets/images/ff061dba-a7a0-11ec-bba5-d7f313e92b3a.png 'Watchtower logo'
 [watchtower-docs-url]: https://containrrr.dev/watchtower/ 'Watchtower Documentation'
 [watchtower-github-url]: https://github.com/containrrr/watchtower 'Watchtower Github Repository'
 

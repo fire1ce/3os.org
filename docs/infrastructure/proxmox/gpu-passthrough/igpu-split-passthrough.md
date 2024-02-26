@@ -280,9 +280,9 @@ done;
 
 <!-- urls -->
 
-[igpu-full-passthrough-url]: /infrastructure/proxmox/gpu-passthrough-to-vm/#igpu-full-passthrough 'iGPU Full Passthrough'
-[igpu-split-gvt-g-passthrough-url]: /infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/ 'iGPU Split GVT-g Passthrough'
-[windows-vm-configuration-url]: /infrastructure/proxmox/windows-vm-configuration/ 'Windows VM Configuration'
+[igpu-full-passthrough-url]: gpu-passthrough-to-vm.md#igpu-full-passthrough 'iGPU Full Passthrough'
+[igpu-split-gvt-g-passthrough-url]: igpu-split-passthrough.md 'iGPU Split GVT-g Passthrough'
+[windows-vm-configuration-url]: ../windows-vm-configuration.md 'Windows VM Configuration'
 [intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/products/80939/graphics.html 'Intel GPU Drivers'
 [intel-driver-and-support-assistant-url]: https://www.intel.com/content/www/us/en/support/detect.html 'Intel Driver and Support Assistant'
 [gpu-z-url]: https://www.techpowerup.com/gpuz/ 'GPU-Z Homepage'
@@ -291,23 +291,23 @@ done;
 
 <!-- Proxmox/general Images-->
 
-[proxmox-lspci-vga-img]: /assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
-[general-add-igpu-mdev-to-vm-img]: /assets/images/2cf3d69c-bd89-11ec-af8c-67974c4ba3f0.jpg 'Add iGPU MDev to VM'
+[proxmox-lspci-vga-img]: ../../../assets/images/c98e4e9a-b912-11ec-9100-c3da7dd122f2.jpg 'Proxmox lspci vga'
+[general-add-igpu-mdev-to-vm-img]: ../../../assets/images/2cf3d69c-bd89-11ec-af8c-67974c4ba3f0.jpg 'Add iGPU MDev to VM'
 
 <!-- Windows Images-->
 
-[windows-vm-add-pci-device-img]: /assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
-[windows-vm-add-igpu-split-to-vm-img]: /assets/images/393f9ce0-bc41-11ec-976a-cb1d91990157.jpg 'Windows VM Add iGPU Split to VM'
-[windows-vm-igpu-pci-split-settings-img]: /assets/images/0bb26720-bc42-11ec-97d5-0f6751fb6075.jpg 'Windows VM iGPU PCI Split Settings'
-[windows-vm-igpu-split-hardware-settings-img]: /assets/images/d1d0f06c-bd9f-11ec-993d-77cc04f321dc.jpg 'Windows VM iGPU Split Hardware Settings'
-[gpu-z-and-device-manager-igpu-img]: /assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
+[windows-vm-add-pci-device-img]: ../../../assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
+[windows-vm-add-igpu-split-to-vm-img]: ../../../assets/images/393f9ce0-bc41-11ec-976a-cb1d91990157.jpg 'Windows VM Add iGPU Split to VM'
+[windows-vm-igpu-pci-split-settings-img]: ../../../assets/images/0bb26720-bc42-11ec-97d5-0f6751fb6075.jpg 'Windows VM iGPU PCI Split Settings'
+[windows-vm-igpu-split-hardware-settings-img]: ../../../assets/images/d1d0f06c-bd9f-11ec-993d-77cc04f321dc.jpg 'Windows VM iGPU Split Hardware Settings'
+[gpu-z-and-device-manager-igpu-img]: ../../../assets/images/7c9df2f6-b91d-11ec-b08b-775e53b2c017.jpg 'GPU-Z and Device Manager iGPU'
 
 <!-- Ubuntu Images-->
 
-[ubuntu-vm-add-pci-device-img]: /assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
-[ubuntu-vm-add-igpu-split-to-vm-img]: /assets/images/3802e9b8-bd8b-11ec-a4ba-8305e0d2d682.jpg 'Ubuntu VM Add iGPU Split to VM'
-[ubuntu-vm-igpu-pci-split-settings-img]: /assets/images/c605680c-bd8c-11ec-81f9-4755a5d3fa24.jpg 'Ubuntu VM iGPU PCI Split Settings'
-[ubuntu-vm-igpu-split-hardware-settings-img]: /assets/images/375ed1c8-bd8d-11ec-94c6-cf0bac60954a.jpg 'Ubuntu VM iGPU Split Hardware Settings'
-[vm-renderd128-img]: /assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
+[ubuntu-vm-add-pci-device-img]: ../../../assets/images/19bbed86-bc34-11ec-bdef-d76764bad4d0.jpg 'Ubuntu VM Add PCI Device'
+[ubuntu-vm-add-igpu-split-to-vm-img]: ../../../assets/images/3802e9b8-bd8b-11ec-a4ba-8305e0d2d682.jpg 'Ubuntu VM Add iGPU Split to VM'
+[ubuntu-vm-igpu-pci-split-settings-img]: ../../../assets/images/c605680c-bd8c-11ec-81f9-4755a5d3fa24.jpg 'Ubuntu VM iGPU PCI Split Settings'
+[ubuntu-vm-igpu-split-hardware-settings-img]: ../../../assets/images/375ed1c8-bd8d-11ec-94c6-cf0bac60954a.jpg 'Ubuntu VM iGPU Split Hardware Settings'
+[vm-renderd128-img]: ../../../assets/images/7660a1d4-bd8e-11ec-a58e-3f9f3e6c485d.jpg 'VM renderD128'
 
 <!-- end appendices -->
