@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://3os.org/sitemap.xml

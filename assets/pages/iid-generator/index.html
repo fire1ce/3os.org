@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  data-ng-app="iid">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Israel ID Generator & Validator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="idd.css">
+    <script src="idd-ng.js"></script>
+</head>
+<body data-ng-controller="mainCtrl">
+    <div class="container">
+        <h3>Insert ID to Validate</h1>
+        <label class="pure-material-textfield-outlined">
+            <input type="text" data-ng-model="iid" id="iid" data-ng-change="check()">
+            <span data-ng-if="checkStatus" class="status valid">VALID</span>
+            <span data-ng-if="!checkStatus" class="status invalid">NOT VALID</span>
+        </label>
+        <button class="pure-material-button-contained" data-ng-click="generate()">Generate</button>
+    </div>
+    <script src="idd.js"></script>
+</body>
+</html>
+
+
+

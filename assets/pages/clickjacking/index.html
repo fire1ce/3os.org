@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Clickjacking / Framing Vulnerability Test</title>
+    <link rel="stylesheet" href="clickjacking.css" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <script type="text/javascript" src="clickjacking.js"></script>
+    <meta name="description" content="Page for the Clickjacking vulnerability in web applications testing tool." />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Test a Page for Clickjacking/Framing Vulnerability</h1>
+      <h2 id="today"></h2>
+      <form>
+        <div class="pure-material-textfield-outlined">
+          <input id="url" type="text" value="https://3os.org" />
+          <span>Enter the URL to frame</span>
+          <button id="submit-test" class="pure-material-button-contained" type="button">Test it!</button>
+        </div>
+      </form>
+      <br />
+      <iframe src="about:blank" id="iframe" width="100%" height="50%"></iframe>
+    </div>
+  </body>
+</html>
