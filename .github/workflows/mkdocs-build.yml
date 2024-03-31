@@ -30,14 +30,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install ./requirements.txt
+      - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
-
-        # - name: Deploy MkDocs
-        #   uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        #   CUSTOM_DOMAIN: 3os.org
-        #   CONFIG_FILE: ./mkdocs.yml
-        #   EXTRA_PACKAGES: build-base jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev cairo-dev libffi-dev libwebp-dev
-        #   REQUIREMENTS: ./requirements.txt
