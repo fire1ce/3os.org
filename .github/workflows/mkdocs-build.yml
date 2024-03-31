@@ -8,21 +8,36 @@ on:
     - cron: '0 4 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build:
-    name: Deploy docs
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
         with:
-          fetch-depth: 0
-          set-safe-directory: false
-      - name: Deploy MkDocs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: 3os.org
-          CONFIG_FILE: ./mkdocs.yml
-          EXTRA_PACKAGES: build-base jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev cairo-dev libffi-dev libwebp-dev
-          REQUIREMENTS: ./requirements.txt
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install ./requirements.txt
+      - run: mkdocs gh-deploy --force
+
+        # - name: Deploy MkDocs
+        #   uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #   CUSTOM_DOMAIN: 3os.org
+        #   CONFIG_FILE: ./mkdocs.yml
+        #   EXTRA_PACKAGES: build-base jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev cairo-dev libffi-dev libwebp-dev
+        #   REQUIREMENTS: ./requirements.txt
