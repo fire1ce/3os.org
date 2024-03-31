@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
@@ -28,4 +30,4 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7-dev libtiff5-dev tk-dev tcl-dev libcairo2-dev libffi-dev libwebp-dev
       - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force -vvv
