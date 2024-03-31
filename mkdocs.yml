@@ -12,8 +12,15 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   highlightjs: true
-  custom_dir: theme
   language: en
+  font:
+    false
+    # text: Rubik
+    # code: Rubik Mono
+  icon:
+    logo: material/chart-donut-variant
+  favicon: assets/favicon.ico
+  custom_dir: theme
   features:
     - navigation.tabs
     - navigation.top
@@ -42,12 +49,6 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  font:
-    text: Rubik
-    code: Rubik Mono
-  icon:
-    logo: material/chart-donut-variant
-  favicon: assets/favicon.ico
 
 # Custom theme configuration
 extra_css:
