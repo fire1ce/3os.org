@@ -29,10 +29,10 @@ jobs:
           sudo apt-get install -y build-essential libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7-dev libtiff5-dev tk-dev tcl-dev libcairo2-dev libffi-dev libwebp-dev
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
+        # with:
+        #   key: mkdocs-material-${{ env.cache_id }}
+        #   path: .cache
+        #   restore-keys: |
+        #     mkdocs-material-
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
