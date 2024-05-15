@@ -79,6 +79,8 @@ plugins:
   - social
   - git-authors:
       sort_authors_by: contribution
+      show_email_address: false
+      show_contribution: true
 
 extra:
   social:
@@ -147,4 +149,3 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format # Copyright
 
 
-copyright: 'Copyright &copy; 3os.org 2022'

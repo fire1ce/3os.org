@@ -20,7 +20,6 @@ Feel free to suggest new applications and tools at comments section below.
 - [CiLocks][cilocks-url]{target=\_blank} - Python script to brute force android lockscreen password.
 - [Network Analyzer][network-analyzer-url]{target=\_blank} - Network Analyzer for Android.
 - [Packet Capture][packet-capture-url]{target=\_blank} - Packet capture/Network traffic sniffer.
-- [Material Terminal][material-terminal-url]{target=\_blank} - Terminal for Android.
 - [Gplaycli][gplaycli-url]{target=\_blank} Cli Tool to download APK form PlayStore.
 
 <!-- appendices -->
@@ -33,7 +32,6 @@ Feel free to suggest new applications and tools at comments section below.
 [cilocks-url]: https://github.com/tegal1337/CiLocks 'CiLocks Github Page'
 [network-analyzer-url]: https://play.google.com/store/apps/details?id=net.techet.netanalyzerlite.an 'Network Analyzer Play Store Page'
 [root-explorer-url]: https://play.google.com/store/apps/details?id=com.speedsoftware.rootexplorer 'Root Explorer Play Store Page'
-[material-terminal-url]: https://play.google.com/store/apps/details?id=yarolegovich.materialterminal&hl=en 'Material Terminal Play Store Page'
 [gplaycli-url]: https://github.com/matlink/gplaycli 'Gplaycli Github Page'
 
 <!-- end appendices -->

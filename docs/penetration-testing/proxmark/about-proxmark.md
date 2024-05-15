@@ -10,7 +10,7 @@ tags: [pt, tools, rfid]
 The Proxmark is an RFID swiss-army tool, allowing for both high and low level interactions with the vast majority of RFID tags and systems world-wide.
 
 <div style="width:80%; margin:0 auto">
-   <img src="../assets/images/penetration-testing/proxmark/rsz_img_1044.jpg" alt="terminal screenshot">
+   <img src="/assets/images/penetration-testing/proxmark/rsz_img_1044.jpg" alt="terminal screenshot">
 </div>
 
 There are few Promark Devices, and you can find them at the offical website. I personally use the device at the picture above, you can get one at

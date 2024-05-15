@@ -258,8 +258,8 @@ done;
 [igpu-full-passthrough-url]: gpu-passthrough-to-vm.md#igpu-full-passthrough 'iGPU Full Passthrough'
 [igpu-split-gvt-g-passthrough-url]: igpu-split-passthrough.md 'iGPU Split GVT-g Passthrough'
 [windows-vm-configuration-url]: ../windows-vm-configuration.md 'Windows VM Configuration'
+[intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/articles/000090440/graphics.html 'Intel GPU Drivers'
 [intel-driver-and-support-assistant-url]: https://www.intel.com/content/www/us/en/support/detect.html 'Intel Driver and Support Assistant'
-[intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/products/80939/graphics.html 'Intel GPU Drivers'
 [gpu-z-url]: https://www.techpowerup.com/gpuz/ 'GPU-Z Homepage'
 
 <!-- images -->
