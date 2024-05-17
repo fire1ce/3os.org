@@ -9,6 +9,29 @@ tags: [docker, cheat-sheet]
 
 This is a short summary of the most commonly used Docker commands. If you're new to Docker, or even experienced Docker, it can be helpful to have a quick reference to the most commonly used Docker commands for managing the Docker environment.
 
+## Show all local Docker Images
+```shell
+docker images -a
+```
+
+## Removing Docker Images
+```shell
+docker rmi <image_id>
+```
+
+force remove
+
+```shell
+docker rmi -f <image_id>
+```
+
+force remove all images
+
+```shell
+docker rmi -f $(docker images -aq)
+```
+
+
 ## Show all Containers Including Running and Stopped
 
 ```shell
@@ -57,6 +80,12 @@ force remove
 
 ```shell
 docker rm -f <container_id>
+```
+
+force remove all containers
+
+```shell
+docker rm -f $(docker ps -aq)
 ```
 
 ## Find Container IP Address
