@@ -14,11 +14,16 @@ example@*
 you@*
 root@*
 user@*
-# Amazon ads
+
+# Wiled card domains
 https://amzn.to/*
+https://www.intel.com/*
+https://s.click.aliexpress.com/*
+https://www.patreon.com/*
+https://developers.cloudflare.com/*
+
 
 # Other
-https://developers.cloudflare.com/*
 https://www.dslreports.com/speedtest
 https://help.ubnt.com/hc/en-us/articles/115015971688-EdgeRouter-OpenVPN-Server
 
@@ -29,11 +34,7 @@ http://ha.ckers.org@google/
 file:///github/workspace/docs/penetration-testing/cheatsheets/http:/google:ha.ckers.org
 file:///github/workspace/docs/penetration-testing/cheatsheets/http:/;URL=javascript:alert('XSS')
 file:///home/runner/work/3os.org/3os.org/theme/partials/*
-opt/homebrew/var/run/supervisor.sock
-
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
 https://www.raspberrypi.org/software/
 
 
-https://www.intel.com/*
-https://s.click.aliexpress.com/*
