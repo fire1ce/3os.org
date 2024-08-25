@@ -70,7 +70,7 @@ ZSH_THEME="3os"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew colorize macos pip pyenv virtualenv adb aws command-not-found zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git colored-man-pages docker docker-compose iterm2 node npm brew colorize macos pip pyenv virtualenv aws command-not-found zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
