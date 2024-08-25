@@ -24,7 +24,7 @@ Cloud images are operating system templates and every instance starts out as an 
 
 Ubuntu provides official cloud images you can find the proper image for your needs at [cloud-images.ubuntu.com][ubuntu-cloud-images-url]{target=\_blank}.
 
-In this tutorial we will be using `Ubuntu Server 22.04 LTS Jammy Jellyfish` cloud image.
+In this tutorial we will be using `Ubuntu Server 24.04 LTS Noble Numbat` cloud image.
 
 ## Create Cloud Image Template
 
@@ -33,7 +33,7 @@ SSH to you Proxmox server.
 Download the cloud image template from the official website.
 
 ```shell
-wget https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
+wget https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img
 ```
 
 In order to create a cloud image template first of all we need to create a new `VM`. After we will configure it we will create a `Template` from it.
@@ -54,7 +54,7 @@ Command parameters description:
 Create a new virtual machine.
 
 ```shell
-qm create 9000 --memory 2048 --core 2 --name ubuntu-22.04-cloud --net0 virtio,bridge=vmbr0 --agent enabled=1 --onboot 1
+qm create 9000 --memory 2048 --core 2 --name ubuntu-24.04-cloud --net0 virtio,bridge=vmbr0 --agent enabled=1 --onboot 1
 ```
 
 The default storage Proxmox creates for vm is **storage1**.
