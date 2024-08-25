@@ -64,7 +64,7 @@ The following commands will utilize the **storage1** storage. Change the storage
 Import the downloaded `Ubuntu Cloud Image` we downloaded before disk to the storage.
 
 ```shell
-qm importdisk 9000 jammy-server-cloudimg-amd64.img storage1
+qm importdisk 9000 noble-server-cloudimg-amd64.img storage1
 ```
 
 Attach the new disk to the vm as a `scsi` drive on the `scsi` controller
