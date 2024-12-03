@@ -2,682 +2,682 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://3os.org/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/blog/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/android/adb-cheat-sheet/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/android/apktool/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/android/applications/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/android/jadx-decompiler/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/android/mobsf/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/android/ssl-pinning-bypass/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/automation/ddns-cloudflare-bash/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/automation/ddns-cloudflare-powershell/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/automation/gmail-mark-archived-mail-as-read/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/automation/pihole-cloudflare-dns-sync/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/automation/syncthings/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/automation/guides/better-terminal-experience/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/automation/guides/pihole-doh/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/development/node-npm/npm/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/development/node-npm/pm2/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/development/python/pip/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/development/python/supervisor/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/development/python/virtualenv/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/development/ruby/ruby/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/common-docker-commands/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/docker-containers/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/docker-images/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/docker-install/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/docker-networks/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/docker-security/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/docker/watchtower/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/git/delete-commit-history/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/git/git-cli-cheat-sheet/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/git/git-submodules/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/devops/git/github-cli/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/homelab/devices/synology-nas/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/affiliateDisclosure/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/cookies-policy/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/endorsement/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/license/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/portfolio/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/information/privacy-policy/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/openwrt/disable-ipv6/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/openwrt/install-oh-my-zsh/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/openwrt/snippets/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/cloud-image-template/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/lets-encrypt-cloudflare/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/pvekclean/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/vm-disk-expander/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/windows-vm-configuration/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/gpu-passthrough/gpu-passthrough-to-vm/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/gpu-passthrough/vgpu-split-passthrough/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/network/disable-ipv6/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/proxmox/network/proxmox-networking/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/synology/Install-oh-my-zsh/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/synology/Installing-vm-tools-on-virtual-machine/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/synology/auto-dsm-config-backup/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/synology/disable-dms-listening-on-80-443-ports/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/synology/enable-ssh-root-login/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/synology/ssh-with-rsa-key/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/edge-router/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/udm-dream-machine/cli-commands/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/udm-dream-machine/failover-telegram-notifications/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/udm-dream-machine/persistent-boot-script/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/udm-dream-machine/persistent-ssh-keys/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/udm-dream-machine/udm-better-fan-speeds/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/udm-dream-machine/udm-cloudflare-ddns/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/ubiquiti/udm-dream-machine/wireguard-vpn/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/infrastructure/vmware/vmware-fusion/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/files-handling/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/general-snippets/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/locales-time-zone/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/lvm-partitions/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/memory-swap/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/services-and-daemons/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/smb-mount-autofs/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ssh-hardening-with-rsa-keys/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/Network/identify-nics/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ubuntu-debian/disable-ipv6/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ubuntu-debian/free-port-53/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ubuntu-debian/remove-snap-store/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/linux/ubuntu-debian/unattended-upgrades/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/applications-tweaks/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/enable-root-user/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/import-ssh-keys-keychain/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/terminal-snippets/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/touch-id-for-sudo/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/ui-tweaks/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/homebrew/brewup/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/homebrew/homebrew-snippets/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/mac-os/python/pyenv-virtualenv/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/cli-commands-collation/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/gobuster-cheatsheet/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/nmap-cheatsheet/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/cheatsheets/xss-cheatsheet/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/kali-linux/bettercap1.6.2/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/kali-linux/kali-linux/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/kali-linux/links/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/kali-linux/metasploit/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/kali-linux/wifite/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/proxmark/about-proxmark/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/proxmark/cheatsheet/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/proxmark/mifare-tags/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/utilities/clickjacking/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/penetration-testing/utilities/idd-generator/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/docker-raspberrypi/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/external-power-button/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/motion-sensor-display-control/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/snippets/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/guides/3g-modem-host/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/projects/magic-mirror-v2/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/raspberry-pi/projects/magic-mirror/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/htpasswd-generator/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/useful-links-tools/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/wifiQrGenerator/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/browsers-extensions/chrome/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/browsers-extensions/firefox/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/about/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/admonition/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/awesome-pages/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/basic-formatting/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/code-blocks/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/content-tabs/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/diagrams/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/external-markdown/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/icons/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/images/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/links/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/utilities/markdown-cheatsheet/tables-lists-quotes/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/ssh-server/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/useful-software/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/windows-servers/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/windows-ssh-agent-with-keys/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/windows-tweaks/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/guides/declare-locations/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/windows/guides/email-from-task-scheduler/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://3os.org/tags/</loc>
-         <lastmod>2024-12-02</lastmod>
+         <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
