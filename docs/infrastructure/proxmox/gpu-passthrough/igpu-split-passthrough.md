@@ -1,15 +1,15 @@
 ---
-title: iGPU Split Passthrough
-description: Proxmox iGPU split passthrough to VM configuration for hardware acceleration.
+title: iGPU GVT-g Split Passthrough
+description: Proxmox iGPU GVT-g split passthrough to VM configuration for hardware acceleration.
 template: comments.html
 tags: [proxmox, igpu, passthrough]
 ---
 
-# iGPU Split Passthrough (Intel Integrated Graphics)
+# iGPU GVT-g Split Passthrough (Intel Integrated Graphics)
 
 ## Introduction
 
-Intel Integrated Graphics (iGPU) is a GPU that is integrated into the CPU. The GPU is a part of the CPU and is used to render graphics. Proxmox may be configured to use iGPU split passthrough to VM to allow the VM to use the iGPU for hardware acceleration for example using video encoding/decoding and Transcoding for series like Plex and Emby.
+Intel Integrated Graphics (iGPU) is a GPU that is integrated into the CPU. The GPU is a part of the CPU and is used to render graphics. Proxmox may be configured to use iGPU split passthrough to VM to allow the VM to use the iGPU for hardware acceleration for example using video encoding/decoding and Transcoding for series like [Plex][plex-url], [Emby][emby-url] and [Jellyfin][jellyfin-url].  
 This guide will show you how to configure Proxmox to use iGPU passthrough to VM.
 
 !!! Warning ""
@@ -120,7 +120,7 @@ There should be a line that looks like `DMAR: IOMMU enabled`. If there is no out
 
 ## Windows Virtual Machine iGPU Passthrough Configuration
 
-For better results its recommend to use this [Windwos 10/11 Virutal Machine configuration for proxmox][windows-vm-configuration-url].
+For better results its recommend to use this [Windows 10/11 Virtual Machine configuration for proxmox][windows-vm-configuration-url].
 
 Find the PCI address of the iGPU.
 
@@ -286,6 +286,9 @@ done;
 [intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/articles/000090440/graphics.html 'Intel GPU Drivers'
 [intel-driver-and-support-assistant-url]: https://www.intel.com/content/www/us/en/support/detect.html 'Intel Driver and Support Assistant'
 [gpu-z-url]: https://www.techpowerup.com/gpuz/ 'GPU-Z Homepage'
+[plex-url]: https://www.plex.tv/ 'Plex Homepage'
+[emby-url]: https://emby.media/ 'Emby Homepage'
+[jellyfin-url]: https://jellyfin.org/ 'Jellyfin Homepage'
 
 <!-- images -->
 
