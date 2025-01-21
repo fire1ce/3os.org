@@ -65,6 +65,7 @@ options:
                                            &#39;always&#39; - always use source name if it&#39;s available
                                            &#39;if-better&#39; - use source name if it seems better than the current one
                                            &#39;never&#39; - never use source name, even if it&#39;s available
+  --source-name-repeat-limit             - allow using source name if it appears less than a limit number, default: 10
   --use-kotlin-methods-for-var-names    - use kotlin intrinsic methods to rename variables, values: disable, apply, apply-and-hide, default: apply
   --rename-flags                        - fix options (comma-separated list of):
                                            &#39;case&#39; - fix case sensitivity issues (according to --fs-case-sensitive option),
@@ -122,7 +123,20 @@ Examples:
   jadx --rename-flags &quot;valid, printable&quot; classes.dex
   jadx --log-level ERROR app.apk
   jadx -Pdex-input.verify-checksum=no app.apk
-</code></pre></div> These options also work in jadx-gui running from command line and override options from preferences' dialog</p> <h2 id=use-jadx-as-a-library>Use jadx as a Library<a class=headerlink href=#use-jadx-as-a-library title="Permanent link">&para;</a></h2> <p>You can use jadx in your java projects, check details on <a href=https://github.com/skylot/jadx/wiki/Use-jadx-as-a-library>wiki page</a></p> <style>
+</code></pre></div> These options also work in jadx-gui running from command line and override options from preferences' dialog</p> <p>Usage for <code>plugins</code> command <div class=highlight><pre><span></span><code>usage: plugins [options]
+options:
+  -i, --install &lt;locationId&gt;      - install plugin with locationId
+  -j, --install-jar &lt;path-to.jar&gt; - install plugin from jar file
+  -l, --list                      - list installed plugins
+  -a, --available                 - list available plugins from jadx-plugins-list (aka marketplace)
+  -u, --update                    - update installed plugins
+  --uninstall &lt;pluginId&gt;          - uninstall plugin with pluginId
+  --disable &lt;pluginId&gt;            - disable plugin with pluginId
+  --enable &lt;pluginId&gt;             - enable plugin with pluginId
+  --list-all                      - list all plugins including bundled and dropins
+  --list-versions &lt;locationId&gt;    - fetch latest versions of plugin from locationId (will download all artefacts, limited to 10)
+  -h, --help                      - print this help
+</code></pre></div></p> <h2 id=use-jadx-as-a-library>Use jadx as a Library<a class=headerlink href=#use-jadx-as-a-library title="Permanent link">&para;</a></h2> <p>You can use jadx in your java projects, check details on <a href=https://github.com/skylot/jadx/wiki/Use-jadx-as-a-library>wiki page</a></p> <style>
   .md-typeset img {
     display: inline;
 </style> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5886334466795247" crossorigin=anonymous></script> <ins class=adsbygoogle style="display: block" data-ad-client=ca-pub-5886334466795247 data-ad-slot=6176317884 data-ad-format=auto data-full-width-responsive=true></ins> <script>
