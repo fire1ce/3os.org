@@ -63,8 +63,8 @@ plugins:
       exclude:
         - blog.md
   - awesome-pages
-  - tags:
-      tags_file: tags.md
+  - tags
+    # tags_file: tags.md
   - meta-descriptions
   - external-markdown
   - minify:
