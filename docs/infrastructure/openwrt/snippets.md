@@ -2,7 +2,7 @@
 title: Snippets
 description: OpenWrt Snippets with useful commands and scripts. Best practices and tips.
 template: comments.html
-tags: [template, markdown]
+tags: [OpenWrt, Snippets, Tips]
 ---
 
 # Snippets and Tips
