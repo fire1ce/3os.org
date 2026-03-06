@@ -14,7 +14,6 @@ Feel free to suggest new applications and tools at comments section below.
 
 - [Magisk Manager][magisk-manager-url]{target=\_blank} - Systemless rooting system.
 - [EdXposed Manager][edxposed-manager-url]{target=\_blank} - Companion Android application for EdXposed.
-- [BusyBox][busybox-url]{target=\_blank} - Android busyBox.
 - [SQLite Editor Master][sqlite-editor-url]{target=\_blank} - SQLite Editor.
 - [Root Explorer][root-explorer-url]{target=\_blank} File Manager for Root Users (Root Required).
 - [CiLocks][cilocks-url]{target=\_blank} - Python script to brute force android lockscreen password.
@@ -26,7 +25,6 @@ Feel free to suggest new applications and tools at comments section below.
 
 [magisk-manager-url]: https://magiskmanager.com/ 'Magisk Manager Official Website'
 [edxposed-manager-url]: https://github.com/ElderDrivers/EdXposedManager/releases 'EdXposed Manager Github Page'
-[busybox-url]: https://play.google.com/store/apps/details?id=stericson.busybox 'BusyBox Play Store Page'
 [sqlite-editor-url]: https://play.google.com/store/apps/details?id=com.dundastech.sqlitemasterlight 'SQLite Editor Play Store Page'
 [packet-capture-url]: https://www.apkmirror.com/apk/grey-shirts/packet-capture/packet-capture-1-4-7-release/packet-capture-1-4-7-android-apk-download/ 'Packet Capture APK Mirror'
 [cilocks-url]: https://github.com/tegal1337/CiLocks 'CiLocks Github Page'
