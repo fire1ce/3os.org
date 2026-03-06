@@ -16,106 +16,112 @@ We will cover how to enable GPU passthrough to a virtual machine in Proxmox VE.
 
     **Your mileage may vary depending on your hardware.**
 
+!!! Note "Prerequisites"
+
+    Before starting, make sure IOMMU / VT-d (Intel) or AMD-Vi (AMD) is **enabled in your BIOS/UEFI**.
+
 ## Proxmox Configuration for GPU Passthrough
 
-The following examples uses `SSH` connection to the Proxmox server. The editor is `nano` but feel free to use any other editor.
-We will be editing the `grub` configuration file.
+The following examples use an `SSH` connection to the Proxmox server.
 
-Find the PCI address of the GPU Device. The following command will show the PCI address of the GPU devices in Proxmox server:
+### Find the GPU PCI Address
 
 ```shell
 lspci -nnv | grep VGA
 ```
 
-Find the GPU you want to passthrough in result ts should be similar to this:
+Output will look similar to:
 
 ```shell
-01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] [10de:1e81] (rev a1) (prog-if 00 [VGA controller])
+0b:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] [10de:1e81] (rev a1)
 ```
 
-What we are looking is the PCI address of the GPU device. In this case it's `01:00.0`.  
-`01:00.0` is only a part of of a group of PCI devices on the GPU.  
-We can list all the devices in the group `01:00` by using the following command:
+The PCI address is `0b:00.0`. List all devices in the same PCI group:
 
 ```shell
-lspci -s 01:00
+lspci -s 0b:00
 ```
 
-The usual output will include VGA Device and Audio Device. In my case, we have a USB Controller and a Serial bus controller:
+A multi-function GPU typically includes a GPU, Audio, USB and UCSI controller:
 
 ```shell
-01:00.0 VGA compatible controller: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] (rev a1)
-01:00.1 Audio device: NVIDIA Corporation TU104 HD Audio Controller (rev a1)
-01:00.2 USB controller: NVIDIA Corporation TU104 USB 3.1 Host Controller (rev a1)
-01:00.3 Serial bus controller [0c80]: NVIDIA Corporation TU104 USB Type-C UCSI Controller (rev a1)
+0b:00.0 VGA compatible controller: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] (rev a1)
+0b:00.1 Audio device: NVIDIA Corporation TU104 HD Audio Controller (rev a1)
+0b:00.2 USB controller: NVIDIA Corporation TU104 USB 3.1 Host Controller (rev a1)
+0b:00.3 Serial bus controller: NVIDIA Corporation TU104 USB Type-C UCSI Controller (rev a1)
 ```
 
-Now we need to get the id's of those devices. We can do this by using the following command:
+Get the vendor:device IDs for the VFIO configuration:
 
 ```shell
-lspci -s 01:00 -n
+lspci -s 0b:00 -n
 ```
-
-The output should look similar to this:
 
 ```shell
-01:00.0 0300: 10de:1e81 (rev a1)
-01:00.1 0403: 10de:10f8 (rev a1)
-01:00.2 0c03: 10de:1ad8 (rev a1)
-01:00.3 0c80: 10de:1ad9 (rev a1)
+0b:00.0 0300: 10de:1e81 (rev a1)
+0b:00.1 0403: 10de:10f8 (rev a1)
+0b:00.2 0c03: 10de:1ad8 (rev a1)
+0b:00.3 0c80: 10de:1ad9 (rev a1)
 ```
 
-What we are looking are the pairs, we will use those id to split the PCI Group to separate devices.
+Note the IDs — you'll need them in the next steps:
 
 ```shell
 10de:1e81,10de:10f8,10de:1ad8,10de:1ad9
 ```
 
-Now it's time to edit the `grub` configuration file.
+### Configure GRUB
+
+Edit the GRUB configuration file:
 
 ```shell
 nano /etc/default/grub
 ```
 
-Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` by default they should look like this:
-
-```shell
-GRUB_CMDLINE_LINUX_DEFAULT="quiet"
-```
+Find the `GRUB_CMDLINE_LINUX_DEFAULT` line and update it:
 
 === "For Intel CPU"
 
-    ``` shell
-    intel_iommu=on
+    ```shell
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt video=efifb:off video=vesa:off kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
     ```
 
 === "For AMD CPU"
 
-    ``` shell
-    amd_iommu=on
+    ```shell
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=efifb:off video=vesa:off kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
     ```
 
-Then change it to look like this (Intel CPU example) and replace `vfio-pci.ids=` with the ids for the GPU you want to passthrough:
+!!! Note "What each flag does"
 
-```shell
-GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on pcie_acs_override=downstream,multifunction video=efifb:off video=vesa:off vfio-pci.ids=10de:1e81,10de:10f8,10de:1ad8,10de:1ad9 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
-```
+    - `iommu=pt` — passthrough mode, improves performance
+    - `video=efifb:off video=vesa:off` — prevents the host from using the GPU framebuffer
+    - `kvm.ignore_msrs=1` — suppresses NVIDIA MSR access errors in KVM
+    - `modprobe.blacklist=...` — prevents host GPU drivers from loading
 
-Save the config changed and then update GRUB.
+Save and update GRUB:
 
 ```shell
 update-grub
 ```
 
-Next we need to add `vfio` modules to allow PCI passthrough.
+### Configure VFIO
 
-Edit the `/etc/modules` file.
+Create the VFIO configuration file. Replace the IDs with the ones from your GPU:
+
+```shell
+echo "options vfio-pci ids=10de:1e81,10de:10f8,10de:1ad8,10de:1ad9 disable_vga=1" > /etc/modprobe.d/vfio.conf
+```
+
+!!! Note ""
+
+    `disable_vga=1` prevents the host from trying to use the GPU as a VGA device.
+
+Add the required VFIO kernel modules to `/etc/modules`:
 
 ```shell
 nano /etc/modules
 ```
-
-Add the following line to the end of the file:
 
 ```shell
 # Modules required for PCI passthrough
@@ -125,227 +131,239 @@ vfio_pci
 vfio_virqfd
 ```
 
-Save and exit the editor.
+### Install vendor-reset (NVIDIA RTX Cards)
 
-Update configuration changes made in your /etc filesystem
+NVIDIA RTX (Turing/Ampere/Ada) GPUs have a hardware reset bug that prevents proper VM passthrough without a software fix. Install the `vendor-reset` kernel module:
+
+```shell
+apt install -y dkms git build-essential pve-headers-$(uname -r)
+git clone https://github.com/gnif/vendor-reset.git /tmp/vendor-reset
+cd /tmp/vendor-reset && dkms install .
+echo "vendor_reset" >> /etc/modules
+```
+
+### Apply Changes
 
 ```shell
 update-initramfs -u -k all
 ```
 
-**Reboot Proxmox to apply the changes**
+**Reboot Proxmox to apply the changes.**
 
-Verify that IOMMU is enabled
-
-```shell
-dmesg | grep -e DMAR -e IOMMU
-```
-
-There should be a line that looks like `DMAR: IOMMU enabled`. If there is no output, something is wrong.
-
-```shell hl_lines="2"
-[0.000000] Warning: PCIe ACS overrides enabled; This may allow non-IOMMU protected peer-to-peer DMA
-[0.067203] DMAR: IOMMU enabled
-[2.573920] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
-[2.580393] pci 0000:00:00.2: AMD-Vi: Found IOMMU cap 0x40
-[2.581776] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank).
-```
-
-Check that the GPU is in a separate IOMMU Group by using the following command:
+### Verify IOMMU is Enabled
 
 ```shell
-#!/bin/bash
-shopt -s nullglob
+dmesg | grep -e DMAR -e IOMMU -e AMD-Vi
+```
+
+=== "Intel — expected output"
+
+    ```shell
+    [0.067203] DMAR: IOMMU enabled
+    ```
+
+=== "AMD — expected output"
+
+    ```shell
+    [2.311473] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
+    [2.318109] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank)
+    ```
+
+### Verify VFIO Binding
+
+Confirm all GPU functions are bound to `vfio-pci`:
+
+```shell
+lspci -k | grep -A3 "0b:00"
+```
+
+You should see `Kernel driver in use: vfio-pci` for each function.
+
+### Verify IOMMU Groups
+
+Check that the GPU is isolated in its own IOMMU group:
+
+```bash
 for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
-    echo "IOMMU Group ${g##*/}:"
-    for d in $g/devices/*; do
-        echo -e "\t$(lspci -nns ${d##*/})"
-    done;
-done;
+  echo "IOMMU Group ${g##*/}:"
+  for d in $g/devices/*; do
+    echo -e "\t$(lspci -nns ${d##*/})"
+  done
+done
 ```
 
-Now your Proxmox host should be ready to GPU passthrough!
+The GPU and all its functions should appear together in a single group, with no other unrelated devices sharing that group.
+
+Now your Proxmox host is ready for GPU passthrough!
+
+---
 
 ## Windows Virtual Machine GPU Passthrough Configuration
 
-For better results its recommend to use this [Windwos 10/11 Virutal Machine configuration for proxmox][windows-vm-configuration-url].
+For best results use the [Windows 10/11 Virtual Machine configuration for Proxmox][windows-vm-configuration-url].
 
 !!! Failure "Limitations & Workarounds"
 
-     - In order for the GPU to to function properly in the VM, you must disable Proxmox's Virutal Display - Set it `none`.
+    - In order for the GPU to function properly in the VM, you must disable Proxmox's Virtual Display — set it to `none`.
+    - You will lose the ability to connect to the VM via Proxmox's Console.
+    - Display must be connected to the physical output of the GPU for Windows to initialize the GPU properly.
+    - **You can use a [HDMI Dummy Plug][hdmi-dummy-pluh-amazon-url]{target=\_blank} as a workaround.**
+    - Make sure you have an alternative way to connect to the VM, for example via Remote Desktop (RDP).
 
-     - You will lose the ability to conect to the VM via Proxmox's Console.
+In the Proxmox web UI, navigate to the VM's **Hardware** tab → **Add** → **PCI Device**.
 
-     - Display must be conected to the physical output of the GPU for the Windows Host to initialize the GPU properly.
+Select the GPU by its PCI address (`0000:0b:00.0`) and enable:
 
-     - **You can use a [HDMI Dummy Plug][hdmi-dummy-pluh-amazon-url]{target=\_blank} as a workaround - It will present itself as a HDMI Display  to the Windows Host.**
+- ✅ All Functions
+- ✅ ROM-Bar
+- ✅ Primary GPU
+- ✅ PCI-Express
 
-     - Make sure you have alternative way to connect to the VM for example via Remote Desktop (RDP).
+Power on the VM, connect via RDP, and install the latest NVIDIA driver from the [NVIDIA website](https://www.nvidia.com/drivers){target=\_blank}.
 
-Find the PCI address of the GPU.
+Verify with [GPU-Z][gpu-z-url]{target=\_blank} or Device Manager.
 
-```shell
-lspci -nnv | grep VGA
-```
+---
 
-This should result in output similar to this:
+## Linux VM GPU Passthrough Configuration (Headless)
 
-```shell
-01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] [10de:1e81] (rev a1) (prog-if 00 [VGA controller])
-```
+This section covers a **headless Ubuntu Server** setup for GPU compute workloads (AI, CUDA, etc.).
 
-If you have multiple VGA, look for the one that has the `Intel` in the name.  
-Here, the PCI address of the GPU is `01:00.0`.
+### VM Configuration in Proxmox
 
-![Proxmox lspci vga][proxmox-lspci-vga-img]
+- **Machine type**: `q35`
+- **BIOS**: SeaBIOS (default)
+- **CPU type**: `host`
+- **VGA**: `serial0` (no display needed)
 
-For best performance the VM should be configured the `Machine` type to ==q35==.  
-This will allow the VM to utilize PCI-Express passthrough.
+In the Proxmox web UI, navigate to the VM's **Hardware** tab → **Add** → **PCI Device**.
 
-Open the web gui and navigate to the `Hardware` tab of the VM you want to add a vGPU.  
-Click `Add` above the device list and then choose `PCI Device`
+Select the GPU (`0000:0b:00.0`) and enable:
 
-![Windows VM Add PCI Device][windows-vm-add-pci-device-img]
+- ✅ All Functions
+- ✅ PCI-Express
+- ❌ ROM-Bar — **must be disabled for headless Linux VMs**
+- ❌ Primary GPU
 
-Open the `Device` dropdown and select the GPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `01:00.0` is listed as `0000:01:00.0`.
+!!! Warning "ROM-Bar must be disabled for headless Linux VMs"
 
-![Add GPU to VM][general-vm-add-gpu-to-vm-img]
+    With SeaBIOS, enabling ROM-Bar causes the firmware to execute the GPU's VBIOS during POST. On NVIDIA RTX cards this hangs the VM at boot. Disabling ROM-Bar skips GPU firmware initialization — safe for compute-only use where you don't need display output.
 
-Select `All Functions`, `ROM-Bar`, `Primary GPU`, `PCI-Express` and then click `Add`.
+### Boot the VM
 
-![Windows VM GPU PCI Settings][windows-vm-gpu-pci-settings-img]
-
-The Windows Virtual Machine Proxmox Setting should look like this:
-
-![Windows VM GPU Hardware Settings][windows-vm-gpu-hardware-settings-img]
-
-Power on the Windows Virtual Machine.
-
-Connect to the VM via Remote Desktop (RDP) or any other remote access protocol you prefer.
-Install the latest version of GPU Driver for your GPU.
-
-If all when well you should see the following output in `Device Manager` and [GPU-Z][gpu-z-url]{target=\_blank}:
-
-![GPU-Z and Device Manager GPU][gpu-z-and-device-manager-gpu-img]
-
-That's it!
-
-## Linux Virtual Machine GPU Passthrough Configuration
-
-We will be using Ubuntu Server 20.04 LTS. for this guide.
-
-From Proxmox Terminal find the PCI address of the GPU.
+Boot the VM and verify the GPU is visible:
 
 ```shell
-lspci -nnv | grep VGA
+lspci | grep -i nvidia
 ```
 
-This should result in output similar to this:
+Expected output:
 
 ```shell
-01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] [10de:1e81] (rev a1) (prog-if 00 [VGA controller])
+01:00.0 VGA compatible controller: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] (rev a1)
+01:00.1 Audio device: NVIDIA Corporation TU104 HD Audio Controller (rev a1)
+01:00.2 USB controller: NVIDIA Corporation TU104 USB 3.1 Host Controller (rev a1)
+01:00.3 Serial bus controller: NVIDIA Corporation TU104 USB Type-C UCSI Controller (rev a1)
 ```
 
-If you have multiple VGA, look for the one that has the `Intel` in the name.
-Here, the PCI address of the GPU is `01:00.0`.
+### Install NVIDIA Drivers
 
-![lspci-nnv-vga][proxmox-lspci-vga-img]
-
-For best performance the VM should be configured the `Machine` type to ==q35==.  
-This will allow the VM to utilize PCI-Express passthrough.
-
-![Ubuntu VM Add PCI Device][ubuntu-vm-add-pci-device-img]
-
-Open the `Device` dropdown and select the GPU, which you can find using it’s PCI address. This list uses a different format for the PCI addresses id, `01:00.0` is listed as `0000:01:00.0`.
-
-![Add GPU to VM][general-vm-add-gpu-to-vm-img]
-
-Select `All Functions`, `ROM-Bar`, `PCI-Epress` and then click `Add`.
-
-![Ubuntu VM GPU PCI Settings][ubuntu-vm-gpu-pci-settings-img]
-
-The Ubuntu Virtual Machine Proxmox Setting should look like this:
-
-![Ubuntu VM GPU Hardware Settings][ubuntu-vm-gpu-hardware-settings-img]
-
-Boot the VM. To test the GPU passthrough was successful, you can use the following command in the VM:
+Check which driver versions are available:
 
 ```shell
- sudo lspci -nnv | grep VGA
+apt search nvidia-driver | grep "^nvidia-driver-[0-9]"
 ```
 
-The output should incliude the GPU:
+Install the latest production driver (headless — no GUI packages):
 
 ```shell
-01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] [10de:1e81] (rev a1) (prog-if 00 [VGA controller])
+apt install --no-install-recommends -y nvidia-driver-570 nvidia-utils-570
 ```
 
-Now we need to install the GPU Driver. I'll be covering the installation of Nvidia Drivers in the next example.
-
-Search for the latest Nvidia Driver for your GPU.
+Reboot the VM:
 
 ```shell
-sudo apt search nvidia-driver
+reboot
 ```
 
-In the next step we will install the Nvidia Driver v535.
-
-!!! note
-
-    **--no-install-recommends** is important for Headless Server. `nvidia-driver-535` will install xorg (GUI) `--no-install-recommends` flag will prevent the GUI from being installed.
+Verify driver initialization:
 
 ```shell
-sudo apt install --no-install-recommends -y build-essential nvidia-driver-535 nvidia-headless-535 nvidia-utils-535 nvidia-cuda-toolkit
+nvidia-smi
 ```
 
-This will take a while to install. After the installation is complete, you should reboot the VM.
-
-Now let's test the Driver initalization. Run the following command in the VM:
+Expected output:
 
 ```shell
-nvidia-smi && nvidia-smi -L
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.x.xx    Driver Version: 570.x.xx    CUDA Version: 12.x     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+|   0  NVIDIA GeForce RTX 2080 SUPER  Off |   00000000:01:00.0 Off |                  N/A |
++-----------------------------------------------------------------------------------------+
 ```
 
-If all went well you should see the following output:
+### Install NVIDIA Container Toolkit (Docker GPU Support)
 
-![Ubuntu VM GPU Nvidia-smi][ubuntu-vm-gpu-nvidia-smi]
+To use the GPU inside Docker containers:
 
-That's it! You should now be able to use the GPU for hardware acceleration inside the VM.
+```shell
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | \
+  gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+  sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' \
+  > /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+apt update && apt install -y nvidia-container-toolkit
+nvidia-ctk runtime configure --runtime=docker
+systemctl restart docker
+```
+
+Test GPU access inside a container:
+
+```shell
+docker run --rm --gpus all nvidia/cuda:12.0-base-ubuntu22.04 nvidia-smi
+```
+
+---
 
 ## Debug
 
-Dbug Messages - Shows Hardware initialization and errors
+Show hardware initialization messages and errors:
 
 ```shell
 dmesg -w
 ```
 
-Display PCI devices information
+Display all PCI devices:
 
 ```shell
 lspci
 ```
 
-Display Driver in use for PCI devices
+Show kernel driver in use for each PCI device:
 
 ```shell
 lspci -k
 ```
 
-Display IOMMU Groups the PCI devices are assigned to
+Check VFIO binding for a specific device:
 
 ```shell
-#!/bin/bash
-shopt -s nullglob
-for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
-    echo "IOMMU Group ${g##*/}:"
-    for d in $g/devices/*; do
-        echo -e "\t$(lspci -nns ${d##*/})"
-    done;
-done;
+lspci -k -s 0b:00
 ```
 
-**Reboot Proxmox to apply the changes**
+Display IOMMU groups:
+
+```bash
+for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
+  echo "IOMMU Group ${g##*/}:"
+  for d in $g/devices/*; do
+    echo -e "\t$(lspci -nns ${d##*/})"
+  done
+done
+```
 
 <!-- urls -->
 
