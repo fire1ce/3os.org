@@ -12,11 +12,11 @@ tags: [proxmox, gpu, passthrough]
 GPU passthrough is a technology that allows the Linux kernel to present the internal PCI GPU directly to the virtual machine. The device behaves as if it were powered directly by the virtual machine, and the virtual machine detects the PCI device as if it were physically connected.
 We will cover how to enable GPU passthrough to a virtual machine in Proxmox VE.
 
-!!! Warning ""
+!!! warning ""
 
     **Your mileage may vary depending on your hardware.**
 
-!!! Note "Prerequisites"
+!!! note "Prerequisites"
 
     Before starting, make sure IOMMU / VT-d (Intel) or AMD-Vi (AMD) is **enabled in your BIOS/UEFI**.
 
@@ -92,7 +92,7 @@ Find the `GRUB_CMDLINE_LINUX_DEFAULT` line and update it:
     GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=efifb:off video=vesa:off kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
     ```
 
-!!! Note "What each flag does"
+!!! note "What each flag does"
 
     - `iommu=pt` — passthrough mode, improves performance
     - `video=efifb:off video=vesa:off` — prevents the host from using the GPU framebuffer
@@ -113,7 +113,7 @@ Create the VFIO configuration file. Replace the IDs with the ones from your GPU:
 echo "options vfio-pci ids=10de:1e81,10de:10f8,10de:1ad8,10de:1ad9 disable_vga=1" > /etc/modprobe.d/vfio.conf
 ```
 
-!!! Note ""
+!!! note ""
 
     `disable_vga=1` prevents the host from trying to use the GPU as a VGA device.
 
@@ -183,7 +183,7 @@ You should see `Kernel driver in use: vfio-pci` for each function.
 
 Check that the GPU is isolated in its own IOMMU group:
 
-```bash
+```shell
 for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
   echo "IOMMU Group ${g##*/}:"
   for d in $g/devices/*; do
@@ -202,7 +202,7 @@ Now your Proxmox host is ready for GPU passthrough!
 
 For best results use the [Windows 10/11 Virtual Machine configuration for Proxmox][windows-vm-configuration-url].
 
-!!! Failure "Limitations & Workarounds"
+!!! failure "Limitations & Workarounds"
 
     - In order for the GPU to function properly in the VM, you must disable Proxmox's Virtual Display — set it to `none`.
     - You will lose the ability to connect to the VM via Proxmox's Console.
@@ -245,7 +245,7 @@ Select the GPU (`0000:0b:00.0`) and enable:
 - ❌ ROM-Bar — **must be disabled for headless Linux VMs**
 - ❌ Primary GPU
 
-!!! Warning "ROM-Bar must be disabled for headless Linux VMs"
+!!! warning "ROM-Bar must be disabled for headless Linux VMs"
 
     With SeaBIOS, enabling ROM-Bar causes the firmware to execute the GPU's VBIOS during POST. On NVIDIA RTX cards this hangs the VM at boot. Disabling ROM-Bar skips GPU firmware initialization — safe for compute-only use where you don't need display output.
 
@@ -356,7 +356,7 @@ lspci -k -s 0b:00
 
 Display IOMMU groups:
 
-```bash
+```shell
 for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
   echo "IOMMU Group ${g##*/}:"
   for d in $g/devices/*; do

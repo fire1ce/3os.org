@@ -1,6 +1,6 @@
 ---
 title: IID Generator & Validator
-description: Penetration Testing - Israel ID Generator & Validator
+description: Free online Israeli ID (Teudat Zehut) generator and validator. Generate valid test ID numbers with correct check digits and verify any ID - runs entirely in your browser, no data is sent to any server.
 template: comments.html
 tags: [pt, tools, IID]
 ---

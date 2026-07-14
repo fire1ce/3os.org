@@ -12,11 +12,11 @@ tags: [proxmox, igpu, passthrough]
 Intel Integrated Graphics (iGPU) is a GPU that is integrated into the CPU. The GPU is a part of the CPU and is used to render graphics. Proxmox may be configured to use iGPU split passthrough to VM to allow the VM to use the iGPU for hardware acceleration for example using video encoding/decoding and Transcoding for series like [Plex][plex-url], [Emby][emby-url] and [Jellyfin][jellyfin-url].  
 This guide will show you how to configure Proxmox to use iGPU passthrough to VM.
 
-!!! Warning ""
+!!! warning ""
 
     **Your mileage may vary depending on your hardware. The following guide was tested with Intel Gen8 CPU.**
 
-!!! Failure "Supported CPUs"
+!!! failure "Supported CPUs"
 
     `iGPU GVT-g Split Passthrough` is supported only on Intel's **5th generation to 10th generation** CPUs!
 
@@ -59,7 +59,7 @@ Your `GRUB_CMDLINE_LINUX_DEFAULT` should look like this:
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on i915.enable_gvt=1 iommu=pt pcie_acs_override=downstream,multifunction video=efifb:off video=vesa:off vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
 ```
 
-!!! Note
+!!! note
 
     This will blacklist most of the graphics drivers from proxmox. If you have a specific driver you need to use for Proxmox Host you need to remove it from `modprobe.blacklist`
 

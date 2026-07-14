@@ -12,7 +12,7 @@ tags: [proxmox, igpu, passthrough]
 Intel Integrated Graphics (iGPU) is a GPU that is integrated into the CPU. The GPU is a part of the CPU and is used to render graphics. Proxmox may be configured to use iGPU passthrough to VM to allow the VM to use the iGPU for hardware acceleration for example using video encoding/decoding and Transcoding for series like Plex and Emby.
 This guide will show you how to configure Proxmox to use iGPU passthrough to VM.
 
-!!! Warning ""
+!!! warning ""
 
     **Your mileage may vary depending on your hardware. The following guide was tested with Intel Gen8 CPU.**
 
@@ -37,7 +37,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 
 We want to allow `passthrough` and `Blacklists` known graphics drivers to prevent proxmox from utilizing the iGPU.
 
-!!! Warning
+!!! warning
 
     **You will lose the ability to use the onboard graphics card to access the Proxmox's console since Proxmox won't be able to use the Intel's gpu**
 
@@ -47,7 +47,7 @@ Your `GRUB_CMDLINE_LINUX_DEFAULT` should look like this:
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction initcall_blacklist=sysfb_init video=simplefb:off video=vesafb:off video=efifb:off video=vesa:off disable_vga=1 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu,snd_hda_intel,snd_hda_codec_hdmi,i915"
 ```
 
-!!! Note
+!!! note
 
     This will blacklist most of the graphics drivers from proxmox. If you have a specific driver you need to use for Proxmox Host you need to remove it from `modprobe.blacklist`
 
