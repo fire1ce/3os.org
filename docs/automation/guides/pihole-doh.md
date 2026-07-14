@@ -1,11 +1,17 @@
 ---
-title: Pi-hole with DOH on Docker
-description: Pi-hole as DNS Server with DNS over HTTPS (DOH) Based on Docker Containers. Pi-hole, DNS ads, tracking blocking on Ubuntu with DNS over HTTP, list of blacklist
+title: Pi-hole With DoH on Docker (Legacy)
+description: Legacy Pi-hole and cloudflared Docker Compose deployment retained for historical reference; do not use it for new installations.
 template: comments.html
 tags: [pi-hole, doh, docker, dns, dns-over-https]
 ---
 
-# Pi-hole as DNS Server with DNS over HTTPS (DOH) Based on Docker Containers
+# Pi-hole With DNS Over HTTPS on Docker (Legacy)
+
+!!! warning "Legacy Guide — Do Not Use for New Deployments"
+
+    This page documents a Pi-hole v5-era Docker Compose deployment and is retained for historical reference only. Pi-hole v6 uses a different [Docker configuration model][pi-hole-docker-config-url]{target=\_blank}.
+
+    Cloudflare removed the `cloudflared proxy-dns` command from new releases starting February 2, 2026, and the container repository used below is archived. See the [Cloudflare announcement][cloudflare-proxy-dns-url]{target=\_blank} and use the current [Pi-hole Docker documentation][pi-hole-docker-url]{target=\_blank} for new installations.
 
 ![pihole-webgui][webgui-img]{: style="width:600px"}
 
@@ -131,6 +137,9 @@ We are done with the installation.
 <!-- urls -->
 
 [pi-hole-url]: https://pi-hole.net/ 'Pi-hole official website'
+[pi-hole-docker-url]: https://docs.pi-hole.net/docker/ 'Pi-hole Docker documentation'
+[pi-hole-docker-config-url]: https://docs.pi-hole.net/docker/configuration/ 'Pi-hole Docker configuration'
+[cloudflare-proxy-dns-url]: https://developers.cloudflare.com/changelog/post/2025-11-11-cloudflared-proxy-dns/ 'Cloudflare proxy-dns removal announcement'
 [amazon-raspberry-url]: https://amzn.to/3KbHRuc 'Raspberry Pi Amazon'
 [github-docker-pi-hole-url]: https://github.com/pi-hole/docker-pi-hole 'Github Docker Pi-hole'
 [github-docker-cloudflared-url]: https://github.com/visibilityspots/dockerfile-cloudflared 'Github Docker Cloudflared'

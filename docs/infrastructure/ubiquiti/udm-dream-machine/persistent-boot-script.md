@@ -1,16 +1,16 @@
 ---
 title: Persistent Boot Script
-description: Persistent On Boot Script for Ubiquiti UniFi UDM, UDM PRO which allows you to persists custom modifications to the system.
+description: Persistent boot script for Ubiquiti UniFi UDM and UDM Pro devices that reapplies custom system changes after updates and reboots.
 template: comments.html
 tags: [udm, ubiquiti, unifi]
 ---
 
 # Persistent On Boot Script
 
-When UDM or UDM PRO reboots or the firmawre is updated the custom changes you made will be lost.
-This Script will allow you to initialize your custom changes on every boot or firmware update. without losing your custom changes.
+When a UDM or UDM Pro reboots or receives a firmware update, custom system changes can be lost.
+This script reapplies those changes after each reboot or firmware update.
 
-Github Repository: [unifi-utilities - unifi-common][unifi-common-github-url]{target=\_blank}
+GitHub repository: [unifi-utilities/unifi-common][unifi-common-github-url]{target=\_blank}
 
 {{ external_markdown('https://raw.githubusercontent.com/unifi-utilities/unifi-common/main/README.md', '') }}
 
@@ -18,7 +18,7 @@ Github Repository: [unifi-utilities - unifi-common][unifi-common-github-url]{tar
 
 <!-- urls -->
 
-[unifi-common-github-url]: https://github.com/unifi-utilities/unifi-common 'unifi-common Github Repository'
+[unifi-common-github-url]: https://github.com/unifi-utilities/unifi-common 'unifi-common GitHub repository'
 
 <!-- images -->
 

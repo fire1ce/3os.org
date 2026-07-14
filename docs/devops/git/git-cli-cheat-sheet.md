@@ -1,11 +1,11 @@
 ---
-title: Git Cli Cheat Sheet
-description: Cheat sheet for Git. Git version control system designed to quickly and efficiently manage projects cheet sheet for the command line.
+title: Git CLI Cheat Sheet
+description: Cheat sheet for creating repositories, configuring Git, synchronizing changes, managing branches, and rewriting commits from the command line.
 template: comments.html
 tags: [github, git, cheat-sheet]
 ---
 
-# Git Cli Cheat Sheet
+# Git CLI Cheat Sheet
 
 Git is a free and open source distributed version control system designed to quickly and efficiently manage everything from small to very large projects.
 

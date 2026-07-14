@@ -1,24 +1,23 @@
 ---
-title: GitHub Cli
-description: Cheat sheet for GitHub Cli. 
+title: GitHub CLI
+description: Cheat sheet for installing GitHub CLI and opening repositories or pull requests from the terminal.
 template: comments.html
 tags: [github, git, cheat-sheet]
 ---
 
-# GitHub Cli Cheat Sheet
+# GitHub CLI Cheat Sheet
 
-The GitHub Cli a is free and open source Cli tool to interact with GitHub repositories. It allows you to work solely from the command line, as well as navigate to remote (web) repositories very easily.
+GitHub CLI is a free and open source command-line tool for working with GitHub repositories. It can manage GitHub workflows from the terminal and open repository pages in a browser.
 
 ## Installation
 
-The GitHub Cli can be found at [https://cli.github.com/](https://cli.github.com/). The installation are very straightfoward, for example,
+Follow the [official installation instructions][github-cli-url]{target=\_blank}, or install GitHub CLI with Homebrew on macOS:
 
 ```shell
 brew install gh
 ```
-on macOS.
 
-## Some example commands
+## Repository Commands
 
 View the repository remotely.
 
@@ -31,3 +30,11 @@ Create a pull request remotely.
 ```shell
 gh pr create --web
 ```
+
+<!-- appendices -->
+
+<!-- urls -->
+
+[github-cli-url]: https://cli.github.com/ 'GitHub CLI official website'
+
+<!-- end appendices -->

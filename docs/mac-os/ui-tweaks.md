@@ -1,8 +1,8 @@
 ---
 title: UI Tweaks
-description: macOS macOS UI tweaks and tips, for better experience, productivity and workflow
+description: macOS interface tweaks for hiding desktop icons, changing the Launchpad layout, resetting icon order, and applying Finder view defaults.
 template: comments.html
-tags: [macOS]
+tags: [macos]
 ---
 
 # UI Tweaks

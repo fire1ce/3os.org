@@ -1,16 +1,16 @@
 ---
 title: Persistent SSH Keys
-description: Persistent SSH Keys Script for UDM and UDM PRO which allows you to persists your SSH keys after reboot.
+description: Persistent SSH key script for UDM and UDM Pro devices that restores authorized keys after reboots and firmware upgrades.
 template: comments.html
 tags: [udm, ubiquiti, unifi]
 ---
 
 # UDM Persistent SSH Keys
 
-UDM will discard any Authorized Keys for SSH every reboot or firmware upgrade.
-This script will allow you to persist your SSH keys in the UDM and survive reboots.
+UDM devices discard authorized SSH keys after a reboot or firmware upgrade.
+This script restores your SSH keys so they persist across reboots.
 
-Github Repository: [UDM Persistent SSH Keys][udm-persistent-ssh-keys-url]{target="\_blank"}
+GitHub repository: [UDM Persistent SSH Keys][udm-persistent-ssh-keys-url]{target=\_blank}
 
 {{ external_markdown('https://raw.githubusercontent.com/fire1ce/UDM-Persistent-SSH-Keys/main/README.md', '') }}
 
@@ -18,7 +18,7 @@ Github Repository: [UDM Persistent SSH Keys][udm-persistent-ssh-keys-url]{target
 
 <!-- urls -->
 
-[udm-persistent-ssh-keys-url]: https://github.com/fire1ce/UDM-Persistent-SSH-Keys 'Github Repository'
+[udm-persistent-ssh-keys-url]: https://github.com/fire1ce/UDM-Persistent-SSH-Keys 'GitHub repository'
 
 <!-- images -->
 
