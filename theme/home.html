@@ -27,6 +27,14 @@ config.theme.font %}
 
   .md-container {
     background-color: var(--md-code-bg-color);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* the empty <main> otherwise absorbs all leftover viewport height
+     as a blank band above the footer — give that space to the hero instead */
+  .md-main {
+    flex-grow: 0;
   }
 
   .tx-container {
@@ -34,6 +42,16 @@ config.theme.font %}
     background-image: linear-gradient(to bottom, transparent, transparent, var(--md-code-bg-color)),
       linear-gradient(to top, transparent, transparent, var(--md-primary-fg-color)), url('circuitboard.svg');
     background-repeat: no-repeat;
+    background-size: cover;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* breathing room between the feature row and the footer */
+  .top-hr {
+    margin-bottom: 1.2rem;
   }
 
   .tx-hero {
@@ -177,6 +195,25 @@ config.theme.font %}
     }
   }
 
+  /* compact mode: short viewports (laptops, browser chrome on 1080p) */
+  @media screen and (min-width: 60em) and (max-height: 51.25em) {
+    .feature-item h2 {
+      font-size: 22px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+    .feature-item p {
+      font-size: 15px;
+      line-height: 1.5em;
+    }
+    .md-footer-social {
+      padding-top: 8px;
+    }
+    .md-footer-meta__inner {
+      margin-top: 0.4rem;
+    }
+  }
+
   @media screen and (min-width: 60em) and (orientation: portrait) {
     .tx-hero {
       display: flex;
@@ -184,14 +221,14 @@ config.theme.font %}
       justify-content: space-between;
     }
     .tx-hero__content {
-      margin-top: 3.5rem;
+      margin-top: min(3.5rem, 5vh);
       max-width: 19rem;
-      padding-bottom: 14vw;
+      padding-bottom: min(14vw, 8vh);
     }
     .tx-hero__image {
       order: 1;
-      padding: 2rem 0rem 0rem 5rem;
-      width: 36rem;
+      padding: min(2rem, 3vh) 0rem 0rem 5rem;
+      width: min(36rem, 63vh);
     }
   }
 
@@ -202,15 +239,15 @@ config.theme.font %}
       justify-content: space-between;
     }
     .tx-hero__content {
-      margin-top: 3.5rem;
+      margin-top: min(3.5rem, 5vh);
       max-width: 19rem;
-      padding-bottom: 14vw;
+      padding-bottom: min(14vw, 8vh);
       transform: translateX(2rem);
     }
     .tx-hero__image {
       order: 1;
-      padding: 2rem 0rem 0rem 5rem;
-      width: 38rem;
+      padding: min(2rem, 3vh) 0rem 0rem 5rem;
+      width: min(38rem, 63vh);
     }
 
     /* Transform feature-item*/
