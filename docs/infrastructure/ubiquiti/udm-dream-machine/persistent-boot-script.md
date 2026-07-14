@@ -10,24 +10,15 @@ tags: [udm, ubiquiti, unifi]
 When UDM or UDM PRO reboots or the firmawre is updated the custom changes you made will be lost.
 This Script will allow you to initialize your custom changes on every boot or firmware update. without losing your custom changes.
 
-Github Repository: [unifios-utilities - on-boot-script][unifi-utilities-github-url]{target="\_blank"}
+Github Repository: [unifi-utilities - unifi-common][unifi-common-github-url]{target=\_blank}
 
-## Features
-
-{{ external_markdown('https://raw.githubusercontent.com/unifi-utilities/unifios-utilities/main/on-boot-script/README.md', '## Features') }}
-
-## Install
-
-{{ external_markdown('https://raw.githubusercontent.com/unifi-utilities/unifios-utilities/master/on-boot-script/README.md', '## Install') }}
-
-For manual installation see: [The Github Readme][manually-install-steps-url]{target="\_blank"}
+{{ external_markdown('https://raw.githubusercontent.com/unifi-utilities/unifi-common/main/README.md', '') }}
 
 <!-- appendices -->
 
 <!-- urls -->
 
-[unifi-utilities-github-url]: https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script 'on-boot-script Github Repository'
-[manually-install-steps-url]: https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script#manually-install-steps 'Manually Install Steps'
+[unifi-common-github-url]: https://github.com/unifi-utilities/unifi-common 'unifi-common Github Repository'
 
 <!-- images -->
 

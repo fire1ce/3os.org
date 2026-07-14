@@ -15,7 +15,6 @@ List of extensions for Chrome browser.
 | [Clear Browsing Data](https://chromewebstore.google.com/detail/clear-browsing-data/bjilljlpencdcpihofiobpnfgcakfdbe)                     | Clear Browsing Data                                |
 | [HTTPS Everywhere](https://chromewebstore.google.com/detail/https-everywhere/ikclbgejgcbdlhjmckecmdljlpbhmbmf)                           | Automatically use HTTPS                            |
 | [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)                                 | Ad Block                                           |
-| [EditThisCookie](https://chromewebstore.google.com/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)                               | Edit cookie per page                               |
 | [Wappalyzer](https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg)                        | Uncovers the technologies used on websites         |
 | [IP Address and Domain Information](https://chromewebstore.google.com/detail/ip-address-and-domain-inf/lhgkegeccnckoiliokondpaaalbhafoa) | Find detailed information about each IP address    |
 | [JSON viewer](https://chromewebstore.google.com/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)                                     | Pretty print / display JSON content in the browser |

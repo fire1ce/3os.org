@@ -16,6 +16,16 @@ jobs:
       - name: Broken Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v2
+        with:
+          # root-dir resolves root-relative links (/assets/...) against the
+          # docs source; theme templates and the page template are rendered
+          # into full pages at build time so their /-links can't resolve here
+          args: >-
+            --verbose --no-progress
+            --root-dir "$GITHUB_WORKSPACE/docs"
+            --exclude-path theme
+            --exclude-path template.md
+            './**/*.md' './**/*.html' './**/*.rst'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 

@@ -13,19 +13,19 @@ The awesome-pages plugin allows you to customize how your pages show up the navi
 
 ## Features
 
-{{ external_markdown('https://raw.githubusercontent.com/lukasgeiter/mkdocs-awesome-pages-plugin/master/README.md', '## Features') }}
+{{ external_markdown('https://raw.githubusercontent.com/lukasgeiter/mkdocs-awesome-nav/v2.10.1/README.md', '## Features') }}
 
 ## Rest Filter Patterns
 
-{{ external_markdown('https://raw.githubusercontent.com/lukasgeiter/mkdocs-awesome-pages-plugin/master/README.md', '## Rest Filter Patterns') }}
+{{ external_markdown('https://raw.githubusercontent.com/lukasgeiter/mkdocs-awesome-nav/v2.10.1/README.md', '## Rest Filter Patterns') }}
 
 ## Options
 
-{{ external_markdown('https://raw.githubusercontent.com/lukasgeiter/mkdocs-awesome-pages-plugin/master/README.md', '## Options') }}
+{{ external_markdown('https://raw.githubusercontent.com/lukasgeiter/mkdocs-awesome-nav/v2.10.1/README.md', '## Options') }}
 
 <!-- appendices -->
 
-[awesome-pages-url]: https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin 'MkDocs Awesome Pages Plugin Github Repository'
+[awesome-pages-url]: https://github.com/lukasgeiter/mkdocs-awesome-nav/tree/v2.10.1 'MkDocs Awesome Pages Plugin Github Repository'
 [3os-url]: https://3os.org/
 [3os-url]: https://3os.org/
 [image-url]: ../assets/images/markdown-cheatsheet/minion.png 'Title of the image'

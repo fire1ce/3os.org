@@ -219,7 +219,7 @@ Select the GPU by its PCI address (`0000:0b:00.0`) and enable:
 - ✅ Primary GPU
 - ✅ PCI-Express
 
-Power on the VM, connect via RDP, and install the latest NVIDIA driver from the [NVIDIA website](https://www.nvidia.com/drivers){target=\_blank}.
+Power on the VM, connect via RDP, and install the latest NVIDIA driver from the [NVIDIA website](https://www.nvidia.com/en-us/drivers/){target=\_blank}.
 
 Verify with [GPU-Z][gpu-z-url]{target=\_blank} or Device Manager.
 

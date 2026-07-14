@@ -170,6 +170,6 @@ adb shell settings put global http_proxy :0
 
 <!-- appendices -->
 
-[adb-docs-url]: https://developer.android.com/studio/command-line/adb.html 'Android Debug Bridge'
+[adb-docs-url]: https://developer.android.com/tools/adb 'Android Debug Bridge'
 
 <!-- end appendices -->
