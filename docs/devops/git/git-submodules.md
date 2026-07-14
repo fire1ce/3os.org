@@ -1,75 +1,80 @@
 ---
 title: Submodules Cheat Sheet
-description: Cheat sheet for Pip Git sumboduls. Git submodules allow you to keep a git repository as a subdirectory. Git Submodule Cli Useful Commands cheat sheet.
+description: Cheat sheet for adding, cloning, updating, and removing Git submodules in a parent repository.
 template: comments.html
-tags: [github, cheat-sheet, submodules]
+tags: [git, cheat-sheet, submodules]
 ---
 
 # Git Submodules Cheat Sheet
 
-## What is a Submodule?
+Git submodules let a repository track another repository at a specific commit. This cheat sheet covers the common lifecycle; see the [official Git submodule documentation][git-submodule-url]{target=\_blank} for every option.
 
-Git submodules allow you to keep a git repository as a subdirectory of another git repository. Git submodules are simply a reference to another repository at a particular snapshot in time. Git submodules enable a Git repository to incorporate and track version history of external code.
+## What Is a Submodule?
+
+A submodule stores another Git repository inside a parent repository, also called the superproject. The parent tracks the submodule's path, URL, and selected commit rather than copying its full history.
 
 ## Add a Submodule
 
-You need to know the remote git repository url and where you want to place that it in your repository.
-
-for example:
+Add a remote repository at the path where it should appear in the parent repository:
 
 ```shell
-git submodule add https://github.com/fire1ce/3os.org path/to/submodule
-git add .
-git commit -m "adds submodule path/to/submodule"
+git submodule add https://github.com/fire1ce/3os.org.git path/to/submodule
+git commit -m "Add submodule"
 ```
 
-## Cloning A Project With Submodules
+## Clone a Project With Submodules
 
-When you clone a repository that contains submodules there are a few extra steps to be taken.
-
-for example:
+Clone the parent repository and initialize every nested submodule in one command:
 
 ```shell
-git clone https://github.com/fire1ce/3os.org repo
-cd repo
-git submodule init
-git submodule update
+git clone --recurse-submodules https://github.com/fire1ce/3os.org.git
 ```
 
-If you’re sure you want to fetch all submodules (and their submodules), you can also use this fancy one-liner:
+Initialize submodules after cloning a repository without `--recurse-submodules`:
 
 ```shell
-git clone --recurse-submodules https://github.com/fire1ce/3os.org
+git submodule update --init --recursive
 ```
 
-## Submodule Update
+## Update Submodules
 
-If you’re simply tracking the `master` or `main` branch for the submodule, you can suffice with a simple `fetch` and `merge`.
-
-```shell
-cd path/to/submodule
-git fetch
-git merge origin/master
-```
-
-If you’re in a hurry, you can streamline this for all submodules in your repo with:
+Fetch each submodule's configured remote branch and update nested submodules:
 
 ```shell
 git submodule update --remote --recursive
 ```
 
-Commit this change to your own repo, so others are locked to this new version of the submodule as well.
+Review and commit the updated submodule references in the parent repository:
 
-## Remove a submodule
+```shell
+git status
+git add path/to/submodule
+git commit -m "Update submodule"
+```
 
-- Delete the relevant section from the `.gitmodules` file.
-- Stage the `.gitmodules` changes git add `.gitmodules`
-- Delete the relevant section from `.git/config`.
-- Run `git rm --cached path_to_submodule` (no trailing slash).
-- Run `rm -rf .git/modules/path_to_submodule` (no trailing slash).
-- Commit `git commit -m "Removed submodule"`
-- Delete the now untracked submodule files `rm -rf path_to_submodule`
+## Remove a Submodule
+
+!!! danger
+
+    These commands remove the submodule working tree. Commit or back up any changes inside it before continuing.
+
+Deinitialize the submodule, remove it from the parent repository, and delete its local metadata:
+
+```shell
+git submodule deinit -f -- path/to/submodule
+git rm -f path/to/submodule
+rm -rf .git/modules/path/to/submodule
+git commit -m "Remove submodule"
+```
 
 <!-- appendices -->
+
+<!-- urls -->
+
+[git-submodule-url]: https://git-scm.com/docs/git-submodule 'Official Git Submodule Documentation'
+
+<!-- images -->
+
+<!--css-->
 
 <!-- end appendices -->

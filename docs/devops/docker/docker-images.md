@@ -15,6 +15,10 @@ A Docker image is a file used to execute code in a Docker container. Docker imag
 
 {{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Images') }}
 
+## Prune
+
+{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '### Prune') }}
+
 ## Credit
 
 Thanks to [@wsargent][wsargent-url]{target=\_blank} for creating this cheat sheet.

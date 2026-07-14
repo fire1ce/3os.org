@@ -3,7 +3,7 @@ site_name: 3os
 site_url: https://3os.org
 site_author: Stas Yakobov
 site_description: >-
-  Collection of technical documentation and guides for devops, developers, pentesters, systems administrators and other IT professionals.
+  Collection of technical documentation and guides for DevOps, developers, pentesters, systems administrators and other IT professionals.
 repo_url: https://github.com/fire1ce/3os.org
 repo_name: fire1ce/3os.org
 edit_uri: edit/main/docs/
@@ -147,5 +147,4 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format # Copyright
-
 

@@ -1,15 +1,26 @@
 ---
 title: BrewUp
-description: Brewup is autmation update for brew installed packages. Brewup uses GitHub as a "backup" of a config file which contains all installed Taps, Formulas, Casks and App Store Apps at your macOS.
+description: BrewUp automates Homebrew updates and stores installed taps, formulae, casks, and Mac App Store apps in a GitHub-backed bundle file.
 template: comments.html
 tags: [macos, homebrew, bash, github]
 ---
 
 # BrewUp
 
+{{ external_markdown('https://raw.githubusercontent.com/fire1ce/BrewUp/master/README.md', '') }}
+
+<!-- appendices -->
+
+<!-- urls -->
+
+<!-- images -->
+
+<!--css-->
+
 <style>
   .md-typeset img {
     display: inline;
+  }
 </style>
 
-{{ external_markdown('https://raw.githubusercontent.com/fire1ce/BrewUp/master/README.md', '') }}
+<!-- end appendices -->

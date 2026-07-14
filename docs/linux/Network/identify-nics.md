@@ -1,6 +1,6 @@
 ---
 title: Identify Network Interfaces
-description: Identify physical network interfaces coresponding to Network Interfaces name in the linux system.
+description: Guide to matching Linux network interface names with their physical Ethernet ports by blinking the port LEDs with ethtool.
 template: comments.html
 tags: [linux, network]
 ---

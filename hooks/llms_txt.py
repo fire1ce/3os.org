@@ -13,7 +13,7 @@ SITE_URL = "https://3os.org"
 HEADER = """\
 # 3os
 
-> Collection of technical documentation and guides for devops, developers,
+> Collection of technical documentation and guides for DevOps, developers,
 > pentesters, systems administrators and other IT professionals: Linux, macOS,
 > Windows, Proxmox, Docker, Synology, UniFi, Raspberry Pi, and more.
 

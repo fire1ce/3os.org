@@ -15,6 +15,10 @@ A Docker container image is a lightweight, standalone, executable package of sof
 
 {{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Containers') }}
 
+## Exposing Ports
+
+{{ external_markdown('https://raw.githubusercontent.com/wsargent/docker-cheat-sheet/master/README.md', '## Exposing ports') }}
+
 ## Credit
 
 Thanks to [@wsargent][wsargent-url]{target=\_blank} for creating this cheat sheet.

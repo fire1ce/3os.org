@@ -1,14 +1,13 @@
 ---
 title: SSH With RSA Keys
-description: Synology DSM - Allow presistent SSH With RSA Keys. How to configure Synology to use RSA keys for SSH access.
+description: Guide to configuring persistent SSH access with RSA keys on Synology DSM without repeated password prompts.
 template: comments.html
 tags: [synology, dsm, ssh, rsa-keys]
 ---
 
-# Synology DSM - Allow Presistent SSH With RSA Keys
+# Synology DSM - Allow Persistent SSH With RSA Keys
 
-As a power user, i would like to be able to connect to my Synology DSM vis SSH. The issue is that Synology DSM won't allow you to use SSH with RSA keys out of the box and only allows you to use SSH with password.
-In order to allow the use of SSH keys we need to perform the following steps:
+This guide shows you how to connect to Synology DSM over SSH with an RSA key instead of a password.
 
 ## Requirements
 

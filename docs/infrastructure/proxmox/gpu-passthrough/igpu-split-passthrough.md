@@ -32,7 +32,7 @@ This guide will show you how to configure Proxmox to use iGPU passthrough to VM.
 
     - **Comet Lake**
 
-There are two ways to use iGPU passthrough to VM. The first way is to use the `Full iGPU Passthrough` to VM. The second way is to use the `iGPU GVT-g` technology which allows as to split the iGPU into two parts. We will be covering the `Split iGPU Passthrough`. If you want to use the split `Full iGPU Passthrough` you can find the guide [here][igpu-full-passthrough-url].
+There are two ways to use iGPU passthrough with a VM. Full iGPU passthrough assigns the entire device to one VM, while `iGPU GVT-g` can split the device between multiple VMs. This guide covers split iGPU passthrough. See the [full iGPU passthrough guide][igpu-full-passthrough-url] for the dedicated-device configuration.
 
 ## Proxmox Configuration for GVT-g Split Passthrough
 
@@ -280,7 +280,7 @@ done;
 
 <!-- urls -->
 
-[igpu-full-passthrough-url]: gpu-passthrough-to-vm.md#igpu-full-passthrough 'iGPU Full Passthrough'
+[igpu-full-passthrough-url]: igpu-passthrough-to-vm.md 'iGPU Full Passthrough'
 [igpu-split-gvt-g-passthrough-url]: igpu-split-passthrough.md 'iGPU Split GVT-g Passthrough'
 [windows-vm-configuration-url]: ../windows-vm-configuration.md 'Windows VM Configuration'
 [intel-gpu-drivers-url]: https://www.intel.com/content/www/us/en/support/articles/000090440/graphics.html 'Intel GPU Drivers'

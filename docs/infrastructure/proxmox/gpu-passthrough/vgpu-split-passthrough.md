@@ -13,6 +13,12 @@ Thanks to [@polloloco][polloloco-url]{target=\_blank} for creating and maintaini
 
 Official GitLab repository: [polloloco/vgpu-proxmox][vgpu-proxmox-url]{target=\_blank}
 
+## RTX 30xx and 40xx Compatibility { #your-rtx-30xx-or-40xx-will-not-work-at-this-point-in-time }
+
+!!! warning
+
+    Consumer GeForce RTX 30- and 40-series GPUs are not supported by the upstream method. NVIDIA-qualified vGPU models are the exception; follow the NVIDIA documentation linked from the embedded guide for those cards.
+
 ## NVIDIA vGPU with the GRID
 
 {{ external_markdown('https://gitlab.com/polloloco/vgpu-proxmox/-/raw/master/README.md', '') }}

@@ -1,15 +1,15 @@
 ---
 title: Services & Daemons
-description: Guide on how to use systemctl to manage services and daemons on your Linux system:
+description: Cheat sheet for managing Linux services and daemons with systemctl, including status, start, stop, restart, enable, and disable commands.
 template: comments.html
 tags: [linux, services, daemons]
 ---
 
 # Services & Daemons
 
-In Linux, a service is a program that runs in the background and performs a specific function. A daemon is a type of service that also runs in the background and often starts at boot time. These processes can be controlled using the systemctl or service command. Services and daemons are an important part of the Linux operating system, as they provide various functions and services that allow the system to run smoothly. There are many different types of services and daemons that can be found on a typical Linux system, and you can find more information about them in the documentation for your specific distribution.
+In Linux, services and daemons run in the background to provide system functions. On distributions that use systemd, the `systemctl` command manages their runtime state and boot behavior.
 
-## Useful `systemctl` commands
+## Useful `systemctl` Commands
 
 Start the specified service.
 
@@ -61,13 +61,13 @@ systemctl list-units --all
 
 ## Display Running Services
 
-The systemctl command with the grep command will display a list of all running services and daemons on your Linux system. The grep command will search the output of systemctl for the string "running" and only display the lines that contain that string.
+Filter the `systemctl` output to display running services and daemons:
 
 ```shell
 systemctl | grep running
 ```
 
-For more readable output:
+Format the same output as aligned columns:
 
 ```shell
 systemctl --no-pager | grep running | column -t
@@ -75,7 +75,7 @@ systemctl --no-pager | grep running | column -t
 
 ## Display Enabled Services
 
-`systemctl list-unit-files --state=enabled` is a command that shows a list of unit files that are currently enabled on the system. The --state option specifies the state of the unit files that you want to see. By using --state=enabled, you will see only unit files that are enabled and will be started automatically when the system boots.
+List the unit files that are enabled to start automatically at boot:
 
 ```shell
 systemctl list-unit-files --state=enabled

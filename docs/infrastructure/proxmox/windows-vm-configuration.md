@@ -1,8 +1,8 @@
 ---
 title: Windows VM Configuration
-description: Windows 10 or Windows 11 Virutal Machines with VirtIO Disks and Networking using Proxmox guide. Supports Proxmox's GPU passthroughs feature.
+description: Guide to creating Windows 10 and 11 virtual machines on Proxmox VE with VirtIO disks, networking, and GPU passthrough support.
 template: comments.html
-tags: [Proxmox, Windows Virtual Machines, VirtIO]
+tags: [proxmox, windows, virtio]
 ---
 
 # Proxmox Windows Virtual Machine Configuration
