@@ -1,6 +1,6 @@
 ---
 title: Common Docker Commands
-description: This is a short summary of the most commonly used Docker commands. If you're new to Docker, or even experienced Docker, it can be helpful to have a quick reference to the most commonly used Docker commands for managing the Docker environment
+description: Quick reference for common Docker commands used to manage images, containers, networks, volumes, logs, and system resources.
 template: comments.html
 tags: [docker, cheat-sheet]
 ---

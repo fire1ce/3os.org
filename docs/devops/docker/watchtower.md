@@ -1,6 +1,6 @@
 ---
 title: Watchtower
-description: Watchtower is a container-based solution for automating Docker container base image updates. Watchtower will monitor your running Docker containers and watch for changes to the images that those containers were originally started from.
+description: Run Watchtower to monitor Docker containers and automatically recreate them when updated base images become available.
 template: comments.html
 tags: [docker, container, watchtower]
 ---

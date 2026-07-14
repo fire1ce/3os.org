@@ -1,6 +1,6 @@
 ---
 title: Windows SSH with ed25519 Keys
-description: Enhance the security of your Windows system by configuring SSH client and SSH agent using ed25519 keys. This guide covers the installation of OpenSSH client, key generation, and secure connections for services like Git.
+description: Configure the Windows OpenSSH client and SSH agent with Ed25519 keys for secure Git and remote-server connections.
 template: comments.html
 tags: [SSH, Windows, ed25519, OpenSSH, Git, Security]
 ---

@@ -1,6 +1,6 @@
 ---
 title: MobSF
-description: Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis.
+description: Run Mobile Security Framework (MobSF) in Docker for automated static and dynamic analysis of Android and other mobile applications.
 template: comments.html
 tags: [android, penetration-testing]
 ---

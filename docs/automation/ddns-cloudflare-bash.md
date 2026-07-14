@@ -1,6 +1,6 @@
 ---
 title: DDNS Cloudflare Bash
-description: DDNS Cloudflare Bash script is a simple bash script that allows you to easily update your Cloudflare's DNS records dynamically regardless of your current IP address for Linux, Unix, FreeBSD, and macOS.
+description: Deploy the DDNS Cloudflare Bash script to keep Cloudflare DNS records synchronized with changing public IP addresses.
 template: comments.html
 tags: [automation, cloudflare, ddns, bash]
 ---

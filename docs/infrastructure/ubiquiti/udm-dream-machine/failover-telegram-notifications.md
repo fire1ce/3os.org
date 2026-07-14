@@ -1,6 +1,6 @@
 ---
 title: Failover Telegram Notifications
-description: UDM WAN Failover Telegram Notifications. This script will send a message to a Telegram chat when WAN connection is changed to failover and back to normal.
+description: Send Telegram notifications when a UniFi UDM switches its WAN connection to failover mode or returns to the primary connection.
 template: comments.html
 tags: [udm, ubiquiti, unifi]
 ---
