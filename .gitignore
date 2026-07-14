@@ -23,3 +23,50 @@ Pipfile.lock
 node_modules/
 .vscode/settings.json
 .venv
+__pycache__/
+.env
+
+### AI / LLM agent tooling — never commit ###
+# Claude Code
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+# OpenAI Codex
+.codex/
+AGENTS.md
+AGENTS.local.md
+# Cursor
+.cursor/
+.cursorrules
+.cursorignore
+.cursorindexingignore
+# GitHub Copilot
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+# Aider
+.aider*
+# Windsurf / Codeium
+.windsurf/
+.windsurfrules
+.codeium/
+# Google Gemini CLI
+.gemini/
+GEMINI.md
+# Cline / Roo Code
+.clinerules
+.clinerules/
+.roo/
+.roomodes
+# OpenHands
+.openhands/
+# goose
+.goosehints
+# Continue
+.continue/
+# generic agent scratch / plan / memory artifacts
+.agent/
+.agents/
+*.agent.md
+.llm/
