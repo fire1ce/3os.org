@@ -1,0 +1,175 @@
+# 3os
+
+> Collection of technical documentation and guides for devops, developers,
+> pentesters, systems administrators and other IT professionals: Linux, macOS,
+> Windows, Proxmox, Docker, Synology, UniFi, Raspberry Pi, and more.
+
+Maintained by Stas Yakobov. Source markdown: https://github.com/fire1ce/3os.org (docs/).
+
+## Automation
+
+- [DDNS Cloudflare Bash](https://3os.org/automation/ddns-cloudflare-bash/): DDNS Cloudflare Bash script is a simple bash script that allows you to easily update your Cloudflare's DNS records dynamically regardless of your current IP address for Linux, Unix, FreeBSD, and macOS
+- [DDNS Cloudflare PowerShell](https://3os.org/automation/ddns-cloudflare-powershell/): DDNS Cloudflare PowerShell script is a simple PowerShell script that allows you to easily update your Cloudflare's DNS records dinamically regardless of your current IP address for Windows operating systems
+- [Gmail Mark Archived as Read](https://3os.org/automation/gmail-mark-archived-mail-as-read/): Automatically mark archived emails as read in Gmail
+- [Syncthing](https://3os.org/automation/syncthings/): Syncthing synchronization program, linux, macos, synology dsm installation and configuration
+- [Better Terminal Experience](https://3os.org/automation/guides/better-terminal-experience/): Better terminal experience installation and configuration guide, for macOS and Linux. Based on zsh, oh-my-zsh with auto suggestions and syntax highlighting
+- [Pi-hole with DOH on Docker](https://3os.org/automation/guides/pihole-doh/): Pi-hole as DNS Server with DNS over HTTPS (DOH) Based on Docker Containers. Pi-hole, DNS ads, tracking blocking on Ubuntu with DNS over HTTP, list of blacklist
+
+## DevOps
+
+- [Common Docker Commands](https://3os.org/devops/docker/common-docker-commands/): This is a short summary of the most commonly used Docker commands. If you're new to Docker, or even experienced Docker, it can be helpful to have a quick reference to the most commonly used Docker commands for managing the Docker environment
+- [Containers Cheat Sheet](https://3os.org/devops/docker/docker-containers/): Docker cheat sheet for managing containers. List of all containers, container logs, container shell, stop, remove, and more
+- [Images Cheat Sheet](https://3os.org/devops/docker/docker-images/): Docker cheat sheet for managing images. List of all images, image create, image build, image pull, image push, image remove, and more
+- [Docker Installation](https://3os.org/devops/docker/docker-install/): Most common ways to install Docker on Linux, Mac, and Windows machines with examples
+- [Networks & Links Cheat Sheet](https://3os.org/devops/docker/docker-networks/): Docker cheat sheet for managing docker networks. List of all networks, network create, network remove, link between containers and more
+- [Security & Best Practices](https://3os.org/devops/docker/docker-security/): Docker cheat sheet for security and best practices using Docker containers and images in production
+- [Watchtower](https://3os.org/devops/docker/watchtower/): Watchtower is a container-based solution for automating Docker container base image updates. Watchtower will monitor your running Docker containers and watch for changes to the images that those containers were originally started from
+- [Removing Sensitive Data](https://3os.org/devops/git/delete-commit-history/): Removing sensitive data such as a password, SSH key, API tokens, license keys and so on from the Github repository history
+- [Git Cli Cheat Sheet](https://3os.org/devops/git/git-cli-cheat-sheet/): Cheat sheet for Git. Git version control system designed to quickly and efficiently manage projects cheet sheet for the command line
+- [Submodules Cheat Sheet](https://3os.org/devops/git/git-submodules/): Cheat sheet for Pip Git sumboduls. Git submodules allow you to keep a git repository as a subdirectory. Git Submodule Cli Useful Commands cheat sheet
+- [GitHub Cli](https://3os.org/devops/git/github-cli/): Cheat sheet for GitHub Cli
+
+## Development
+
+- [Npm Command-line Utility](https://3os.org/development/node-npm/npm/): Cheat sheet for NPM. Npm command-line utility for interacting with package installation, version management, and dependency management Useful Commands for Npm
+- [PM2 - Node.js Process Manager](https://3os.org/development/node-npm/pm2/): Cheat sheet for PM2. PM2 is a daemon process manager that will help you manage your Node.js applications
+- [Pip Package Manager](https://3os.org/development/python/pip/): Cheat sheet for Pip. Pip Python Package Manager Cheat Sheet. Pip is the package installer for Python. You can use it to install packages from the Python Package Index and other indexes
+- [Supervisor Process Manager](https://3os.org/development/python/supervisor/): Cheat sheet for Supervisor. Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems
+- [Virtual Environment](https://3os.org/development/python/virtualenv/): Cheat sheet for venv. Python Virtual Environment - venv. How to install and Use venv with Python. venv is a tool to create isolated Python environments
+- [Ruby Gem Package Manager](https://3os.org/development/ruby/ruby/): Cheat sheet for RubyGems. RubyGems is a package manager for the Ruby programming language that provides a standard format for distributing Ruby programs and libraries
+
+## Infrastructure
+
+- [Disable IPV6](https://3os.org/infrastructure/openwrt/disable-ipv6/): How to disable IPV6 on your OpenWrt router
+- [oh-my-zsh Install](https://3os.org/infrastructure/openwrt/install-oh-my-zsh/): How to install oh-my-zsh shell on your OpenWrt router using SSH
+- [Snippets](https://3os.org/infrastructure/openwrt/snippets/): OpenWrt Snippets with useful commands and scripts. Best practices and tips
+- [Wi-Fi Traffic Mirroring](https://3os.org/infrastructure/openwrt/wifi-port-mirror/): OpenWrt Wi-Fi Traffic Mirroring with GL.iNet GL-AR750S
+- [Cloud Image Template](https://3os.org/infrastructure/proxmox/cloud-image-template/): Proxmox tutorial for creating and using Cloud Image Template. This tutorial will walk you through creating a Cloud Image Template, and using it to create a new VM
+- [Let's Encrypt with Cloudflare](https://3os.org/infrastructure/proxmox/lets-encrypt-cloudflare/): Install valid SSL certificate with Let's Encrypt and Cloudflare DNS for Proxmox VE
+- [VM Disk Expander](https://3os.org/infrastructure/proxmox/vm-disk-expander/): Interactive disk expander for Proxmox's VM disks (including the partition) from your Proxmox host cli
+- [Windows VM Configuration](https://3os.org/infrastructure/proxmox/windows-vm-configuration/): Windows 10 or Windows 11 Virutal Machines with VirtIO Disks and Networking using Proxmox guide. Supports Proxmox's GPU passthroughs feature
+- [GPU Passthrough to VM](https://3os.org/infrastructure/proxmox/gpu-passthrough/gpu-passthrough-to-vm/): Proxmox full gpu passthrough to VM configuration for hardware acceleration
+- [iGPU Passthrough to VM](https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/): Proxmox iGPU passthrough to VM configuration for hardware acceleration
+- [iGPU GVT-g Split Passthrough](https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-split-passthrough/): Proxmox iGPU GVT-g split passthrough to VM configuration for hardware acceleration
+- [vGPU Split Passthrough](https://3os.org/infrastructure/proxmox/gpu-passthrough/vgpu-split-passthrough/): Proxmox vGPU split passthrough to VM configuration for hardware acceleration
+- [Disable IPv6 on Proxmox](https://3os.org/infrastructure/proxmox/network/disable-ipv6/): How to permanently disable IPv6 on Proxmox VE Server
+- [Proxmox Networking](https://3os.org/infrastructure/proxmox/network/proxmox-networking/): Proxmox Networking examples, static and DHCP configuration and vlan aware configuration
+- [PVE Kernel Cleaner](https://3os.org/infrastructure/proxmox/pvekclean/): PVE Kernel Cleaner allows you to easily remove old/unused PVE kernels on your Proxmox VE system
+- [oh-my-zsh on Synology NAS](https://3os.org/infrastructure/synology/Install-oh-my-zsh/): Install oh-my-zsh on Synology NAS (DSM)
+- [Install VM Tools on Virtual Machine](https://3os.org/infrastructure/synology/Installing-vm-tools-on-virtual-machine/): How to installing VM Tools on Virtual Machine at DSM Synology NAS
+- [Auto DSM Config Backup](https://3os.org/infrastructure/synology/auto-dsm-config-backup/): Auto DSM config backup with local script
+- [Free 80,443 Ports](https://3os.org/infrastructure/synology/disable-dms-listening-on-80-443-ports/): Free 80,443 ports on Synology NAS for other applications
+- [Enable SSH Root Login](https://3os.org/infrastructure/synology/enable-ssh-root-login/): Enable SSH Root Login on Synology NAS directly from the terminal. No need to log in as a user and then enter "sudo su root"
+- [SSH With RSA Keys](https://3os.org/infrastructure/synology/ssh-with-rsa-key/): Synology DSM - Allow presistent SSH With RSA Keys. How to configure Synology to use RSA keys for SSH access
+- [EdgeRouter](https://3os.org/infrastructure/ubiquiti/edge-router/): Ubiquiti EdgeRouter useful commands tips and tricks
+- [CLI Commands](https://3os.org/infrastructure/ubiquiti/udm-dream-machine/cli-commands/): Collection of CLI commands for the Ubiquiti Unifi Dream Machine or Dream Machine Pro
+- [Failover Telegram Notifications](https://3os.org/infrastructure/ubiquiti/udm-dream-machine/failover-telegram-notifications/): UDM WAN Failover Telegram Notifications. This script will send a message to a Telegram chat when WAN connection is changed to failover and back to normal
+- [Persistent Boot Script](https://3os.org/infrastructure/ubiquiti/udm-dream-machine/persistent-boot-script/): Persistent On Boot Script for Ubiquiti UniFi UDM, UDM PRO which allows you to persists custom modifications to the system
+- [Persistent SSH Keys](https://3os.org/infrastructure/ubiquiti/udm-dream-machine/persistent-ssh-keys/): Persistent SSH Keys Script for UDM and UDM PRO which allows you to persists your SSH keys after reboot
+- [Better Fan Speeds](https://3os.org/infrastructure/ubiquiti/udm-dream-machine/udm-better-fan-speeds/): Overrides UDM fan speeds with users predefined
+- [UDM Cloudflare DDNS](https://3os.org/infrastructure/ubiquiti/udm-dream-machine/udm-cloudflare-ddns/): This will allow to to span a container with podman to handle DDNS updates for main internet IP address
+- [Wireguard VPN](https://3os.org/infrastructure/ubiquiti/udm-dream-machine/wireguard-vpn/): Wireguard VPN installation and configuration guide for Ubiquiti UniFi UDM, UDM PRO, UDR and UXG
+- [VMware Fusion](https://3os.org/infrastructure/vmware/vmware-fusion/): VMware Fusion Port Forwarding for Reverse Shells
+
+## Linux
+
+- [General Snippets](https://3os.org/linux/general-snippets/): Linux general snippets for the Linux user. This is a collection of tips and tricks for the Linux user
+- [Files Handling](https://3os.org/linux/files-handling/): Linux files handling with the Linux file system tips and tricks for the Linux user. This is a collection of tips and tricks for the Linux user
+- [Locales & Timezone](https://3os.org/linux/locales-time-zone/): Linux locales and timezone tips and tricks for the Linux user. This is a collection of tips and tricks for the Linux user
+- [LVM Partitions](https://3os.org/linux/lvm-partitions/): Linux removing lvm partition and merging in to root partition
+- [Memory & Swap](https://3os.org/linux/memory-swap/): Linux memory and swap snipets and tips for the Linux user
+- [Services and daemons](https://3os.org/linux/services-and-daemons/)
+- [SMB Mount With autofs](https://3os.org/linux/smb-mount-autofs/): Using autofs to mount SMB shares on Linux systems with proper UTF-8 support for special characters
+- [SSH Hardening with SSH Keys](https://3os.org/linux/ssh-hardening-with-rsa-keys/): SSH Hardening with SSH key
+- [Identify Network Interfaces](https://3os.org/linux/Network/identify-nics/): Identify physical network interfaces coresponding to Network Interfaces name in the linux system
+- [Disable IPv6 via Grub](https://3os.org/linux/ubuntu-debian/disable-ipv6/): How to permanently disable IPv6 on Ubuntu and Debian
+- [Free Port 53 on Ubuntu](https://3os.org/linux/ubuntu-debian/free-port-53/): How to properly free port 53 on Ubuntu from systemd-resolved DNS
+- [Remove Snap Store](https://3os.org/linux/ubuntu-debian/remove-snap-store/): How to remove snap from Ubuntu server
+- [Unattended Upgrades](https://3os.org/linux/ubuntu-debian/unattended-upgrades/): Ubuntu, Debian, Raspberry Pi unattended upgrades guide
+
+## macOS
+
+- [Applications Tweaks](https://3os.org/mac-os/applications-tweaks/): macOS Applications tweaks and tips for better experience, productivity and workflow and more
+- [Enable Root User](https://3os.org/mac-os/enable-root-user/): How to enable and disable root user in macOS. This will allow you to login as root user
+- [SSH Passphrase to Keychain](https://3os.org/mac-os/import-ssh-keys-keychain/): Import ed25519/RSA SSH Keys passphrase to macOS Keychain
+- [Terminal Snippets](https://3os.org/mac-os/terminal-snippets/): Terminal usage snippets for macOS. This is a collection of snippets that I use without specific category
+- [TouchID for sudo](https://3os.org/mac-os/touch-id-for-sudo/): Enable TouchID for sudo in terminal and iTerm2 with a simple config change
+- [UI Tweaks](https://3os.org/mac-os/ui-tweaks/): macOS macOS UI tweaks and tips, for better experience, productivity and workflow
+- [BrewUp](https://3os.org/mac-os/homebrew/brewup/): Brewup is autmation update for brew installed packages. Brewup uses GitHub as a "backup" of a config file which contains all installed Taps, Formulas, Casks and App Store Apps at your macOS
+- [Brew Snippets](https://3os.org/mac-os/homebrew/homebrew-snippets/): Homebrew usage snippets for macOS. This is a collection of snippets that I use to install and manage homebrew packages
+- [Pyenv-virtualenv Multi Version](https://3os.org/mac-os/python/pyenv-virtualenv/): Multiple Version Python Virtual Environment Manager for Python development in macOS
+
+## Windows
+
+- [Windows SSH Server](https://3os.org/windows/ssh-server/): Windows SSH Server with PowerShell and RSA keys installation and configuration guide
+- [Useful Software](https://3os.org/windows/useful-software/): Windows Tips & Guides, examples and simple usage and useful software
+- [Windows Servers](https://3os.org/windows/windows-servers/): Windows Servers Tips & Guides, examples and simple usage and useful software
+- [Windows SSH with ed25519 Keys](https://3os.org/windows/windows-ssh-agent-with-keys/): Enhance the security of your Windows system by configuring SSH client and SSH agent using ed25519 keys. This guide covers the installation of OpenSSH client, key generation, and secure connections for services like Git
+- [Windows 10/11 Tweaks](https://3os.org/windows/windows-tweaks/): Some tips and tricks and Tweaks for Windows 10/11 that may be helpful or even essential for you
+- [Declare Locations as "Inside Your Local Network"](https://3os.org/windows/guides/declare-locations/): Declare Locations as "Inside Your Local Network"
+- [Send Emails From The Windows Task Scheduler](https://3os.org/windows/guides/email-from-task-scheduler/): How to send emails from the windows task scheduler
+
+## Raspberry Pi
+
+- [Snippets](https://3os.org/raspberry-pi/snippets/): Raspberry Pi Tips & Tricks how to, guides, snippets, examples, and simple usage, Raspberry Pi, Default User and Password, Install Oh-My-Zsh on Raspberry os
+- [Docker on Raspberry Pi](https://3os.org/raspberry-pi/docker-raspberrypi/): How to install Docker and Docker-compose on Raspberry Pi and user configuration
+- [External Power Button](https://3os.org/raspberry-pi/external-power-button/): Python script to with external power button - Wake/Power Off/Restart(Double Press)
+- [Motion Sensor Display Control](https://3os.org/raspberry-pi/motion-sensor-display-control/): Python script to control connected display to Raspberry Pi using Motion Sensor
+- [3g Modem Host Configuration](https://3os.org/raspberry-pi/guides/3g-modem-host/): Setup of 3g Modem On Raspberry Pi
+- [Magic Mirror 2.0](https://3os.org/raspberry-pi/projects/magic-mirror-v2/): Magic Mirror 2.0 is a Raspberry Pi based mirror that can be used to display information from various sources
+- [Magic Mirror](https://3os.org/raspberry-pi/projects/magic-mirror/): Raspberry Pi - Magic Mirror Installation how to, guides, examples, and simple usage
+
+## Android
+
+- [ADB Cheat Sheet](https://3os.org/android/adb-cheat-sheet/): Cheat sheet for ADB. ADB, Android Debug Bridge, is a command-line utility for Android. ADB can control your device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands
+- [Apktool](https://3os.org/android/apktool/): Apktool A tool for reverse engineering 3rd party, closed, binary Android apps. you will find a series of practical example commands for running Apktool and getting the most of this powerful tool
+- [PT Application](https://3os.org/android/applications/): List for Android penetration testing applications and tools that can be used to aid in penetration testing. The following are the most commonly used applications
+- [JADX Decompiler](https://3os.org/android/jadx-decompiler/): JADX Decompiler is a Java bytecode decompiler for Android applications
+- [MobSF](https://3os.org/android/mobsf/): Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis
+- [SSL Pinning Bypass](https://3os.org/android/ssl-pinning-bypass/): Android SSL Pinning bypass using Frida. Frida is dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers
+
+## Penetration Testing
+
+- [CLI Commands Collation](https://3os.org/penetration-testing/cheatsheets/cli-commands-collation/): A collation of handy penetration-testing and networking CLI commands - reverse DNS lookups, packet capture, reverse shells with msfvenom, and NFS enumeration
+- [Gobuster CheatSheet](https://3os.org/penetration-testing/cheatsheets/gobuster-cheatsheet/): Gobuster CheatSheet - practical example commands and a full flag reference for directory, DNS, vhost, S3, GCS, TFTP, and fuzzing modes in Gobuster 3.8
+- [Nmap CheatSheet](https://3os.org/penetration-testing/cheatsheets/nmap-cheatsheet/): Nmap CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Nmap and getting the most of this powerful tool. Full documentation for the nmap flags
+- [XSS CheatSheet](https://3os.org/penetration-testing/cheatsheets/xss-cheatsheet/): XSS cheatsheet  for pentesting series of practical example commands for running XSS and getting the most of this
+- [Bettercap 1.6.2 Installation](https://3os.org/penetration-testing/kali-linux/bettercap1.6.2/): Bettercap 1.6.2 is a tool for Man In The Middle Attack and SSL Strip
+- [Kali Linux](https://3os.org/penetration-testing/kali-linux/kali-linux/): Kali Linux how to, guides, examples, and simple usage and tools, Minimal Headless Kali Linux installation, Kali Linux cloud
+- [Links and Tools](https://3os.org/penetration-testing/kali-linux/links/): Penetration Testing - Tools and Usefully Links for Penetration Testing
+- [Metasploit Framework](https://3os.org/penetration-testing/kali-linux/metasploit/): Metasploit Framework, a tool for developing and executing exploit code against a remote target machine
+- [Wifite](https://3os.org/penetration-testing/kali-linux/wifite/): Wifite is an automated wireless attack tool. You will find a series of practical example commands for running Wifite and getting the most of this powerful tool
+- [About Proxmark3](https://3os.org/penetration-testing/proxmark/about-proxmark/): The Proxmark is an RFID swiss-army tool, allowing for both high and low level interactions with the vast majority of RFID tags and systems world-wide
+- [Proxmark3 CheatSheet](https://3os.org/penetration-testing/proxmark/cheatsheet/): Proxmark3 CheatSheet - In this CheatSheet, you will find a series of practical example commands for running Proxmark3 and getting the most of this powerful tool
+- [Mifare Classic 1K ISO14443A](https://3os.org/penetration-testing/proxmark/mifare-tags/): How to clone Mifare Classic 1K ISO14443A NFC Tag with proxmark3
+- [Clickjacking Test Page](https://3os.org/penetration-testing/utilities/clickjacking/): Page for the Clickjacking vulnerability in web applications testing tool
+- [IID Generator & Validator](https://3os.org/penetration-testing/utilities/idd-generator/): Free online Israeli ID (Teudat Zehut) generator and validator. Generate valid test ID numbers with correct check digits and verify any ID - runs entirely in your browser, no data is sent to any server
+
+## HomeLab
+
+- [Synology NAS](https://3os.org/homelab/devices/synology-nas/): HomeLab Synology NAS device. Synology DS218+ NAS is used mainly for home lab for data backup, synchronization, storage and Docker containers
+
+## Utilities
+
+- [htpasswd Password Generator](https://3os.org/utilities/htpasswd-generator/): Generates a random password for htpasswd
+- [Useful Links & Tools](https://3os.org/utilities/useful-links-tools/): Useful Links & Tools
+- [Wifi QR Image Generator](https://3os.org/utilities/wifiQrGenerator/): Simple QR Code Generator for your wifi network. Scan & Connect This will generate a QR code that can be used with any iOS/Android device to access a given Wifi
+- [Chrome Extensions](https://3os.org/utilities/browsers-extensions/chrome/): List of extensions for Chrome browser
+- [Firefox Extensions](https://3os.org/utilities/browsers-extensions/firefox/): List of extensions for Firefox browser
+- [About Markdown](https://3os.org/utilities/markdown-cheatsheet/about/): About Markdown cheatsheet for MkDocs and Material
+- [Admonitions](https://3os.org/utilities/markdown-cheatsheet/admonition/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Admonitions
+- [Basic Formatting](https://3os.org/utilities/markdown-cheatsheet/basic-formatting/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for Markddown Text Highlighting, Horizontal Line
+- [Code Blocks](https://3os.org/utilities/markdown-cheatsheet/code-blocks/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for Code Blocks, Code Blocks with Syntax Highlighting, Code Blocks with titles, Code Blocks with numbers
+- [Content Tabs](https://3os.org/utilities/markdown-cheatsheet/content-tabs/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for Content Tabs
+- [Diagrams](https://3os.org/utilities/markdown-cheatsheet/diagrams/): This Markdown cheat sheet provides a quick overview of Diagrams based on Mermaid.js a very popular and flexible solution for drawing diagrams
+- [Embed External Markdown](https://3os.org/utilities/markdown-cheatsheet/external-markdown/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for embedding external markdown from remote sources
+- [Icons & Emojis](https://3os.org/utilities/markdown-cheatsheet/icons/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Icons & Emojis
+- [Images](https://3os.org/utilities/markdown-cheatsheet/images/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes Images
+- [Links](https://3os.org/utilities/markdown-cheatsheet/links/): This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements for MkDocs and Material Theme for MkDocs. Includes links
+- [Tables, Lists and Quotes](https://3os.org/utilities/markdown-cheatsheet/tables-lists-quotes/): This Markdown cheat sheet provide a quick overview of all the Markdown syntax elements for  Tables and Markddown Lists, Markdown Quotes
+- [Awesome Pages Plugin](https://3os.org/utilities/markdown-cheatsheet/awesome-pages/): The awesome-pages plugin allows you to customize how your pages show up the navigation of your MkDocs without having to configure the full structure in your mkdocs.yml
+
+## Optional
+
+- [What's New](https://3os.org/blog/): site changelog
+- [Tags](https://3os.org/tags/): tag index
