@@ -1,175 +1,179 @@
 ---
-title: ADB Cheat Sheet
-description: ADB cheat sheet for managing Android devices, transferring files, installing packages, and running shell commands from a computer.
+title: Android ADB Cheat Sheet
+description: Current ADB commands for connecting Android devices, installing packages, transferring files, collecting logs, and capturing screens.
 template: comments.html
-tags: [android, adb, cheat-sheet]
+tags: [android, adb, cheat-sheet, platform-tools]
 ---
 
 # Android ADB Cheat Sheet
 
-ADB, Android Debug Bridge, is a command-line utility included with Google's Android SDK. ADB can control your device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands, and more. ADB is a powerful tool that can be used to control your Android device from a computer. Below are some of the most common commands you can use with ADB and their usage. You can find more information about ADB and its usage by visiting the [official website][adb-docs-url]{target=\_blank}.
+Android Debug Bridge (`adb`) is a command-line tool for communicating with an Android device or emulator. You can use it to install applications, transfer files, run shell commands, collect logs, and more. ADB is included in the [Android SDK Platform Tools package][platform-tools-url].
 
-## Common ADB Commands
+Before using ADB with a physical device, enable **Developer options** and **USB debugging**. Connect the device, accept the RSA authorization prompt, and run `adb devices` to check the connection.
 
-### Push a file to Download folder of the Android Device
+The commands below follow the current [Android Debug Bridge documentation][adb-docs-url]. You can also run `adb --help` to check the commands supported by the Platform Tools version installed on your computer.
 
-```bash
-adb push example.apk /mnt/sdcard/Download/
+## Select a Device
+
+| Command | Purpose |
+| --- | --- |
+| `adb devices` | List connected devices and emulators. |
+| `adb devices -l` | Include descriptive device information. |
+| `adb -d <command>` | Send a command to the only connected hardware device. |
+| `adb -e <command>` | Send a command to the only running emulator. |
+| `adb -s <serial> <command>` | Send a command to the device with the specified serial. |
+
+When more than one target is connected, use `-d`, `-e`, or `-s`; otherwise, `adb` reports that more than one device or emulator is available.
+
+## ADB Server
+
+```shell
+adb start-server
+adb kill-server
 ```
 
-### Lists all the installed packages and get the full paths
+After `adb kill-server`, the next `adb` command will start the server again.
 
-```bash
-adb shell pm list packages -f
+## Wireless Debugging
+
+Android 11 and later support wireless debugging on phones and tablets. Enable **Wireless debugging** in Developer options, select **Pair device with pairing code**, and use the IP address and port shown on the device:
+
+```shell
+adb pair <ip-address>:<pairing-port>
+adb connect <ip-address>:<debugging-port>
+adb devices
 ```
 
-### Pulls a file from android device
+The pairing port and debugging port can be different. Make sure the computer and Android device are connected to the same wireless network.
 
-```bash
-adb pull /mnt/sdcard/Download/example.apk
+## Install and Uninstall Packages
+
+Install an APK stored on the computer:
+
+```shell
+adb install app.apk
 ```
 
----
+Reinstall an existing package while keeping its data:
 
-### Install apk from host to Android device
-
-```bash
-adb shell install example.apk
+```shell
+adb install -r app.apk
 ```
 
-### Install apk from Android device storage
+Install an APK that is already stored on the Android device:
 
-```bash
-adb shell install /mnt/sdcard/Download/example.apk
+```shell
+adb shell pm install /sdcard/Download/app.apk
 ```
 
----
+Uninstall a package by its package name:
 
-### Set network proxy
-
-```bash
-adb shell settings put global http_proxy <address>:<port>
+```shell
+adb shell pm uninstall com.example.app
 ```
 
-Disable network proxy
+Use `adb install -t app.apk` when installing an APK marked as a test package.
 
-```bash
-adb shell settings put global http_proxy :0
+## Query Packages
+
+| Command | Purpose |
+| --- | --- |
+| `adb shell pm list packages` | List installed package names. |
+| `adb shell pm list packages -f` | Include each package's associated APK path. |
+| `adb shell pm list packages -3` | List third-party packages. |
+| `adb shell pm list packages -s` | List system packages. |
+| `adb shell pm list packages -u` | Include uninstalled packages. |
+| `adb shell pm path <package>` | Print the APK path for a package. |
+| `adb shell pm list permission-groups` | List known permission groups. |
+| `adb shell pm list permissions -g -f` | List permissions with full details, organized by group. |
+
+## Transfer Files
+
+Copy a local file or directory to the device:
+
+```shell
+adb push <local-path> <device-path>
 ```
 
-## ADB Basics Commands
+Copy a file or directory from the device to the computer:
 
-| Command                             | Description                                 |
-| ----------------------------------- | ------------------------------------------- |
-| **adb devices**                     | **Lists connected devices**                 |
-| **adb connect 192.168.2.1**         | **Connects to adb device over network**     |
-| adb root                            | Restarts adbd with root permissions         |
-| adb start-server                    | Starts the adb server                       |
-| adb kill-server                     | Kills the adb server                        |
-| **adb reboot**                      | **Reboots the device**                      |
-| **adb devices -l**                  | **List of devices by product/model**        |
-| **adb -s `<deviceName> <command>`** | **Redirect command to specific device**     |
-| adb –d `<command>`                  | Directs command to only attached USB device |
-| adb –e `<command>`                  | Directs command to only attached emulator   |
+```shell
+adb pull <device-path> <local-path>
+```
 
-## Logs
+For example:
 
-| Command                                      | Description         |
-| -------------------------------------------- | ------------------- |
-| **adb logcat `[options] [filter] [filter]`** | **View device log** |
-| adb bugreport                                | Print bug reports   |
+```shell
+adb push app.apk /sdcard/Download/app.apk
+adb pull /sdcard/Download/app.apk ./app.apk
+```
 
-## Permissions
+The ADB shell can only access paths allowed by the Android device permissions.
 
-| Command                          | Description                        |
-| -------------------------------- | ---------------------------------- |
-| adb shell permissions groups     | List permission groups definitions |
-| adb shell list permissions -g -r | List permissions details           |
+## Run Shell Commands
 
-## Package Installation
+Start an interactive shell:
 
-| Command                        | Description                     |
-| ------------------------------ | ------------------------------- |
-| **adb shell install** `<apk>`  | **Install app**                 |
-| **adb shell install `<path>`** | **Install app from phone path** |
-| adb shell install -r `<path>`  | Install app from phone path     |
-| adb shell uninstall `<name>`   | Remove the app                  |
+```shell
+adb shell
+```
 
-## Paths
+Run a single device command without starting an interactive session:
 
-| Command                                   | Description                               |
-| ----------------------------------------- | ----------------------------------------- |
-| /data/data/`<package name>`/databases     | App databases                             |
-| /data/data/`<package name>`/shared_prefs/ | Shared preferences                        |
-| /mnt/sdcard/Download/                     | Download folder                           |
-| /data/app                                 | Apk installed by user                     |
-| /system/app                               | Pre-installed APK files                   |
-| /mmt/asec                                 | Encrypted apps (App2SD)                   |
-| /mmt/emmc                                 | Internal SD Card                          |
-| /mmt/adcard                               | External/Internal SD Card                 |
-| /mmt/adcard/external_sd                   | External SD Card                          |
-| -------                                   | -----------                               |
-| adb shell ls                              | List directory contents                   |
-| adb shell ls -s                           | Print size of each file                   |
-| adb shell ls -R                           | List subdirectories recursively           |
-| **adb shell pm path `<package name>`**    | **Get full path of a package**            |
-| **adb shell pm list packages -f**         | **Lists all the packages and full paths** |
+```shell
+adb shell <command>
+```
 
-## File Operations
+List the command-line tools available on the connected device:
 
-| Command                         | Description                      |
-| ------------------------------- | -------------------------------- |
-| **adb push `<local> <remote>`** | **Copy file/dir to device**      |
-| **adb pull `<remote> <local>`** | **Copy file/dir from device**    |
-| run-as `<package>` cat `<file>` | Access the private package files |
+```shell
+adb shell ls /system/bin
+```
 
-## Phone Info
+Many shell commands provide their own `--help` output. The available commands can be different between Android versions and device builds.
 
-| Command                                           | Description                            |
-| ------------------------------------------------- | -------------------------------------- |
-| adb get-statе                                     | Print device state                     |
-| adb get-serialno                                  | Get the serial number                  |
-| adb shell dumpsys iphonesybinfo                   | Get the IMEI                           |
-| adb shell netstat                                 | List TCP connectivity                  |
-| adb shell pwd                                     | Print current working directory        |
-| adb shell dumpsys battery                         | Battery status                         |
-| adb shell pm list features                        | List phone features                    |
-| adb shell service list                            | List all services                      |
-| adb shell dumpsys activity `<package>/<activity>` | Activity info                          |
-| adb shell ps                                      | Print process status                   |
-| adb shell wm size                                 | Displays the current screen resolution |
+## View Logs and Create a Bug Report
 
-## Package Info
+Stream the device log:
 
-| Command                            | Description                       |
-| ---------------------------------- | --------------------------------- |
-| adb shell list packages            | Lists package names               |
-| adb shell list packages -r         | Lists package name + path to apks |
-| adb shell list packages -3         | Lists third party package names   |
-| adb shell list packages -s         | Lists only system packages        |
-| adb shell list packages -u         | Lists package names + uninstalled |
-| adb shell dumpsys package packages | Lists info on all apps            |
-| adb shell dump `<name>`            | Lists info on one package         |
-| adb shell path `<package>`         | Path to the apk file              |
+```shell
+adb logcat
+```
 
-## Device Related Commands
+Write a bug report archive to the current directory:
 
-| Command                                                      | Description                              |
-| ------------------------------------------------------------ | ---------------------------------------- |
-| adb reboot recovery                                          | Reboot device into recovery mode         |
-| adb reboot fastboot                                          | Reboot device into recovery mode         |
-| adb shell screencap -p "/path/to/screenshot.png"             | Capture screenshot                       |
-| adb shell screenrecord "/path/to/record.mp4"                 | Record device screen                     |
-| adb backup -apk -all -f backup.ab                            | Backup settings and apps                 |
-| adb backup -apk -shared -all -f backup.ab                    | Backup settings, apps and shared storage |
-| adb backup -apk -nosystem -all -f backup.ab                  | Backup only non-system apps              |
-| adb restore backup.ab                                        | Restore a previous backup                |
-| -------                                                      | -----------                              |
-| adb shell am start -a android.intent.action.VIEW -d URL      | Opens URL                                |
-| adb shell am start -t image/\* -a android.intent.action.VIEW | Opens gallery                            |
+```shell
+adb bugreport
+```
+
+See the [official Logcat command-line reference][logcat-docs-url] for filtering and formatting options.
+
+The [`adb bugreport` guide][bugreport-docs-url] explains what is included in the report and how it is collected.
+
+## Capture the Screen
+
+Save a PNG screenshot directly on the computer:
+
+```shell
+adb exec-out screencap -p > screen.png
+```
+
+Record the device display to an MPEG-4 file on the device, stop with ++ctrl+c++, and then copy the recording to the computer:
+
+```shell
+adb shell screenrecord /sdcard/demo.mp4
+adb pull /sdcard/demo.mp4
+```
+
+The official ADB reference documents `screenrecord` for Android 4.4 and later and lists its current limitations and options.
 
 <!-- appendices -->
 
+<!-- urls -->
+
 [adb-docs-url]: https://developer.android.com/tools/adb 'Android Debug Bridge'
+[bugreport-docs-url]: https://developer.android.com/studio/debug/bug-report 'Capture and Read Android Bug Reports'
+[logcat-docs-url]: https://developer.android.com/tools/logcat 'Logcat Command-Line Tool'
+[platform-tools-url]: https://developer.android.com/tools/releases/platform-tools 'SDK Platform Tools Release Notes'
 
 <!-- end appendices -->

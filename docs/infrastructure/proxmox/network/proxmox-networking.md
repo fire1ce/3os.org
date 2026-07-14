@@ -1,200 +1,129 @@
 ---
-title: Proxmox Networking
-description: Proxmox Networking examples, static and DHCP configuration and vlan aware configuration
+title: Proxmox VE Network Configuration
+description: Configure Proxmox VE Linux bridges, VLAN-aware networking, and bonded interfaces with current, documented examples.
 template: comments.html
-tags: [proxmox, network]
+tags: [proxmox, network, linux-bridge, vlan, bonding]
 ---
 
-# Proxmox Networking
+# Proxmox VE Network Configuration
 
-Official Proxmox networking documentation can be found [here][proxmox-network-configuration-url]{target=\_blank}.
+This guide shows how to configure Linux bridges, VLANs, and network bonds on Proxmox VE. You can manage the network from the web interface or by editing `/etc/network/interfaces`. Proxmox recommends using the web interface because it helps protect you from configuration errors. The examples below follow the official [Proxmox VE network configuration][proxmox-network-configuration-url] and [administration guide][proxmox-admin-guide-url].
 
-## Basics
+!!! warning
 
-```shell title="Proxmox network configuration file location"
-/etc/network/interfaces
-```
+    A network error can make the node unreachable. Always keep local console or out-of-band access available before changing the management interface.
 
-```shell title="Restart proxmox network service to apply changes"
-systemctl restart networking.service
-```
+## Apply Network Changes
 
-## Example of Multi Network Interface Server
+If you make changes from the Proxmox VE web interface, click **Apply Configuration**. Proxmox saves the pending changes in `/etc/network/interfaces.new` before applying them.
 
-The next examples will be based on the following network nics, `ip addr` output:
+If you edit `/etc/network/interfaces` directly, apply the changes with:
 
 ```shell
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-2: enp7s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 18:c0:4d:00:9f:b7 brd ff:ff:ff:ff:ff:ff
-3: enp6s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 18:c0:4d:00:9f:b9 brd ff:ff:ff:ff:ff:ff
-4: enp12s0f4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master vmbr0 state UP group default qlen 1000
-    link/ether 00:07:43:29:42:c0 brd ff:ff:ff:ff:ff:ff
-5: enp12s0f4d1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 00:07:43:29:42:c8 brd ff:ff:ff:ff:ff:ff
-6: enp12s0f4d2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 00:07:43:29:42:d0 brd ff:ff:ff:ff:ff:ff
-7: enp12s0f4d3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 00:07:43:29:42:d8 brd ff:ff:ff:ff:ff:ff
-8: wlp5s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 8c:c6:81:f0:a6:9a brd ff:ff:ff:ff:ff:ff
-9: vmbr0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
-    link/ether 00:07:43:29:42:c0 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.100.12/24 scope global vmbr0
-       valid_lft forever preferred_lft forever
+ifreload -a
 ```
 
-In order Identify physical network interfaces corresponding to Network Interfaces name in Proxmox you can follow [this guide][identify-nics-url]
+`ifupdown2` is installed by default on new Proxmox VE installations since version 7.0. You can also reboot the node to apply the configuration. Avoid using `ifdown` and `ifup` on a guest bridge unless you understand their effect on running guest traffic.
 
-Breakdown of the `ip addr` output:
+## Default Static Bridge
 
-1. `lo` is a loopback interface.
-2. `enp7s0` is a 2.5G network interface.
-3. `enp6s0` is a 1G network interface.
-4. `enp12s0f4` is a 10G network interface.
-5. `enp12s0f4d1` is a 10G network interface.
-6. `enp12s0f4d2` is a 10G network interface.
-7. `enp12s0f4d3` is a 10G network interface.
-8. `wlp5s0` is a Wifi network interface
-9. `vmbr0` is a bridge interface.
+A new Proxmox VE installation normally creates `vmbr0` and connects it to the first Ethernet interface. Replace the interface name, address, and gateway in this example with values from your network.
 
-The content of the `/etc/network/interfaces` after fresh installation:
-
-```shell
+```config
 auto lo
 iface lo inet loopback
 
-iface enp12s0f4 inet manual
+iface eno1 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-	address 192.168.100.12/24
-	gateway 192.168.100.1
-	bridge-ports enp12s0f4
-	bridge-stp off
-	bridge-fd 0
-
-iface enp7s0 inet manual
-
-iface enp6s0 inet manual
-
-iface enp12s0f4d1 inet manual
-
-iface enp12s0f4d2 inet manual
-
-iface enp12s0f4d3 inet manual
-
-iface wlp5s0 inet manual
+        address 192.168.10.2/24
+        gateway 192.168.10.1
+        bridge-ports eno1
+        bridge-stp off
+        bridge-fd 0
 ```
 
-!!! info
+The management address belongs on the bridge, not on its physical bridge port. Guests connected to `vmbr0` appear on the physical network with their own MAC addresses.
 
-    **`vmbr0` is a bridge interface. It's used to provision network to virtual machines and containers on Proxmox VE Server.
-    We can assign multiple network interfaces to the bridge interface with `bridge-ports` option.**
+If you need to map a physical port to its Linux interface name, follow the [network-interface identification guide][identify-nics-url].
 
-## Static IP Bridge Configuration
+## VLAN-Aware Bridge
 
-The following example shows a static IP configuration `vmbr0` bridge interface, including two network interfaces `enp12s0f4` and `enp7s0`.
+A VLAN-aware Linux bridge allows you to configure a VLAN tag on a guest network interface. The following documented example places the Proxmox VE management address on VLAN 5 and allows VLAN IDs 2 through 4094 on `vmbr0`:
 
 ```config
-auto vmbr0
-iface vmbr0 inet static
-           address 192.168.100.12/24
-           gateway 192.168.100.1
-           bridge-ports enp12s0f4 enp7s0
-           bridge-stp off
-           bridge-fd 0
-```
-
-Configuring multi network interfaces to the bridge interface will provide you a failover behavior when the network interface is down or disconnected - for example, when specific switch is down.
-
-## Static IP Bridge with VLAN Aware Configuration
-
-The following example shows a static IP as above but with VLAN Aware bridge.
-
-```config hl_lines="8 9"
-auto vmbr0
-iface vmbr0 inet static
-           address 192.168.100.12/24
-           gateway 192.168.100.1
-           bridge-ports enp12s0f4 enp7s0
-           bridge-stp off
-           bridge-fd 0
-           bridge-vlan-aware yes
-           bridge-vids 2-4094
-```
-
-## DHCP Bridge Configuration
-
-The following example shows a DHCP configuration `vmbr0` bridge interface, including two network interfaces `enp12s0f4` and `enp7s0`.
-
-```config
-auto vmbr0
-iface vmbr0 inet dhcp
-           bridge-ports enp12s0f4 enp7s0
-           bridge-stp off
-           bridge-fd 0
-```
-
-## DHCP Bridge with VLAN Aware Configuration
-
-The following example shows a DHCP as above but with VLAN Aware bridge.
-
-```config
-auto vmbr0
-iface vmbr0 inet dhcp
-           bridge-ports enp12s0f4 enp7s0
-           bridge-stp off
-           bridge-fd 0
-           bridge-vlan-aware yes
-           bridge-vids 2-4094
-```
-
-## Personal Network Configuration
-
-Here's a sample of the `/etc/network/interfaces` file for a personal network:
-
-```shell
 auto lo
 iface lo inet loopback
 
+iface eno1 inet manual
+
+auto vmbr0.5
+iface vmbr0.5 inet static
+        address 10.10.10.2/24
+        gateway 10.10.10.1
+
 auto vmbr0
-iface vmbr0 inet dhcp
-           bridge-ports enp12s0f4 enp12s0f4d1 enp12s0f4d2 enp12s0f4d3 enp7s0
-           bridge-stp off
-           bridge-fd 0
-           bridge-vlan-aware yes
-           bridge-vids 2-4094
-
-iface enp12s0f4 inet manual
-
-iface enp12s0f4d1 inet manual
-
-iface enp12s0f4d2 inet manual
-
-iface enp12s0f4d3 inet manual
-
-iface enp7s0 inet manual
-
-iface enp6s0 inet manual
-
-iface wlp5s0 inet manual
+iface vmbr0 inet manual
+        bridge-ports eno1
+        bridge-stp off
+        bridge-fd 0
+        bridge-vlan-aware yes
+        bridge-vids 2-4094
 ```
+
+Make sure the connected switch port carries the VLANs used by the host and guests.
+
+## Redundant Bridge with a Linux Bond
+
+Adding multiple physical interfaces directly to `bridge-ports` does not create documented failover. For network redundancy, create a Linux bond and use the bond as the bridge port.
+
+The `active-backup` mode keeps one interface active and uses another interface if the active one fails. Proxmox recommends this mode when your switch does not support LACP:
+
+```config
+auto lo
+iface lo inet loopback
+
+iface eno1 inet manual
+iface eno2 inet manual
+
+auto bond0
+iface bond0 inet manual
+        bond-slaves eno1 eno2
+        bond-miimon 100
+        bond-mode active-backup
+
+auto vmbr0
+iface vmbr0 inet static
+        address 10.10.10.2/24
+        gateway 10.10.10.1
+        bridge-ports bond0
+        bridge-stp off
+        bridge-fd 0
+```
+
+If your switch supports IEEE 802.3ad LACP, Proxmox recommends the `802.3ad` bond mode. You must also configure LACP on the switch. Follow the complete bond section in the official documentation before enabling it.
+
+## Verify the Configuration
+
+After applying the configuration, run the following commands to check the interfaces, addresses, routes, bridge ports, and bond state:
+
+```shell
+ip -brief link
+ip -brief address
+ip route
+bridge link
+cat /proc/net/bonding/bond0
+```
+
+The final command applies only when `bond0` exists.
 
 <!-- appendices -->
 
 <!-- urls -->
 
 [identify-nics-url]: ../../../linux/Network/identify-nics.md
-[proxmox-network-configuration-url]: https://pve.proxmox.com/wiki/Network_Configuration 'Proxmox VE Server Network Configuration Wiki'
-
-<!-- images -->
-
-[default-ipv6-proxmox-img]: ../assets/images/1ee15c1c-bd9a-11ec-926f-3b1ee33b95ee.jpg 'Default IPv6 Proxmox Image'
-[no-ipv6-proxmox-img]: ../assets/images/542c7a30-bd9c-11ec-848e-932ce851a8c3.jpg 'No IPv6 Proxmox Image'
+[proxmox-network-configuration-url]: https://pve.proxmox.com/wiki/Network_Configuration 'Proxmox VE Network Configuration'
+[proxmox-admin-guide-url]: https://pve.proxmox.com/pve-docs/pve-admin-guide.pdf 'Proxmox VE Administration Guide'
 
 <!-- end appendices -->
