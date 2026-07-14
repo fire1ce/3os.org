@@ -55,6 +55,9 @@ extra_css:
   # - css/fonts.css
 
 # Plugins
+hooks:
+  - hooks/llms_txt.py
+
 plugins:
   - search:
       lang: 'en'
