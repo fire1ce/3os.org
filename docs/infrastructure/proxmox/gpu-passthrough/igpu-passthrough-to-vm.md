@@ -39,7 +39,7 @@ We want to allow `passthrough` and `Blacklists` known graphics drivers to preven
 
 !!! Warning
 
-    **You will loose the ability to use the onboard graphics card to access the Proxmox's console since Proxmox won't be able to use the Intel's gpu**
+    **You will lose the ability to use the onboard graphics card to access the Proxmox's console since Proxmox won't be able to use the Intel's gpu**
 
 Your `GRUB_CMDLINE_LINUX_DEFAULT` should look like this:
 
