@@ -1,48 +1,105 @@
 ---
-title: Apktool
-description: Apktool A tool for reverse engineering 3rd party, closed, binary Android apps. you will find a series of practical example commands for running Apktool and getting the most of this powerful tool.
+title: Apktool Decode, Build, and Sign Guide
+description: Install Apktool, decode and rebuild an APK, then align, sign, and verify the rebuilt package with Android SDK tools.
 template: comments.html
-tags: [android, penetration-testing, reverse-engineering, apktool]
+tags: [android, reverse-engineering, apktool, apksigner]
 ---
 
-# Android Apktool for Reverse Engineering
+# Apktool Decode, Build, and Sign Guide
 
-A tool for reverse engineering 3rd party, closed, binary Android apps. It can decode resources to nearly original form and rebuild them after making some modifications. It also makes working with an app easier because of the project like file structure and automation of some repetitive tasks like building apk, etc.
+Apktool decodes Android resources and disassembles DEX files into a project-like directory. It can build that directory back into an APK, but it does not recreate the original source project.
 
-It is `NOT` intended for piracy and other non-legal uses. It could be used for localizing, adding some features or support for custom platforms, analyzing applications and much more.
+Use this workflow only for an application you own or have permission to analyze or modify.
 
-## Download and Documentation
+## Install Apktool
 
-[Official Apktool Website][apktool-url]{target=\_blank}
+Apktool requires Java. Follow the official install guide for the current Java requirement and download locations.
 
-## How to Sign APK After Compile
+On macOS with Homebrew:
 
-In order to install modified APK on Android device, you need to sign it with a certificate. Android APK won't be signed by default. You need to sign it manually.
-
-Install **apksigner**
-
-```bash
-apt install -y apksigner
+```shell
+brew install apktool
 ```
 
-Create certificate at the same folder you've compiled your modified APK
+For Linux and Windows, the project provides a wrapper script plus the release JAR. Download both from the official site and put them in a directory on your `PATH`.
 
-```bash
-keytool -genkey -v -keystore keystore.jks -keyalg RSA -keysize 2048 -validity 10000
+Verify the installation:
+
+```shell
+apktool --version
 ```
 
-Enter A password (we will need it to singe the APK), enter any data you wish for the certificate information. At the end enter **'y'** at the end to create the certificate.
+## Decode an APK
 
-Now we should have 2 files: your.apk, keystore.jks. The only step left is to singe the APK with new certificate.
-
-```bash
-apksigner sign --ks keystore.jks your.apk
+```shell
+apktool d app.apk -o app-src
 ```
 
-When installing the APK you will be prompted with a warning of "unknown certificate" just hit Install.
+The output normally includes decoded resources, the manifest, and Smali code. Some applications use resource formats or protection that Apktool cannot decode or rebuild cleanly.
+
+## Rebuild the APK
+
+```shell
+apktool b app-src -o app-unsigned.apk
+```
+
+The rebuilt file is unsigned. Android will not accept it as an update to an app signed with a different certificate, and changing the package can also break integrity checks inside the application.
+
+## Align and sign the rebuilt APK
+
+Install current Android SDK Build Tools through Android Studio's SDK Manager or `sdkmanager`. This provides `zipalign` and `apksigner`.
+
+Create a test signing key if you do not already have one:
+
+```shell
+keytool -genkeypair \
+  -keystore release.jks \
+  -alias release \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 10000
+```
+
+Protect this keystore and its password. Losing a production signing key can prevent future updates, so do not treat this example key as a production key-management design.
+
+Align the unsigned APK before signing it:
+
+```shell
+zipalign -P 16 -f -v 4 app-unsigned.apk app-aligned.apk
+```
+
+Sign to a new file:
+
+```shell
+apksigner sign \
+  --ks release.jks \
+  --out app-signed.apk \
+  app-aligned.apk
+```
+
+Verify both alignment and signature:
+
+```shell
+zipalign -c -P 16 -v 4 app-signed.apk
+apksigner verify --verbose --print-certs app-signed.apk
+```
+
+Do not modify the APK after `apksigner` runs; any later change invalidates its signature.
+
+## Sources
+
+- [Apktool official site and basic commands][apktool]
+- [Apktool install guide][apktool-install]
+- [Apktool CLI parameters][apktool-cli]
+- [Android `zipalign` reference][zipalign]
+- [Android `apksigner` reference][apksigner]
 
 <!-- appendices -->
 
-[apktool-url]: https://ibotpeaches.github.io/Apktool/ 'Apktool Official Website'
+[apktool]: https://apktool.org/
+[apktool-install]: https://apktool.org/docs/install/
+[apktool-cli]: https://apktool.org/docs/cli-parameters/
+[zipalign]: https://developer.android.com/tools/zipalign
+[apksigner]: https://developer.android.com/tools/apksigner
 
 <!-- end appendices -->

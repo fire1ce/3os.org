@@ -1,40 +1,79 @@
 ---
 title: Free Port 53 on Ubuntu
-description: How to properly free port 53 on Ubuntu from systemd-resolved DNS.
+description: Disable the systemd-resolved local DNS stub safely so another local DNS service can bind to port 53.
 template: comments.html
-tags: [Ubuntu, dns]
+tags: [ubuntu, dns, systemd-resolved]
 ---
 
 # Free Port 53 on Ubuntu
 
-## What's Using Port 53?
+Ubuntu commonly runs the `systemd-resolved` DNS stub on `127.0.0.53:53`. If Pi-hole, AdGuard Home, or another local DNS server must bind to port 53, disable only the stub listener and keep `systemd-resolved` available for upstream DNS information.
 
-When you install Ubuntu (in my case its Server version). It uses systemd-resolved as internal DNS Forwarder.
-
-systemd-resolved is a system service that provides network name resolution to local applications. It implements a caching and validating DNS/DNSSEC stub resolver, as well as an LLMNR resolver and responder.
-
-![Netstat output][netstat-output-img]
-
-## How to Free Port 53 on Ubuntu
-
-If we want to use port 53 for other purposes, we need to free it for example a `Pihole DNS` server.
-
-We can do it with the following commands:
+## Confirm what owns port 53
 
 ```shell
-sudo sed -r -i.orig 's/#?DNSStubListener=yes/DNSStubListener=no/g' /etc/systemd/resolved.conf
-sudo sh -c 'rm /etc/resolv.conf && ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf'
+sudo ss -luntp | grep ':53 '
+resolvectl status
+```
+
+Do not continue until the output confirms that `systemd-resolved` is the conflicting listener. A different service needs a different fix.
+
+## Disable the stub listener
+
+Use a drop-in instead of editing the vendor configuration in place:
+
+```shell
+sudo mkdir -p /etc/systemd/resolved.conf.d
+sudo editor /etc/systemd/resolved.conf.d/disable-stub.conf
+```
+
+Add:
+
+```ini
+[Resolve]
+DNSStubListener=no
+```
+
+When the stub is disabled, `/etc/resolv.conf` must not keep pointing at the stub file. Point it at the resolver-maintained file containing known upstream DNS servers:
+
+```shell
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo systemctl restart systemd-resolved
 ```
 
+## Verify before installing the new DNS service
+
+```shell
+sudo ss -luntp | grep ':53 ' || true
+readlink -f /etc/resolv.conf
+resolvectl status
+getent hosts example.com
+```
+
+Port 53 should now be free, `/etc/resolv.conf` should resolve to `/run/systemd/resolve/resolv.conf`, and normal DNS lookup should still work.
+
+Install or start the replacement DNS service only after these checks pass. Then repeat the socket and lookup tests.
+
+## Undo the change
+
+```shell
+sudo rm /etc/systemd/resolved.conf.d/disable-stub.conf
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+sudo systemctl restart systemd-resolved
+```
+
+Confirm that `127.0.0.53:53` is listening again.
+
+## Sources
+
+- [`resolved.conf`: `DNSStubListener=`][resolved-conf]
+- [`systemd-resolved`: `/etc/resolv.conf` modes][systemd-resolved]
+- [`resolvectl` reference][resolvectl]
+
 <!-- appendices -->
 
-<!-- urls -->
-
-<!-- images -->
-
-[netstat-output-img]: ../../assets/images/6f1283a2-f6eb-11ec-a1c2-ef56aa217b30.jpg 'Netstat output'
-
-<!--css-->
+[resolved-conf]: https://www.freedesktop.org/software/systemd/man/latest/resolved.conf.html
+[systemd-resolved]: https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html
+[resolvectl]: https://www.freedesktop.org/software/systemd/man/latest/resolvectl.html
 
 <!-- end appendices -->

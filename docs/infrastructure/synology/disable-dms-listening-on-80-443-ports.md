@@ -1,97 +1,57 @@
 ---
-title: Free 80,443 Ports
-description: Free 80,443 ports on Synology NAS for other applications.
+title: Synology DSM Ports 80 and 443
+description: Supported options for DSM web ports, reverse proxy rules, and the legacy workaround that edited Synology nginx templates.
 template: comments.html
-tags: [synology, NAS, ports]
+tags: [synology, dsm, ports, reverse-proxy, legacy]
 ---
 
-# Free 80,443 Ports On Synology NAS (DSM)
+# Synology DSM Ports 80 and 443
 
-Synology NAS (DSM) is a network storage device, with some additional features like native support for virtualization, and docker support.
-One of the issues is that the default ports 80 and 443 are used by the web server even if you change the default ports of the Synology's DSM to other ports.
-In some cases, you want to use these ports for other purposes, such as a reverse proxy as an entry point for the web services.
-The following steps will help you to free the default ports 80 and 443 on the Synology NAS (DSM) for other purposes.
+Changing DSM's login ports does not guarantee that the NAS stops listening on TCP 80 and 443. Synology packages and the built-in web stack can also use those ports.
 
-## Configure the Synology NAS (DSM) to Listen on Other Ports
+!!! warning "Legacy workaround retired"
+    The old version of this page edited Synology's internal nginx templates with `sed`, restarted nginx, and repeated the change with a boot task. I removed those commands. They were not a supported DSM interface, could be overwritten by updates, and could break DSM or installed packages.
 
-First, you need to configure the Synology NAS (DSM) to listen on other ports then 80, 443.
+There is no safe one-line command that can promise to “free” both ports on every DSM 7 system. First find the service that owns them, then use DSM's supported controls.
 
-Login to the Synology NAS (DSM) as administrator user open `Control Panel` and find `Login Portal` under `System`
+## Check the actual listener
 
-**Under `DSM` tab, change the DSM port (http) to a different port then 80, and the DSM port (https) to a different port then 443.**
+Enable SSH temporarily, connect with an administrator account, and open a root shell with `sudo -i`. Then inspect the listeners:
 
-![DSM Change Default Port][dsm-change-default-port-img]
+```shell
+ss -lntp | grep -E ':(80|443)[[:space:]]'
+```
 
-Click `Save` to save the changes. Then, re-login to the Synology NAS (DSM) with the new port as administrator user as we did above.
+Treat the output as diagnostic information. Do not edit generated nginx files directly.
 
-## Disable the Synology NAS (DSM) to Listen on 80, 443 Ports
+## Supported options
 
-Synology NAS (DSM) will listen on 80, 443 ports after each reboot. Therefore, the changes will be lost after each reboot. The workaround is to run the a script to free the ports 80, 443 on each time the Synology NAS (DSM) is boots.
+### Change the DSM login ports
 
-The following one liner will free the ports 80, 443 on Nginx web server of the Synology NAS (DSM), until the Synology NAS (DSM) is rebooted.
-It removes the port 80, 443 from the `Nginx` config and restarts the `Nginx` service.
+In DSM 7, open **Control Panel > Login Portal > DSM** and set the HTTP and HTTPS ports used for DSM login. Reconnect with the new port after saving.
 
-=== "DSM 7.x.x"
+This changes DSM access; it does not reassign ports used by every package.
 
-    ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
+### Use DSM Reverse Proxy
 
-    synosystemctl restart nginx
-    ```
+If the goal is to publish another service through one hostname, use **Control Panel > Login Portal > Advanced > Reverse Proxy**. Create a rule with the required source protocol, hostname, and port, then point it to the internal service.
 
-=== "DSM 6.x.x"
+This keeps the web entry point inside DSM's supported configuration and avoids patching generated files.
 
-    ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
+### Move or disable the package that owns the port
 
-    synoservicecfg --restart nginx
-    ```
+Web Station and other packages can claim standard web ports. Review the package configuration and stop or reconfigure the specific package only if you no longer need it.
 
-In order to persist the changes, we will create a `Scheduled Task` to run the above script on each reboot.
+If another reverse proxy must own host ports 80 and 443, the clean design is usually to run it on another host or IP address. That avoids fighting DSM's managed web stack after every update.
 
-Head to `Control Panel` and find `Task Scheduler`, then click `Create` and select `Triggerd Task` - `User-defined script`.
+## Sources
 
-At `Create Task` - `General` page, fill in the following information:
+- [Synology DSM: Login Portal and Reverse Proxy][synology-proxy]
+- [Synology: configure external DSM addresses and ports][synology-external]
 
-> Task: Disable_DSM_Listening_on_80_443  
-> User: root  
-> Event: Boot-up  
-> Pre-taks: None <blank>  
-> Enabled: Yes
+<!-- appendices -->
 
-![DSM Create Task][dsm-create-task-img]
-
-At `Task Settings` tab, under `Run command` fill the `User-defined script` with the following depending on Synology NAS (DSM) version:
-
-=== "DSM 7.x.x"
-
-    ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
-
-    synosystemctl restart nginx
-    ```
-
-=== "DSM 6.x.x"
-
-    ```shell
-    sed -i -e 's/80/81/' -e 's/443/444/' /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
-
-    synoservicecfg --restart nginx
-    ```
-
-Suggestion: Select the Notification when the task is terminated abnormally.
-
-![DSM Task Settings][dsm-task-settings-img]
-
-Click `OK`. The new task should be created. You can check the task by clicking `Run` in the `Task Scheduler` page.
-Preferred to reboot the Synology NAS (DSM) to make sure the changes are applied at boot.
-
-<!-- images -->
-
-[dsm-change-default-port-img]: ../../assets/images/ce653b82-c3a7-11ec-8d1f-17eb1f5bd0eb.jpg 'DSM Change Default Port'
-[dsm-create-task-img]: ../../assets/images/944c1cbc-c3ad-11ec-b5f1-5f23693b3268.jpg 'DSM Create Task'
-[dsm-task-settings-img]: ../../assets/images/d163247e-c3ad-11ec-89c1-b30522ee9186.jpg 'DSM Task Settings'
-
-<!--css-->
+[synology-proxy]: https://kb.synology.com/en-us/DSM/help/DSM/AdminCenter/system_login_portal_advanced?version=7
+[synology-external]: https://kb.synology.com/en-us/DSM/tutorial/Synology_storage_system_external_access
 
 <!-- end appendices -->

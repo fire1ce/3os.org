@@ -1,64 +1,77 @@
 ---
-title: SSH Passphrase to Keychain
-description: Import ed25519/RSA SSH Keys passphrase to macOS Keychain
+title: Store an SSH Key Passphrase in macOS Keychain
+description: Add an SSH private-key passphrase to macOS Keychain and configure OpenSSH to load it for a specific host.
 template: comments.html
-tags: [macos]
+tags: [macos, ssh, keychain, openssh]
 ---
 
-# Import ed25519/RSA Keys Passphrase to macOS Keychain
+# Store an SSH Key Passphrase in macOS Keychain
 
-First, you need to add the keys to the `keychain` with the following steps:
+macOS OpenSSH can store a private key's passphrase in the login Keychain and add the key to `ssh-agent` when it is used.
 
-Copy your `ed25519, ed25519.pub` / `id_rsa, id_rsa.pub` to `~/.ssh/` folder
+This does not import the private key into Keychain. The private key remains in `~/.ssh`; Keychain stores the passphrase.
 
-!!! Example "Store the key in the MacOS Keychain"
+## Prepare the key file
 
-    === "ed25519 Key"
+Use the standard name `id_ed25519` in this example:
 
-        ```shell
-        ssh-add --apple-use-keychain ~/.ssh/ed25519
-        ```
+```shell
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_ed25519
+```
 
-    === "RSA Key"
+Never copy the private key to a remote server. The `.pub` file is the public key and is the part that belongs in `authorized_keys` on the server.
 
-        ```shell
-        ssh-add --apple-use-keychain ~/.ssh/id_rsa
-        ```
+## Store the passphrase
 
-Enter your key passphrase. You won't be asked for it again.
+```shell
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
 
-List all keys in the keychain:
+Enter the key passphrase when prompted. Current macOS uses `--apple-use-keychain`; older guides may show Apple's previous `-K` option.
+
+List identities currently loaded in the agent:
 
 ```shell
 ssh-add -l
 ```
 
-## Configure SSH to always use the keychain
+## Configure the host
 
-If you haven't already, create an `~/.ssh/config` file. In other words, in the .ssh directory in your home dir, make a file called config.
+Edit `~/.ssh/config` and scope the settings to the host that uses this key:
 
-At `~/.ssh/config` file, add the following lines at the top of the config:
+```sshconfig
+Host server.example.com
+    User remote-user
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_ed25519
+```
 
-!!! Example "Store the key in the MacOS Keychain"
+Protect the configuration file:
 
-    === "For ed25519 Key"
+```shell
+chmod 600 ~/.ssh/config
+```
 
-        ```shell
-        Host *
-          UseKeychain yes
-          AddKeysToAgent yes
-          IdentityFile ~/.ssh/id_ed25519
-        ```
+Test a normal connection:
 
-    === "For RSA Key"
+```shell
+ssh server.example.com
+```
 
-        ```shell
-        Host *
-          UseKeychain yes
-          AddKeysToAgent yes
-          IdentityFile ~/.ssh/id_rsa
-        ```
+`UseKeychain yes` tells the macOS SSH client to find and store the passphrase in Keychain. `AddKeysToAgent yes` loads a key into the running agent after SSH reads it from disk.
 
-The UseKeychain yes is the key part, which tells SSH to look in your macOS keychain for the key passphrase.
+If you use Homebrew or another non-Apple OpenSSH build, it may not understand `UseKeychain`. Use `/usr/bin/ssh` and `/usr/bin/ssh-add` for the Apple-specific integration, or keep the Apple-only option inside a host configuration used by Apple's client.
 
-That's it! Next time you load any ssh connection, it will try the private keys you've specified, and it will look for their passphrase in the macOS keychain. No passphrase typing required.
+## Sources
+
+- [Apple: OpenSSH Keychain and agent behavior][apple-openssh]
+- Run `man ssh-add` and `man ssh_config` in macOS Terminal for the options installed on your Mac.
+
+<!-- appendices -->
+
+[apple-openssh]: https://developer.apple.com/library/archive/technotes/tn2449/index.html
+
+<!-- end appendices -->

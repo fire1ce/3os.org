@@ -1,101 +1,74 @@
 ---
-title: Wi-Fi Traffic Mirroring
-description: OpenWrt Wi-Fi Traffic Mirroring with GL.iNet GL-AR750S
+title: OpenWrt Wi-Fi Traffic Mirroring Legacy Guide
+description: Legacy GL.iNet GL-AR750S Wi-Fi mirroring notes for OpenWrt 19.07 and a safe current packet-capture starting point.
 template: comments.html
-tags: [Wi-Fi Traffic Mirroring, OpenWrt, GL.iNet, GL-AR750S, tcpdump, Wireshark]
+tags: [openwrt, wifi, traffic-capture, legacy]
 ---
 
-# Wi-Fi Traffic Mirroring
+# OpenWrt Wi-Fi Traffic Mirroring
 
-## Goal
+This page originally mirrored `wlan0` and `wlan1` traffic to LAN port 2 on a GL.iNet GL-AR750S running OpenWrt 19.07.8.
 
-Mirror all Wi-Fi traffic from `wlan0` and `wlan1` interfaces to a physical LAN port (Port 2) for packet inspection via tools like **Wireshark** or **tcpdump**.
+!!! danger "Legacy, device-specific procedure"
+    OpenWrt 19.07 is end of life and receives no security updates. The original script depended on that router's old `swconfig` switch layout and temporary interface names. Current OpenWrt devices commonly use DSA instead, so I removed the copy-and-run script rather than pretend it is portable.
 
-This allows real-time monitoring of Android phone traffic (or any wireless client) connected to the router's Wi-Fi.
+Do not install OpenWrt 19.07 to reproduce this setup. Upgrade the router to a supported firmware that is listed for the exact hardware revision.
 
-## Requirements
+## Why the old commands no longer transfer
 
-- A GL.iNet GL-AR750S router (OpenWRT 19.07.8)
-- SSH access
-- LAN Port 2 connected to a monitoring PC
-- An Android phone or wireless client connected to `wlan1` or `wlan0`
+Starting with OpenWrt 21.02, many targets moved from `swconfig` to Linux Distributed Switch Architecture (DSA). DSA represents switch ports as network devices and uses a different bridge/VLAN model. OpenWrt also warns that some devices cannot carry their old `swconfig` configuration through that migration.
 
-## Caveats
+Port mirroring support still depends on the switch driver, target, and hardware. A command that works on one GL.iNet model can disconnect management access or do nothing on another model.
 
-- This script is **not persistent**. You must run it **after every router reboot**.
-- Traffic will only appear when a client is actively transmitting over Wi-Fi.
+## Current safe starting point
 
-## Script
+If the goal is analysis rather than a permanent physical mirror, capture on the router first.
 
-Create a file named `wifi-mirror.sh`:
+List the interfaces on that exact firmware:
 
-```bash
-#!/bin/sh
-
-echo "[*] Installing dependencies..."
-opkg update
-opkg install kmod-ifb tcpdump nano
-
-echo "[*] Loading IFB and bringing up ifb0..."
-modprobe ifb
-ip link set ifb0 up
-
-echo "[*] Configuring switch to mirror CPU port (0) to monitor port (2)..."
-uci set network.@switch[0].mirror_source_port='0'
-uci set network.@switch[0].mirror_monitor_port='2'
-uci set network.@switch[0].enable_mirror_rx='1'
-uci set network.@switch[0].enable_mirror_tx='1'
-uci commit network
-/etc/init.d/network restart
-
-echo "[*] Waiting for wlan0, wlan1, br-lan, and ifb0 interfaces to be available..."
-for iface in wlan0 wlan1 br-lan ifb0; do
-    while [ ! -d "/sys/class/net/$iface" ]; do
-        sleep 1
-    done
-done
-echo "[✔] Interfaces ready."
-
-echo "[*] Resetting TC qdiscs..."
-tc qdisc del dev ifb0 root 2>/dev/null
-tc qdisc del dev wlan0 ingress 2>/dev/null
-tc qdisc del dev wlan1 ingress 2>/dev/null
-
-echo "[*] Setting up TC mirroring..."
-
-# Root qdisc for IFB0
-tc qdisc add dev ifb0 root handle 1: prio
-
-# Re-add ingress qdiscs for wlan interfaces
-tc qdisc add dev wlan0 handle ffff: ingress
-tc qdisc add dev wlan1 handle ffff: ingress
-
-# Ingress filters to mirror Wi-Fi to IFB
-tc filter add dev wlan0 parent ffff: protocol all u32 match u32 0 0 action mirred egress mirror dev ifb0
-tc filter add dev wlan1 parent ffff: protocol all u32 match u32 0 0 action mirred egress mirror dev ifb0
-
-# Outgoing traffic from IFB to eth0 (CPU port)
-tc filter add dev ifb0 parent 1: protocol all u32 match u32 0 0 action mirred egress mirror dev eth0
-
-echo "[✔] Done. You can now monitor Wi-Fi traffic with:"
-echo "    tcpdump -i ifb0 -n"
-echo "    Or run Wireshark on LAN Port 2."
+```shell
+ip -brief link
 ```
 
-Make it executable:
+If `tcpdump` is installed, list the interfaces it can capture:
 
-```bash
-chmod +x wifi-mirror.sh
+```shell
+tcpdump --list-interfaces
 ```
 
-Run it after every reboot to re-activate mirroring:
+Capture on the verified wireless or bridge interface, replacing the placeholder with a name from the router:
 
-```bash
-./wifi-mirror.sh
+```shell
+tcpdump -i <verified-interface> -nn -s 0 -w /tmp/wifi-capture.pcap
 ```
 
-## Debugging Tips
+Stop with `Ctrl-C`, copy the capture to the analysis computer, and remove it from `/tmp` when finished. OpenWrt devices have limited storage and memory, so keep captures short.
 
-- Ensure Port 2 is connected to your PC and set as the mirror monitor port
-- Use `tcpdump -i ifb0` to confirm Wi-Fi traffic is mirrored correctly
-- Re-run the script manually if traffic stops
+!!! warning
+    Capture only networks and devices you are authorized to inspect. Packet captures can contain credentials, session identifiers, DNS names, and private user data.
+
+For a physical mirror port on current firmware, use documentation for the exact device and switch driver. First confirm whether it uses DSA, keep a configuration backup, and maintain a separate recovery connection while testing.
+
+## Original tested context
+
+- Hardware: GL.iNet GL-AR750S
+- Firmware: OpenWrt 19.07.8
+- Source interfaces: `wlan0` and `wlan1`
+- Destination: physical LAN port 2
+- Persistence: none; the old script had to run after every reboot
+
+This context is preserved so old search results are not mistaken for current, generic OpenWrt advice.
+
+## Sources
+
+- [OpenWrt 19.07 end-of-life notice][openwrt-1907]
+- [OpenWrt DSA networking overview][openwrt-dsa]
+- [OpenWrt 19.07 to 21.02 DSA migration notes][openwrt-migration]
+
+<!-- appendices -->
+
+[openwrt-1907]: https://openwrt.org/releases/19.07/start
+[openwrt-dsa]: https://openwrt.org/docs/guide-user/network/dsa/start
+[openwrt-migration]: https://openwrt.org/docs/guide-user/network/dsa/upgrading-to-2102
+
+<!-- end appendices -->

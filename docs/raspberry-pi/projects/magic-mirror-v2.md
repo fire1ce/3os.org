@@ -1,118 +1,96 @@
 ---
-title: Magic Mirror 2.0
-description: Magic Mirror 2.0 is a Raspberry Pi based mirror that can be used to display information from various sources.
+title: MagicMirror² Raspberry Pi 4 Build
+description: My second MagicMirror build using a Raspberry Pi 4, recycled 27-inch iMac display, motion sensor, and external power button.
 template: comments.html
 tags: [raspberry-pi, magicmirror]
 ---
 
-# Magic Mirror 2.0
+# MagicMirror² Raspberry Pi 4 Build
 
 ![Magic Mirror Final][magicmirror-final-img]
 
-To be honest, it's not my first time building a Magic Mirror project. My first magicmirror can be found [here][old-magicmirror-project-url].
-The Magic Mirror 2.0 is based on [Raspberry Pi 4][amazon-raspberry-pi-4-url]{target=\_blank} with Docker Container.
+To be honest, this was not my first Magic Mirror project. My [first build][old-magicmirror-project-url] is still available as a legacy build record.
+
+This second version uses a [Raspberry Pi 4][amazon-raspberry-pi-4-url]{target=\_blank}, a recycled 27-inch iMac display, a motion sensor, and an external power button. The original software deployment used Docker; the build story and hardware are still useful, but the old container recipe is retired below.
 
 ## References
 
-> [magicmirror.builders][magicmirror-homepage-url]{target=\_blank} official website.  
-> [khassel's magicmirror docker image][magicmirror-docker-build-url]{target=\_blank} documentation website.
+- [Official MagicMirror² documentation][magicmirror-install-url]{target=\_blank}
+- [Community Docker deployment linked by MagicMirror²][magicmirror-docker-build-url]{target=\_blank}
 
 ## The Build Process
 
-I had dead iMac 2011 27" with 2k display. I've managed to use it's LCD panel with this [product][aliexpress-lcd-contoller-url]{target=\_blank} from AliExpress. It actually a full controller for the specific LCD panel, including the inverter for backlight. Basically, it's a full-fledged LCD Monitor with HDMI we need for the [Raspberry Pi 4][amazon-raspberry-pi-4-url]{target=\_blank}.
+I had a dead 2011 27-inch iMac with a 2K display. I managed to reuse its LCD panel with this [controller][aliexpress-lcd-contoller-url]{target=\_blank} from AliExpress. It includes the backlight inverter and turns the panel into an HDMI monitor for the [Raspberry Pi 4][amazon-raspberry-pi-4-url]{target=\_blank}.
 
-I've decided to test the controller for the LCD Panel inside the original iMac's body.
+I first tested the controller with the LCD panel still inside the original iMac body.
 
 ![LCD Controller][lcd-controller-img]
 
-I've connected raspberry to the new monitor for the magicmirror testing and configuration.
+Then I connected the Raspberry Pi for the first MagicMirror² test and configuration.
 
 ![iMac Raspberry P][imac-rasperry-pi-img]
 
-Since my previous experience with my first magicmirror build, I've decided to add a [Motion Sensor][aliexpress-pir-sensor-url]{target=\_blank} to the Raspberry Pi to detect the movement of the person infront of the mirror and turn the display on/off accordingly.  
-The second thing i've added is a [Power Button][aliexpress-button-url]{target=\_blank} to turn the Raspberry Pi on, off and restart it without a physical access to the Raspberry Pi.
+From my first MagicMirror build, I knew I wanted a [motion sensor][aliexpress-pir-sensor-url]{target=\_blank} to detect someone in front of the mirror and control the display. I also added a [power button][aliexpress-button-url]{target=\_blank} to shut down or restart the Raspberry Pi without opening the frame.
 
-I couldn't find any open source projects for the functionality I needed of the power button and the Motion Sensor. So I've decided to create my own solution. Bellow are the scripts that I've created:
+I could not find one project that handled the exact button and motion-sensor behavior I wanted, so I created these two parts:
 
 - [External Power Button Wake/Power Off/Restart][external-power-button-for-raspberry-pi-url]
 - [Motion Sensor Display Control][motion-sensor-display-control-url]
 
-Thats how i've tested the functionality of the power button and the motion sensor.
+This was my test setup for the power button and motion sensor.
 
 ![PIR Button Test][pir-button-test-img]
 
-I've order a reflective glass with 4 holes for mounting. It was a challenge to find a suitable reflective glass for the MagicMirror. The product I've found is not perfect - the glass is tinted, but it's a good enough solution and way better then [Glass Mirror Films][amazon-glass-mirror-film-url]{target=\_blank} I've used on my first Magic Mirror Project.
+I ordered reflective glass with four mounting holes. Finding suitable glass was one of the harder parts. This piece is tinted and not perfect, but it worked much better than the [mirror film][amazon-glass-mirror-film-url]{target=\_blank} I used on the first build.
 
 ![Row Glass][row-glass-img]
 
-After I've done all the `proof of concepts` that every thing will work as i intended, I've continue to build the frame to house all the components.
+After proving that every part worked as intended, I continued with the frame.
 
-I've used scrap wood I had laying around to build the frame and the mounting for the LCD panel, and the glass
+I used scrap wood for the frame and the LCD-panel and glass mounts.
 
 ![Wood Frame][wood-frame-img]
 
-For mounting the Magic Mirror to the wall i've used the smallest [TV Mount][amazon-tv-mount-url]{target=\_blank} I've found.
+For mounting the Magic Mirror to the wall, I used the smallest [TV mount][amazon-tv-mount-url]{target=\_blank} I could find.
 
 ![Frame TV Mount][frame-tv-mount-img]
 
-After the frame is built, I've added the electronics to the frame.
+After building the frame, I added the electronics.
 
 ![Frame Electronics][frame-electronics-img]
 
-Performing senity check on the electronics, and display assembly.
+I performed one more sanity check on the electronics and display assembly.
 
 ![Frame Screen Test][frame-screen-test-img]
 
-Since I when on the `floating` effect the glass isn't covering the all the frame, all the exposed parts of the glass are needed to be covered to avoid light leaking.
+I wanted a floating-glass effect, so the glass does not cover the whole frame. I covered the exposed areas behind it to prevent light leaks.
 
 ![Glass Cover][glass-cover-img]
 
-And the final Magic Mirror on the wall.
+Finally, the Magic Mirror was ready for the wall.
 
 ![Magic Mirror Final Side][magicmirror-final-side-img]
 
 ![Magic Mirror Final][magicmirror-final-img]
 
-## The Software
+## Current Software Setup
 
-The magicmiror is based on [MagicMirror][magicmirror-homepage-url]{target=\_blank} project. running on docker on Raspberry OS.
+!!! warning "Original Docker recipe retired"
+    The first version of this page used a Compose v3 file with Raspberry Pi X11, `/opt/vc`, and `/dev/vchiq` mappings. That stack describes the older Raspberry Pi graphics environment and should not be copied to a current Raspberry Pi OS installation.
 
-Below the docker compose file for your reference.
+The MagicMirror² team currently supports manual installation. Check its required Node.js version first because the requirement changes between releases:
 
-```yml
-version: '3'
-
-services:
-  magicmirror:
-    image: karsten13/magicmirror
-    container_name: magicmirror
-    hostname: magicmirror
-    restart: always
-    ports:
-      - 80:8080
-    volumes:
-      - ./config:/opt/magic_mirror/config
-      - ./modules:/opt/magic_mirror/modules
-      - ./css:/opt/magic_mirror/css
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - /opt/vc:/opt/vc/:ro
-      - /sys:/sys
-      - /usr/bin/vcgencmd:/usr/bin/vcgencmd
-      - /etc/localtime:/etc/localtime
-    devices:
-      - /dev/vchiq
-    environment:
-      - LD_LIBRARY_PATH=/opt/vc/lib
-      - DISPLAY=unix:0.0
-      - TZ=Asia/Jerusalem
-      - SET_CONTAINER_TIMEZONE=true
-      - CONTAINER_TIMEZONE=Asia/Jerusalem
-    shm_size: '1024mb'
-    command:
-      - npm
-      - run
-      - start
+```shell
+git clone https://github.com/MagicMirrorOrg/MagicMirror.git
+cd MagicMirror
+node --run install-mm
+cp config/config.js.sample config/config.js
+node --run start
 ```
+
+MagicMirror² also links to a community Docker deployment, but it is not maintained by the core team. If you choose Docker, use the current compose example from that project and review its image tag, mounts, display mode, port binding, and update procedure before deploying it.
+
+The official installation page is the source of truth for current commands. It also documents server-only mode, X11, Wayland, and the current autostart service.
 
 <!-- appendices -->
 
@@ -122,6 +100,7 @@ services:
 [external-power-button-for-raspberry-pi-url]: ../external-power-button.md 'External Power Button'
 [motion-sensor-display-control-url]: ../motion-sensor-display-control.md 'Motion Sensor Display Control'
 [magicmirror-homepage-url]: https://magicmirror.builders/ 'Magic Mirror Homepage'
+[magicmirror-install-url]: https://docs.magicmirror.builders/getting-started/installation.html 'MagicMirror Installation'
 [magicmirror-docker-build-url]: https://khassel.gitlab.io/magicmirror/ 'Magic Mirror Docker Build'
 [amazon-raspberry-pi-4-url]: https://amzn.to/3xJJLyG 'Amazon Raspberry Pi 4'
 [aliexpress-lcd-contoller-url]: https://s.click.aliexpress.com/e/_9RQ0KF 'Aliexpress LCD Controller'

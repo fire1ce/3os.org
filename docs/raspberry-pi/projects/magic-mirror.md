@@ -1,289 +1,112 @@
 ---
-title: Magic Mirror
-description: Raspberry Pi - Magic Mirror Installation how to, guides, examples, and simple usage
+title: Original Raspberry Pi MagicMirror Build
+description: Legacy photo record of my first Raspberry Pi MagicMirror hardware build, with current software guidance linked separately.
 template: comments.html
-tags: [raspberry-pi, magic-mirror]
+tags: [raspberry-pi, magic-mirror, legacy]
 ---
 
-# Magic Mirror
+# Original Raspberry Pi MagicMirror Build
+
+!!! warning "Legacy build record"
+    This is my first MagicMirror hardware build. The original software section used old Raspbian graphics, LXDE autostart, Node.js 10, `/etc/network/interfaces`, and retired Raspberry Pi display settings. I removed those commands because they are not a current installation guide.
+
+For current software installation, use the [official MagicMirror² installation guide][magicmirror-install]. My [second MagicMirror build][second-build] also shows the later hardware and control setup.
 
 <div style="width:80%; margin:0 auto">
-    <img src="/assets/images/raspberry-pi/magicMirror/IMG_2134.jpg" alt="MagicMirror">
+    <img src="/assets/images/raspberry-pi/magicMirror/IMG_2134.jpg" alt="Completed first Raspberry Pi MagicMirror build">
 </div>
 
-## Magic Mirror Build Pictures
+## MagicMirror Build Pictures
 
-23" Samsung screen power resoldering:
+23-inch Samsung screen power connection work:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1719.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1719.jpg" alt="Samsung display power connection for the MagicMirror">
 </div>
 
-Wooden frame initial fitting test on a glass with duel mirror film applied:
+Initial wooden-frame fitting test on glass with dual-mirror film:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1717.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1717.jpg" alt="Wooden MagicMirror frame fitted over mirror film">
 </div>
 
-Testing the screen installation (frame removed) with power cords:
+Testing the display installation with the frame removed:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1722.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1722.jpg" alt="MagicMirror screen installation test">
 </div>
 
-Testing black&white picture from a laptop after frame assembly:
+Testing a black-and-white image from a laptop after assembling the frame:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1732.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1732.jpg" alt="Black-and-white display test through the MagicMirror glass">
 </div>
 
-Power, Lan, Usb external ports cutouts:
+Power, LAN, and USB cutouts:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1766.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1766.jpg" alt="Power LAN and USB cutouts in the MagicMirror frame">
 </div>
 
-Fitted extended ports with wood filler:
+Extended ports fitted with wood filler:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1767.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1767.jpg" alt="Extended ports fitted into the wooden frame">
 </div>
 
-Extended ports:
+The finished external ports:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1768.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1768.jpg" alt="Finished external ports on the MagicMirror">
 </div>
 
-Assembly With screen, Raspberry Pi, cable routing, black material which do not pass light where there is no screen:
+Display, Raspberry Pi, cable routing, and blackout material behind the mirror:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1771.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1771.jpg" alt="Raspberry Pi display and cable routing behind the mirror">
 </div>
 
-Adding some color for the frame:
+Adding color to the frame:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1978.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1978.jpg" alt="Painted wooden MagicMirror frame">
 </div>
 
-Testing everything is working as it should be:
+Final function test:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1984.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1984.jpg" alt="MagicMirror function test before final assembly">
 </div>
 
 Full assembly behind the mirror:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1985.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_1985.jpg" alt="Completed electronics assembly behind the MagicMirror">
 </div>
 
-Final Product:
+Final product:
 
 <div style="width:80%; margin:0 auto">
-   <img src="/assets/images/raspberry-pi/magicMirror/IMG_2134.jpg" alt="MagicMirror">
+   <img src="/assets/images/raspberry-pi/magicMirror/IMG_2134.jpg" alt="Completed first MagicMirror mounted on the wall">
 </div>
 
-## Configuration Setup
+## What Still Transfers to a New Build
 
-### Change Display Rotation
+- Prove the screen, controller, and HDMI path before building the frame.
+- Plan cable exits, service access, ventilation, and a safe shutdown path before closing the back.
+- Block light around the active display area.
+- Keep mains-voltage parts enclosed and strain-relieved.
+- Treat the software as a separate, replaceable layer and follow current project documentation.
 
-```bash
-sudo nano /boot/config.txt
-```
+## Sources
 
-Add one of those according to your setup to the config file:
+- [MagicMirror² current installation and usage][magicmirror-install]
+- [MagicMirror² current hardware requirements][magicmirror-requirements]
 
-| Code                   | Description     |
-| ---------------------- | --------------- |
-| display_rotate=0       | Normal          |
-| display_rotate=1       | 90 degrees      |
-| display_rotate=2       | 180 degrees     |
-| display_rotate=3       | 270 degrees     |
-| display_rotate=0x8000  | horizontal flip |
-| display_rotate=0x20000 | vertical flip   |
+<!-- appendices -->
 
-`NOTE: You can rotate both the image and touch interface 180º by entering lcd_rotate=2 instead`
+[magicmirror-install]: https://docs.magicmirror.builders/getting-started/installation.html
+[magicmirror-requirements]: https://docs.magicmirror.builders/getting-started/requirements.html
+[second-build]: magic-mirror-v2.md
 
-### Disabling the Screensaver
-
-Change to OPEN GL Driver
-
-```bash
-sudo nano /boot/config.txt
-```
-
-add this:
-
-```bash
-dtoverlay=vc4-fkms-v3d
-```
-
----
-
-(Please note, you will need the x11-xserver-utils package installed.)
-
-edit ~/.config/lxsession/LXDE-pi/autostart:
-
-```bash
-sudo nano ~/.config/lxsession/LXDE-pi/autostart
-```
-
-Add the following lines:
-
-```bash
-@xset s noblank
-@xset s off
-@xset -dpms
-```
-
-Edit /etc/lightdm/lightdm.conf:
-
-```bash
-sudo nano /etc/lightdm/lightdm.conf
-```
-
-Add the following line below [SeatDefaults]
-
-```bash
-xserver-command=X -s 0 -dpms
-```
-
-### OS UI Finishes
-
-Make the Background Black:
-
-`Right click the Desktop` -> `Desktop Preferences` and Change:
-`Layout -> no image`
-`Colour -> #000000`
-
-Hit ok.
-
-`Right click on the top panel` -> `Panel Preferences` -> `Appearance`
-
-Select `Solid Color (With Opacity)` make sure `Opacity at 0`
-
-### Disable WiFi Power Save
-
-Edit /etc/modprobe.d/8192cu.conf
-
-```bash
-sudo nano /etc/modprobe.d/8192cu.conf
-```
-
-Add the following lines
-
-```bash
-# Disable power saving
-options 8192cu rtw_power_mgnt=0 rtw_enusbss=1 rtw_ips_mode=1
-```
-
-For Raspberry Pi 3
-Edit /etc/network/interfaces
-
-```bash
-sudo nano /etc/network/interfaces
-```
-
-Add the following line under the wlan0 section
-
-```bash
-allow-hotplug wlan0
-iface wlan0 inet manual
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-wireless-power off
-```
-
-Reboot your PI
-
-```bash
-sudo reboot
-```
-
-### Disable Cursor on Startup
-
-```bash
-sudo apt-get install unclutter
-
-```
-
-### Installation
-
-first install node.js and npm
-
-```bash
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-
-and then run:
-
-```bash
-sudo npm install -g npm@latest
-```
-
-If you need to remove node and npm run this:
-
-```bash
-sudo apt-get remove nodejs nodejs-legacy nodered
-```
-
-Installation:
-
-[magicmirror-installation][magicmirror-installation-url]{target=\_blank}
-
-[magicmirror-installation-url]: https://docs.magicmirror.builders/getting-started/installation.html
-
-`say no to PM2 auto start - will be install manually`
-
-To Start from SSH:
-
-```bash
-cd ~/MagicMirror && DISPLAY=:0 npm start
-```
-
-### pm2 auto start installation
-
-```bash
-sudo npm install -g pm2
-cd ~
-nano mm.sh
-```
-
-add this to mm.sh and save:
-
-```bash
-#!/bin/sh
-
-cd ~/MagicMirror
-DISPLAY=:0 npm start
-```
-
-```bash
-chmod +x mm.sh
-pm2 start mm.sh
-pm2 save
-pm2 startup
-```
-
-pm2 commands:
-
-```bash
-pm2 restart mm
-pm2 stop mm
-pm2 start mm
-pm2 log
-pm2 show mm
-```
-
-## Logrotate Installation
-
-This will Retain for 14 days compress the logs.
-
-```bash
-pm2 install pm2-logrotate
-pm2 set pm2-logrotate:compress true
-pm2 set pm2-logrotate:retain 14
-pm2 set pm2-logrotate:max_size 10M
-```
+<!-- end appendices -->

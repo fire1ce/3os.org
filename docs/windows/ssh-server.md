@@ -1,127 +1,130 @@
 ---
-title: Windows SSH Server
-description: Windows SSH Server with PowerShell and RSA keys installation and configuration guide
+title: Windows OpenSSH Server
+description: Install and configure the built-in OpenSSH Server on Windows with PowerShell and key authentication.
 template: comments.html
-tags: [windows, ssh-server, powershell, rsa-keys]
+tags: [windows, ssh-server, powershell, openssh]
 ---
 
-# Windows SSH Server
+# Windows OpenSSH Server
 
-Sometime you need to connect to a remote server via `SSH`. Usually it's the main connection to linux servers. But you can also connect to a windows server via `SSH`. At this guide we will show you how to install and configure a windows ssh server, including `SSH Keys authentication`.
+Windows includes OpenSSH Server as an optional feature. This is the clean setup I use for remote PowerShell access and SSH key authentication.
 
-## SSH Server Installation on Windows
+The commands below apply to supported Windows 10 and 11 releases and Windows Server 2019 or later. Run PowerShell as Administrator.
 
-We will be using PowerShell to install the SSH server inculding the SSH client.
+## Install OpenSSH
 
-Open PowerShell Terminal as Administrator.
+Check the available OpenSSH features:
 
-Run the following commands to install the SSH server and client.
+```powershell
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+```
 
-```Powershell
+Install the client and server:
+
+```powershell
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
-After the installaton you can check the Windows SSH server and client are installed.
+Start `sshd` now and on future boots:
 
-```Powershell
-Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
-```
-
-The output will be something like this:
-
-![SSH Server Installation][ssh-installed-img]
-
-To start the Windows SSH server service
-
-```Powershell
+```powershell
 Start-Service sshd
+Set-Service -Name sshd -StartupType Automatic
 ```
 
-Enable Windows SSH Server on Windows Boot
+The server installation normally creates the `OpenSSH-Server-In-TCP` firewall rule. Verify it instead of creating a duplicate:
 
-```Powershell
-Set-Service -Name sshd -StartupType 'Automatic'
+```powershell
+Get-NetFirewallRule -Name OpenSSH-Server-In-TCP
 ```
 
-Add a Firewall rule to allow the SSH port
+If that rule does not exist, create the rule Microsoft documents:
 
-```Powershell
-if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) { Write-Output "Firewall Rule 'OpenSSH-Server-In-TCP' does not exist, creating it..." New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 } else { Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists." }
+```powershell
+New-NetFirewallRule `
+  -Name 'OpenSSH-Server-In-TCP' `
+  -DisplayName 'OpenSSH Server (sshd)' `
+  -Enabled True `
+  -Direction Inbound `
+  -Protocol TCP `
+  -Action Allow `
+  -LocalPort 22
 ```
 
-At this point you should be able to connect via SSH to the Windows server with your username and password.
+Test from another computer:
 
-![SSH Connection][ssh-connection-img]
+```shell
+ssh windows-user@windows-host
+```
 
-## Adding SSH Keys
+## Configure SSH keys
 
-### Administrator User
+Create an Ed25519 key on the client if you do not already have one:
 
-Create the file: `administrators_authorized_keys` at the following location:
+```shell
+ssh-keygen -t ed25519
+```
 
-```path
+Copy only the `.pub` public key to Windows. The destination depends on the Windows account.
+
+### Standard user
+
+Put the public key on one line in:
+
+```text
+C:\Users\windows-user\.ssh\authorized_keys
+```
+
+The `.ssh` directory and `authorized_keys` file must belong to that user and must not be writable by unrelated users.
+
+### Administrator account
+
+By default, accounts in the Administrators group use this shared file:
+
+```text
 C:\ProgramData\ssh\administrators_authorized_keys
 ```
 
-Edit the file and add you SSH public key to the file.
+Set the file ACL to Administrators and SYSTEM only. The SID form works on non-English Windows installations:
 
-Now we need to import the SSH public key to the Windows SSH server. We can do this by using the following command:
-
-```Powershell
-icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"
+```powershell
+icacls.exe 'C:\ProgramData\ssh\administrators_authorized_keys' /inheritance:r /grant '*S-1-5-32-544:F' /grant 'SYSTEM:F'
 ```
 
-Test the SSH connection to the Windows server from remote machine with the SSH Key.  
-You should be able to connect to the Windows server with your SSH key
+Restart the service after changing server configuration or key-file rules:
 
-### Regular User (non-administrator)
-
-Create a `.ssh` directory in the home directory of the user.
-
-````path
-
-```path
-C:\Users\<username>\.ssh\
-````
-
-Create the file: `authorized_keys` at the following location:
-
-```path
-C:\Users\<username>\.ssh\authorized_keys
+```powershell
+Restart-Service sshd
 ```
 
-Edit the file and add you SSH public key to the file.
+Keep the password login available until key authentication works in a second terminal. Then review `C:\ProgramData\ssh\sshd_config` if you want to restrict authentication further.
 
-Test the SSH connection to the Windows server from remote machine with the SSH Key.  
-You should be able to connect with non-administrator user to the Windows server with your SSH key
+## Optional: use PowerShell as the default shell
 
-## `PowerShell` as Default Shell for SSH
+Windows OpenSSH uses `cmd.exe` by default. Set Windows PowerShell as the SSH default shell with the documented registry value:
 
-By default the SSH client uses the Windows command prompt as the default shell.
-
-We can change the default shell to PowerShell running the following PowerShell command:
-
-```Powershell
-New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\PowerShell.exe" -PropertyType String -Force
+```powershell
+New-ItemProperty `
+  -Path 'HKLM:\SOFTWARE\OpenSSH' `
+  -Name DefaultShell `
+  -Value 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' `
+  -PropertyType String `
+  -Force
 ```
 
-Next to you connet to the Windows SSG server it should start the PowerShell shell.
+Open a new SSH connection to test it.
 
-It should look something like this:
+## Sources
 
-![SSH Connection with PowerShell][ssh-windows-powershell-img]
+- [Microsoft: get started with OpenSSH Server for Windows][ms-install]
+- [Microsoft: OpenSSH key management][ms-keys]
+- [Microsoft: OpenSSH Server configuration][ms-config]
 
 <!-- appendices -->
 
-<!-- urls -->
-
-<!-- images -->
-
-[ssh-installed-img]: ../assets/images/0bafb0da-c18c-11ec-a0f0-db42d5ba669d.jpg 'SSH Server Installation'
-[ssh-connection-img]: ../assets/images/f285a87e-c18d-11ec-8189-f712e9b20b30.jpg 'SSH Connection'
-[ssh-windows-powershell-img]: ../assets/images/4b56c486-c190-11ec-8406-5b42a0c9b07a.jpg 'SSH Connection with PowerShell'
-
-<!--css-->
+[ms-install]: https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
+[ms-keys]: https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement
+[ms-config]: https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh-server-configuration
 
 <!-- end appendices -->

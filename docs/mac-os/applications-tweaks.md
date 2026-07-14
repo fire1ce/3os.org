@@ -1,60 +1,67 @@
 ---
-title: Applications Tweaks
-description: macOS Applications tweaks and tips for better experience, productivity and workflow and more
+title: macOS Application Tweaks
+description: Practical macOS shortcuts for opening another application instance and launching the Firefox Profile Manager.
 template: comments.html
-tags: [macOS]
+tags: [macos, applications, firefox]
 ---
 
-# Applications Tweaks
+# macOS Application Tweaks
 
-## Running Multi Instances of an Application
+These are two small macOS shortcuts I keep around: opening another instance of an application and launching Firefox's Profile Manager without remembering the full command.
 
-Launch the Script Editor choose temporary folder
+## Open another application instance
 
-Copy the command to be executed to the Script Editor
+macOS `open` supports `-n`, which opens a new application instance even when one is already running:
 
-```bash
-do shell script "open -n <path to application>"
+```shell
+open -n -a 'Visual Studio Code'
 ```
 
-!!! example
+Not every application supports multiple independent instances cleanly. Test the command before creating a permanent shortcut.
 
-    do shell script "open -n /Applications/'Visual Studio Code.app'"
+### Turn it into an app
 
-File > Export
+1. Open **Script Editor**.
+2. Create a new script.
+3. Add the command, replacing the application name:
 
-Use the following settings:
-
-- Export As: **Your New Application Name**
-- Where: **Applications**
-- File Format: **Application**
-
-^^Change The Icon of Your New Application:^^
-
-In **Finder** got to **Applications** folder.
-Right Click on the new **Your New Application** application we just created and click **Get Info**.
-Drug the original application icon (or any other) to the in the left corner of the "get info" menu.
-
-## Lunch Firefox Profile Manager as Application
-
-Launch the Script Editor choose temporary folder
-
-Copy the command to be executed to the Script Editor
-
-```bash
-do shell script "/Applications/Firefox.app/Contents/MacOS/firefox -ProfileManager &> /dev/null &"
+```applescript
+do shell script "open -n -a 'Visual Studio Code'"
 ```
 
-File > Export
+4. Click **File > Export**.
+5. Choose a name and the **Applications** folder.
+6. Set **File Format** to **Application**, then export.
 
-Use the following settings:
+You can now launch the shortcut from Finder, Spotlight, or the Dock.
 
-- Save As: **Firefox Profile Manager**
-- Where: **Applications**
-- File Format: **Application**
+To change its icon, open **Get Info** for both the source app and the shortcut. Copy the source icon, select the small icon in the shortcut's Get Info window, and paste.
 
-^^Change The Icon of Your New Firefox Profile Manager Application:^^
+## Firefox Profile Manager shortcut
 
-In **Finder** got to **Applications** folder.
-Right Click on the new **Firefox Profile Manager** application we just created and click **Get Info**.
-Drug the original application to the icon in the left corner of the "get info" menu.
+Firefox provides a built-in Profile Manager. Close Firefox first, then test it in Terminal:
+
+```shell
+/Applications/Firefox.app/Contents/MacOS/firefox -P
+```
+
+If Firefox is installed somewhere else, adjust the path. Mozilla also provides `about:profiles` for managing profiles from a running Firefox session.
+
+To create a launcher, repeat the Script Editor export steps with:
+
+```applescript
+do shell script "/Applications/Firefox.app/Contents/MacOS/firefox -P"
+```
+
+Be careful when deleting profiles. Mozilla recommends keeping the profile files unless you are certain you no longer need bookmarks, passwords, settings, and other stored data.
+
+## Sources
+
+- Run `man open` in macOS Terminal for Apple's current `open` options.
+- [Mozilla: create, remove, or switch Firefox profiles][firefox-profiles]
+
+<!-- appendices -->
+
+[firefox-profiles]: https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles
+
+<!-- end appendices -->

@@ -1,69 +1,92 @@
 ---
-title: JADX Decompiler
-description: JADX Decompiler is a Java bytecode decompiler for Android applications.
+title: JADX Android Decompiler
+description: Install and use the current JADX command-line and GUI tools to inspect APK, DEX, AAB, and related Android files.
 template: comments.html
-tags: [android, decompiler, java]
+tags: [android, jadx, decompiler, java]
 ---
 
-# JADX - Dex to Java Decompiler
+# JADX Android Decompiler
 
-Github Repository: [skylot-jadx][jadx-github-repository-url]{target="\_blank"}
+JADX produces Java source from Android DEX bytecode and decodes resources such as `AndroidManifest.xml`. It includes both a command-line tool and a desktop GUI.
 
-## About JADX
+!!! note
+    Decompiled source is a reconstruction, not the original project. JADX warns that it cannot recover 100% of every application, so expect errors around obfuscated, optimized, or unusual bytecode.
 
-Command line and GUI tools for producing Java source code from Android Dex and Apk files
+Use it only on applications you own or are authorized to inspect.
 
-:exclamation::exclamation::exclamation: Please note that in most cases **jadx** can't decompile all 100% of the code, so errors will occur. Check [Troubleshooting guide](https://github.com/skylot/jadx/wiki/Troubleshooting-Q&A#decompilation-issues) for workarounds
+## Install JADX
 
-**Main features:**
+The project publishes release archives containing both `jadx` and `jadx-gui`. The cross-platform archive requires a 64-bit Java 11 or later runtime.
 
-- decompile Dalvik bytecode to java classes from APK, dex, aar, aab and zip files
-- decode `AndroidManifest.xml` and other resources from `resources.arsc`
-- deobfuscator included
+On macOS, the project also documents Homebrew:
 
-**jadx-gui features:**
+```shell
+brew install jadx
+```
 
-- view decompiled code with highlighted syntax
-- jump to declaration
-- find usage
-- full text search
-- smali debugger, check [wiki page](https://github.com/skylot/jadx/wiki/Smali-debugger) for setup and usage
+On Arch Linux:
 
-Jadx-gui key bindings can be found [here](https://github.com/skylot/jadx/wiki/JADX-GUI-Key-bindings)
+```shell
+sudo pacman -S jadx
+```
 
-See these features in action here: [jadx-gui features overview](https://github.com/skylot/jadx/wiki/jadx-gui-features-overview)
+On other systems, download a release archive, unpack it, and run the launcher from its `bin` directory. Prefer the official release page over third-party download sites.
 
-<img src="https://user-images.githubusercontent.com/118523/142730720-839f017e-38db-423e-b53f-39f5f0a0316f.png" width="700"/>
+## Use the GUI
 
-## Download
+Open an APK directly:
 
-{{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Download') }}
+```shell
+jadx-gui app.apk
+```
 
-## Installation
+The GUI provides syntax highlighting, navigation to declarations, usage search, and full-text search. Start here when you need to explore an unfamiliar application.
 
-{{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Install') }}
+## Use the CLI
 
-## Usage
+Decompile an APK into a chosen directory:
 
-{{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Usage') }}
+```shell
+jadx -d app-source app.apk
+```
 
-## Use jadx as a Library
+Skip resources when you only need source output:
 
-{{ external_markdown('https://raw.githubusercontent.com/skylot/jadx/master/README.md', '### Use jadx as a library') }}
+```shell
+jadx --no-res -d app-source app.apk
+```
+
+Skip source decompilation when you only need decoded resources:
+
+```shell
+jadx --no-src -d app-resources app.apk
+```
+
+Check the options supported by your installed version:
+
+```shell
+jadx --help
+```
+
+JADX accepts APK, DEX, JAR, CLASS, AAB, AAR, ZIP, XAPK, APKM, and several related input formats. Support can change between releases, so the local `--help` output is the final reference for your installed build.
+
+## When output looks wrong
+
+- Check the GUI log for decompilation errors.
+- Compare questionable Java output with the Smali view.
+- Search by strings, resources, and call sites instead of trusting one reconstructed method.
+- Retest with the current JADX release before reporting a decompiler bug.
+
+## Sources
+
+- [JADX official repository and usage][jadx]
+- [JADX releases][jadx-releases]
+- [JADX troubleshooting guide][jadx-troubleshooting]
 
 <!-- appendices -->
 
-<!-- urls -->
-
-[wireguard-vyatta-ubnt-url]: https://github.com/WireGuard/wireguard-vyatta-ubnt 'wireguard-vyatta-ubnt Github Repository'
-[jadx-github-repository-url]: https://github.com/skylot/jadx 'jadx Github Repository'
-
-<!-- images -->
-
-<!--css-->
-<style>
-  .md-typeset img {
-    display: inline;
-</style>
+[jadx]: https://github.com/skylot/jadx
+[jadx-releases]: https://github.com/skylot/jadx/releases
+[jadx-troubleshooting]: https://github.com/skylot/jadx/wiki/Troubleshooting-Q&A#decompilation-issues
 
 <!-- end appendices -->

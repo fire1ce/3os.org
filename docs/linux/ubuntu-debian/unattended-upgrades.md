@@ -1,131 +1,86 @@
 ---
-title: Unattended Upgrades
-description: Ubuntu, Debian, Raspberry Pi unattended upgrades guide
+title: Ubuntu Unattended Upgrades
+description: Enable, test, monitor, and safely customize automatic Ubuntu security updates with unattended-upgrades.
 template: comments.html
-tags: [ubuntu]
+tags: [ubuntu, apt, security-updates, automation]
 ---
 
-# Unattended Upgrades
+# Ubuntu Unattended Upgrades
 
-```bash
-sudo apt install -y unattended-upgrades apt-listchanges
+Ubuntu uses `unattended-upgrades` to install security updates automatically. The package is installed by default on many Ubuntu systems, but I still verify the package, schedule, allowed sources, dry run, and logs before trusting it.
+
+## Install or confirm the package
+
+```shell
+sudo apt update
+sudo apt install unattended-upgrades
 ```
 
-Edit the config to your preference
+The two main configuration files are:
 
-```bash
-sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
-```
+- `/etc/apt/apt.conf.d/20auto-upgrades` — whether package-list refresh and unattended upgrades run, and their interval in days.
+- `/etc/apt/apt.conf.d/50unattended-upgrades` — allowed repositories, package exclusions, reboot behavior, and other policy.
 
-!!! example
+## Enable daily checks
 
-    === "Ubuntu"
+Check `/etc/apt/apt.conf.d/20auto-upgrades`. A daily Ubuntu setup contains:
 
-        ```config
-        Unattended-Upgrade::Allowed-Origins {
-        "${distro_id}:${distro_codename}";
-        "${distro_id}:${distro_codename}-security";
-        // Extended Security Maintenance; doesn't necessarily exist for
-        // every release and this system may not have it installed, but if
-        // available, the policy for updates is such that unattended-upgrades
-        // should also install from here by default.
-        "${distro_id}ESMApps:${distro_codename}-apps-security";
-        "${distro_id}ESM:${distro_codename}-infra-security";
-        "${distro_id}:${distro_codename}-updates";
-        "${distro_id}:${distro_codename}-proposed";
-        // "${distro_id}:${distro_codename}-backports";
-        };
-
-        Unattended-Upgrade::DevRelease "auto";
-        Unattended-Upgrade::AutoFixInterruptedDpkg "true";
-        Unattended-Upgrade::MinimalSteps "true";
-        Unattended-Upgrade::InstallOnShutdown "false";
-        //Unattended-Upgrade::Mail "";
-        //Unattended-Upgrade::MailReport "on-change";
-        Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
-        Unattended-Upgrade::Remove-New-Unused-Dependencies "true";
-        Unattended-Upgrade::Remove-Unused-Dependencies "true";
-        Unattended-Upgrade::Automatic-Reboot "true";
-        Unattended-Upgrade::Automatic-Reboot-WithUsers "true";
-        Unattended-Upgrade::Automatic-Reboot-Time "06:00";
-        //Acquire::http::Dl-Limit "70";
-        // Unattended-Upgrade::SyslogEnable "false";
-        // Unattended-Upgrade::SyslogFacility "daemon";
-        // Unattended-Upgrade::OnlyOnACPower "true";
-        // Unattended-Upgrade::Skip-Updates-On-Metered-Connections "true";
-        // Unattended-Upgrade::Verbose "false";
-        // Unattended-Upgrade::Debug "false";
-        // Unattended-Upgrade::Allow-downgrade "false";
-        ```
-
-    === "Debian/RaspberyOS"
-
-        ```config
-        Unattended-Upgrade::Origins-Pattern {
-        // Codename based matching:
-        // This will follow the migration of a release through different
-        // archives (e.g. from testing to stable and later oldstable).
-        // Software will be the latest available for the named release,
-        // but the Debian release itself will not be automatically upgraded.
-        "origin=Debian,codename=${distro_codename}-updates";
-        // "origin=Debian,codename=${distro_codename}-proposed-updates";
-        "origin=Debian,codename=${distro_codename},label=Debian";
-        "origin=Debian,codename=${distro_codename},label=Debian-Security";
-
-        // Archive or Suite based matching:
-        // Note that this will silently match a different release after
-        // migration to the specified archive (e.g. testing becomes the
-        // new stable).
-        // "o=Debian,a=stable";
-        // "o=Debian,a=stable-updates";
-        // "o=Debian,a=proposed-updates";
-        // "o=Debian Backports,a=${distro_codename}-backports,l=Debian Backports";
-        };
-
-        Unattended-Upgrade::DevRelease "auto";
-        Unattended-Upgrade::AutoFixInterruptedDpkg "true";
-        Unattended-Upgrade::MinimalSteps "true";
-        Unattended-Upgrade::InstallOnShutdown "false";
-        //Unattended-Upgrade::Mail "";
-        //Unattended-Upgrade::MailReport "on-change";
-        Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
-        Unattended-Upgrade::Remove-New-Unused-Dependencies "true";
-        Unattended-Upgrade::Remove-Unused-Dependencies "true";
-        Unattended-Upgrade::Automatic-Reboot "true";
-        Unattended-Upgrade::Automatic-Reboot-WithUsers "true";
-        Unattended-Upgrade::Automatic-Reboot-Time "06:00";
-        // Acquire::http::Dl-Limit "70";
-        // Unattended-Upgrade::SyslogEnable "false";
-        // Unattended-Upgrade::SyslogFacility "daemon";
-        // Unattended-Upgrade::OnlyOnACPower "true";
-        // Unattended-Upgrade::Skip-Updates-On-Metered-Connections "true";
-        // Unattended-Upgrade::Verbose "false";
-        // Unattended-Upgrade::Debug "false";
-        // Unattended-Upgrade::Allow-downgrade "false";
-        ```
-
-Automatic call via /etc/apt/apt.conf.d/20auto-upgrades
-
-```bash
-echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | sudo debconf-set-selections
-sudo dpkg-reconfigure -f noninteractive unattended-upgrades
-```
-
-Check the /etc/apt/apt.conf.d/20auto-upgrades for those 2 lines:
-
-```bash
+```aptconf
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
 ```
 
-Manual Run:
+A value of `1` means daily. A value of `0` disables that action.
 
-```bash
-sudo unattended-upgrade -d
+Ubuntu's `apt-daily.timer` and `apt-daily-upgrade.timer` trigger the work with a randomized delay. Confirm the timers:
+
+```shell
+systemctl list-timers 'apt-daily*'
 ```
 
-To enable unattended-upgrade use the following command:
+## Keep the update policy conservative
 
-```bash
-sudo dpkg-reconfigure --priority=low unattended-upgrades
+The package's Ubuntu defaults allow the release and security pockets, plus applicable Ubuntu ESM security sources. Review the active `Allowed-Origins` or `Origins-Pattern` in the file shipped by your installed release.
+
+Do not copy a complete configuration from another Ubuntu or Debian release. In particular:
+
+- Do not enable `-proposed` for normal automatic updates.
+- Add the normal `-updates` pocket only if you deliberately want non-security updates installed automatically.
+- Keep automatic reboot disabled unless the host has a tested maintenance window and recovery plan.
+- Block a package only when you accept the security tradeoff and have another update process for it.
+
+Debian and Raspberry Pi OS ship different repository origins and defaults. Use their package-provided configuration instead of pasting Ubuntu origin names.
+
+## Dry-run and inspect
+
+Update package metadata, then run a verbose dry run:
+
+```shell
+sudo apt update
+sudo unattended-upgrade --dry-run --debug
 ```
+
+The dry run reports the allowed origins and packages it would process without installing them.
+
+Review recent logs:
+
+```shell
+sudo ls -la /var/log/unattended-upgrades/
+sudo journalctl -u apt-daily-upgrade.service --since today
+```
+
+For a server fleet, unattended upgrades are one layer, not fleet management. You still need inventory, failure monitoring, maintenance windows, and a way to confirm that every host is actually current.
+
+## Sources
+
+- [Ubuntu Server: automatic updates][ubuntu-auto]
+- [Ubuntu security updates documentation][ubuntu-security]
+- [Ubuntu `unattended-upgrade(8)` manual][ubuntu-man]
+
+<!-- appendices -->
+
+[ubuntu-auto]: https://ubuntu.com/server/docs/how-to/software/automatic-updates/
+[ubuntu-security]: https://documentation.ubuntu.com/security/security-updates/
+[ubuntu-man]: https://manpages.ubuntu.com/manpages/resolute/man8/unattended-upgrade.8.html
+
+<!-- end appendices -->
