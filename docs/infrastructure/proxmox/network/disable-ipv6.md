@@ -1,55 +1,69 @@
 ---
-title: Disable IPv6 on Proxmox
-description: How to permanently disable IPv6 on Proxmox VE Server.
+title: Disable IPv6 on Proxmox VE
+description: Permanently disable IPv6 on a Proxmox VE host with the sysctl method recommended in the current Proxmox documentation.
 template: comments.html
-tags: [proxmox, ipv6]
+tags: [proxmox, ipv6, sysctl, networking]
 ---
 
-# Disable IPv6 on Proxmox Permanently
+# Disable IPv6 on Proxmox VE
 
-By default, Proxmox IPv6 is enabled after installation. This means that the IPv6 stack is active and the host can communicate with other hosts on the same network via IPv6 protocol.
+Proxmox VE works with or without IPv6 and recommends keeping the default network configuration. Disable IPv6 only when the network design requires it.
 
-Output of `ip addr` command:
+!!! warning
 
-![Default IPv6 Proxmox][default-ipv6-proxmox-img]
+    Check the node, cluster, storage and management configuration first. Disabling a protocol that is already in use can disconnect the host or break services.
 
-You can disable IPv6 on Proxmox VE by editing the `/etc/default/grub` file.
+## Create the sysctl Configuration
 
-```shell
-nano /etc/default/grub
-```
+The current Proxmox documentation recommends a sysctl file instead of disabling IPv6 through the kernel command line.
 
-add `ipv6.disable=1` to the end of `GRUB_CMDLINE_LINUX_DEFAULT` and `GRUB_CMDLINE_LINUX` line. Don't change the other values at those lines.
-
-```bash
-GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1"
-GRUB_CMDLINE_LINUX="ipv6.disable=1"
-```
-
-The config should look like this:
-
-![Grub Configuration][grub-configuration-img]
-
-Update the grub configuration.
+Create the file:
 
 ```shell
-update-grub
+nano /etc/sysctl.d/disable-ipv6.conf
 ```
 
-Save and exit. Reboot Proxmox Server to apply the changes.
+Add:
 
-Output of `ip addr` command after disabling IPv6 on Proxmox VE:
+```text
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+```
 
-![No IPv6 Proxmox Image][no-ipv6-proxmox-img]
+Save the file and load the settings:
 
-<!-- appendices -->
+```shell
+sysctl --system
+```
 
-<!-- urls -->
+## Verify the Result
 
-<!-- images -->
+```shell
+sysctl net.ipv6.conf.all.disable_ipv6
+sysctl net.ipv6.conf.default.disable_ipv6
+```
 
-[default-ipv6-proxmox-img]: ../../../assets/images/1ee15c1c-bd9a-11ec-926f-3b1ee33b95ee.jpg 'Default IPv6 Proxmox Image'
-[grub-configuration-img]: ../../../assets/images/f1f18772-f881-11ec-9918-afad89ede03c.jpg 'Grub Configuration'
-[no-ipv6-proxmox-img]: ../../../assets/images/542c7a30-bd9c-11ec-848e-932ce851a8c3.jpg 'No IPv6 Proxmox Image'
+Both values should be `1`.
 
-<!-- end appendices -->
+Check the host addresses:
+
+```shell
+ip -6 address show
+```
+
+Reboot the node during a maintenance window, then run the verification commands again to confirm that the settings persist.
+
+## Re-enable IPv6
+
+Remove the custom file and reboot:
+
+```shell
+rm /etc/sysctl.d/disable-ipv6.conf
+reboot
+```
+
+After the reboot, verify that both `disable_ipv6` values returned to `0`.
+
+## Source
+
+- [Proxmox VE Network Configuration: Disabling IPv6](https://pve.proxmox.com/wiki/Network_Configuration#sysadmin_network_disable_ipv6)

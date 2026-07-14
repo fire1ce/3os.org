@@ -1,393 +1,148 @@
 ---
-title: GPU Passthrough to VM
-description: Proxmox full gpu passthrough to VM configuration for hardware acceleration.
+title: Proxmox GPU Passthrough to a VM
+description: Configure full PCIe GPU passthrough from a Proxmox VE host to a Windows or Linux virtual machine with VFIO.
 template: comments.html
-tags: [proxmox, gpu, passthrough]
+tags: [proxmox, gpu, pcie, passthrough, vfio]
 ---
 
-# Proxmox GPU Passthrough to VM
+# Proxmox GPU Passthrough to a VM
 
-## Introduction
+Full PCIe passthrough gives one VM direct control of a physical GPU. The Proxmox host and other VMs cannot use that device while it is assigned.
 
-GPU passthrough is a technology that allows the Linux kernel to present the internal PCI GPU directly to the virtual machine. The device behaves as if it were powered directly by the virtual machine, and the virtual machine detects the PCI device as if it were physically connected.
-We will cover how to enable GPU passthrough to a virtual machine in Proxmox VE.
+!!! warning
 
-!!! warning ""
+    Hardware support and IOMMU grouping vary. Keep SSH or another management path available before releasing a GPU used by the host console.
 
-    **Your mileage may vary depending on your hardware.**
+## Requirements
 
-!!! note "Prerequisites"
+- CPU and motherboard support for IOMMU interrupt remapping
+- Intel VT-d or AMD-Vi enabled in BIOS/UEFI
+- A GPU in a usable IOMMU group
+- A second display or remote-management method when this is the host's only GPU
 
-    Before starting, make sure IOMMU / VT-d (Intel) or AMD-Vi (AMD) is **enabled in your BIOS/UEFI**.
+This guide uses the current Proxmox VE baseline. It does not add ACS overrides, unsafe interrupts, generic framebuffer flags or vendor-specific reset modules.
 
-## Proxmox Configuration for GPU Passthrough
-
-The following examples use an `SSH` connection to the Proxmox server.
-
-### Find the GPU PCI Address
+## Find the GPU and Its Functions
 
 ```shell
-lspci -nnv | grep VGA
+lspci -nnk | grep -A3 -E "VGA|3D|Audio"
 ```
 
-Output will look similar to:
+A GPU can have separate graphics, audio, USB and USB-C functions. Note the PCI addresses and the vendor/device IDs in brackets:
 
-```shell
-0b:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] [10de:1e81] (rev a1)
+```text
+0b:00.0 VGA compatible controller [0300]: NVIDIA Corporation GPU [10de:1e81]
+0b:00.1 Audio device [0403]: NVIDIA Corporation Audio [10de:10f8]
 ```
 
-The PCI address is `0b:00.0`. List all devices in the same PCI group:
+Do not copy these example addresses or IDs.
 
-```shell
-lspci -s 0b:00
-```
+## Load VFIO
 
-A multi-function GPU typically includes a GPU, Audio, USB and UCSI controller:
-
-```shell
-0b:00.0 VGA compatible controller: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] (rev a1)
-0b:00.1 Audio device: NVIDIA Corporation TU104 HD Audio Controller (rev a1)
-0b:00.2 USB controller: NVIDIA Corporation TU104 USB 3.1 Host Controller (rev a1)
-0b:00.3 Serial bus controller: NVIDIA Corporation TU104 USB Type-C UCSI Controller (rev a1)
-```
-
-Get the vendor:device IDs for the VFIO configuration:
-
-```shell
-lspci -s 0b:00 -n
-```
-
-```shell
-0b:00.0 0300: 10de:1e81 (rev a1)
-0b:00.1 0403: 10de:10f8 (rev a1)
-0b:00.2 0c03: 10de:1ad8 (rev a1)
-0b:00.3 0c80: 10de:1ad9 (rev a1)
-```
-
-Note the IDs — you'll need them in the next steps:
-
-```shell
-10de:1e81,10de:10f8,10de:1ad8,10de:1ad9
-```
-
-### Configure GRUB
-
-Edit the GRUB configuration file:
-
-```shell
-nano /etc/default/grub
-```
-
-Find the `GRUB_CMDLINE_LINUX_DEFAULT` line and update it:
-
-=== "For Intel CPU"
-
-    ```shell
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt video=efifb:off video=vesa:off kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
-    ```
-
-=== "For AMD CPU"
-
-    ```shell
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=efifb:off video=vesa:off kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"
-    ```
-
-!!! note "What each flag does"
-
-    - `iommu=pt` — passthrough mode, improves performance
-    - `video=efifb:off video=vesa:off` — prevents the host from using the GPU framebuffer
-    - `kvm.ignore_msrs=1` — suppresses NVIDIA MSR access errors in KVM
-    - `modprobe.blacklist=...` — prevents host GPU drivers from loading
-
-Save and update GRUB:
-
-```shell
-update-grub
-```
-
-### Configure VFIO
-
-Create the VFIO configuration file. Replace the IDs with the ones from your GPU:
-
-```shell
-echo "options vfio-pci ids=10de:1e81,10de:10f8,10de:1ad8,10de:1ad9 disable_vga=1" > /etc/modprobe.d/vfio.conf
-```
-
-!!! note ""
-
-    `disable_vga=1` prevents the host from trying to use the GPU as a VGA device.
-
-Add the required VFIO kernel modules to `/etc/modules`:
+Edit `/etc/modules`:
 
 ```shell
 nano /etc/modules
 ```
 
-```shell
-# Modules required for PCI passthrough
+Add:
+
+```text
 vfio
 vfio_iommu_type1
 vfio_pci
-vfio_virqfd
 ```
 
-### Install vendor-reset (NVIDIA RTX Cards)
-
-NVIDIA RTX (Turing/Ampere/Ada) GPUs have a hardware reset bug that prevents proper VM passthrough without a software fix. Install the `vendor-reset` kernel module:
-
-```shell
-apt install -y dkms git build-essential pve-headers-$(uname -r)
-git clone https://github.com/gnif/vendor-reset.git /tmp/vendor-reset
-cd /tmp/vendor-reset && dkms install .
-echo "vendor_reset" >> /etc/modules
-```
-
-### Apply Changes
+Refresh the initramfs and reboot:
 
 ```shell
 update-initramfs -u -k all
+reboot
 ```
 
-**Reboot Proxmox to apply the changes.**
+Recent Proxmox kernels enable IOMMU by default on AMD and on Intel with kernel 6.8 or newer after it is enabled in firmware. Older Intel kernels may require `intel_iommu=on`; follow the bootloader instructions for the installed Proxmox version instead of assuming the host uses GRUB.
 
-### Verify IOMMU is Enabled
+## Verify IOMMU
 
 ```shell
 dmesg | grep -e DMAR -e IOMMU -e AMD-Vi
 ```
 
-=== "Intel — expected output"
+The exact output varies. It must show that IOMMU, Directed I/O or interrupt remapping is enabled.
 
-    ```shell
-    [0.067203] DMAR: IOMMU enabled
-    ```
-
-=== "AMD — expected output"
-
-    ```shell
-    [2.311473] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
-    [2.318109] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank)
-    ```
-
-### Verify VFIO Binding
-
-Confirm all GPU functions are bound to `vfio-pci`:
+Check Proxmox's PCI and IOMMU information. Replace `NODE` with the node name:
 
 ```shell
-lspci -k | grep -A3 "0b:00"
+pvesh get /nodes/NODE/hardware/pci --pci-class-blacklist ""
 ```
 
-You should see `Kernel driver in use: vfio-pci` for each function.
+It is normal for a GPU to share a group with its own functions or root port. Do not pass an unrelated host device only to work around a poor group.
 
-### Verify IOMMU Groups
+## Bind the GPU to VFIO When Needed
 
-Check that the GPU is isolated in its own IOMMU group:
+Proxmox VE tries to make an assigned PCI device unavailable to the host automatically. Normally, add the GPU to the VM in the next section first and return here only if assignment fails. After assigning the GPU and rebooting, check each function:
 
 ```shell
-for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
-  echo "IOMMU Group ${g##*/}:"
-  for d in $g/devices/*; do
-    echo -e "\t$(lspci -nns ${d##*/})"
-  done
-done
+lspci -nnk -s 0b:00
 ```
 
-The GPU and all its functions should appear together in a single group, with no other unrelated devices sharing that group.
+The driver should be `vfio-pci`, or the `Kernel driver in use` line may be absent.
 
-Now your Proxmox host is ready for GPU passthrough!
-
----
-
-## Windows Virtual Machine GPU Passthrough Configuration
-
-For best results use the [Windows 10/11 Virtual Machine configuration for Proxmox][windows-vm-configuration-url].
-
-!!! failure "Limitations & Workarounds"
-
-    - In order for the GPU to function properly in the VM, you must disable Proxmox's Virtual Display — set it to `none`.
-    - You will lose the ability to connect to the VM via Proxmox's Console.
-    - Display must be connected to the physical output of the GPU for Windows to initialize the GPU properly.
-    - **You can use a [HDMI Dummy Plug][hdmi-dummy-pluh-amazon-url]{target=\_blank} as a workaround.**
-    - Make sure you have an alternative way to connect to the VM, for example via Remote Desktop (RDP).
-
-In the Proxmox web UI, navigate to the VM's **Hardware** tab → **Add** → **PCI Device**.
-
-Select the GPU by its PCI address (`0000:0b:00.0`) and enable:
-
-- ✅ All Functions
-- ✅ ROM-Bar
-- ✅ Primary GPU
-- ✅ PCI-Express
-
-Power on the VM, connect via RDP, and install the latest NVIDIA driver from the [NVIDIA website](https://www.nvidia.com/en-us/drivers/){target=\_blank}.
-
-Verify with [GPU-Z][gpu-z-url]{target=\_blank} or Device Manager.
-
----
-
-## Linux VM GPU Passthrough Configuration (Headless)
-
-This section covers a **headless Ubuntu Server** setup for GPU compute workloads (AI, CUDA, etc.).
-
-### VM Configuration in Proxmox
-
-- **Machine type**: `q35`
-- **BIOS**: SeaBIOS (default)
-- **CPU type**: `host`
-- **VGA**: `serial0` (no display needed)
-
-In the Proxmox web UI, navigate to the VM's **Hardware** tab → **Add** → **PCI Device**.
-
-Select the GPU (`0000:0b:00.0`) and enable:
-
-- ✅ All Functions
-- ✅ PCI-Express
-- ❌ ROM-Bar — **must be disabled for headless Linux VMs**
-- ❌ Primary GPU
-
-!!! warning "ROM-Bar must be disabled for headless Linux VMs"
-
-    With SeaBIOS, enabling ROM-Bar causes the firmware to execute the GPU's VBIOS during POST. On NVIDIA RTX cards this hangs the VM at boot. Disabling ROM-Bar skips GPU firmware initialization — safe for compute-only use where you don't need display output.
-
-### Boot the VM
-
-Boot the VM and verify the GPU is visible:
+If automatic binding fails, add only the IDs verified on this host:
 
 ```shell
-lspci | grep -i nvidia
-```
-
-Expected output:
-
-```shell
-01:00.0 VGA compatible controller: NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] (rev a1)
-01:00.1 Audio device: NVIDIA Corporation TU104 HD Audio Controller (rev a1)
-01:00.2 USB controller: NVIDIA Corporation TU104 USB 3.1 Host Controller (rev a1)
-01:00.3 Serial bus controller: NVIDIA Corporation TU104 USB Type-C UCSI Controller (rev a1)
-```
-
-### Install NVIDIA Drivers
-
-Check which driver versions are available:
-
-```shell
-apt search nvidia-driver | grep "^nvidia-driver-[0-9]"
-```
-
-Install the latest production driver (headless — no GUI packages):
-
-```shell
-apt install --no-install-recommends -y nvidia-driver-570 nvidia-utils-570
-```
-
-Reboot the VM:
-
-```shell
+echo "options vfio-pci ids=10de:1e81,10de:10f8" > /etc/modprobe.d/vfio.conf
+update-initramfs -u -k all
 reboot
 ```
 
-Verify driver initialization:
+Replace both example IDs. If the host needs the same driver for another GPU, do not blacklist that driver globally.
+
+## Add the GPU to the VM
+
+1. Shut down the VM.
+2. Open **Hardware** > **Add** > **PCI Device**.
+3. Select the GPU by its PCI address.
+4. Use **All Functions** when the related GPU functions must be passed together.
+5. Use **PCI-Express** with the `q35` machine type.
+6. Enable **Primary GPU** only when the guest should use the physical GPU as its main display.
+
+Proxmox recommends `q35`, OVMF and PCIe for the best GPU-passthrough compatibility. OVMF requires a UEFI-capable GPU ROM; otherwise use SeaBIOS.
+
+!!! note
+
+    The passed-through GPU framebuffer is not available through the Proxmox noVNC or SPICE console. Connect a monitor to the GPU or configure remote desktop inside the guest. Keep the virtual display until remote access works.
+
+## Install and Verify the Guest Driver
+
+Install the driver supported by the guest operating system and GPU vendor. Avoid copying a fixed driver version from an old guide.
+
+On Linux:
+
+```shell
+lspci -nnk | grep -A3 -E "VGA|3D|Audio"
+```
+
+For NVIDIA compute workloads, verify the installed NVIDIA driver with:
 
 ```shell
 nvidia-smi
 ```
 
-Expected output:
+On Windows, check **Device Manager** and the GPU vendor's control or diagnostic tool.
 
-```shell
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 570.x.xx    Driver Version: 570.x.xx    CUDA Version: 12.x     |
-|-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-|   0  NVIDIA GeForce RTX 2080 SUPER  Off |   00000000:01:00.0 Off |                  N/A |
-+-----------------------------------------------------------------------------------------+
-```
-
-### Install NVIDIA Container Toolkit (Docker GPU Support)
-
-To use the GPU inside Docker containers:
-
-```shell
-curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | \
-  gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
-
-curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
-  sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' \
-  > /etc/apt/sources.list.d/nvidia-container-toolkit.list
-
-apt update && apt install -y nvidia-container-toolkit
-nvidia-ctk runtime configure --runtime=docker
-systemctl restart docker
-```
-
-Test GPU access inside a container:
-
-```shell
-docker run --rm --gpus all nvidia/cuda:12.0-base-ubuntu22.04 nvidia-smi
-```
-
----
-
-## Debug
-
-Show hardware initialization messages and errors:
+## Troubleshooting
 
 ```shell
 dmesg -w
+lspci -nnk
+lspci -nnk -s 0b:00
 ```
 
-Display all PCI devices:
+Use the real PCI address from your host. If the device does not reset cleanly, check the GPU model, firmware and vendor documentation before installing any out-of-tree reset module. The `vendor-reset` project supports only the AMD device families listed by that project; it is not an NVIDIA RTX fix.
 
-```shell
-lspci
-```
+## Sources
 
-Show kernel driver in use for each PCI device:
-
-```shell
-lspci -k
-```
-
-Check VFIO binding for a specific device:
-
-```shell
-lspci -k -s 0b:00
-```
-
-Display IOMMU groups:
-
-```shell
-for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
-  echo "IOMMU Group ${g##*/}:"
-  for d in $g/devices/*; do
-    echo -e "\t$(lspci -nns ${d##*/})"
-  done
-done
-```
-
-<!-- urls -->
-
-[windows-vm-configuration-url]: ../windows-vm-configuration.md 'Windows VM Configuration'
-[gpu-z-url]: https://www.techpowerup.com/gpuz/ 'GPU-Z Homepage'
-[hdmi-dummy-pluh-amazon-url]: https://amzn.to/391shDL 'HDMI Dummy Plug Amazon'
-
-<!-- images -->
-
-<!-- Proxmox/general Images-->
-
-[proxmox-lspci-vga-img]: ../../../assets/images/8886bc4a-be38-11ec-ba3b-d3e0526955c4.jpg 'Proxmox lspci vga'
-[general-vm-add-gpu-to-vm-img]: ../../../assets/images/a7d93848-be38-11ec-9607-2ba8ccd0b5ab.jpg 'Add GPU to VM'
-
-<!-- Windows Images-->
-
-[windows-vm-add-pci-device-img]: ../../../assets/images/893555e4-b914-11ec-8e85-df9da2014d5a.jpg 'Windows VM Add PCI Device'
-[windows-vm-gpu-pci-settings-img]: ../../../assets/images/d48456fc-be38-11ec-a8da-c747b71c446f.jpg 'Windows VM GPU PCI Settings'
-[windows-vm-gpu-hardware-settings-img]: ../../../assets/images/157b55e8-be3e-11ec-a2c2-97d25fe194df.jpg 'Windows VM GPU Hardware Settings'
-[gpu-z-and-device-manager-gpu-img]: ../../../assets/images/13d3484a-be39-11ec-9c17-d311291bdb58.jpg 'GPU-Z and Device Manager GPU'
-
-<!-- Ubuntu Images-->
-
-[ubuntu-vm-add-pci-device-img]: ../../../assets/images/3d942380-be3d-11ec-99fc-0778f9dc8acd.jpg 'Ubuntu VM Add PCI Device'
-[ubuntu-vm-gpu-pci-settings-img]: ../../../assets/images/4dc679d8-be3d-11ec-8ef7-03c9f9ba3344.jpg 'Ubuntu VM GPU PCI Settings'
-[ubuntu-vm-gpu-hardware-settings-img]: ../../../assets/images/6953aefa-be3d-11ec-bfe8-7f9219dc10e2.jpg 'Ubuntu VM GPU Hardware Settings'
-[ubuntu-vm-gpu-nvidia-smi]: ../../../assets/images/a6de4412-be40-11ec-85e6-338ef50c9599.jpg 'Ubuntu VM GPU Nvidia-smi'
+- [Proxmox VE Administration Guide: PCI(e) Passthrough](https://pve.proxmox.com/pve-docs/pve-admin-guide.pdf)
+- [vendor-reset supported devices](https://github.com/gnif/vendor-reset#supported-devices)
+- [NVIDIA driver downloads](https://www.nvidia.com/en-us/drivers/)

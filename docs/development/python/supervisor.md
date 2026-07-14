@@ -1,177 +1,106 @@
 ---
-title: Supervisor Process Manager
-description: Cheat sheet for Supervisor. Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
+title: Supervisor Process Manager Cheat Sheet
+description: Install and configure Supervisor, manage UNIX processes with supervisorctl, reload configuration, and inspect process logs.
 template: comments.html
-tags: [python, supervisor, processes-manager, cheat-sheet]
+tags: [python, supervisor, process-manager, cheat-sheet]
 ---
 
-# Supervisor Python Processes Management
+# Supervisor Process Manager Cheat Sheet
 
-Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. [Official Supervisord Docs][supervisord-docs-url]{target=\_blank}.
+Supervisor is a client/server process-control system for UNIX-like operating systems. `supervisord` runs the managed processes and `supervisorctl` controls them.
 
-Example of Supervisord Web UI listening on localhost:9999
+## Install Supervisor
 
-![Supervisord web ui][supervisord-web-ui]
-
-## Tips of Supervisor Usage
-
-Seeing all child processes running
+The official Python package can be installed with pip:
 
 ```shell
-supervisorctl -c /path/to/supervisord.conf
+python3 -m pip install supervisor
 ```
 
-I find it helpful to create an alias in my bash profile for those 2 commands above so that I don't have to manually type `-c` all the time
+Supervisor can also be installed inside a Python virtual environment. Distribution packages may include service-manager integration, but their paths and versions are controlled by the distribution.
 
-Example:
+Verify the installed commands:
 
 ```shell
-echo "alias supervisord='supervisord -c /System/Volumes/Data/opt/homebrew/etc/supervisord.conf'"
-echo "alias supervisorctl='supervisorctl -c /System/Volumes/Data/opt/homebrew/etc/supervisord.conf'"
+supervisord --version
+supervisorctl --help
 ```
 
-### List All Processes
+## Create a Configuration
 
-You need to provide the path to the supervisor configuration file with - **-c /path/to/supervisord.conf**
+Generate the sample configuration in the current directory:
 
 ```shell
-supervisorctl -c /System/Volumes/Data/opt/homebrew/etc/supervisord.conf
+echo_supervisord_conf > supervisord.conf
 ```
 
-### Reload Changes from Config File to Supervisor
+Always pass an absolute configuration path when the file is not in a standard location:
 
 ```shell
-supervisorctl reread
+supervisord -c /absolute/path/to/supervisord.conf
+supervisorctl -c /absolute/path/to/supervisord.conf status
 ```
 
-### Update Supervisor Configuration
+Using an absolute path also prevents Supervisor from finding an unexpected `supervisord.conf` in the current directory.
 
-```shell
-supervisorctl update
-```
+## Minimal Local Example
 
-## MacOS Supervisor Installation
+Create a `logs` directory next to the configuration, then use paths that exist on the machine:
 
-Install with pip as system package:
-
-```shell
-brew install supervisor
-```
-
-The default location of the supervisor configuration file is at `/System/Volumes/Data/opt/homebrew/etc/supervisord.conf`.
-
-You can use a symbolic link to the configuration file to make it persistent. For example, you can move the configuration file to Dropbox folder and use a symbolic link to it.
-
-Link the configuration file to the Dropbox folder:
-
-```shell
-rm -rf /System/Volumes/Data/opt/homebrew/etc/supervisord.conf
-ln -s /Users/fire1ce/Dropbox/SettingsConfigs/supervisor/supervisord.conf /System/Volumes/Data/opt/homebrew/etc/supervisord.conf
-```
-
-### Start Supervisor Service on Boot
-
-In order to start the supervisor service on boot, we need to create a service file for MacOS.
-
-```shell
-sudo nano /Library/LaunchDaemons/com.agendaless.supervisord.plist
-```
-
-Append the following content to the file:
-
-```xml
-<!-- /Library/LaunchDaemons/com.agendaless.supervisord.plist -->
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>KeepAlive</key>
-    <dict>
-        <key>SuccessfulExit</key>
-        <false/>
-    </dict>
-    <key>Label</key>
-    <string>com.agendaless.supervisord</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/opt/homebrew/bin/supervisord</string>
-        <string>-n</string>
-        <string>-c</string>
-        <string>/System/Volumes/Data/opt/homebrew/etc/supervisord.conf</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-</dict>
-</plist>
-```
-
-## Supervisor Configuration File Example With 2 Managed Processes:
-
-```yaml
+```ini
 [unix_http_server]
-file=/opt/homebrew/var/run/supervisor.sock # the path to the socket file
-
-
-[inet_http_server] # inet (TCP) server disabled by default
-port=127.0.0.1:9999 # ip_address:port specifier, *:port for all iface
-# username=user # default is no username (open server)
-# password=123  default is no password (open server)
+file=%(here)s/supervisor.sock
+chmod=0700
 
 [supervisord]
-logfile=/opt/homebrew/var/log/supervisord.log # main log file# default $CWD/supervisord.log
-logfile_maxbytes=50MB # max main logfile bytes b4 rotation# default 50MB
-logfile_backups=10 # # of main logfile backups# 0 means none, default 10
-loglevel=info # log level# default info# others: debug,warn,trace
-pidfile=/opt/homebrew/var/run/supervisord.pid # supervisord pidfile# default supervisord.pid
-nodaemon=false # start in foreground if true# default false
-silent=false # no logs to stdout if true# default false
-minfds=1024 # min. avail startup file descriptors# default 1024
-minprocs=200 # min. avail process descriptors#default 200
+logfile=%(here)s/supervisord.log
+pidfile=%(here)s/supervisord.pid
+childlogdir=%(here)s/logs
 
 [rpcinterface:supervisor]
 supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 
 [supervisorctl]
-serverurl=unix:///opt/homebrew/var/run/supervisor.sock
+serverurl=unix://%(here)s/supervisor.sock
 
-[include]
-files = /opt/homebrew/etc/supervisor.d/*.ini
-
-[program:macos-bt-connect-based-on-ip]
-command=/Users/fire1ce/.pyenv/versions/macos-bt-connect-based-on-ip/bin/python /Users/fire1ce/projects/macos-bt-connect-based-on-ip/macos-bt-connect-based-on-ip.py
-directory=/Users/fire1ce/projects/macos-bt-connect-based-on-ip
-user=fire1ce
+[program:example]
+command=/absolute/path/to/python /absolute/path/to/app.py
+directory=/absolute/path/to/project
 autostart=true
 autorestart=true
-startsecs=2
-startretries=3
-stdout_logfile=/opt/homebrew/var/log/macos-bt-connect-based-on-ip.out.log
-stdout_logfile_maxbytes=1MB # max # logfile bytes b4 rotation (default 50MB)
-stdout_logfile_backups=5 # # of stdout logfile backups (0 means none, default 10)
-stderr_logfile=/opt/homebrew/var/log/macos-bt-connect-based-on-ip.err.log
-stderr_logfile_maxbytes=1MB # max # logfile bytes b4 rotation (default 50MB)
-stderr_logfile_backups=5 # # of stderr logfile backups (0 means none, default 10)
-
-
-[program:macos-screenlock-api]
-command=/Users/fire1ce/.pyenv/versions/macos-screenlock-api/bin/python /Users/fire1ce/projects/macos-screenlock-api/macos-screenlock-api.py
-directory=/Users/fire1ce/projects/macos-screenlock-api
-user=fire1ce
-autostart=true
-autorestart=true
-startsecs=2
-startretries=3
-stdout_logfile=/opt/homebrew/var/log/macos-screenlock-api.out.log
-stdout_logfile_maxbytes=1MB # max # logfile bytes b4 rotation (default 50MB)
-stdout_logfile_backups=5 # # of stdout logfile backups (0 means none, default 10)
-stderr_logfile=/opt/homebrew/var/log/macos-screenlock-api.err.log
-stderr_logfile_maxbytes=1MB # max # logfile bytes b4 rotation (default 50MB)
-stderr_logfile_backups=5 # # of stderr logfile backups (0 means none, default 10)
+stdout_logfile=%(here)s/logs/example.out.log
+stderr_logfile=%(here)s/logs/example.err.log
 ```
 
-<!-- appendices -->
+The `%(here)s` expression expands to the directory containing the configuration file.
 
-[supervisord-web-ui]: ../../assets/images/58a43cfe-ab60-11ec-aa76-bf689f051be2.jpg 'Supervisor Web UI'
-[supervisord-docs-url]: http://supervisord.org/# 'Supervisor Documentation'
+!!! warning
 
-<!-- end appendices -->
+    The optional TCP web server is unencrypted and has no authentication by default. Never expose it to the public internet. A local UNIX socket is enough for this guide.
+
+## Manage Processes
+
+```shell
+supervisorctl -c /absolute/path/to/supervisord.conf status
+supervisorctl -c /absolute/path/to/supervisord.conf start example
+supervisorctl -c /absolute/path/to/supervisord.conf stop example
+supervisorctl -c /absolute/path/to/supervisord.conf restart example
+supervisorctl -c /absolute/path/to/supervisord.conf tail -f example
+```
+
+`restart` does not reread the configuration.
+
+After editing the configuration, run:
+
+```shell
+supervisorctl -c /absolute/path/to/supervisord.conf reread
+supervisorctl -c /absolute/path/to/supervisord.conf update
+```
+
+`reread` detects changes without restarting processes. `update` applies added, removed or changed process groups and restarts affected programs.
+
+## Sources
+
+- [Supervisor installation](https://supervisord.org/installing.html)
+- [Supervisor configuration](https://supervisord.org/configuration.html)
+- [Running supervisord and supervisorctl](https://supervisord.org/running.html)
