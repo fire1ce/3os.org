@@ -1,21 +1,21 @@
 ---
-title: Windwos 10/11 Tweeks
-description: Some tips and tricks and Tweeks for Windows 10/11 that may be helpful or even essential for you
+title: Windows 10/11 Tweaks
+description: Some tips and tricks and Tweaks for Windows 10/11 that may be helpful or even essential for you
 template: comments.html
-tags: [Windwos, Tweeks]
+tags: [windows, tweaks]
 ---
 
-# Windwos 10/11 Tweeks
+# Windows 10/11 Tweaks
 
-Some tips and tricks and Tweeks for Windows 10/11 that may be helpful or even essential for you
+Some tips and tricks and Tweaks for Windows 10/11 that may be helpful or even essential for you
 
-## Deblot Windwos 10/11 Powershell Script
+## Debloat Windows 10/11 Powershell Script
 
 Source: [Windows10Debloater Github Page][windows10debloater-url]{target=\_blank}
 
 Run as Administrator:
 
-```poweshell
+```powershell
 iwr -useb https://git.io/debloat|iex
 ```
 
@@ -41,7 +41,7 @@ The context menu will now look like this:
 
 ## Allow ICMP (Ping) in Windows Firewall
 
-The following commands will allow ICMP (Ping) in Windows Firewall. Use Powershell as Administrator to run the following commands.
+The following commands will allow ICMP (Ping) in Windows Firewall. Use PowerShell as Administrator to run the following commands.
 
 For IPv4:
 
@@ -67,7 +67,7 @@ Edit Administrator, remove the - [x] Account is disable. ok
 
 Right Click on Administrator and click Set Password
 
-## Lunch "Network Connections"
+## Launch "Network Connections"
 
 Hit the Windows Key + R and type
 

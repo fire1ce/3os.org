@@ -39,8 +39,8 @@ nano /usr/bin/sakis3gConnect.sh
 ```
 
 !!! note
-interactive connect (for testing)
-`bash sakis3g --interactive `
+
+    Interactive connect (for testing): `sakis3g --interactive`
 
 Copy the following
 
@@ -51,7 +51,8 @@ Copy the following
 ```
 
 !!! note
-When APN credentials are epmpy, APN_USER and APN_PASS should be a string with a space
+
+    When APN credentials are empty, APN_USER and APN_PASS should be a string with a space
 
 Add executable permissions
 
@@ -65,8 +66,9 @@ You should have a new interface ppp0
 
 ## Configuring DHCP Server
 
-!! info
-The following configuration assumes use of eth0 interface for the DHCP
+!!! info
+
+    The following configuration assumes use of the eth0 interface for the DHCP
 
 Edit
 

@@ -3,7 +3,7 @@ site_name: 3os
 site_url: https://3os.org
 site_author: Stas Yakobov
 site_description: >-
-  Collocation of technical documentation and guides for devops, developers, pentesters, systems administrators and other IT professionals.
+  Collection of technical documentation and guides for devops, developers, pentesters, systems administrators and other IT professionals.
 repo_url: https://github.com/fire1ce/3os.org
 repo_name: fire1ce/3os.org
 edit_uri: edit/main/docs/
@@ -11,7 +11,6 @@ edit_uri: edit/main/docs/
 # Theme Configuration
 theme:
   name: material
-  highlightjs: true
   language: en
   font:
     false
@@ -127,21 +126,19 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: fire1ec
+      user: fire1ce
       repo: 3os.org
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
       check_paths: true
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true
   - pymdownx.tilde
-  - meta
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

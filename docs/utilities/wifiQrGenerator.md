@@ -1,6 +1,6 @@
 ---
 title: Wifi QR Image Generator
-description: USimple QR Code Generator for your wifi network. Scan & Connect This will generate a QR code what can be used with any iOS/Android device to access a given Wifi.
+description: Simple QR Code Generator for your wifi network. Scan & Connect This will generate a QR code that can be used with any iOS/Android device to access a given Wifi.
 template: comments.html
 tags: [utilities]
 ---
@@ -9,7 +9,7 @@ tags: [utilities]
 
 ## Description
 
-This will generate a QR code what can be used with any iOS/Android device to access a given Wifi without manually adding a network and password.  
+This will generate a QR code that can be used with any iOS/Android device to access a given Wifi without manually adding a network and password.  
 Just scan the QR Code and you are connected.
 This is a fully static code - no data is send to any server!
 

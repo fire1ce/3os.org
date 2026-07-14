@@ -1,6 +1,7 @@
 ---
 title: Ruby Gem Package Manager
 description: Cheat sheet for RubyGems. RubyGems is a package manager for the Ruby programming language that provides a standard format for distributing Ruby programs and libraries.
+template: comments.html
 tags: [ruby, gem, package-manager, cheat-sheet]
 ---
 

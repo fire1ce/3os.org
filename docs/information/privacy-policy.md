@@ -8,7 +8,7 @@ tags: [information, privacy policy]
 
 Your privacy is very important to us. Accordingly, we have developed this policy in order for you to understand how we collect, use, communicate and make use of personal information. The following outlines our privacy policy.
 
-When accessing this website, will learn certain information about you during your visit.
+When accessing this website, 3os.org will learn certain information about you during your visit.
 
 Similar to other commercial websites, our website utilizes a standard technology called ‘cookies’ (see explanation below) and server logs to collect information about how our site is used. Information gathered through cookies and server logs may include the date and time of visits, the pages viewed, time spent at our site, and the websites visited just before and just after our own, as well as your IP address.
 
@@ -28,7 +28,7 @@ If you choose to correspond with us through email, we may retain the content of 
 
 Broadly speaking, we use personal information for purposes of administering our business activities, providing customer service and making available other items and services to our customers and prospective customers.
 
-will not obtain personally-identifying information about you when you visit our site, unless you choose to provide such information to us, nor will such information be sold or otherwise transferred to unaffiliated third parties without the approval of the user at the time of collection.
+3os.org will not obtain personally-identifying information about you when you visit our site, unless you choose to provide such information to us, nor will such information be sold or otherwise transferred to unaffiliated third parties without the approval of the user at the time of collection.
 
 We may disclose information when legally compelled to do so, in other words, when we, in good faith, believe that the law requires it or for the protection of our legal rights.
 
@@ -36,7 +36,7 @@ We may disclose information when legally compelled to do so, in other words, whe
 
 We are committed to keeping your e-mail address confidential. We do not sell, rent, or lease our subscription lists to third parties, and we will not provide your personal information to any third party individual, government agency, or company at any time unless strictly compelled to do so by law.
 
-We will use your e-mail address solely to provide timely information about .
+We will use your e-mail address solely to provide timely information about 3os.org.
 
 We will maintain the information you send via e-mail in accordance with applicable federal law.
 

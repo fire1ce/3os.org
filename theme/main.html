@@ -1,6 +1,27 @@
 <!-- Elements added to main will be displayed on all pages -->
 {% extends "base.html" %}
 
+<!-- structured data for search engines -->
+{% block extrahead %}
+{{ super() }}
+{% if page and page.canonical_url %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": {{ page.meta.title | d(page.title, true) | d(config.site_name, true) | tojson }},
+    "description": {{ page.meta.description | d(config.site_description, true) | tojson }},
+    "url": {{ page.canonical_url | tojson }},
+    {% if page.meta.git_revision_date_localized_raw_iso_date %}
+    "dateModified": {{ page.meta.git_revision_date_localized_raw_iso_date | tojson }},
+    {% endif %}
+    "author": { "@type": "Person", "name": {{ config.site_author | d('3os.org', true) | tojson }}, "url": "https://github.com/fire1ce" },
+    "publisher": { "@type": "Organization", "name": "3os.org", "url": "https://3os.org" }
+  }
+</script>
+{% endif %}
+{% endblock %}
+
 <!-- footer -->
 {% block footer %}{% include "footer.html" %} {% endblock %}
 
