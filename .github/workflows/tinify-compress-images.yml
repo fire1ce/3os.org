@@ -4,13 +4,16 @@ on:
     branches:
       - main
     paths:
-      - 'docs../assets/images/**'
+      - 'docs/**/*.png'
+      - 'docs/**/*.jpg'
+      - 'docs/**/*.jpeg'
+      - 'docs/**/*.webp'
 
 jobs:
   compress:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.head_ref }}
       - uses: namoscato/action-tinify@v1
