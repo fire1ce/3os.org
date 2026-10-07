@@ -10,7 +10,7 @@ Maintained by Stas Yakobov. Source markdown: https://github.com/fire1ce/3os.org 
 
 - [DDNS Cloudflare Bash](https://3os.org/automation/ddns-cloudflare-bash/): Deploy the DDNS Cloudflare Bash script to keep Cloudflare DNS records synchronized with changing public IP addresses
 - [DDNS Cloudflare PowerShell](https://3os.org/automation/ddns-cloudflare-powershell/): PowerShell script for dynamically updating Cloudflare DNS records when a Windows host's public IP address changes
-- [Mark Archived Gmail as Read Automatically](https://3os.org/automation/gmail-mark-archived-mail-as-read/): Use a personal Google Apps Script and time-driven trigger to mark unread Gmail threads outside the Inbox as read
+- [Mark Archived Gmail as Read Automatically](https://3os.org/automation/gmail-mark-archived-mail-as-read/): A durable Google Apps Script that marks archived unread Gmail as read with the Gmail API, plus a filter for mail that never reaches the Inbox
 - [Syncthing](https://3os.org/automation/syncthings/): Syncthing synchronization program, linux, macos, synology dsm installation and configuration
 - [Better Terminal Experience](https://3os.org/automation/guides/better-terminal-experience/): Better terminal experience installation and configuration guide, for macOS and Linux. Based on zsh, oh-my-zsh with auto suggestions and syntax highlighting
 - [Pi-hole With DoH on Docker (Legacy)](https://3os.org/automation/guides/pihole-doh/): Legacy Pi-hole and cloudflared Docker Compose deployment retained for historical reference; do not use it for new installations
