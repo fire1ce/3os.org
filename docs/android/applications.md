@@ -23,7 +23,7 @@ Feel free to suggest new applications and tools at comments section below.
 
 <!-- appendices -->
 
-[magisk-manager-url]: https://magiskmanager.com/ 'Magisk Manager Official Website'
+[magisk-manager-url]: https://github.com/topjohnwu/Magisk 'Magisk official source repository'
 [edxposed-manager-url]: https://github.com/ElderDrivers/EdXposedManager/releases 'EdXposed Manager Github Page'
 [sqlite-editor-url]: https://play.google.com/store/apps/details?id=com.dundastech.sqlitemasterlight 'SQLite Editor Play Store Page'
 [packet-capture-url]: https://www.apkmirror.com/apk/grey-shirts/packet-capture/packet-capture-1-4-7-release/packet-capture-1-4-7-android-apk-download/ 'Packet Capture APK Mirror'

@@ -27,6 +27,6 @@ The RFID tags i use are **duel band** tags 13.56Mhz and 125KHz
 
 Useful Links:
 
-- [Official Proxmark Website](http://www.proxmark.org/){target=\_blank}
+- [Proxmark hardware site](https://proxmark.com/){target=\_blank}
 - [Official Proxmark3 Github Repo](https://github.com/Proxmark/proxmark3){target=\_blank}
 - [Andprox - Android client](https://github.com/AndProx/AndProx){target=\_blank}

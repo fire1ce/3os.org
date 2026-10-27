@@ -5,14 +5,21 @@ on:
     workflows: [pages-build-deployment]
     types: [completed]
 
+permissions:
+  contents: read
+
 jobs:
   cloudflare-cache:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'gh-pages' }}
     runs-on: ubuntu-latest
     steps:
       - name: Purge Cloudflare Cache
+        env:
+          CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
         run: |
           curl -fsS -X POST \
-            "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE }}/purge_cache" \
-            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}" \
+            "https://api.cloudflare.com/client/v4/zones/${CF_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
             -H "Content-Type: application/json" \
-            --data '{"purge_everything":true}'
+            --data '{"purge_everything":true}' | python3 -c 'import json,sys; assert json.load(sys.stdin).get("success") is True'

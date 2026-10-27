@@ -8,6 +8,10 @@ on:
     - cron: '0 4 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: mkdocs-deploy
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -15,7 +19,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
       - name: Configure Git Credentials
@@ -24,10 +28,13 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           sudo apt-get update
           sudo apt-get install -y build-essential libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7-dev libtiff5-dev tk-dev tcl-dev libcairo2-dev libffi-dev libwebp-dev
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.12'
+          cache: pip
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-          mkdocs gh-deploy --force
+          git fetch origin main
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          mkdocs gh-deploy

@@ -12,11 +12,13 @@ on:
 jobs:
   compress:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          ref: ${{ github.head_ref }}
-      - uses: namoscato/action-tinify@v1
+          ref: ${{ github.ref }}
+      - uses: namoscato/action-tinify@440013f371108cc683f7774be2e001dc9c5b97e1 # v1
         with:
           api_key: ${{ secrets.TINIFY_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
