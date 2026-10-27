@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "axes": [
+    {
+      "axis": "X",
+      "measure": "length",
+      "negative_direction": "backward",
+      "positive_direction": "forward"
+    },
+    {
+      "axis": "Y",
+      "measure": "width",
+      "negative_direction": "left",
+      "positive_direction": "right"
+    },
+    {
+      "axis": "Z",
+      "measure": "height",
+      "negative_direction": "down",
+      "positive_direction": "up"
+    },
+    {
+      "axis": "T",
+      "measure": "duration",
+      "negative_direction": "past",
+      "positive_direction": "future"
+    }
+  ],
+  "origin_status": "declared_reference_unmeasured",
+  "sha256": "ea428b0f34402146a719062367f452328315ac3ecc0dd8e8c64e561cb96381d5",
+  "published_at": "2026-10-27T16:23:11Z"
+}
