@@ -27,6 +27,8 @@
     }
   ],
   "origin_status": "declared_reference_unmeasured",
-  "sha256": "ea428b0f34402146a719062367f452328315ac3ecc0dd8e8c64e561cb96381d5",
-  "published_at": "2026-10-27T16:23:11Z"
+  "source_revision": "d42e100202dee9f75acac7504345a1c4bfb5751f",
+  "source_commit_at": "2026-10-27T18:33:34+02:00",
+  "sha256": "6f4b036938a53eb1ce7caea78f6e2e6f524a9cae68ee20328277b50e3c4a76e2",
+  "published_at": "2026-10-27T16:33:41Z"
 }
