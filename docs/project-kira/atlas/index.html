@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas · four-axis frame</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d16;--panel:#141825;--ink:#f0f2fa;--mute:#a7aec2;--line:#30384d;--x:#6eb5ff;--y:#65d4aa;--z:#c3a1ff;--t:#ffca77;--origin:#fff}
+@media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f4f6fb;--panel:#fff;--ink:#152035;--mute:#49566b;--line:#bfc8d7;--x:#155da4;--y:#087451;--z:#6b3aa4;--t:#865500;--origin:#152035}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,sans-serif}
+main{max-width:1040px;margin:auto;padding:20px clamp(14px,3vw,32px) 36px}h1{font-size:clamp(24px,4vw,38px);line-height:1.1;margin:0 0 8px}h2{font-size:18px;margin:0 0 8px}p{margin:0 0 12px;color:var(--mute)}.eyebrow{font:12px/1.2 ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.scene{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(245px,1fr);gap:16px;align-items:start}.stage{position:relative;min-width:0}.stage canvas{display:block;width:100%;height:auto;aspect-ratio:1/1;background:var(--panel);border:1px solid var(--line);border-radius:14px;touch-action:none}.stage canvas:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--x);outline-offset:3px}.badge{position:absolute;top:12px;left:12px;background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:5px 8px;font:12px ui-monospace,monospace;color:var(--mute);pointer-events:none}.side{display:grid;gap:15px}.panel{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px}.axes{display:grid;gap:7px}.axis{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:baseline}.axis b{font:700 17px ui-monospace,monospace}.axis span{font-size:13px;color:var(--mute)}.axis:nth-child(1) b{color:var(--x)}.axis:nth-child(2) b{color:var(--y)}.axis:nth-child(3) b{color:var(--z)}.axis:nth-child(4) b{color:var(--t)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-top:16px}.controls label{display:grid;gap:4px;font-size:13px;color:var(--mute)}select,input[type=range],button{font:inherit}select,button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px}button{min-height:42px}input[type=range]{width:min(260px,58vw);accent-color:var(--t)}.value{font:13px ui-monospace,monospace;color:var(--ink)}.source{font-size:12px;overflow-wrap:anywhere}.source a{color:var(--x)}.source code{font:11px ui-monospace,monospace}.status{font-size:13px;color:var(--mute);margin-top:12px}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:720px){.scene{grid-template-columns:1fr}.side{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}}
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0}.readout div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px}.readout b{display:block;font:12px ui-monospace,monospace;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}.readout output{display:block;margin-top:5px;font:15px ui-monospace,monospace;overflow-wrap:anywhere}.map{width:100%;border-collapse:collapse;font-size:13px}.map th,.map td{text-align:left;padding:9px;border-bottom:1px solid var(--line)}.map th{color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">Project Kira · Atlas · public mirror</div>
+<h1>Four axes, one observation reference</h1>
+<p>Drag to turn the spatial view. Select any axis pair to rotate the four-dimensional projection. The wireframe is a coordinate illustration; Atlas has no measured pebble positions in this frame.</p>
+<div class="scene">
+  <div class="stage"><canvas id="view" width="720" height="720" tabindex="0" role="img" aria-label="Rotatable projection of the candidate X, Y, Z and T axes. Drag or use arrow keys for the camera; select an axis pair for four-dimensional rotation."></canvas><div class="badge">MODEL · NO MEASURED COORDINATES</div></div>
+  <div class="side">
+    <section class="panel"><h2>Axis definitions</h2><div class="axes" id="axes"></div></section>
+    <section class="panel"><h2>What the center means</h2><p>The white cross is the declared information-arrival reference. Its zero is a convention for each observation, not a measured world location. Earth is a candidate context marker; no Earth position has been placed in this frame.</p></section>
+    <section class="panel"><h2>Reading boundary</h2><p>X/Y/Z/T here are physical-frame names. The time-ratio drawing uses X for time, and the statistical Atlas map has arbitrary plot axes. No measured transform joins them.</p></section>
+    <section class="panel"><h2>Rhythm test</h2><p>Choose one event stream and one clock. For ordered times, Δᵢ = tᵢ₊₁ − tᵢ and Rᵢ = Δᵢ₊₁ / Δᵢ when Δᵢ &gt; 0. Atlas has not selected a stream or measured a rhythm coordinate.</p></section>
+  </div>
+</div>
+<div class="controls" aria-label="Rotation controls">
+  <label>Axis pair<select id="plane"><option>XY</option><option>XZ</option><option>YZ</option><option selected>XT</option><option>YT</option><option>ZT</option></select></label>
+  <label>Rotation <span class="value" id="angleText">0°</span><input id="angle" type="range" min="-180" max="180" step="1" value="0"></label>
+  <button id="reset" type="button">Reset view</button>
+  <button id="pauseLive" type="button" aria-pressed="false">Pause updates</button>
+  <button id="sound" type="button" aria-pressed="false">Hear feed checks</button>
+</div>
+<div class="status" id="status" aria-live="polite">Spatial camera at rest · XT 0°</div>
+<div class="status" id="liveStatus" role="status" aria-live="polite">Public mirror · checking status feed</div>
+<div class="readout" aria-label="Time and observation readouts"><div><b>Viewer clock · UTC</b><output id="clock">Reading clock…</output></div><div><b>Atlas publication</b><output id="publication">Checking feed…</output></div><div><b>zTime · layer one</b><output>Adjacent to center · no measured coordinate</output></div></div>
+<section class="panel"><h2>Conversion map</h2><p>Each row states what can be translated today. “Open” means Atlas has no measured transform; rotating the drawing changes only this view.</p><table class="map"><thead><tr><th>From</th><th>To</th><th>Relation</th></tr></thead><tbody><tr><td>Atlas event</td><td>White center</td><td>Declared arrival reference (0,0,0,0)</td></tr><tr><td>Center</td><td>zTime</td><td>Adjacent named point; distance open</td></tr><tr><td>Earth</td><td>Observation frame</td><td>Context candidate; location and transform open</td></tr><tr><td>Time-ratio X</td><td>Physical T</td><td>Transform open</td></tr><tr><td>Source time</td><td>Arrival time</td><td>Needs both clock readings and units</td></tr><tr><td>Any event</td><td>X/Y/Z/T location</td><td>Coordinates open</td></tr></tbody></table></section>
+<section class="panel" id="credits"><h2>Source and credit</h2><p>Axis definitions and the observation reference are rendered from Project Kira records. This page shows an allowlisted projection; the source records retain their own provenance.</p><p><a href="https://git.3os.re/3os/project-kira">Project Kira source</a> · <a href="https://github.com/fire1ce/3os.org">Website source</a> · <a href="https://github.com/fire1ce/3os.org/blob/main/license.md">Website MIT license</a></p><p>Project Kira record licensing is not specified by this page. The website license does not assert a license for those records.</p></section>
+<p class="sr" id="description"></p>
+</main>
+<script>
+let AXES = [{"axis":"X","measure":"length","negative_direction":"backward","positive_direction":"forward"},{"axis":"Y","measure":"width","negative_direction":"left","positive_direction":"right"},{"axis":"Z","measure":"height","negative_direction":"down","positive_direction":"up"},{"axis":"T","measure":"duration","negative_direction":"past","positive_direction":"future"}];
+let sourceHash = 'ea428b0f34402146a719062367f452328315ac3ecc0dd8e8c64e561cb96381d5';
+const PUBLIC = true, FEED = './status.json';
+const clock=document.getElementById('clock'),publication=document.getElementById('publication');
+const sound=document.getElementById('sound');let audioContext=null,soundOn=false;
+sound.addEventListener('click',async()=>{soundOn=!soundOn;sound.setAttribute('aria-pressed',String(soundOn));sound.textContent=soundOn?'Mute feed checks':'Hear feed checks';if(soundOn){audioContext ||= new (window.AudioContext||window.webkitAudioContext)();await audioContext.resume();}});
+function pulse(kind){if(!soundOn||!audioContext)return;const now=audioContext.currentTime,osc=audioContext.createOscillator(),gain=audioContext.createGain();osc.type='sine';osc.frequency.value=kind==='changed'?660:kind==='error'?220:440;gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.07,now+.01);gain.gain.exponentialRampToValueAtTime(.0001,now+.12);osc.connect(gain).connect(audioContext.destination);osc.start(now);osc.stop(now+.13);}
+function tickClock(){clock.textContent=new Date().toISOString().replace('T',' ').slice(0,19)+' UTC';}
+tickClock();setInterval(tickClock,1000);
+const canvas=document.getElementById('view'),ctx=canvas.getContext('2d');
+const plane=document.getElementById('plane'),angle=document.getElementById('angle');
+const angleText=document.getElementById('angleText'),status=document.getElementById('status');
+const root=document.documentElement,css=k=>getComputedStyle(root).getPropertyValue(k).trim();
+const colors=['--x','--y','--z','--t'];
+const pairs=['XY','XZ','YZ','XT','YT','ZT'];
+const turns=Object.fromEntries(pairs.map(p=>[p,0]));
+let yaw=-.38,pitch=.22,drag=null;
+const vertices=Array.from({length:16},(_,mask)=>Array.from({length:4},(_,d)=>(mask&(1<<d))?1:-1));
+const edges=[];for(let i=0;i<16;i++)for(let d=0;d<4;d++){let j=i^(1<<d);if(i<j)edges.push([i,j,d]);}
+function rotate(v,a,b,theta){const c=Math.cos(theta),s=Math.sin(theta),x=v[a],y=v[b];v[a]=c*x-s*y;v[b]=s*x+c*y;}
+function projected(input){
+  const v=input.slice();for(const p of pairs){const a='XYZT'.indexOf(p[0]),b='XYZT'.indexOf(p[1]);rotate(v,a,b,turns[p]*Math.PI/180);}
+  const k=3.5/(3.5-v[3]),q=[v[0]*k,v[1]*k,v[2]*k];
+  rotate(q,0,2,yaw);rotate(q,1,2,pitch);
+  const depth=4/(4-q[2]);return [q[0]*depth,q[1]*depth,q[2]];
+}
+function screen(p,w,h){const scale=Math.min(w,h)*.142;return [w/2+p[0]*scale,h/2-p[1]*scale,p[2]];}
+function render(){
+  const box=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),w=Math.max(320,box.width),h=Math.max(320,box.height);
+  const ink=colors.map(css),originInk=css('--origin');
+  if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+  const pts=vertices.map(v=>screen(projected(v),w,h));
+  edges.map(([a,b,d])=>({a,b,d,z:(pts[a][2]+pts[b][2])/2})).sort((a,b)=>a.z-b.z).forEach(e=>{
+    ctx.beginPath();ctx.moveTo(pts[e.a][0],pts[e.a][1]);ctx.lineTo(pts[e.b][0],pts[e.b][1]);
+    ctx.strokeStyle=ink[e.d];ctx.globalAlpha=e.d===3?.48:.28;ctx.lineWidth=e.d===3?1.6:1.2;
+    ctx.setLineDash(e.d===3?[4,5]:[]);ctx.stroke();
+  });ctx.setLineDash([]);ctx.globalAlpha=1;
+  const center=screen(projected([0,0,0,0]),w,h);
+  for(let d=0;d<4;d++){
+    const end=[0,0,0,0];end[d]=1.55;const p=screen(projected(end),w,h);
+    ctx.beginPath();ctx.moveTo(center[0],center[1]);ctx.lineTo(p[0],p[1]);ctx.strokeStyle=ink[d];ctx.lineWidth=3;ctx.stroke();
+    ctx.fillStyle=ink[d];ctx.font='600 17px system-ui';ctx.fillText(AXES[d].axis,p[0]+8,p[1]-8);
+  }
+  ctx.strokeStyle=originInk;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(center[0]-7,center[1]);ctx.lineTo(center[0]+7,center[1]);ctx.moveTo(center[0],center[1]-7);ctx.lineTo(center[0],center[1]+7);ctx.stroke();
+  ctx.fillStyle=originInk;ctx.font='12px system-ui';ctx.fillText('reference',center[0]+10,center[1]+16);
+}
+function update(){angle.value=String(turns[plane.value]);angleText.textContent=angle.value+'°';status.textContent=`Camera yaw ${(yaw*180/Math.PI).toFixed(0)}°, pitch ${(pitch*180/Math.PI).toFixed(0)}° · ${plane.value} ${angle.value}°`;render();}
+angle.addEventListener('input',()=>{turns[plane.value]=Number(angle.value);update();});plane.addEventListener('change',update);
+document.getElementById('reset').addEventListener('click',()=>{for(const p of pairs)turns[p]=0;yaw=-.38;pitch=.22;update();});
+canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.008;pitch=Math.max(-1.45,Math.min(1.45,pitch+(e.clientY-drag[1])*.008));drag=[e.clientX,e.clientY];update();});
+canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointercancel',()=>drag=null);
+canvas.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();yaw+=(e.key==='ArrowLeft'?-1:e.key==='ArrowRight'?1:0)*.08;pitch=Math.max(-1.45,Math.min(1.45,pitch+(e.key==='ArrowUp'?-1:e.key==='ArrowDown'?1:0)*.08));update();});
+function showAxes(){document.getElementById('axes').replaceChildren(...AXES.map(a=>{const row=document.createElement('div');row.className='axis';const b=document.createElement('b');b.textContent=a.axis;const s=document.createElement('span');s.textContent=`${a.measure}: ${a.negative_direction} ↔ ${a.positive_direction} · unmeasured · ${PUBLIC?'public projection':'source row '+a.source.row}`;row.append(b,s);return row;}));}
+document.getElementById('description').textContent='Four named candidate axes. All source-event coordinates and units are unset. The center is a declared per-observation reference.';
+const liveStatus=document.getElementById('liveStatus'),pauseLive=document.getElementById('pauseLive');
+let paused=false,checking=false;
+function liveLabel(value){if(liveStatus.textContent!==value)liveStatus.textContent=value;}
+function validState(data){return data&&data.v===1&&data.origin_status==='declared_reference_unmeasured'&&/^[a-f0-9]{64}$/.test(data.sha256)&&Array.isArray(data.axes)&&data.axes.length===4&&data.axes.every((a,i)=>a.axis==='XYZT'[i]&&typeof a.measure==='string'&&typeof a.negative_direction==='string'&&typeof a.positive_direction==='string'&&(PUBLIC?(!('source' in a)):a.source&&Number.isInteger(a.source.row)))&&(!PUBLIC||typeof data.published_at==='string');}
+async function checkLive(){
+  if(paused||checking||document.hidden)return;
+  checking=true;
+  try{
+    const url=PUBLIC?`${FEED}?tick=${Date.now()}`:FEED;
+    const response=await fetch(url,{cache:'no-store',headers:PUBLIC?{}:{'If-None-Match':`"${sourceHash}"`}});
+    if(response.status===304){liveLabel(`Live · source unchanged · ${sourceHash.slice(0,12)}`);pulse('same');return;}
+    if(!response.ok)throw new Error(`source endpoint ${response.status}`);
+    const data=await response.json();if(!validState(data))throw new Error('invalid source state');
+    if(data.sha256!==sourceHash){AXES=data.axes;sourceHash=data.sha256;showAxes();render();pulse('changed');}else pulse('same');
+    if(PUBLIC){publication.textContent=data.published_at;liveLabel(`Public mirror · published ${data.published_at} · ${sourceHash.slice(0,12)}`);}
+    else liveLabel(`Live · source checked · ${sourceHash.slice(0,12)}`);
+  }catch(error){liveLabel(`Stale snapshot · ${error.message}`);pulse('error');}
+  finally{checking=false;}
+}
+pauseLive.addEventListener('click',()=>{paused=!paused;pauseLive.textContent=paused?'Resume updates':'Pause updates';pauseLive.setAttribute('aria-pressed',String(paused));if(paused)liveLabel(`Paused · ${sourceHash.slice(0,12)}`);else checkLive();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkLive();});
+showAxes();new ResizeObserver(render).observe(canvas);update();
+if(location.protocol==='http:'||location.protocol==='https:'){checkLive();setInterval(checkLive,PUBLIC?30000:3000);}else liveLabel(`Source snapshot · ${sourceHash.slice(0,12)} · open the live server for updates`);
+</script>
+</body>
+</html>
