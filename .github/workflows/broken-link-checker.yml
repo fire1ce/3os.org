@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  # A pull request is checked before merge, not only after it reaches main.
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: '0 5 * * 5'
