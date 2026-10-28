@@ -14,6 +14,7 @@ main{max-width:1040px;margin:auto;padding:20px clamp(14px,3vw,32px) 36px}h1{font
 .readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0}.readout div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px}.readout b{display:block;font:12px ui-monospace,monospace;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}.readout output{display:block;margin-top:5px;font:15px ui-monospace,monospace;overflow-wrap:anywhere}.map{width:100%;border-collapse:collapse;font-size:13px}.map th,.map td{text-align:left;padding:9px;border-bottom:1px solid var(--line)}.map th{color:var(--mute)}
 .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.flow span{padding:8px 10px;border:1px solid var(--line);border-radius:8px}.flow em{color:var(--mute);font:12px ui-monospace,monospace}
 .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:9px;list-style:none;margin:0;padding:0}.timeline li{border-left:3px solid var(--x);padding:4px 9px}.timeline li:nth-child(2){border-color:var(--y)}.timeline li:nth-child(3){border-color:var(--z)}.timeline li:nth-child(4){border-color:var(--t)}.timeline li:nth-child(5){border-color:var(--origin)}.timeline b{display:block}.timeline small{display:block;color:var(--mute);overflow-wrap:anywhere}
+.views{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;margin-top:16px}.view-table{width:100%;border-collapse:collapse;font-size:12px}.view-table th,.view-table td{text-align:left;vertical-align:top;padding:7px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.view-table th{color:var(--mute)}.empty{border:1px dashed var(--line);border-radius:8px;padding:12px;color:var(--mute)}code{font:12px ui-monospace,monospace}
 </style>
 </head>
 <body>
@@ -29,17 +30,23 @@ main{max-width:1040px;margin:auto;padding:20px clamp(14px,3vw,32px) 36px}h1{font
   <button id="sound" type="button" aria-pressed="false">Hear feed checks</button>
 </div>
 <div class="status" id="status" aria-live="polite">Spatial camera at rest · XT 0°</div>
-<div class="status" id="liveStatus" role="status" aria-live="polite">Public mirror · checking status feed</div>
-<div class="readout" aria-label="Time and observation readouts"><div><b>Viewer clock · UTC</b><output id="clock">Reading clock…</output></div><div><b>Atlas publication</b><output id="publication">Checking feed…</output></div><div><b>zTime · layer one</b><output>Adjacent to center · no measured coordinate</output></div></div>
-<section class="panel"><h2>History as observed</h2><p>The steps are ordered by information flow, not plotted at equal time intervals.</p><ol class="timeline"><li><b>Source event</b><small>Event time not in public projection</small></li><li><b>Source record</b><small>Record time not in public projection</small></li><li><b>Published view digest</b><small id="sourceRevision">Checking…</small></li><li><b>Publication</b><small id="timelinePublication">Checking…</small></li><li><b>Your read</b><small id="browserRead">Waiting for feed…</small></li></ol></section>
+<div class="status" id="liveStatus" role="status" aria-live="polite">Published snapshot · checking status feed</div>
+<div class="readout" aria-label="Time and observation readouts"><div><b>Viewer clock · UTC</b><output id="clock">Reading clock…</output></div><div><b>Snapshot generated</b><output id="publication">Checking feed…</output></div><div><b>zTime · layer one</b><output>Adjacent to center · no measured coordinate</output></div></div>
+<section class="panel"><h2>Snapshot path</h2><p>The steps are ordered by information flow, not plotted at equal time intervals. Generation time is not source-event or deployment time.</p><ol class="timeline"><li><b>Source event</b><small>Event time not in public projection</small></li><li><b>Source record</b><small>Record time not in public projection</small></li><li><b>Published view digest</b><small id="sourceRevision">Checking…</small></li><li><b>Snapshot generation</b><small id="timelinePublication">Checking…</small></li><li><b>Your read</b><small id="browserRead">Waiting for feed…</small></li></ol></section>
 <div class="scene">
   <div class="stage"><canvas id="view" width="720" height="720" tabindex="0" role="img" aria-label="Rotatable projection of the candidate X, Y, Z and T axes. Drag or use arrow keys for the camera; select an axis pair for four-dimensional rotation."></canvas><div class="badge">MODEL · NO MEASURED COORDINATES</div></div>
   <div class="side">
-    <section class="panel"><h2>Axis definitions</h2><div class="axes" id="axes"></div></section>
+    <section class="panel"><h2>Axis definitions</h2><div class="axes" id="axes"><div class="axis"><b>X</b><span>length: backward ↔ forward · unmeasured · public projection</span></div><div class="axis"><b>Y</b><span>width: left ↔ right · unmeasured · public projection</span></div><div class="axis"><b>Z</b><span>height: down ↔ up · unmeasured · public projection</span></div><div class="axis"><b>T</b><span>duration: past ↔ future · unmeasured · public projection</span></div></div></section>
     <section class="panel"><h2>What the center means</h2><p>The white cross is the declared information-arrival reference. Its zero is a convention for each observation, not a measured world location. Earth is a candidate context marker; no Earth position has been placed in this frame.</p></section>
     <section class="panel"><h2>Reading boundary</h2><p>X/Y/Z/T here are physical-frame names. The time-ratio drawing uses X for time, and the statistical Atlas map has arbitrary plot axes. No measured transform joins them.</p></section>
     <section class="panel"><h2>Rhythm test</h2><p>Choose one event stream and one clock. For ordered times, Δᵢ = tᵢ₊₁ − tᵢ and Rᵢ = Δᵢ₊₁ / Δᵢ when Δᵢ &gt; 0. Atlas has not selected a stream or measured a rhythm coordinate.</p></section>
   </div>
+</div>
+<div class="views" aria-label="Atlas published views">
+  <section class="panel" aria-labelledby="timelineHeading"><h2 id="timelineHeading">Timeline</h2><p>Allowlisted public events ordered by their published observation time.</p><div class="empty">No published timeline event.</div></section>
+  <section class="panel" aria-labelledby="equationsHeading"><h2 id="equationsHeading">Equations</h2><p>Published expressions with explicit input and output kinds.</p><div class="empty">No published equation.</div></section>
+  <section class="panel" aria-labelledby="computeHeading"><h2 id="computeHeading">Compute</h2><p>Published measurements only; absent counters never become zero.</p><div class="empty">No published compute measurement.</div></section>
+  <section class="panel" aria-labelledby="gapsHeading"><h2 id="gapsHeading">Gaps</h2><p>Unresolved dimensions and the next measurement that could reduce them.</p><div class="empty">No published gap measurement.</div></section>
 </div>
 <section class="panel"><h2>Conversion map</h2><p>Each row states what can be translated today. “Open” means Atlas has no measured transform; rotating the drawing changes only this view.</p><table class="map"><thead><tr><th>From</th><th>To</th><th>Relation</th></tr></thead><tbody><tr><td>Atlas event</td><td>White center</td><td>Declared arrival reference (0,0,0,0)</td></tr><tr><td>Center</td><td>zTime</td><td>Adjacent named point; distance open</td></tr><tr><td>Earth</td><td>Observation frame</td><td>Context candidate; location and transform open</td></tr><tr><td>Time-ratio X</td><td>Physical T</td><td>Transform open</td></tr><tr><td>Source time</td><td>Arrival time</td><td>Needs both clock readings and units</td></tr><tr><td>Any event</td><td>X/Y/Z/T location</td><td>Coordinates open</td></tr></tbody></table></section>
 <section class="panel"><h2>Information path</h2><div class="flow"><span>Source event</span><em>recorded as →</em><span>Source record</span><em>derived into →</em><span>Atlas projection</span><em>published to →</em><span>Your view</span></div><p>These are information links. A causal claim between events needs its own evidence; the arrows above do not supply it.</p></section>
@@ -49,7 +56,8 @@ main{max-width:1040px;margin:auto;padding:20px clamp(14px,3vw,32px) 36px}h1{font
 </main>
 <script>
 let AXES = [{"axis":"X","measure":"length","negative_direction":"backward","positive_direction":"forward"},{"axis":"Y","measure":"width","negative_direction":"left","positive_direction":"right"},{"axis":"Z","measure":"height","negative_direction":"down","positive_direction":"up"},{"axis":"T","measure":"duration","negative_direction":"past","positive_direction":"future"}];
-let sourceHash = 'ea428b0f34402146a719062367f452328315ac3ecc0dd8e8c64e561cb96381d5';
+let sourceHash = '89539a2b875003c3f20a300f23df9acc3aac0d2c4d2a44b6f4bc12c1f1c48098';
+const PAGE_PUBLICATION = '2026-10-28T01:29:51Z';
 const PUBLIC = true, FEED = './status.json';
 const clock=document.getElementById('clock'),publication=document.getElementById('publication');
 const sourceRevision=document.getElementById('sourceRevision'),timelinePublication=document.getElementById('timelinePublication'),browserRead=document.getElementById('browserRead');
@@ -108,7 +116,10 @@ document.getElementById('description').textContent='Four named candidate axes. A
 const liveStatus=document.getElementById('liveStatus'),pauseLive=document.getElementById('pauseLive');
 let paused=false,checking=false;
 function liveLabel(value){if(liveStatus.textContent!==value)liveStatus.textContent=value;}
-function validState(data){return data&&data.v===1&&data.origin_status==='declared_reference_unmeasured'&&/^[a-f0-9]{64}$/.test(data.sha256)&&Array.isArray(data.axes)&&data.axes.length===4&&data.axes.every((a,i)=>a.axis==='XYZT'[i]&&typeof a.measure==='string'&&typeof a.negative_direction==='string'&&typeof a.positive_direction==='string'&&(PUBLIC?(!('source' in a)):a.source&&Number.isInteger(a.source.row)))&&(!PUBLIC||typeof data.published_at==='string');}
+const VIEW_KEYS={timeline:['public_id','kind','label','observed_at','status'],equations:['public_id','title','expression','input_kinds','output_kind','state'],compute:['public_id','operation','backend','device_class','duration','unit','uncertainty','state'],gaps:['public_id','dimension','state','residual','uncertainty','next_measurement']};
+function exactKeys(value,keys){return value&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).sort().join('\0')===keys.slice().sort().join('\0');}
+function validState(data){return data&&data.v===1&&data.origin_status==='declared_reference_unmeasured'&&/^[a-f0-9]{64}$/.test(data.sha256)&&Array.isArray(data.axes)&&data.axes.length===4&&data.axes.every((a,i)=>a.axis==='XYZT'[i]&&typeof a.measure==='string'&&typeof a.negative_direction==='string'&&typeof a.positive_direction==='string'&&a.source&&Number.isInteger(a.source.row));}
+function freshnessHint(data){return data&&exactKeys(data,['v','projection_id','axes','origin_status','views','sha256','published_at'])&&data.v===2&&data.projection_id==='atlas-public-v2'&&/^[a-f0-9]{64}$/.test(data.sha256)&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(data.published_at);}
 async function checkLive(){
   if(paused||checking||document.hidden)return;
   checking=true;
@@ -117,10 +128,10 @@ async function checkLive(){
     const response=await fetch(url,{cache:'no-store',headers:PUBLIC?{}:{'If-None-Match':`"${sourceHash}"`}});
     if(response.status===304){browserRead.textContent=new Date().toISOString();sourceRevision.textContent=sourceHash.slice(0,12)+' · source digest';timelinePublication.textContent='Local view · not published';liveLabel(`Live · source unchanged · ${sourceHash.slice(0,12)}`);pulse('same');return;}
     if(!response.ok)throw new Error(`source endpoint ${response.status}`);
-    const data=await response.json();if(!validState(data))throw new Error('invalid source state');
-    if(data.sha256!==sourceHash){AXES=data.axes;sourceHash=data.sha256;showAxes();render();pulse('changed');}else pulse('same');
+    const data=await response.json();if(PUBLIC?!freshnessHint(data):!validState(data))throw new Error(PUBLIC?'invalid freshness hint':'invalid source state');
+    const changed=data.sha256!==sourceHash;if(PUBLIC){if(changed)pulse('changed');else pulse('same');}else if(changed){AXES=data.axes;sourceHash=data.sha256;showAxes();render();pulse('changed');}else pulse('same');
     browserRead.textContent=new Date().toISOString();
-    if(PUBLIC){publication.textContent=data.published_at;timelinePublication.textContent=data.published_at;sourceRevision.textContent=sourceHash.slice(0,12);liveLabel(`Public mirror · published ${data.published_at} · ${sourceHash.slice(0,12)}`);}
+    if(PUBLIC){publication.textContent=PAGE_PUBLICATION;timelinePublication.textContent=PAGE_PUBLICATION;sourceRevision.textContent=sourceHash.slice(0,12);liveLabel(changed?`New snapshot hint · reload to verify and view it · ${data.sha256.slice(0,12)}`:`Published snapshot · generated ${PAGE_PUBLICATION} · ${sourceHash.slice(0,12)}`);}
     else{sourceRevision.textContent=sourceHash.slice(0,12)+' · source digest';timelinePublication.textContent='Local view · not published';liveLabel(`Live · source checked · ${sourceHash.slice(0,12)}`);}
   }catch(error){liveLabel(`Stale snapshot · ${error.message}`);pulse('error');}
   finally{checking=false;}
