@@ -13,15 +13,36 @@ permissions:
 
 jobs:
   linkChecker:
+    # A push can prove repository-owned paths without depending on the state of
+    # third-party servers. Keep this job name stable for branch protection.
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - name: Broken Link Checker
+      - name: Repository Link Checker
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
         with:
           # root-dir resolves root-relative links (/assets/...) against the
           # docs source; theme templates and the page template are rendered
-          # into full pages at build time so their /-links can't resolve here
+          # into full pages at build time so their /-links can't resolve here.
+          # Offline mode validates local targets and blocks network requests.
+          args: >-
+            --offline --verbose --no-progress
+            --root-dir "$GITHUB_WORKSPACE/docs"
+            --exclude-path theme
+            --exclude-path template.md
+            './**/*.md' './**/*.html' './**/*.rst'
+
+  externalAudit:
+    # Internet availability is evidence, not a publication gate. The schedule
+    # owns its pulse; a manual run executes both the local and external lanes.
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: External Link Audit
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
           # UISP help pages serve 403 responses to automated link checkers.
           # The private Forge is not reliably reachable from public runners.
           # These three historical man7 references timed out in the public
