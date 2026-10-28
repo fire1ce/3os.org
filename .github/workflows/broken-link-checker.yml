@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  # A pull request is checked before merge, not only after it reaches main.
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: '0 5 * * 5'
@@ -36,7 +40,7 @@ jobs:
   externalAudit:
     # Internet availability is evidence, not a publication gate. The schedule
     # owns its pulse; a manual run executes both the local and external lanes.
-    if: github.event_name != 'push'
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7

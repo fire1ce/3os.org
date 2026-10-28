@@ -4,20 +4,49 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   schedule:
     - cron: '0 4 * * *'
   workflow_dispatch:
 
+# A pull request builds in a group of its own, so a review never cancels a deploy.
 concurrency:
-  group: mkdocs-deploy
+  group: ${{ github.event_name == 'pull_request' && format('mkdocs-pr-{0}', github.event.pull_request.number) || 'mkdocs-deploy' }}
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  deploy:
+  # The merge gate for pull requests: the same build as deploy, read-only, nothing published.
+  build:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7-dev libtiff5-dev tk-dev tcl-dev libcairo2-dev libffi-dev libwebp-dev
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Build
+        run: |
+          pip install -r requirements.txt
+          mkdocs build --site-dir "$RUNNER_TEMP/site"
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
