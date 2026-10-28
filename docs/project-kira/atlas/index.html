@@ -15,6 +15,7 @@ main{max-width:1040px;margin:auto;padding:20px clamp(14px,3vw,32px) 36px}h1{font
 .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.flow span{padding:8px 10px;border:1px solid var(--line);border-radius:8px}.flow em{color:var(--mute);font:12px ui-monospace,monospace}
 .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:9px;list-style:none;margin:0;padding:0}.timeline li{border-left:3px solid var(--x);padding:4px 9px}.timeline li:nth-child(2){border-color:var(--y)}.timeline li:nth-child(3){border-color:var(--z)}.timeline li:nth-child(4){border-color:var(--t)}.timeline li:nth-child(5){border-color:var(--origin)}.timeline b{display:block}.timeline small{display:block;color:var(--mute);overflow-wrap:anywhere}
 .views{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;margin-top:16px}.view-table{width:100%;border-collapse:collapse;font-size:12px}.view-table th,.view-table td{text-align:left;vertical-align:top;padding:7px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.view-table th{color:var(--mute)}.empty{border:1px dashed var(--line);border-radius:8px;padding:12px;color:var(--mute)}code{font:12px ui-monospace,monospace}
+.machinery-panel{grid-column:1/-1}.machinery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:0}.machinery div{min-width:0}.machinery dt{font-size:12px;color:var(--mute)}.machinery dd{margin:4px 0 0;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -43,6 +44,7 @@ main{max-width:1040px;margin:auto;padding:20px clamp(14px,3vw,32px) 36px}h1{font
   </div>
 </div>
 <div class="views" aria-label="Atlas published views">
+  <section class="panel machinery-panel" aria-labelledby="machineryHeading"><h2 id="machineryHeading">Machinery</h2><p>Values recorded by the observing harness, with evidence references checked. MCP inventory describes that session; native CLI inspection has its own evidence. This snapshot does not claim continuous availability.</p><dl class="machinery"><div><dt>Tool</dt><dd><a href="https://github.com/morluto/rea">REA</a></dd></div><div><dt>Skill version</dt><dd>49</dd></div><div><dt>CLI version</dt><dd>6.8.0</dd></div><div><dt>Skill</dt><dd>installed</dd></div><div><dt>CLI</dt><dd>ready</dd></div><div><dt>Session MCP inventory</dt><dd>not_advertised</dd></div><div><dt>Invocation</dt><dd>observed</dd></div><div><dt>Operation</dt><dd>inspect-rust-binary</dd></div><div><dt>Observation recorded (UTC)</dt><dd>2026-10-28T19:00:16Z</dd></div></dl></section>
   <section class="panel" aria-labelledby="timelineHeading"><h2 id="timelineHeading">Timeline</h2><p>Allowlisted public events ordered by their published observation time.</p><div class="empty">No published timeline event.</div></section>
   <section class="panel" aria-labelledby="equationsHeading"><h2 id="equationsHeading">Equations</h2><p>Published expressions with explicit input and output kinds.</p><div class="empty">No published equation.</div></section>
   <section class="panel" aria-labelledby="computeHeading"><h2 id="computeHeading">Compute</h2><p>Published measurements only; absent counters never become zero.</p><div class="empty">No published compute measurement.</div></section>
@@ -56,7 +58,7 @@ main{max-width:1040px;margin:auto;padding:20px clamp(14px,3vw,32px) 36px}h1{font
 </main>
 <script>
 let AXES = [{"axis":"X","measure":"length","negative_direction":"backward","positive_direction":"forward"},{"axis":"Y","measure":"width","negative_direction":"left","positive_direction":"right"},{"axis":"Z","measure":"height","negative_direction":"down","positive_direction":"up"},{"axis":"T","measure":"duration","negative_direction":"past","positive_direction":"future"}];
-let sourceHash = '89539a2b875003c3f20a300f23df9acc3aac0d2c4d2a44b6f4bc12c1f1c48098';
+let sourceHash = '4b70de3bd18aba635589ec12187172b959d42ba78295133b2277a1c0405dc83d';
 const PUBLIC = true, FEED = './status.json';
 const sourceRevision=document.getElementById('sourceRevision'),browserRead=document.getElementById('browserRead');
 const sound=document.getElementById('sound');let audioContext=null,soundOn=false;
