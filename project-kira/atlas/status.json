@@ -1,6 +1,6 @@
 {
-  "v": 2,
-  "projection_id": "atlas-public-v2",
+  "v": 4,
+  "projection_id": "atlas-public-v4",
   "axes": [
     {
       "axis": "X",
@@ -32,7 +32,21 @@
     "timeline": [],
     "equations": [],
     "compute": [],
-    "gaps": []
+    "gaps": [],
+    "machinery": [
+      {
+        "name": "REA",
+        "skill_version": "49",
+        "cli_version": "6.8.0",
+        "skill_state": "installed",
+        "cli_state": "ready",
+        "mcp_state": "not_advertised",
+        "invocation_state": "observed",
+        "operation": "inspect-rust-binary",
+        "observed_at": "2026-10-28T19:00:16Z",
+        "public_id": "machinery-409ebb528d76c5b3b8f8fe52952a54fc1bb266e74965e30930065cdf5b766be7"
+      }
+    ]
   },
-  "sha256": "89539a2b875003c3f20a300f23df9acc3aac0d2c4d2a44b6f4bc12c1f1c48098"
+  "sha256": "4b70de3bd18aba635589ec12187172b959d42ba78295133b2277a1c0405dc83d"
 }
