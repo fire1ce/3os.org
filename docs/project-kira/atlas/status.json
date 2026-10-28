@@ -1,5 +1,6 @@
 {
-  "v": 1,
+  "v": 2,
+  "projection_id": "atlas-public-v2",
   "axes": [
     {
       "axis": "X",
@@ -27,6 +28,11 @@
     }
   ],
   "origin_status": "declared_reference_unmeasured",
-  "sha256": "ea428b0f34402146a719062367f452328315ac3ecc0dd8e8c64e561cb96381d5",
-  "published_at": "2026-10-27T19:58:21Z"
+  "views": {
+    "timeline": [],
+    "equations": [],
+    "compute": [],
+    "gaps": []
+  },
+  "sha256": "89539a2b875003c3f20a300f23df9acc3aac0d2c4d2a44b6f4bc12c1f1c48098"
 }
