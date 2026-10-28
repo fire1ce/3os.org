@@ -24,6 +24,8 @@ jobs:
           # into full pages at build time so their /-links can't resolve here
           # UISP help pages serve 403 responses to automated link checkers.
           # The private Forge is not reliably reachable from public runners.
+          # These three historical man7 references timed out in the public
+          # runner; preserve them without exempting future man7 links.
           args: >-
             --verbose --no-progress
             --root-dir "$GITHUB_WORKSPACE/docs"
@@ -31,6 +33,9 @@ jobs:
             --exclude-path template.md
             --exclude '^https://help\.uisp\.com/'
             --exclude '^https://git\.3os\.re/'
+            --exclude '^https://man7\.org/linux/man-pages/man5/auto\.master\.5\.html$'
+            --exclude '^https://man7\.org/linux/man-pages/man5/autofs\.5\.html$'
+            --exclude '^https://man7\.org/linux/man-pages/man8/mount\.cifs\.8\.html$'
             './**/*.md' './**/*.html' './**/*.rst'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
