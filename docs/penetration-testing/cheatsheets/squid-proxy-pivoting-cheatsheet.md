@@ -102,12 +102,6 @@ Every port is classified with one of the following statuses:
 
 The open ports are also saved in the `Squid_Port.txt` file.
 
-Alternatively, [SPOSE][spose-url]{target=\_blank} (Squid Pivoting Open Port Scanner) does the same job:
-
-```shell
-python3 spose.py --proxy http://10.10.10.10:3128 --target 10.10.10.10
-```
-
 ## Check the Cache Manager
 
 Misconfigured Squid proxies sometimes expose the Cache Manager, which can leak the version, counters and configuration details. On modern Squid versions it is available below `/squid-internal-mgr/`:
@@ -128,19 +122,13 @@ More details about the Cache Manager are available in the [Squid documentation][
 
 A full write-up about Squid pentesting, open proxy abuse, pivoting and hardening is available in [Squid Proxy Port 3128: Pentest, Pivoting and Secure Configuration][hackita-squid-url]{target=\_blank}.
 
-## Credit
-
-Thanks to [@aancw][aancw-url]{target=\_blank} for SPOSE.
-
 <!-- appendices -->
 
 <!-- urls -->
 
 [mysquidscanner-url]: https://github.com/hack-ita/mysquidscanner 'mysquidscanner GitHub repository'
-[spose-url]: https://github.com/aancw/spose 'SPOSE - Squid Pivoting Open Port Scanner'
 [squid-cache-manager-url]: https://wiki.squid-cache.org/Features/CacheManager/Index 'The Cache Manager - Squid Web Cache wiki'
 [hackita-squid-url]: https://en.hackita.it/articoli/porta-3128-squid-proxy/ 'Squid Proxy Port 3128 - Pentest, Pivoting and Secure Configuration'
-[aancw-url]: https://github.com/aancw 'aancw on GitHub'
 
 <!-- images -->
 
